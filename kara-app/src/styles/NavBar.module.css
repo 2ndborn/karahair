@@ -1,0 +1,20 @@
+.NavContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.NavBarShadow {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 767px) {
+    .NavContainer {
+        display: flex;
+        flex-direction: column-reverse;
+        border: none;
+    }
+
+    .NavBarShadow {
+        box-shadow: none;
+    }
+}

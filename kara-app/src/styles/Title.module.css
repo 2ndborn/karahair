@@ -4,3 +4,9 @@
     justify-content: center;
     height: 30vh;
 }
+
+@media (max-width: 767px) {
+    .TitleContainer {
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+}
