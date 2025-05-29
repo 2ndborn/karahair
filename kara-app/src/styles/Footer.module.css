@@ -1,3 +1,8 @@
 .socialMedia {
     font-size:xx-large;
 }
+
+.Footer {
+  position: relative;
+  z-index: 1;
+}

@@ -1,10 +1,11 @@
 import React from 'react'
 import styles from '../styles/HomePage.module.css';
+import practiceImage from '../assets/practice-image.jpg'
 
 function HomePage() {
   return (
     <div className={styles.homeContainer}>
-      <h1>Home Page</h1>
+      <img src={practiceImage} alt='out' />
     </div>
   )
 }

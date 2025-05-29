@@ -4,16 +4,17 @@ const useClickOutsideToggle = () => {
     const [expanded, setExpanded] = useState(false)
     const ref = useRef(null)
     useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (ref.current && !ref.current.contains(event.target)) {
-                setExpanded(false)
-            }
+    const handleClickOutside = (event) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+            setTimeout(() => setExpanded(false), 10); // Small delay ensures clean transition
         }
-        document.addEventListener('mouseup', handleClickOutside)
-        return () => {
-            document.addEventListener('mouseup', handleClickOutside)
-        }
-    }, [ref])
+    };
+    document.addEventListener("mouseup", handleClickOutside);
+    
+    return () => {
+        document.removeEventListener("mouseup", handleClickOutside);
+    };
+}, [ref]);
 
   return {expanded, setExpanded, ref}
 }

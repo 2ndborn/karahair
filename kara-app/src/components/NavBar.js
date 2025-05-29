@@ -7,14 +7,12 @@ import Title from './Title';
 import styles from '../styles/NavBar.module.css'
 
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
-import { Reveal } from '../utils/Reveal';
 import { NavLink } from 'react-router-dom';
 
 function NavBar() {
   const {expanded, setExpanded, ref} = useClickOutsideToggle();
   return (
     <div className={styles.NavContainer}>
-      <Reveal>
         <Title />
         <Navbar expanded={expanded} onToggle={setExpanded} ref={ref} expand="md" className={styles.NavBarShadow}>
           <Container>
@@ -31,7 +29,6 @@ function NavBar() {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-      </Reveal>
     </div>
   );
 }

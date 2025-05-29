@@ -3,7 +3,7 @@ import { motion, useInView, useAnimation } from "motion/react"
 
 export const Reveal = ({children}) => {
   const ref = useRef(null);
-  const inView = useInView(ref, {once: true});
+  const inView = useInView(ref);
   const mainControl = useAnimation();
 
   useEffect(() => {
@@ -15,12 +15,12 @@ export const Reveal = ({children}) => {
     <div ref={ref}>
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: 75 },
+          hidden: { opacity: 0.5, y: 25 },
           visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
         animate={mainControl}
-        transition={{ duration: 1.5, delay: 0.25, ease: "easeOut" }}
+        transition={{ duration: 2.5, delay: 0.25, ease: "easeOut" }}
       >
         {children}
       </motion.div>
