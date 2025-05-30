@@ -13,6 +13,10 @@
     color: black;
 }
 
+.ColorNav {
+  transition: background-color 1s ease-in-out;
+}
+
 .NavBarShadow.collapsing {
     visibility: hidden;
 }

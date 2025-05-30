@@ -22,10 +22,10 @@ function NavBar() {
         <Title />
         <AnimatePresence>
         <Navbar 
-          style={{backgroundColor: getColor("navbar")}}
-          expanded={expanded} 
-          expand="md" 
-          className={styles.NavBarShadow}
+          style={{ backgroundColor: getColor("navbar") }}
+          expanded={expanded}
+          expand="md"
+          className={`${styles.NavBarShadow} ${styles.ColorNav}`}
         >
           <Container>
             <Navbar.Toggle

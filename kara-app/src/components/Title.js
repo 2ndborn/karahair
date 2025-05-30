@@ -12,7 +12,7 @@ function Title() {
   return (
     <div 
     style={{backgroundColor: getColor("title")}}
-    className={styles.TitleContainer}>
+    className={`${styles.TitleContainer} ${styles.ColorNav}`}>
         <Container className='text-center'>
             {isLoaded && (
               <motion.h1

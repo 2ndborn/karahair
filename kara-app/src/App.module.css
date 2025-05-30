@@ -5,3 +5,7 @@
 .Main {
     min-height: 80vh;
 }
+
+.ColorNav {
+  transition: background-color 1s ease-in-out;
+}
