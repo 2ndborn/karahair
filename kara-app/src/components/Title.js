@@ -3,12 +3,16 @@ import {motion} from 'framer-motion';
 import Container from 'react-bootstrap/esm/Container'
 import styles from '../styles/Title.module.css'
 import useFadeUp from '../hooks/useFadeUp';
+import useDynamicColor from '../hooks/useDynamicColor';
 
 function Title() {
   const isLoaded = useFadeUp(1000);
+  const getColor = useDynamicColor();
 
   return (
-    <div className={styles.TitleContainer}>
+    <div 
+    style={{backgroundColor: getColor("title")}}
+    className={styles.TitleContainer}>
         <Container className='text-center'>
             {isLoaded && (
               <motion.h1

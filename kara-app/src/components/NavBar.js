@@ -10,14 +10,22 @@ import styles from '../styles/NavBar.module.css'
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 import { NavLink } from 'react-router-dom';
 import useFadeUp from '../hooks/useFadeUp';
+import useDynamicColor from '../hooks/useDynamicColor';
 
 function NavBar() {
   const {expanded, setExpanded, ref} = useClickOutsideToggle();
   const isLoaded = useFadeUp(2000)
+  const getColor = useDynamicColor();
+
   return (
     <div className={styles.NavContainer}>
         <Title />
-        <Navbar expanded={expanded} onToggle={setExpanded} ref={ref} expand="md" className={styles.NavBarShadow}>
+        <Navbar 
+        style={{backgroundColor: getColor("navbar")}}
+        expanded={expanded} 
+        onToggle={setExpanded} 
+        ref={ref} expand="md" 
+        className={styles.NavBarShadow}>
           <Container>
             <Navbar.Toggle
               className='ms-auto' aria-controls="basic-navbar-nav" />
