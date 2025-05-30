@@ -1,5 +1,5 @@
 import React from 'react';
-import {motion} from 'framer-motion';
+import {AnimatePresence, motion} from 'framer-motion';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -14,24 +14,28 @@ import useDynamicColor from '../hooks/useDynamicColor';
 
 function NavBar() {
   const {expanded, setExpanded, ref} = useClickOutsideToggle();
-  const isLoaded = useFadeUp(2000)
+  const isLoaded = useFadeUp(500)
   const getColor = useDynamicColor();
 
   return (
     <div className={styles.NavContainer}>
         <Title />
+        <AnimatePresence>
         <Navbar 
-        style={{backgroundColor: getColor("navbar")}}
-        expanded={expanded} 
-        onToggle={setExpanded} 
-        ref={ref} expand="md" 
-        className={styles.NavBarShadow}>
+          style={{backgroundColor: getColor("navbar")}}
+          expanded={expanded} 
+          expand="md" 
+          className={styles.NavBarShadow}
+        >
           <Container>
             <Navbar.Toggle
-              className='ms-auto' aria-controls="basic-navbar-nav" />
+              ref={ref}
+              onClick={() => setExpanded(!expanded)}
+              className='ms-auto' aria-controls="basic-navbar-nav" 
+            />
             <Navbar.Collapse className='ms-auto' id="basic-navbar-nav">
             {isLoaded && (
-              <Nav className={expanded ? "ms-auto d-flex flex-column align-items-end" : "mx-auto"}>
+              <Nav className="mx-md-auto flex-md-row flex-column align-items-end">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -71,6 +75,7 @@ function NavBar() {
             </Navbar.Collapse>
           </Container>
         </Navbar>
+        </AnimatePresence>
     </div>
   );
 }

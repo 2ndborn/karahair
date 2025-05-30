@@ -1,28 +1,31 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import styles from '../styles/Footer.module.css'
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="bg-dark text-light py-4">
       <Container className={styles.Footer}>
         <Row>
-          <Col md={4}>
+          <Col md={4} className="text-md-start text-center">
             <h5>Menu</h5>
             <ul className="list-unstyled">
-              <li><a href="/projects" className="text-light">Home</a></li>
-              <li><a href="/projects" className="text-light">My Story</a></li>
-              <li><a href="/projects" className="text-light">Services</a></li>
-              <li><a href="/projects" className="text-light">Gallery</a></li>
-              <li><a href="/contact" className="text-light">Contact Me</a></li>
+              <li><NavLink exact to="/" className="text-light text-decoration-none">Home</NavLink></li>
+              <li><NavLink to="/mystory" className="text-light">My Story</NavLink></li>
+              <li><NavLink to="/services" className="text-light">Services</NavLink></li>
+              <li><NavLink to="/gallery" className="text-light">Gallery</NavLink></li>
+              <li><NavLink to="/contactme" className="text-light">Contact Me</NavLink></li>
             </ul>
           </Col>
-          <Col md={4}>
+          <Col md={4} className="text-md-start text-center">
                 <h5>Contact Me</h5>
-                <p><i className="fa-solid fa-mobile-screen-button"></i> 07900 000 000</p>
-                <p><i className="fa-solid fa-envelope"></i> noemail@gmal.com</p>
+                <ul className="list-unstyled">
+                  <li><i className="fa-solid fa-mobile-screen-button"></i>07900 000 000</li>
+                  <li><i className="fa-solid fa-envelope"></i>noemail@gmal.com</li>
+                </ul>
           </Col>
-          <Col md={4}>
+          <Col md={4} className="text-md-start text-center">
             <h5>Follow Me</h5>
             <div className={styles.socialMedia}>
                 <a href="/" className="px-2"><i className="fa-brands fa-instagram"></i></a>
