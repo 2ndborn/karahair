@@ -8,8 +8,9 @@ const NavItem = ({to, label, delay}) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay, ease: "easeOut" }}
+            whileHover={{scale: 1.2}}
         >
-            <NavLink to={to} className={styles.NavLink}>{label}</NavLink>
+            <NavLink to={to} className={`${styles.NavLink} px-2`}>{label}</NavLink>
         </motion.div>
     )
 }
