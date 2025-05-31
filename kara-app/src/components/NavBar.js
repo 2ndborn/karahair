@@ -1,5 +1,5 @@
 import React from 'react';
-import {AnimatePresence, motion} from 'framer-motion';
+import {AnimatePresence} from 'framer-motion';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -8,9 +8,9 @@ import Title from './Title';
 import styles from '../styles/NavBar.module.css'
 
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
-import { NavLink } from 'react-router-dom';
 import useFadeUp from '../hooks/useFadeUp';
 import useDynamicColor from '../hooks/useDynamicColor';
+import NavItem from './NavItem';
 
 function NavBar() {
   const {expanded, setExpanded, ref} = useClickOutsideToggle();
@@ -36,40 +36,11 @@ function NavBar() {
             <Navbar.Collapse className='ms-auto' id="basic-navbar-nav">
             {isLoaded && (
               <Nav className="mx-md-auto flex-md-row flex-column align-items-end">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}>
-                  <NavLink to="/" className={styles.NavLink}>Home</NavLink>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}>
-                  <NavLink to="/mystory" className={styles.NavLink}>My story</NavLink>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}>
-                  <NavLink to="" className={styles.NavLink}>Services</NavLink>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}>
-                  <NavLink to="" className={styles.NavLink}>Gallery</NavLink>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 1, ease: "easeOut" }}>
-                  <NavLink to="" className={styles.NavLink}>Contact me</NavLink>
-                </motion.div>
+                <NavItem to="/" label="Home" delay={0.2} />
+                <NavItem to="/mystory" label="My Story" delay={0.4} />
+                <NavItem to="/services" label="Services" delay={0.6} />
+                <NavItem to="/gallery" label="Gallery" delay={0.8} />
+                <NavItem to="/contactme" label="Contact Me" delay={1.0} />
               </Nav>
             )}
             </Navbar.Collapse>
