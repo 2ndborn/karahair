@@ -4,8 +4,8 @@ const useDynamicColor = () => {
     const location = useLocation();
     const getColor = (element) => {
         const colors = {
-            "/mystory": {navbar: "blue", title: "blue", footer: "blue"},
-            default: {navbar: "white", title: "white", footer: "white"},
+            "/mystory": {navbar: "#d9b9a0", title: "#d9b9a0", footer: "#d9b9a0"},
+            default: {navbar: "#f1e7dd", title: "#f1e7dd", footer: "#f1e7dd"},
         }
         return colors[location.pathname]?.[element] || colors.default[element]
     }

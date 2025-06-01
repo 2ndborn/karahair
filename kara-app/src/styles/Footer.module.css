@@ -2,7 +2,18 @@
     font-size:xx-large;
 }
 
+.socialMedia i {
+  color: #22161c;
+}
+
 .Footer {
   position: relative;
   z-index: 1;
+}
+
+footer {
+  color: #22161c;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  background-color: #f1e7dd;
+  box-shadow: 0px -8px 8px rgba(0,0,0,0.5);
 }
