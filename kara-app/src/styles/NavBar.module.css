@@ -37,4 +37,8 @@
     .NavBarShadow {
         box-shadow: none;
     }
+
+    .NavLink {
+        margin-bottom: 20px;
+    }
 }
