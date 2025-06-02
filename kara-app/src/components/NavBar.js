@@ -32,9 +32,13 @@ function NavBar() {
             <Navbar.Toggle
               ref={ref}
               onClick={() => setExpanded(!expanded)}
-              className='ms-auto' aria-controls="basic-navbar-nav" 
+              className={`${styles.McButton} ${expanded ? styles.active : ""} ms-auto`} aria-controls="basic-navbar-nav" 
               style={{boxShadow: "none", border: "none"}}
-            />
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </Navbar.Toggle>
             <Navbar.Collapse className='ms-auto' id="basic-navbar-nav">
             {isLoaded && (
               <Nav className="mx-md-auto flex-md-row pt-md-0 flex-column align-items-center pt-4">
