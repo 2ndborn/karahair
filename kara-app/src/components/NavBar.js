@@ -5,7 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Title from './Title';
-import styles from '../styles/NavBar.module.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from '../styles/NavBar.module.css';
 
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 import useFadeUp from '../hooks/useFadeUp';
@@ -32,6 +33,7 @@ function NavBar() {
               ref={ref}
               onClick={() => setExpanded(!expanded)}
               className='ms-auto' aria-controls="basic-navbar-nav" 
+              style={{boxShadow: "none", border: "none"}}
             />
             <Navbar.Collapse className='ms-auto' id="basic-navbar-nav">
             {isLoaded && (
