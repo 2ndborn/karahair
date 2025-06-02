@@ -19,6 +19,9 @@ function HomePage() {
         variants={variants}
         transition={{ duration: 1, delay: 1.5, ease: "easeOut" }}
       />
+      <div className={styles.Slogan}>
+        <h1>Knowledge</h1>
+      </div>
     </motion.div>
   )
 }
