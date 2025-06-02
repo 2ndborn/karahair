@@ -28,6 +28,55 @@
     visibility: hidden;
 }
 
+.McButton {
+  width: 44px;
+  height: 32px;
+  position: relative;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.McButton span {
+  position: absolute;
+  width: 44px;
+  height: 3px;
+  background-color: #22161c;
+  transition: all 0.3s ease-in-out;
+}
+
+.McButton span:nth-child(1) {
+  top: 0;
+}
+
+.McButton span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.McButton span:nth-child(3) {
+  bottom: 0;
+}
+
+/* Animated Effect when Toggled */
+.McButton.active span:nth-child(1) {
+  transform: translateY(13px) rotate(45deg);
+}
+
+.McButton.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.McButton.active span:nth-child(3) {
+  transform: translateY(-13px) rotate(-45deg);
+}
+
+button.NavBar_McButton {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 @media (max-width: 767px) {
     .NavContainer {
         flex-direction: column-reverse !important;
