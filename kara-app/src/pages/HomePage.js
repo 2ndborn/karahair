@@ -9,6 +9,11 @@ function HomePage() {
     visible: { opacity: 1, scale: 1 },
   }
 
+  const sloganVarients = {
+    hidden: {opacity: 0, y: 30},
+    visible: {opacity: 0.8},
+  }
+
   return (
     <motion.div className={styles.homeContainer}>
       <motion.img
@@ -19,9 +24,20 @@ function HomePage() {
         variants={variants}
         transition={{ duration: 1, delay: 1.5, ease: "easeOut" }}
       />
-      <div className={styles.Slogan}>
-        <h1>Knowledge</h1>
-      </div>
+      <motion.div
+        initial="hidden"
+        variants={sloganVarients}
+        whileInView={{opacity: 0.8, y: 0}}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className={styles.Slogan}
+      >
+        <ul className='list-unstyled mb-0 mx-5'>
+          <li><h1>Knowledgeble</h1></li>
+          <li><h1>Assessment</h1></li>
+          <li><h1>Restores</h1></li>
+          <li><h1>Allure</h1></li>
+        </ul>
+      </motion.div>
     </motion.div>
   )
 }

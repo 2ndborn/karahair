@@ -23,7 +23,7 @@ function NavBar() {
         <Title />
         <AnimatePresence>
         <Navbar 
-          style={{ backgroundColor: getColor("navbar") }}
+          style={{ backgroundColor: getColor("navbar"), position: "sticky", top: 0 }}
           expanded={expanded}
           expand="md"
           className={`${styles.NavBarShadow} ${styles.ColorNav}`}

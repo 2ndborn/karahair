@@ -1,6 +1,6 @@
 .NavContainer {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .NavBarShadow {
@@ -8,16 +8,12 @@
 }
 
 .NavLink {
-    font-size: 20px;
-    padding: 5px;
-    text-decoration: none;
-    color: #22161c;
-    text-shadow: 4px 4px 6px rgba(10, 10, 10, 0.4);
-    transition: transform 0.1s;
-}
-
-.NavLink:hover {
-    transform: scale(1.2)
+  font-size: 20px;
+  padding: 5px;
+  text-decoration: none;
+  color: #22161c;
+  text-shadow: 4px 4px 6px rgba(10, 10, 10, 0.4);
+  transition: transform 0.1s;
 }
 
 .ColorNav {
