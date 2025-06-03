@@ -4,13 +4,14 @@ import styles from '../styles/HomePage.module.css';
 import practiceImage from '../assets/practice-image.jpg'
 
 function HomePage() {
+  const slogans = ["Knowledgeble", "Assessment", "Restores", "Allure"];
   const variants = {
     hidden: { opacity: 0, scale: 0.5 },
     visible: { opacity: 1, scale: 1 },
   }
 
   const sloganVarients = {
-    hidden: {opacity: 0, y: 30},
+    hidden: {opacity: 0, y: 75},
     visible: {opacity: 0.8},
   }
 
@@ -31,12 +32,22 @@ function HomePage() {
         transition={{ duration: 1.5, ease: "easeOut" }}
         className={styles.Slogan}
       >
-        <ul className='list-unstyled mb-0 mx-5'>
-          <li><h1>Knowledgeble</h1></li>
-          <li><h1>Assessment</h1></li>
-          <li><h1>Restores</h1></li>
-          <li><h1>Allure</h1></li>
-        </ul>
+        <motion.ul className='list-unstyled mb-0 mx-5'>
+          {slogans.map((slogan, index) => (
+          <motion.li
+              key={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }} // Animates when 30% of the element is visible
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, y: 0, transition: { delay: index * 0.4, duration: 0.6 }},
+              }}
+            >
+            <h1>{slogan}</h1>
+          </motion.li>
+          ))}
+        </motion.ul>
       </motion.div>
     </motion.div>
   )
