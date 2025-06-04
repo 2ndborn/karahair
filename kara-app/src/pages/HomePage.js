@@ -4,7 +4,13 @@ import styles from '../styles/HomePage.module.css';
 import practiceImage from '../assets/practice-image.jpg'
 
 function HomePage() {
-  const slogans = ["Knowledgeble", "Assessment", "Restores", "Allure"];
+  const slogans = ["K nowledgeble", "A ssessment", "R estores", "A llure"];
+  const subSlogans = [
+    "I bring over 2 decades of hair care experience with me. YOUR SAFE IN MY HANDS",
+    "Using the perfected Numan method of consultation",
+    "Let take you on a journey to have you see what you really feel",
+    "You radiate elegance and prestige infecting others with your glow"
+  ]
   const variants = {
     hidden: { opacity: 0, scale: 0.5 },
     visible: { opacity: 1, scale: 1 },
@@ -34,7 +40,7 @@ function HomePage() {
       >
         <motion.ul className='list-unstyled mb-0 mx-5'>
           {slogans.map((slogan, index) => (
-          <motion.li
+            <motion.li
               key={index}
               initial="hidden"
               whileInView="visible"

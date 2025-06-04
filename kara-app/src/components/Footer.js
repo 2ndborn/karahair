@@ -11,7 +11,7 @@ const Footer = () => {
         <Reveal>
         <Row>
           <Col md={4} className="text-md-start px-md-5 text-center">
-            <h4 className="mb-3">Menu</h4>
+            <h4 className="mb-3"><strong>Menu</strong></h4>
             <ul className={`${styles.FooterList} list-unstyled`}>
               <li><NavLink to="/" className="text-decoration-none">Home</NavLink></li>
               <li><NavLink to="/mystory" className="text-decoration-none">My Story</NavLink></li>
@@ -21,14 +21,14 @@ const Footer = () => {
             </ul>
           </Col>
           <Col md={4} className="text-md-start px-md-5 text-center">
-                <h4 className="mb-3">Contact Me</h4>
+                <h4 className="mb-3"><strong>Contact Me</strong></h4>
                 <ul className={`${styles.FooterList} list-unstyled`}>
-                  <li><i className="fa-solid fa-mobile-screen-button me-2"></i>07900 000 000</li>
+                  <li><i className="fa-solid fa-mobile-screen-button me-2"></i>07900 000000</li>
                   <li><i className="fa-solid fa-envelope me-2"></i>noemail@gmal.com</li>
                 </ul>
           </Col>
           <Col md={4} className="text-md-start px-md-5 text-center">
-            <h4 className="mb-3">Follow Me</h4>
+            <h4 className="mb-3"><strong>Follow Me</strong></h4>
             <div className={styles.socialMedia}>
                 <a href="/" className="px-md-0 pe-md-3 px-3"><i className="fa-brands fa-instagram"></i></a>
                 <a href="/" className="px-md-0 pe-md-3 px-3"><i className="fa-brands fa-tiktok"></i></a>
