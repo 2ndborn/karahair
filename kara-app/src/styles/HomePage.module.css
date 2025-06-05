@@ -1,7 +1,7 @@
 .homeContainer {
     position: relative;
     width: 100%;
-    height: 150vh;
+    height: 220vh;
     overflow: hidden;
 }
 
@@ -27,8 +27,7 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     z-index: 10;
     
 }
@@ -36,7 +35,14 @@
 .homeContainer h1 {
     position: relative;
     color: #23161c;
-    font-size: 2rem;
     font-weight: bold;
     z-index: 11;
+    align-self: flex-start;
+}
+
+.homeContainer h6 {
+    position: relative;
+    font-size: 1rem;
+    z-index: 11;
+    align-self: flex-end; /* Push h6 to the right */
 }

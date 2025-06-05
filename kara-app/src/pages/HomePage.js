@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'motion/react';
 import styles from '../styles/HomePage.module.css';
-import practiceImage from '../assets/practice-image.jpg'
+import practiceImage from '../assets/practice_image1.webp';
 
 function HomePage() {
   const homeContent = [
@@ -48,23 +48,25 @@ function HomePage() {
                 hidden: { opacity: 0 },
                 visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 }},
               }}
+              className='my-5'
             >
             <motion.h1
               initial={{opacity: 0, x: 250}}
               whileInView={{opacity: 1, x: 0}}
               transition={{delay: index * 0.8, duration: 0.8}}
               style={{fontSize: "clamp(2rem, 5vw, 4.5rem)"}}
+              className='text-md-start text-cente5'
             >
               {content.title}
             </motion.h1>
-            <motion.h6
+            <motion.h5
               initial={{opacity: 0, x: -250}}
               whileInView={{opacity: 1, x: 0}}
               transition={{delay: index * 0.8 + 0.3, duration: 0.8 }}
-              style={{fontSize: "clamp(0.1rem, 5vw, 1rem)"}}
+              className='text-md-end text-center'
             >
               {content.subtitle}
-            </motion.h6>
+            </motion.h5>
           </motion.li>
           ))}
         </motion.ul>
