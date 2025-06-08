@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'motion/react';
 import styles from '../styles/HomePage.module.css';
 import peach from '../assets/peach.jpg';
+import Title from '../components/Title';
 
 function HomePage() {
   const homeContent = [
@@ -16,7 +17,10 @@ function HomePage() {
   }
 
   return (
-    <motion.div className={styles.homeContainer}>
+    <>
+      <Title />
+    
+    <motion.div id='next-section' className={styles.homeContainer}>
       <motion.img
         src={peach}
         alt='out'
@@ -46,6 +50,7 @@ function HomePage() {
         </motion.ul>
       </motion.div>
     </motion.div>
+    </>
   )
 }
 

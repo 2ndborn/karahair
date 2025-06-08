@@ -20,10 +20,10 @@ function NavBar() {
 
   return (
     <div className={styles.NavContainer}>
-        <Title />
+        {/* <Title /> */}
         <AnimatePresence>
         <Navbar 
-          style={{ backgroundColor: getColor("navbar"), position: "sticky", top: 0 }}
+          style={{ backgroundColor: getColor("navbar")}}
           expanded={expanded}
           expand="md"
           className={`${styles.NavBarShadow} ${styles.ColorNav}`}

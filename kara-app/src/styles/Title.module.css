@@ -2,12 +2,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 30vh;
+    height: 100vh;
 }
 
 .ColorNav {
   transition: background-color 1s ease-in-out;
 }
+
+.Arrow {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    font-size: 25px;
+}
+
+button {
+  all: unset; /* Removes default styles */
+  cursor: pointer; /* Keeps click functionality */
+}
+
 
 @media (max-width: 767px) {
     .TitleContainer {

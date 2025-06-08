@@ -9,6 +9,10 @@ function Title() {
   const isLoaded = useFadeUp(1000);
   const getColor = useDynamicColor();
 
+  const scrollToNext = () => {
+    document.getElementById("next-section")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div 
     style={{backgroundColor: getColor("title")}}
@@ -22,7 +26,20 @@ function Title() {
               >
                 K.A.R.A
               </motion.h1>)}
-        </Container>
+      </Container>
+      <div className={styles.Arrow}>
+        <motion.button
+        onClick={scrollToNext}
+          className={styles.ScrollButton}
+          aria-label="Scroll to next section"
+        >
+        <motion.i 
+        className="fa-solid fa-angle-down"
+        animate={{ scale: [1,1.3,1]}}
+        transition={{duration: 2, repeat: Infinity}}
+        ></motion.i>
+        </motion.button>
+      </div>
     </div>
   )
 }

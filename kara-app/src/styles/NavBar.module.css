@@ -1,6 +1,8 @@
 .NavContainer {
   display: flex;
   flex-direction: column;
+  position: fixed;
+  width: 100vw;
 }
 
 .NavBarShadow {
