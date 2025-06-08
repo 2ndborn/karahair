@@ -31,23 +31,16 @@ function HomePage() {
             <motion.li
               key={index}
               initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }} // Animates when 30% of the element is visible
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1},
-              }}
+              animate="visible"
+              variants={{hidden: {opacity: 0, scale: 0}, visible: {opacity: 1, scale: 1}}}
+              transition={{ duration: 1, delay: 2.5, ease: "easeOut"}}
             >
             <motion.h1
-              initial={{opacity: 0, x: 250}}
-              animate={{opacity: 1, x: 0}}
-              transition={{delay: index * 0.8, duration: 0.8, type: "spring", bounce: 0.75}}
-              style={{fontSize: "clamp(2rem, 5vw, 4.5rem)"}}
+              style={{fontSize: "clamp(5rem, 4vw, 7rem)"}}
               className='text-md-start text-center'
             >
               {content.title}
             </motion.h1>
-            
           </motion.li>
           ))}
         </motion.ul>
