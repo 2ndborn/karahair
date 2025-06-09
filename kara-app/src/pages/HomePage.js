@@ -1,8 +1,12 @@
 import React from 'react'
 import { motion } from 'motion/react';
 import styles from '../styles/HomePage.module.css';
-import peach from '../assets/peach.jpg';
+import peach from '../assets/peachone.webp';
 import Title from '../components/Title';
+import { Reveal } from '../utils/Reveal';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
 
 function HomePage() {
   const homeContent = [
@@ -16,42 +20,65 @@ function HomePage() {
     visible: { opacity: 1, scale: 1 },
   }
 
-  return (
-    <>
-      <Title />
-    
+  const listVariants = {
+  hidden: { opacity: 0 },
+  visible: { 
+    opacity: 1,
+    transition: { staggerChildren: 1 } // Ensures staggered effect
+  }
+};
+
+const sloganVariants = {
+  hidden: { opacity: 0, x: -250 },
+  visible: { opacity: 0.8, x: 0, transition: { duration: 1 } }
+};
+
+return (
+  <>
+    <Title />
     <motion.div id='next-section' className={styles.homeContainer}>
       <motion.img
         src={peach}
         alt='out'
-        initial="hidden" // Reference the variants
-        animate="visible"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
         variants={variants}
-        transition={{ duration: 1, delay: 1.5, ease: "easeOut" }}
+        transition={{ duration: 1, ease: "easeOut" }}
       />
       <motion.div className={styles.Slogan}>
-        <motion.ul className='list-unstyled mb-0 mx-5'>
+        <motion.ul
+          className='list-unstyled mb-0 mx-5'
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={listVariants} // Controls staggered animation
+        >
           {homeContent.map((content, index) => (
-            <motion.li
+            <motion.li 
               key={index}
-              initial="hidden"
-              animate="visible"
-              variants={{hidden: {opacity: 0, scale: 0}, visible: {opacity: 1, scale: 1}}}
-              transition={{ duration: 1, delay: 2.5, ease: "easeOut"}}
+              variants={sloganVariants} // Apply animation to <li> instead of <h1>
+              className='mb-4'
             >
-            <motion.h1
-              style={{fontSize: "clamp(5rem, 4vw, 7rem)"}}
-              className='text-md-start text-center'
-            >
-              {content.title}
-            </motion.h1>
-          </motion.li>
+              <h1
+                style={{ fontSize: "clamp(2.5rem, 3.5vw, 6rem)" }}
+                className='text-md-start text-center'
+              >
+                {content.title}
+              </h1>
+              <h6
+                style={{ fontSize: "clamp(1rem, 2vw, 1.25rem)" }}
+                className='text-md-start text-center'
+              >
+                {content.subtitle}
+              </h6>
+            </motion.li>
           ))}
         </motion.ul>
       </motion.div>
     </motion.div>
-    </>
-  )
+  </>
+);
 }
 
 export default HomePage

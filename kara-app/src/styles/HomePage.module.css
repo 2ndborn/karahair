@@ -21,8 +21,8 @@
     top: 10%;
     transform: translateY(0);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    width: 100vw;
-    height: auto;
+    width: auto;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -32,7 +32,8 @@
 
 .homeContainer h1 {
     position: relative;
-    color: #fff;
+    color: rgba(255, 255, 255);
+    mix-blend-mode: difference;
     font-family: "Cal Sans", sans-serif;
     font-style: oblique;
     font-weight: bold;
