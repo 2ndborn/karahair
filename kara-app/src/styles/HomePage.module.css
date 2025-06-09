@@ -14,7 +14,6 @@
     position: relative; /* Fixes image to viewport */
     top: 0;
     left: 0;
-    z-index: -1; /* Moves it behind content */
 }   
 
 .Slogan {
@@ -28,7 +27,6 @@
     flex-direction: column;
     padding: 20px;
     justify-content: space-between;
-    z-index: 10;
     
 }
 
@@ -38,7 +36,6 @@
     font-family: "Cal Sans", sans-serif;
     font-style: oblique;
     font-weight: bold;
-    z-index: 11;
     align-self: flex-start;
 }
 

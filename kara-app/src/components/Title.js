@@ -15,6 +15,7 @@ function Title() {
 
   return (
     <div 
+    id="title-container" 
     style={{backgroundColor: getColor("title")}}
     className={`${styles.TitleContainer} ${styles.ColorNav}`}>
         <Container className='text-center'>
@@ -28,9 +29,8 @@ function Title() {
               </motion.h1>)}
       </Container>
       <div className={styles.Arrow}>
-        <motion.button
-        onClick={scrollToNext}
-          className={styles.ScrollButton}
+        <a href='#next-section'
+          className={`${styles.ScrollButton} text-decoration-none`}
           aria-label="Scroll to next section"
         >
         <motion.i 
@@ -38,7 +38,7 @@ function Title() {
         animate={{ scale: [1,1.3,1]}}
         transition={{duration: 2, repeat: Infinity}}
         ></motion.i>
-        </motion.button>
+        </a>
       </div>
     </div>
   )

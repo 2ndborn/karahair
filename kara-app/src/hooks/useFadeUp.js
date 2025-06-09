@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const useFadeUp = (delay = 1000) => {
+const useFadeUp = (delay = 0) => {
     const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => {
         const timer = setTimeout(() => {

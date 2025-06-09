@@ -18,8 +18,9 @@
     font-size: 25px;
 }
 
-button {
-  all: unset; /* Removes default styles */
+a {
+  text-decoration: none;
+  color: #22161c;
   cursor: pointer; /* Keeps click functionality */
 }
 
