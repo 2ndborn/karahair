@@ -16,24 +16,30 @@
     left: 0;
 }   
 
+.homeBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
 .Slogan {
     position: absolute;
     top: 10%;
     transform: translateY(0);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    width: auto;
+    transition: opacity 0.6 ease-out, transform 0.6s ease-out;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 20px;
     justify-content: space-between;
-    
 }
 
 .homeContainer h1 {
     position: relative;
     color: rgba(255, 255, 255);
-    mix-blend-mode: difference;
     font-family: "Cal Sans", sans-serif;
     font-style: oblique;
     font-weight: bold;
@@ -42,9 +48,13 @@
 
 .homeContainer h5 {
     position: relative;
-    font-family: "Cal Sans" sans-serif;
-    color: #fff;
+    font-family: "Cal Sans", sans-serif;
+    color: rgba(255, 255, 255, 0.8);
     font-style: oblique;
-    z-index: 11;
-    align-self: flex-end; /* Push h6 to the right */
+    align-self: flex-end;
+}
+
+.buttonContainer {
+    position: absolute;
+    z-index: 999;
 }

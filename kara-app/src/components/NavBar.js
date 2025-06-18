@@ -67,7 +67,7 @@ function NavBar() {
               </Navbar.Toggle>
               <Navbar.Collapse className='ms-auto' id="basic-navbar-nav">
                 {isLoaded && (
-                  <Nav className="mx-md-auto flex-md-row pt-md-0 flex-column align-items-center pt-4">
+                  <Nav className="mx-md-auto flex-md-row pt-md-0 flex-column align-items-center">
                     <NavItem to="/" label="Home" delay={0.2} />
                     <NavItem to="/mystory" label="My Story" delay={0.4} />
                     <NavItem to="/services" label="Services" delay={0.6} />
