@@ -9,6 +9,10 @@
   transition: background-color 1s ease-in-out;
 }
 
+.arrowIcon {
+  color: 22161c;
+}
+
 .Arrow {
     position: absolute;
     bottom: 0;

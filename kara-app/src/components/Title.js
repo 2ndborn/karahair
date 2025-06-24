@@ -34,7 +34,7 @@ function Title() {
           aria-label="Scroll to next section"
         >
         <motion.i 
-        className="fa-solid fa-angle-down"
+        className={`${styles.arrowIcon} fa-solid fa-angle-down`}
         animate={{ scale: [1,1.3,1]}}
         transition={{duration: 2, repeat: Infinity}}
         ></motion.i>
