@@ -55,7 +55,9 @@ function HomePage() {
             </div>
           </section>
         ))}
-        <div><button>button</button></div>
+        <div className={styles.buttonContainer}>
+          <Button>Contact Me Now</Button>
+        </div>
       </motion.div>
     </>
   );

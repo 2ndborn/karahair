@@ -63,6 +63,8 @@
 }
 
 .buttonContainer {
-    position: absolute;
-    z-index: 999;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
