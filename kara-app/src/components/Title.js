@@ -9,9 +9,9 @@ function Title() {
   const isLoaded = useFadeUp(1000);
   const getColor = useDynamicColor();
 
-  const scrollToNext = () => {
-    document.getElementById("next-section")?.scrollIntoView({ behavior: "smooth" });
-  };
+  // const scrollToNext = () => {
+  //   document.getElementById("next-section")?.scrollIntoView({ behavior: "smooth" });
+  // };
 
   return (
     <div 
@@ -20,13 +20,23 @@ function Title() {
     className={`${styles.TitleContainer} ${styles.ColorNav}`}>
         <Container className='text-center'>
             {isLoaded && (
+              <>
               <motion.h1
               initial={{ opacity: 0, y: 50}}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
+              transition={{ duration: 1, ease: "easeOut" }}
               >
                 K.A.R.A
-              </motion.h1>)}
+              </motion.h1>
+              <motion.h6
+              initial={{ opacity: 0, y: 50}}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5, ease: "easeOut"}}
+              >
+                HAIRCARE
+              </motion.h6>
+              </>
+            )}
       </Container>
       <div className={styles.Arrow}>
         <a href='#next-section'
