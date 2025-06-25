@@ -57,17 +57,19 @@ function HomePage() {
               <h5>{content.subtitle}</h5>
             </div>
             {index < homeContent.length - 1 && (
-              <button
-              className={styles.scrollButton}
-              onClick={() => scrollToSection(`section-${index + 1}`)}
-              aria-label="Scroll to next section"
-              >
-                <motion.i
-                  className={`${styles.arrowIcon} fa-solid fa-angle-down`}
-                  animate={{ scale: [1, 1.3, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                ></motion.i>
-              </button>
+              <div className={styles.buttonWrapper}>
+                <motion.button
+                  className={styles.scrollButton}
+                  onClick={() => scrollToSection(`section-${index + 1}`)}
+                  aria-label="Scroll to next section"
+                >
+                  <motion.i
+                    className={`${styles.arrowIcon} fa-solid fa-angle-down`}
+                    animate={{ scale: [1, 1.3, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  ></motion.i>
+                </motion.button>
+              </div>
             )}
           </section>
         ))}
