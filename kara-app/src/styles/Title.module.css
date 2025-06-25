@@ -22,10 +22,11 @@
     font-size: 25px;
 }
 
-a {
+button {
   text-decoration: none;
   color: #22161c;
   cursor: pointer; /* Keeps click functionality */
+  border: none;
 }
 
 

@@ -9,9 +9,9 @@ function Title() {
   const isLoaded = useFadeUp(1000);
   const getColor = useDynamicColor();
 
-  // const scrollToNext = () => {
-  //   document.getElementById("next-section")?.scrollIntoView({ behavior: "smooth" });
-  // };
+  const scrollToNext = () => {
+    document.getElementById("next-section")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div 
@@ -39,7 +39,8 @@ function Title() {
             )}
       </Container>
       <div className={styles.Arrow}>
-        <a href='#next-section'
+        <button 
+          onClick={scrollToNext}
           className={`${styles.ScrollButton} text-decoration-none`}
           aria-label="Scroll to next section"
         >
@@ -48,7 +49,7 @@ function Title() {
         animate={{ scale: [1,1.3,1]}}
         transition={{duration: 2, repeat: Infinity}}
         ></motion.i>
-        </a>
+        </button>
       </div>
     </div>
   )
