@@ -68,3 +68,24 @@
     justify-content: center;
     align-items: center;
 }
+
+.arrowIcon {
+  color: #22161c;
+}
+
+.Arrow {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.scrollButton {
+  text-decoration: none;
+  color: #22161c;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer; /* Keeps click functionality */
+  border: none;
+}

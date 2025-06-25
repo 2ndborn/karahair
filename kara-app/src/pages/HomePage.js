@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { useScrollToSection } from '../hooks/useScrollToSection';
 
 function HomePage() {
   const homeContent = [
@@ -20,18 +21,20 @@ function HomePage() {
     visible: { opacity: 1, scale: 1 },
   }
 
-  const listVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 1 } // Ensures staggered effect
-    }
-  };
+  const scrollToSection = useScrollToSection();
 
-  const sloganVariants = {
-    hidden: { opacity: 0, x: -250 },
-    visible: { opacity: 1, x: 0, transition: { duration: 1 } }
-  };
+  // const listVariants = {
+  //   hidden: { opacity: 0 },
+  //   visible: {
+  //     opacity: 1,
+  //     transition: { staggerChildren: 1 } // Ensures staggered effect
+  //   }
+  // };
+
+  // const sloganVariants = {
+  //   hidden: { opacity: 0, x: -250 },
+  //   visible: { opacity: 1, x: 0, transition: { duration: 1 } }
+  // };
 
   return (
     <>
@@ -48,11 +51,24 @@ function HomePage() {
       />
       <motion.div id='next-section' className={styles.homeContainer}>
         {homeContent.map((content, index) => (
-          <section key={index} className={styles.sloganText}>
+          <section key={index} id={`section-${index}`} className={styles.sloganText}>
             <div className={styles.headingGroup}>
               <h1>{content.title}</h1>
               <h5>{content.subtitle}</h5>
             </div>
+            {index < homeContent.length - 1 && (
+              <button
+              className={styles.scrollButton}
+              onClick={() => scrollToSection(`section-${index + 1}`)}
+              aria-label="Scroll to next section"
+              >
+                <motion.i
+                  className={`${styles.arrowIcon} fa-solid fa-angle-down`}
+                  animate={{ scale: [1, 1.3, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                ></motion.i>
+              </button>
+            )}
           </section>
         ))}
         <div className={styles.buttonContainer}>
