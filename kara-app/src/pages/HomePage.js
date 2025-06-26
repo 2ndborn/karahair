@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { useScrollToSection } from '../hooks/useScrollToSection';
+import { Reveal } from '../utils/Reveal';
 
 function HomePage() {
   const homeContent = [
@@ -49,7 +50,8 @@ function HomePage() {
         variants={variants}
         transition={{ duration: 1, ease: "easeOut" }}
       />
-      <motion.div id='next-section' className={styles.homeContainer}>
+      <div className={styles.homeBackground}></div>
+      <motion.div id='next-section' className={`${styles.homeContainer} mx-auto`}>
         {homeContent.map((content, index) => (
           <section key={index} id={`section-${index}`} className={styles.sloganText}>
             <div className={styles.headingGroup}>
@@ -58,21 +60,27 @@ function HomePage() {
             </div>
             {index < homeContent.length - 1 ? (
               <div className={styles.buttonWrapper}>
-                <motion.button
-                  className={styles.scrollButton}
-                  onClick={() => scrollToSection(`section-${index + 1}`)}
-                  aria-label="Scroll to next section"
-                >
-                  <motion.i
-                    className={`${styles.arrowIcon} fa-solid fa-angle-down`}
-                    animate={{ scale: [1, 1.3, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  ></motion.i>
-                </motion.button>
+                <Reveal>
+                  <motion.button
+                    className={styles.scrollButton}
+                    onClick={() => scrollToSection(`section-${index + 1}`)}
+                    aria-label="Scroll to next section"
+                  >
+                    <motion.i
+                      className={`${styles.arrowIcon} fa-solid fa-angle-down`}
+                      animate={{ scale: [1, 1.3, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    ></motion.i>
+                  </motion.button>
+                </Reveal>
               </div>
             ) : (
                 <div className={styles.contactButtonWrapper}>
-                  <button>button</button>
+                  <Reveal>
+                    <motion.button>
+                      Contact me now!
+                    </motion.button>
+                  </Reveal>
                 </div>
             )}
           </section>
