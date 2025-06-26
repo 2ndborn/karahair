@@ -64,13 +64,6 @@
     font-style: oblique;
 }
 
-.buttonContainer {
-    height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .arrowIcon {
   color: #fff;
   font-size: 25px;
@@ -96,4 +89,9 @@
 .buttonWrapper {
     position: absolute;
     bottom: 10px;
+}
+
+.contactButtonWrapper {
+    position: absolute;
+    bottom: 40px;
 }

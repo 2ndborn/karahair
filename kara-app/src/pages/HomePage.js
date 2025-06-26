@@ -56,7 +56,7 @@ function HomePage() {
               <h1>{content.title}</h1>
               <h5>{content.subtitle}</h5>
             </div>
-            {index < homeContent.length - 1 && (
+            {index < homeContent.length - 1 ? (
               <div className={styles.buttonWrapper}>
                 <motion.button
                   className={styles.scrollButton}
@@ -70,12 +70,13 @@ function HomePage() {
                   ></motion.i>
                 </motion.button>
               </div>
+            ) : (
+                <div className={styles.contactButtonWrapper}>
+                  <button>button</button>
+                </div>
             )}
           </section>
         ))}
-        <div className={styles.buttonContainer}>
-          <Button>Contact Me Now</Button>
-        </div>
       </motion.div>
     </>
   );
