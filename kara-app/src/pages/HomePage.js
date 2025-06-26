@@ -55,8 +55,16 @@ function HomePage() {
         {homeContent.map((content, index) => (
           <section key={index} id={`section-${index}`} className={styles.sloganText}>
             <div className={styles.headingGroup}>
-              <h1>{content.title}</h1>
-              <h5>{content.subtitle}</h5>
+              <Reveal
+                variants={{
+                  hidden: { opacity: 0, scale: 0},
+                  visible: { opacity: 1, scale: [0, 1.4, 1]}
+                }}
+                transition={{duration: 2, ease: 'easeInOut'}}
+              >
+                <h1>{content.title}</h1>
+                <h5>{content.subtitle}</h5>
+              </Reveal>
             </div>
             {index < homeContent.length - 1 ? (
               <div className={styles.buttonWrapper}>
@@ -76,8 +84,13 @@ function HomePage() {
               </div>
             ) : (
                 <div className={styles.contactButtonWrapper}>
-                  <Reveal>
-                    <motion.button>
+                  <Reveal
+                    variants={{
+                      hidden: { opacity: 0},
+                      visible: { opacity: 1}
+                    }}
+                  >
+                    <motion.button whileHover={{scale: 1.1}}>
                       Contact me now!
                     </motion.button>
                   </Reveal>
