@@ -91,7 +91,7 @@ function HomePage() {
                     }}
                   >
                     <motion.button whileHover={{scale: 1.1}}>
-                      Contact me now!
+                      Contact me now
                     </motion.button>
                   </Reveal>
                 </div>
