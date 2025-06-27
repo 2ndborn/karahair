@@ -62,7 +62,7 @@ function HomePage() {
                 }}
                 transition={{duration: 2, ease: 'easeInOut'}}
               >
-                <h1>{content.title}</h1>
+                <h1 className='display-1'>{content.title}</h1>
                 <h5>{content.subtitle}</h5>
               </Reveal>
             </div>
