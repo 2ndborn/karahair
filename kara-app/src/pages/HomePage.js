@@ -63,6 +63,14 @@ function HomePage() {
                 transition={{duration: 2, ease: 'easeInOut'}}
               >
                 <h1 className='display-1'>{content.title}</h1>
+              </Reveal>
+              <Reveal
+                variants={{
+                  hidden: { opacity: 0, scale: 0},
+                  visible: { opacity: 1, scale: [0, 1.4, 1]}
+                }}
+                transition={{duration: 2, delay: 1, ease: 'easeInOut'}}
+              >
                 <h5>{content.subtitle}</h5>
               </Reveal>
             </div>
@@ -84,14 +92,14 @@ function HomePage() {
               </div>
             ) : (
                 <div className={styles.contactButtonWrapper}>
-                  <Reveal
-                    variants={{
-                      hidden: { opacity: 0},
-                      visible: { opacity: 1}
-                    }}
-                  >
-                    <motion.button whileHover={{scale: 1.1}}>
-                      Contact me now!
+                  <Reveal>
+                    <motion.button
+                     className='rounded-2 py-2 px-3 border border-transparent' 
+                     whileHover={{scale: 1}}
+                     whileTap={{scale: 0.95, borderColor: '#000', borderWidth: '2px' }}
+                     style={{borderStyle: "solid"}}
+                    >
+                      Contact me now
                     </motion.button>
                   </Reveal>
                 </div>
