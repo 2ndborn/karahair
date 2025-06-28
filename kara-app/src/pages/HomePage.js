@@ -1,12 +1,8 @@
-import React from 'react'
-import { motion } from 'motion/react';
+import React, { useEffect } from 'react'
+import { motion, useAnimation } from 'motion/react';
 import styles from '../styles/HomePage.module.css';
 import peach from '../assets/peachone.webp';
 import Title from '../components/Title';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import { useScrollToSection } from '../hooks/useScrollToSection';
 import { Reveal } from '../utils/Reveal';
 
@@ -21,6 +17,20 @@ function HomePage() {
     hidden: { opacity: 0, scale: 0.5 },
     visible: { opacity: 1, scale: 1 },
   }
+
+  const buttonControl = useAnimation();
+
+  useEffect(() => {
+    buttonControl.start({
+      scale: [1, 1.05, 1],
+      boxShadow: [
+        '0px 2px 0px rgba(0,0,0,0.3)',
+        '0px 5px 12px rgba(0,0,0,0.4)',
+        '0px 2px 0px rgba(0,0,0,0.3)'
+      ],
+      transition: {duration: 1.5, repeat: Infinity, ease: "easeInOut"}
+    })
+  }, [buttonControl])
 
   const scrollToSection = useScrollToSection();
 
@@ -94,10 +104,10 @@ function HomePage() {
                 <div className={styles.contactButtonWrapper}>
                   <Reveal>
                     <motion.button
-                     className='rounded-2 py-2 px-3 border border-transparent' 
-                     whileHover={{scale: 1}}
-                     whileTap={{scale: 0.95, borderColor: '#000', borderWidth: '2px' }}
-                     style={{borderStyle: "solid"}}
+                     className={styles.contactButton}
+                     animate={buttonControl}
+                     whileHover={{scale: 1.05}}
+                     whileTap={{scale: 0.95, borderColor: '#000' }}
                     >
                       Contact me now
                     </motion.button>
