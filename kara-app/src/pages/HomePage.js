@@ -7,6 +7,7 @@ import { useScrollToSection } from '../hooks/useScrollToSection';
 import { Reveal } from '../utils/Reveal';
 
 function HomePage() {
+
   const homeContent = [
     { title: "KNOWLEDGEBLE", subtitle: "I bring over 2 decades of hair care experience with me. YOUR SAFE IN MY HANDS." },
     { title: "ANALYSIS", subtitle: "Using the perfected Numan method of consultation." },

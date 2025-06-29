@@ -57,13 +57,15 @@
     font-family: "Cal Sans", sans-serif;
     font-style: oblique;
     font-weight: bold;
+    text-shadow: 0 3px 8px #000;
 }
 
 .homeContainer h5 {
     position: relative;
     font-family: "Cal Sans", sans-serif;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     font-style: oblique;
+    text-shadow: 0 3px 8px #000;
 }
 
 .arrowIcon {
