@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from "motion/react"
 
-export const Reveal = ({children, variants, transition, delay}) => {
+export const Reveal = ({children, variants, transition, delay, duration, ease}) => {
   const ref = useRef(null);
   const inView = useInView(ref, {once: false});
   const mainControl = useAnimation();
@@ -20,7 +20,11 @@ export const Reveal = ({children, variants, transition, delay}) => {
         }}
         initial="hidden"
         animate={mainControl}
-        transition={transition || { duration: 2.5, delay: 0, ease: "easeOut" }}
+        transition={{
+          ...(transition || {}),
+          duration: duration || 2.5,
+          delay: delay || 0,
+          ease: ease || "easeOut" }}
       >
         {children}
       </motion.div>

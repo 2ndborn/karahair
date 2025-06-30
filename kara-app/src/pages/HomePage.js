@@ -103,7 +103,7 @@ function HomePage() {
               </div>
             ) : (
                 <div className={styles.contactButtonWrapper}>
-                  <Reveal>
+                  <Reveal delay={1.3}>
                     <motion.button
                      className={styles.contactButton}
                      animate={buttonControl}

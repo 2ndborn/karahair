@@ -25,6 +25,7 @@
 button {
   text-decoration: none;
   color: #22161c;
+  background-color: transparent;
   cursor: pointer; /* Keeps click functionality */
   border: none;
 }

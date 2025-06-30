@@ -4,14 +4,17 @@ import Container from 'react-bootstrap/esm/Container'
 import styles from '../styles/Title.module.css'
 import useFadeUp from '../hooks/useFadeUp';
 import useDynamicColor from '../hooks/useDynamicColor';
+import { useScrollToSection } from '../hooks/useScrollToSection';
 
 function Title() {
   const isLoaded = useFadeUp(1000);
   const getColor = useDynamicColor();
 
-  const scrollToNext = () => {
-    document.getElementById("next-section")?.scrollIntoView({ behavior: "smooth" });
-  };
+  const scrollToSection = useScrollToSection();
+
+  // const scrollToNext = () => {
+  //   document.getElementById("next-section")?.scrollIntoView({ behavior: "smooth" });
+  // };
 
   return (
     <div 
@@ -40,7 +43,7 @@ function Title() {
       </Container>
       <div className={styles.Arrow}>
         <button 
-          onClick={scrollToNext}
+          onClick={() => scrollToSection('next-section')}
           className={`${styles.ScrollButton} text-decoration-none`}
           aria-label="Scroll to next section"
         >
