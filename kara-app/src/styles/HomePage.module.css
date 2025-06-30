@@ -101,9 +101,10 @@
 }
 
 .contactButton {
-  border: 5px solid transparent;
-  border-radius: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  transition: border-color 0.2s ease;
-  box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+    background-color: #e5fc1c;
+    border: 5px solid #fff;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    transition: border-color 0.2s ease;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.3);
 }

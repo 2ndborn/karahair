@@ -5,6 +5,7 @@ import peach from '../assets/peachone.webp';
 import Title from '../components/Title';
 import { useScrollToSection } from '../hooks/useScrollToSection';
 import { Reveal } from '../utils/Reveal';
+import { AnimateButton } from '../utils/AnimateButton';
 
 function HomePage() {
 
@@ -104,14 +105,17 @@ function HomePage() {
             ) : (
                 <div className={styles.contactButtonWrapper}>
                   <Reveal delay={1.3}>
-                    <motion.button
+                    <AnimateButton className={`${styles.contactButton}`}>
+                      Contact me now
+                    </AnimateButton>
+                    {/* <motion.button
                      className={styles.contactButton}
                      animate={buttonControl}
                      whileHover={{scale: 1.05}}
                      whileTap={{scale: 0.95, borderColor: '#000' }}
                     >
                       Contact me now
-                    </motion.button>
+                    </motion.button> */}
                   </Reveal>
                 </div>
             )}
