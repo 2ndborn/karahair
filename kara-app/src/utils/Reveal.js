@@ -21,10 +21,11 @@ export const Reveal = ({children, variants, transition, delay, duration, ease}) 
         initial="hidden"
         animate={mainControl}
         transition={{
-          ...(transition || {}),
-          duration: duration || 2.5,
           delay: delay || 0,
-          ease: ease || "easeOut" }}
+          duration: duration || 2.5,
+          ease: ease || "easeOut",
+          ...(transition || {})
+          }}
       >
         {children}
       </motion.div>

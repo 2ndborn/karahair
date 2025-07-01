@@ -6,6 +6,7 @@ import Title from '../components/Title';
 import { useScrollToSection } from '../hooks/useScrollToSection';
 import { Reveal } from '../utils/Reveal';
 import { AnimateButton } from '../utils/AnimateButton';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
 
@@ -81,7 +82,7 @@ function HomePage() {
                   hidden: { opacity: 0, scale: 0},
                   visible: { opacity: 1, scale: [0, 1.4, 1]}
                 }}
-                transition={{duration: 2, delay: 1, ease: 'easeInOut'}}
+                transition={{duration: 2, delay: 0.8, ease: 'easeInOut'}}
               >
                 <h5>{content.subtitle}</h5>
               </Reveal>
@@ -105,9 +106,11 @@ function HomePage() {
             ) : (
                 <div className={styles.contactButtonWrapper}>
                   <Reveal delay={1.3}>
-                    <AnimateButton className={`${styles.contactButton}`}>
-                      Contact me now
-                    </AnimateButton>
+                    <Link to="/contactme">
+                      <AnimateButton className={`${styles.contactButton}`}>
+                        Contact me now
+                      </AnimateButton>
+                    </Link>
                     {/* <motion.button
                      className={styles.contactButton}
                      animate={buttonControl}
