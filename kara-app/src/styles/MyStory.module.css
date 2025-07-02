@@ -1,0 +1,21 @@
+.tcontainer {
+    display: flex;
+    justify-content: end;
+}
+
+.heroImage {
+    position: absolute;
+    height: 100vh;
+    width: 33.3333%;
+    display: flex;
+    justify-content: end;
+    object-fit: cover;
+}
+
+.gradientBg {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, #d9b9a0 66.6666%, transparent);
+    z-index: 1;
+}
