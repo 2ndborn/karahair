@@ -6,7 +6,7 @@
 .heroImage {
     position: absolute;
     height: 100vh;
-    width: 33.3333%;
+    width: 50%;
     display: flex;
     justify-content: end;
     object-fit: cover;
@@ -16,6 +16,21 @@
     display: flex;
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(to right, #d9b9a0 66.6666%, transparent);
+    background-image: linear-gradient(
+        to right, #f1e7dd 50%, transparent);
     z-index: 1;
+}
+
+.leftHalf {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    height: 250px;
+    width: 250px;
+    background-color: black;
 }
