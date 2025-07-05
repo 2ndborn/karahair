@@ -29,8 +29,87 @@
     align-items: center;
 }
 
+.con {
+    height: 100vh;
+    display: flex;
+    background-color: aquamarine;
+}
+
+.con2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    height: 100%;
+    width: 40%;}
+
+.con3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: linear-gradient(to left, #f1e7dd 75%, #fff);
+    height: 100%;
+    width: 60%;
+}
+
 .box {
-    height: 250px;
-    width: 250px;
-    background-color: black;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+    height: 85%;
+    width: 85%;
+    background-color: #fff;
+}
+
+
+.box2 {
+    height: 90%;
+    width: 90%;
+    background-color: red;
+    rotate: 5deg;
+    position: relative;
+    box-shadow: 4px 4px 8px #000;
+    overflow: hidden
+}
+
+.heroImage2 {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    
+}
+
+@media (max-width: 767px) {
+
+    .heroImage {
+        position: absolute;
+        height: 75vh;
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        object-fit: cover;
+    }
+
+    .gradientBg {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(
+            to top, #f1e7dd 35%, transparent);
+        z-index: 1;
+    }
+
+    .leftHalf {
+        display: flex;
+        width: 100%;
+        height: 35vh;
+        flex-direction: row;
+        justify-content: center;
+    }
 }
