@@ -6,7 +6,7 @@ import useFadeUp from '../hooks/useFadeUp';
 import useDynamicColor from '../hooks/useDynamicColor';
 import { useScrollToSection } from '../hooks/useScrollToSection';
 
-function Title() {
+function Title({title, subtitle}) {
   const isLoaded = useFadeUp(1000);
   const getColor = useDynamicColor();
 
@@ -18,9 +18,10 @@ function Title() {
 
   return (
     <div 
-    id="title-container" 
-    style={{backgroundColor: getColor("title")}}
-    className={`${styles.TitleContainer} ${styles.ColorNav}`}>
+      id="title-container" 
+      style={{backgroundColor: getColor("title")}}
+      className={`${styles.TitleContainer} ${styles.ColorNav}`}
+    >
         <Container className='text-center'>
             {isLoaded && (
               <>
@@ -29,14 +30,14 @@ function Title() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
               >
-                K.A.R.A
+                {title}
               </motion.h1>
               <motion.h6
               initial={{ opacity: 0, y: 50}}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.5, ease: "easeOut"}}
+              transition={{ duration: 1, delay: 1, ease: "easeOut"}}
               >
-                HAIRCARE
+                {subtitle}
               </motion.h6>
               </>
             )}

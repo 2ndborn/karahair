@@ -52,7 +52,7 @@ function HomePage() {
 
   return (
     <>
-      <Title />
+      <Title title="K.A.R.A" subtitle="HAIRCARE" />
       <motion.img
         src={peach}
         alt='out'
