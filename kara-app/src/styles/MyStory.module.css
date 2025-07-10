@@ -43,6 +43,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
+
+.leftHalf h1 {
+    font-family: "Cal Sans", sans-serif;
+}
+
+.leftHalf h5 {
+    font-family: "Merriweather Sans", sans-serif;
 }
 
 .con {

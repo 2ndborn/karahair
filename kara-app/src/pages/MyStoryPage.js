@@ -31,21 +31,28 @@ const MyStoryPage = () => {
             />
           <div className={styles.gradientBg}>
             <div className={`${styles.leftHalf} px-5`}>
-              <motion.h3
-              initial={{ opactiy: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 2.5, delay: 4, ease: "easeIn"}}
-              >
-                its all about that moment when a client looks into
-                the mirror and staring back at them is an actualised
-                version of their internal self.
-              </motion.h3>
-              <div style={{ width: "100%", textAlign: "right" }}>
-                <h5 className='text-right'>- Kara Francis</h5>
+              <div className='my-3'>
+                <motion.h1
+                  initial={{ opactiy: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 2.5, delay: 4, ease: "easeIn" }}
+                >
+                  Hi, I'm Kara
+                </motion.h1>
+              </div>
+              <div className='my-4'>
+                <h5>
+                  As an expert colorist of over 20 years, I use my
+                  knowledge of All hair types to 
+                  assess the needs
+                  of my clients before taking the right steps to
+                  restore their hairs beauty and allure.
+                </h5>
               </div>
             </div>
           </div>
         </div>
+        
     {/* <section>
       <div className={styles.con}>
         <div className={styles.con2}>
