@@ -9,6 +9,11 @@
     width: 100%;
 }
 
+.StoryContainer {
+    position: relative;
+    z-index: 1;
+}
+
 .TitleContainer {
     top: 0;
     left: 0;
