@@ -53,61 +53,55 @@ const MyStoryPage = () => {
         </div>
       </div>
       <div className={styles.StoryContainer}>
-        <Container>
-          <Row>
-            <Col>
-              <p>
-                Hello! I’m Kara, a passionate colour expert and 
-                hair care professional with over 20 years in the 
-                beauty industry. I believe in that powerful moment 
-                when a client looks into the mirror and sees not 
-                just a fresh style, but the actualised version of 
-                their internal self staring back. That’s why I do 
-                what I do.
-              </p>
-              <p>
-                Hair—its condition, style, and colour—can completely 
-                shift how we feel about ourselves. Whether you're 
-                preparing to land that dream job, close a big deal, 
-                or turn heads on a date (you know what I’m talking about), 
-                I’m here to help you show up as your most confident self.
-              </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <p>
-                As an award-winning curly and textured hair specialist, 
-                I work across all hair types—from straight to Afro and 
-                everything in between. I use vegan, PPD-free colouring 
-                systems enriched with coconut oil for vibrant shine and 
-                healthy results. My approach is holistic, assessing 
-                individual needs before restoring and enhancing your 
-                hair’s natural beauty and allure.
-              </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <p>
-                Beyond the salon, I’ve worked in TV and film, styling 
-                lead actors and matching wigs to period dramas. My 
-                recent credits include:
-                - Doctor Who Season 2
-                - Netflix’s Treason
-                - ITV’s Belgravia
-                - Channel 5’s Forsyte Saga
-                - Prime Video’s My Lady Jane
-                I’m also a trained educator offering 1:1 workshops and 
-                tailored curly hair and colour theory education for 
-                salons and individuals—because beauty is best when it’s 
-                shared. When I’m not in the studio or on set, I’m home 
-                with my wonderful family, proudly juggling mum-life with 
-                creative life.
-              </p>
-            </Col>
-          </Row>
-        </Container>
+        <div className={`${styles.AboutMeOne} p-5`}>
+          <p>
+            Hello! I’m Kara, a passionate colour expert and
+            hair care professional with over 20 years in the
+            beauty industry. I believe in that powerful moment
+            when a client looks into the mirror and sees not
+            just a fresh style, but the actualised version of
+            their internal self staring back. That’s why I do
+            what I do.
+          </p>
+          <p>
+            I understand that our Hair's condition, style, and colour can completely
+            shift how we feel about ourselves. Whether you're
+            preparing to land that dream job, close a big deal,
+            or turn heads on a date (you know what I’m talking about),
+            I’m here to help you show up as your most confident self.
+          </p>
+        </div>
+        <div className={`${styles.AboutMeTwo} p-5`}>
+          <p>
+            As an award-winning curly and textured hair specialist,
+            I work across all hair types—from straight to Afro and
+            everything in between. I use vegan, PPD-free colouring
+            systems enriched with coconut oil for vibrant shine and
+            healthy results. My approach is holistic, assessing
+            individual needs before restoring and enhancing your
+            hair’s natural beauty and allure.
+          </p>
+        </div>
+        <div className={`${styles.AboutMeOne} p-5`}>
+          <p>
+            Beyond the salon, I’ve worked in TV and film, styling
+            lead actors and matching wigs to period dramas. My
+            recent credits include:
+            <ul>
+              <li>Doctor Who Season 2</li>
+              <li>Netflix’s Treason</li>
+              <li>ITV’s Belgravia</li>
+              <li>Channel 5’s Forsyte Saga</li>
+              <li>Prime Video’s My Lady Jane</li>
+            </ul>
+            I’m also a trained educator offering 1:1 workshops and
+            tailored curly hair and colour theory education for
+            salons and individuals—because beauty is best when it’s
+            shared. When I’m not in the studio or on set, I’m home
+            with my wonderful family, proudly juggling mum-life with
+            creative life.
+          </p>
+        </div>
       </div>
     {/* <section>
       <div className={styles.con}>
