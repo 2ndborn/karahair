@@ -1,6 +1,7 @@
 import React from 'react'
 import {motion}  from 'framer-motion'
 import kara from '../assets/karapic.webp'
+import cathy from '../assets/cathy.webp'
 import styles from '../styles/MyStory.module.css'
 import Container from 'react-bootstrap/Container'
 import {Row, Col} from 'react-bootstrap/'
@@ -63,6 +64,15 @@ const MyStoryPage = () => {
             their internal self staring back. That’s why I do
             what I do.
           </p>
+        </div>
+        <div className={styles.ImageAnchor}>
+          <img 
+            src={cathy}
+            alt='cathy'
+            className={styles.cathyImage}
+          />
+        </div>
+        <div className={`${styles.AboutMeTwo} p-5`}>
           <p>
             I understand that our Hair's condition, style, and colour can completely
             shift how we feel about ourselves. Whether you're
@@ -71,7 +81,7 @@ const MyStoryPage = () => {
             I’m here to help you show up as your most confident self.
           </p>
         </div>
-        <div className={`${styles.AboutMeTwo} p-5`}>
+        <div className={`${styles.AboutMeOne} p-5`}>
           <p>
             As an award-winning curly and textured hair specialist,
             I work across all hair types—from straight to Afro and
@@ -82,11 +92,13 @@ const MyStoryPage = () => {
             hair’s natural beauty and allure.
           </p>
         </div>
-        <div className={`${styles.AboutMeOne} p-5`}>
+        <div className={`${styles.AboutMeTwo} p-5`}>
           <p>
             Beyond the salon, I’ve worked in TV and film, styling
             lead actors and matching wigs to period dramas. My
             recent credits include:
+          </p>
+          <p>
             <ul>
               <li>Doctor Who Season 2</li>
               <li>Netflix’s Treason</li>
@@ -94,6 +106,10 @@ const MyStoryPage = () => {
               <li>Channel 5’s Forsyte Saga</li>
               <li>Prime Video’s My Lady Jane</li>
             </ul>
+          </p>
+        </div>
+        <div className={`${styles.AboutMeOne} p-5`}>
+          <p>
             I’m also a trained educator offering 1:1 workshops and
             tailored curly hair and colour theory education for
             salons and individuals—because beauty is best when it’s
