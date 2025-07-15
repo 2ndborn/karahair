@@ -1,7 +1,7 @@
 import React from 'react'
 import {motion}  from 'framer-motion'
 import kara from '../assets/karapic.webp'
-import cathy from '../assets/cathy.webp'
+import nush from '../assets/nush.webp';
 import styles from '../styles/MyStory.module.css'
 import Container from 'react-bootstrap/Container'
 import {Row, Col} from 'react-bootstrap/'
@@ -67,7 +67,7 @@ const MyStoryPage = () => {
         </div>
         <div className={styles.ImageAnchor}>
           <img 
-            src={cathy}
+            src={nush}
             alt='cathy'
             className={styles.cathyImage}
           />
@@ -81,7 +81,7 @@ const MyStoryPage = () => {
             I’m here to help you show up as your most confident self.
           </p>
         </div>
-        <div className={`${styles.AboutMeOne} p-5`}>
+        <div className={`${styles.AboutMeThree} p-5`}>
           <p>
             As an award-winning curly and textured hair specialist,
             I work across all hair types—from straight to Afro and

@@ -31,6 +31,15 @@
     background-color: #d9b9a0;
 }
 
+.AboutMeThree {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
 .ImageAnchor {
   position: absolute;
   top: calc(50vh - 150px); /* position image halfway into AboutMeOne */
@@ -43,8 +52,8 @@
   width: clamp(180px, 25vw, 250px);
   height: auto;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  rotate: 2deg;
 }
 
 .StoryContainer p {
