@@ -93,13 +93,13 @@ const MyStoryPage = () => {
             individual needs before restoring and enhancing your
             hair’s natural beauty and allure.
           </p>
-        </div>
-        <div className={styles.ImageAnchorTwo}>
-          <img 
-            src={award}
-            alt='cathy'
-            className={styles.cathyImage}
-          />
+          <div className={styles.ImageAnchorTwo}>
+            <img 
+              src={award}
+              alt='cathy'
+              className={styles.awardImage}
+            />
+          </div>
         </div>
         <div className={`${styles.AboutMeTwo} p-5`}>
           <p>
