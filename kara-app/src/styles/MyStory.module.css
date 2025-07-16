@@ -48,6 +48,14 @@
   z-index: 2;
 }
 
+.ImageAnchorTwo {
+  position: absolute;
+  top: calc(50vh - 200px); /* position image halfway into AboutMeOne */
+  left: 18%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
 .cathyImage {
   width: clamp(180px, 25vw, 250px);
   height: auto;

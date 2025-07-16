@@ -2,6 +2,8 @@ import React from 'react'
 import {motion}  from 'framer-motion'
 import kara from '../assets/karapic.webp'
 import nush from '../assets/nush.webp';
+import award from '../assets/award.webp';
+
 import styles from '../styles/MyStory.module.css'
 import Container from 'react-bootstrap/Container'
 import {Row, Col} from 'react-bootstrap/'
@@ -91,6 +93,13 @@ const MyStoryPage = () => {
             individual needs before restoring and enhancing your
             hair’s natural beauty and allure.
           </p>
+        </div>
+        <div className={styles.ImageAnchorTwo}>
+          <img 
+            src={award}
+            alt='cathy'
+            className={styles.cathyImage}
+          />
         </div>
         <div className={`${styles.AboutMeTwo} p-5`}>
           <p>
