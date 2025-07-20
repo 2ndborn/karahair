@@ -3,6 +3,7 @@ import {motion}  from 'framer-motion'
 import kara from '../assets/karapic.webp'
 import nush from '../assets/nush.webp';
 import award from '../assets/award.webp';
+import wigs from '../assets/wigs.webp';
 
 import styles from '../styles/MyStory.module.css'
 import Container from 'react-bootstrap/Container'
@@ -101,7 +102,7 @@ const MyStoryPage = () => {
             />
           </div>
         </div>
-        <div className={`${styles.AboutMeTwo} p-5`}>
+        <div className={`${styles.AboutMeFour} p-5`}>
           <p>
             Beyond the salon, I’ve worked in TV and film, styling
             lead actors and matching wigs to period dramas. My
@@ -116,8 +117,15 @@ const MyStoryPage = () => {
               <li>Prime Video’s My Lady Jane</li>
             </ul>
           </p>
+          <div className={styles.ImageAnchorThree}>
+            <img 
+              src={wigs}
+              alt='cathy'
+              className={styles.wigsImage}
+            />
+          </div>
         </div>
-        <div className={`${styles.AboutMeOne} p-5`}>
+        <div className={`${styles.AboutMeFive} p-5`}>
           <p>
             I’m also a trained educator offering 1:1 workshops and
             tailored curly hair and colour theory education for

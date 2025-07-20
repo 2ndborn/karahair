@@ -42,10 +42,27 @@
     align-items: flex-end;
 }
 
+.AboutMeFour {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #d9b9a0;
+}
+
+.AboutMeFive {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .ImageAnchor {
   position: absolute;
   top: calc(50vh - 150px); /* position image halfway into AboutMeOne */
-  left: 83%;
+  left: 85%;
   transform: translateX(-50%);
   z-index: 2;
 }
@@ -54,6 +71,14 @@
   position: absolute;
   top: calc(0vh - 50px); /* position image halfway into AboutMeOne */
   left: 16%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.ImageAnchorThree {
+  position: absolute;
+  top: calc(50vh - 175px); /* position image halfway into AboutMeOne */
+  left: 85%;
   transform: translateX(-50%);
   z-index: 2;
 }
@@ -72,6 +97,14 @@
   object-fit: cover;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   rotate: -2deg;
+}
+
+.wigsImage {
+  width: clamp(180px, 25vw, 250px);
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  rotate: 2deg;
 }
 
 .StoryContainer p {
@@ -217,5 +250,43 @@
         width: 100%;
         height: 35vh;
         justify-content: center;
+    }
+}
+
+@media (max-width: 450px) {
+    .AboutMeTwo {
+        min-height: 75vh;
+    }
+
+    .AboutMeOne, 
+    .AboutMeFour {
+        min-height: 60vh;
+        justify-content: start;
+    }
+
+    .AboutMeFive, .AboutMeThree  {
+        min-height: 60vh;
+        justify-content: end;
+    }
+
+    .ImageAnchor {
+        top: calc(50vh - 60px);
+        left: 50%;
+    }
+
+    .ImageAnchorTwo {
+        top: calc(0vh - 95px);
+        left: 50%;
+    }
+
+    .ImageAnchorThree {
+        top: calc(50vh - 33px);
+        left: 50%;
+    }
+
+    .StoryContainer p {
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
     }
 }
