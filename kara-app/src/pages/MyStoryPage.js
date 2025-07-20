@@ -35,7 +35,7 @@ const MyStoryPage = () => {
           />
         <div className={styles.gradientBg}>
           <div className={`${styles.leftHalf} px-5`}>
-            <div className='my-3'>
+            <div className='my-3 display-1'>
               <motion.h1
                 initial={{ opactiy: 0 }}
                 animate={{ opacity: 1 }}
@@ -45,13 +45,13 @@ const MyStoryPage = () => {
               </motion.h1>
             </div>
             <div className='my-4'>
-              <h5>
+              <p>
                 As an expert colorist of over 20 years, I use my
                 knowledge of All hair types to 
                 assess the needs
                 of my clients before taking the right steps to
                 restore their hairs beauty and allure.
-              </h5>
+              </p>
             </div>
           </div>
         </div>
@@ -61,7 +61,10 @@ const MyStoryPage = () => {
           <p>
             Hello! I’m Kara, a passionate colour expert and
             hair care professional with over 20 years in the
-            beauty industry. I believe in that powerful moment
+            beauty industry. 
+          </p>
+          <p>
+            I believe in that powerful moment
             when a client looks into the mirror and sees not
             just a fresh style, but the actualised version of
             their internal self staring back. That’s why I do
@@ -78,8 +81,10 @@ const MyStoryPage = () => {
         <div className={`${styles.AboutMeTwo} p-5`}>
           <p>
             I understand that our Hair's condition, style, and colour can completely
-            shift how we feel about ourselves. Whether you're
-            preparing to land that dream job, close a big deal,
+            shift how we feel about ourselves.
+          </p>
+          <p>
+            Whether you're preparing to land that dream job, close a big deal,
             or turn heads on a date (you know what I’m talking about),
             I’m here to help you show up as your most confident self.
           </p>
@@ -87,12 +92,16 @@ const MyStoryPage = () => {
         <div className={`${styles.AboutMeThree} p-5`}>
           <p>
             As an award-winning curly and textured hair specialist,
-            I work across all hair types—from straight to Afro and
-            everything in between. I use vegan, PPD-free colouring
-            systems enriched with coconut oil for vibrant shine and
-            healthy results. My approach is holistic, assessing
-            individual needs before restoring and enhancing your
-            hair’s natural beauty and allure.
+            I work across all hair types from straight to Afro and
+            everything in between.
+          </p>
+          <p>
+            I use vegan, PPD-free colouring systems enriched with 
+            coconut oil for vibrant shine and healthy results.
+          </p>
+          <p>
+            My approach is holistic, assessing individual needs before
+            restoring and enhancing your hair’s natural beauty and allure.
           </p>
           <div className={styles.ImageAnchorTwo}>
             <img 
@@ -130,7 +139,10 @@ const MyStoryPage = () => {
             I’m also a trained educator offering 1:1 workshops and
             tailored curly hair and colour theory education for
             salons and individuals—because beauty is best when it’s
-            shared. When I’m not in the studio or on set, I’m home
+            shared.
+          </p>
+          <p>
+            When I’m not in the studio or on set, I’m home
             with my wonderful family, proudly juggling mum-life with
             creative life.
           </p>

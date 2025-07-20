@@ -10,6 +10,15 @@
     overflow: hidden;
 }
 
+.tcontainer p {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.tcontainer h1 {
+    letter-spacing: -1px;
+}
+
 .StoryContainer {
     position: relative;
     z-index: -1;
@@ -110,6 +119,7 @@
 .StoryContainer p {
     font-size: 20px;
     width: 70%;
+    line-height: 30px;
 }
 
 .TitleContainer {
@@ -285,7 +295,6 @@
     }
 
     .StoryContainer p {
-        font-size: 20px;
         width: 100%;
         text-align: center;
     }
