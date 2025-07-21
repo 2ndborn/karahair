@@ -148,6 +148,11 @@ const MyStoryPage = () => {
             with my wonderful family, proudly juggling mum life with
             a creative one.
           </p>
+          <div className={styles.contactButtonWrapper}>
+            <button className={`${styles.contactButton}`}>
+              Contact me now
+            </button>
+          </div>
         </div>
       </div>
     {/* <section>
