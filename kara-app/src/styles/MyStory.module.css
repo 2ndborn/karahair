@@ -31,6 +31,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-image: 
+        linear-gradient(173deg, rgba(217, 185, 160, 0.7) 1%, #fff 20%),
+        linear-gradient(357deg, rgba(217, 185, 160, 0.7) 1%, #fff 20%);
 }
 
 .AboutMeTwo {
@@ -120,6 +123,12 @@
     font-size: 20px;
     width: 70%;
     line-height: 30px;
+}
+
+.StoryContainer span {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .TitleContainer {

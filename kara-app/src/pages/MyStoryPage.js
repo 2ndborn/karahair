@@ -60,14 +60,14 @@ const MyStoryPage = () => {
         <div className={`${styles.AboutMeOne} p-5`}>
           <p>
             Hello! I’m Kara, a passionate colour expert and
-            hair care professional with over 20 years in the
-            beauty industry. 
+            <span> hair care professional with over 20 years in the
+            beauty industry.</span> 
           </p>
           <p>
-            I believe in that powerful moment
-            when a client looks into the mirror and sees not
-            just a fresh style, but the actualised version of
-            their internal self staring back. That’s why I do
+            I believe in that powerful moment <span>
+            when a client looks into the mirror and sees</span> not
+            just a fresh style, but <span>the actualised version of
+            their internal self staring back at them.</span> That’s why I do
             what I do.
           </p>
         </div>
@@ -80,28 +80,28 @@ const MyStoryPage = () => {
         </div>
         <div className={`${styles.AboutMeTwo} p-5`}>
           <p>
-            I understand that our Hair's condition, style, and colour can completely
-            shift how we feel about ourselves.
+            I understand that <span>our hair's condition, style, and colour can completely
+            shift how we feel about ourselves</span>.
           </p>
           <p>
             Whether you're preparing to land that dream job, close a big deal,
             or turn heads on a date (you know what I’m talking about),
-            I’m here to help you show up as your most confident self.
+            <span> I’m here to help you show up as your most confident self.</span>
           </p>
         </div>
         <div className={`${styles.AboutMeThree} p-5`}>
           <p>
-            As an award-winning curly and textured hair specialist,
+            As an <span>award-winning curly and textured hair specialist</span>,
             I work across all hair types from straight to Afro and
             everything in between.
           </p>
           <p>
-            I use vegan, PPD-free colouring systems enriched with 
-            coconut oil for vibrant shine and healthy results.
+            I use vegan, <span>PPD-free colouring systems enriched with 
+            coconut oil for </span>vibrant shine and healthy results.
           </p>
           <p>
-            My approach is holistic, assessing individual needs before
-            restoring and enhancing your hair’s natural beauty and allure.
+            My approach is holistic, assessing your needs before
+            restoring and <span>enhancing your hair’s natural beauty and allure.</span>
           </p>
           <div className={styles.ImageAnchorTwo}>
             <img 
@@ -118,13 +118,15 @@ const MyStoryPage = () => {
             recent credits include:
           </p>
           <p>
-            <ul>
-              <li>Doctor Who Season 2</li>
-              <li>Netflix’s Treason</li>
-              <li>ITV’s Belgravia</li>
-              <li>Channel 5’s Forsyte Saga</li>
-              <li>Prime Video’s My Lady Jane</li>
-            </ul>
+            <span>
+              <ul>
+                <li>Doctor Who Season 2</li>
+                <li>Netflix’s Treason</li>
+                <li>ITV’s Belgravia</li>
+                <li>Channel 5’s Forsyte Saga</li>
+                <li>Prime Video’s My Lady Jane</li>
+              </ul>
+            </span>
           </p>
           <div className={styles.ImageAnchorThree}>
             <img 
@@ -138,13 +140,13 @@ const MyStoryPage = () => {
           <p>
             I’m also a trained educator offering 1:1 workshops and
             tailored curly hair and colour theory education for
-            salons and individuals—because beauty is best when it’s
+            salons and individuals because beauty is best when it’s
             shared.
           </p>
           <p>
             When I’m not in the studio or on set, I’m home
-            with my wonderful family, proudly juggling mum-life with
-            creative life.
+            with my wonderful family, proudly juggling mum life with
+            a creative one.
           </p>
         </div>
       </div>
