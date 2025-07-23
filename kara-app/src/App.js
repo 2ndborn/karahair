@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 
 import HomePage from './pages/HomePage';
 import MyStoryPage from './pages/MyStoryPage';
+import Services from './pages/Services';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/mystory" element={<MyStoryPage />} />
+          <Route exact path="/services" element={<Services />} />
           <Route exact path="/contactme" element={<h2>Contact Me</h2>} />
         </Routes>
       </div>
