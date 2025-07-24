@@ -46,17 +46,69 @@ const MyStoryPage = () => {
             </div>
             <div className='my-4'>
               <p>
-                As an expert colorist of over 20 years, I use my
-                knowledge of All hair types to 
-                assess the needs
-                of my clients before taking the right steps to
-                restore their hairs beauty and allure.
+                "that moment when a client looks into the mirror
+                and sees not just a fresh style, but the actualised
+                version of their internal self staring back at them. 
+                That’s why I do what I do."
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className={styles.StoryContainer}>
+      <div className={styles.container}>
+        <div className={styles.pr1}>
+          <p>
+            I’m a colour specialist and hairdresser with 20+ years 
+            in the game working across every hair texture, every 
+            shade, every style.
+          </p>
+        </div>
+        <div className={styles.pr2}>
+          <p>
+            Hair is my craft, but education is my purpose. I run 
+            cutting-edge courses built for the next wave of stylists
+            those who want to break rules the right way. 
+          </p>
+        </div>
+        <div className={styles.pr3}>
+          <p>
+            From the salon floor to the set, I’ve coloured for 
+            major productions like: 
+          </p>
+          <ul>
+            <li>Netflix’s Treason</li>
+            <li>Doctor Who</li>
+            <li>ITV’s Belgravia: The Next Chapter</li>
+            <li></li>
+            <li></li>
+          </ul>
+          <p>
+            My work doesn’t just follow trends it helps 
+            create them.
+          </p>
+        </div>
+        <div className={styles.pr4}>
+          <p>
+            I’m all about pushing boundaries, raising standards, 
+            and making sure the future of hairdressing is diverse, 
+            skilled, and fearless.
+          </p>
+        </div>
+        <div className={styles.pr5}>
+          <p>
+            Whether you’re sitting in my chair or learning in my 
+            class, you’re getting more than hair you’re getting 
+            experience, vision, and straight-up passion.
+          </p>
+        </div>
+        <div className={styles.img}>Image</div>
+        <div className={styles.img2}>Image 2</div>
+        <div className={styles.img3}>Image 3</div>
+        <div className={styles.k}>K</div>
+        <div className={styles.h}>H</div>
+      </div>
+
+      {/* <div className={styles.StoryContainer}>
         <div className={`${styles.AboutMeOne} p-5`}>
           <p>
             Hello! I’m Kara, a passionate colour expert and
@@ -154,26 +206,7 @@ const MyStoryPage = () => {
             </button>
           </div>
         </div>
-      </div>
-    {/* <section>
-      <div className={styles.con}>
-        <div className={styles.con2}>
-          <div className={styles.box}>
-              <div className={styles.box2}>
-                <img
-                  src={kara}
-                  alt='owner'
-                  className={styles.heroImage2}
-                />
-            </div>
-          </div>
-        </div>
-        <div className={styles.con3}>
-          <h1>I am Kara</h1>
-          <h3>Young heart run freet</h3>
-        </div>
-      </div>
-    </section> */}
+      </div> */}
     </>
   )
 }
