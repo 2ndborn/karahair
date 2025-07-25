@@ -58,7 +58,7 @@ const MyStoryPage = () => {
       <div className={styles.container}>
         <div className={styles.pr1}>
           <p>
-            I’m a colour specialist and hairdresser with 20+ years 
+            I’m a colour specialist and hairdresser with over 20 years 
             in the game working across every hair texture, every 
             shade, every style.
           </p>
@@ -76,11 +76,11 @@ const MyStoryPage = () => {
             major productions like: 
           </p>
           <ul>
-            <li>Netflix’s Treason</li>
-            <li>Doctor Who</li>
-            <li>ITV’s Belgravia: The Next Chapter</li>
-            <li></li>
-            <li></li>
+            <li><strong>Netflix:</strong> Treason</li>
+            <li><strong>Amazon Prime: </strong>My Lady Jane</li>
+            <li><strong>ITV:</strong> Belgravia - The Next Chapter</li>
+            <li><strong>Channel 5:</strong> The Forsyte Saga</li>
+            <li><strong>BBC:</strong> Doctor Who</li>
           </ul>
           <p>
             My work doesn’t just follow trends it helps 
@@ -101,7 +101,9 @@ const MyStoryPage = () => {
             experience, vision, and straight-up passion.
           </p>
         </div>
-        <div className={styles.img}>Image</div>
+        <div className={styles.img}>
+          <img className={styles.image} src={wigs} alt="wigs colouring"/>
+        </div>
         <div className={styles.img2}>Image 2</div>
         <div className={styles.img3}>Image 3</div>
         <div className={styles.k}>K</div>

@@ -251,7 +251,7 @@
   grid-template-rows: repeat(18, 1fr);
   gap: 20px;
   background-image: linear-gradient(to bottom, #d9b9a0 10%, white 50%);
-  padding: 15px;
+  padding: 75px 20px 50px 20px;
 }
 
 .container > div {
@@ -267,19 +267,33 @@
 .container > div p {
   margin: 0;
   width: 100%;
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.container > div li {
+  
+  font-size: 18px;
+  line-height: 2rem;
 }
 
 .pr1 {grid-area: 1 / 1 / span 2 / -1;}
-.pr2 {grid-area: 3 / 1 / span 2 / span 7;}
-.img {grid-area: 3 / 8 / span 4 / -1;}
-.pr3 {grid-area: 5 / 1 / span 4 / span 5;}
-.pr4 {grid-area: 7 / 6 / span 4 / -1;}
-.img2 {grid-area: 9 / 1 / span 4 / span 5;}
-.pr5 {grid-area: 13 / 1 / -1 / span 7;}
-.img3 {grid-area: 11 / 8 / -1 / -1;}
-.k {grid-area: 5 / 6 / span 2 / span 2}
-.h {grid-area: 11 / 6 / span 2 / span 2;}
+.pr2 {grid-area: 3 / 1 / span 3 / span 7;}
+.img {grid-area: 3 / 8 / span 5 / -1;}
+.pr3 {grid-area: 6 / 1 / span 5 / span 5;}
+.pr4 {grid-area: 8 / 6 / span 5 / -1;}
+.img2 {grid-area: 11 / 1 / span 4 / span 5;}
+.pr5 {grid-area: 15 / 1 / -1 / span 7;}
+.img3 {grid-area: 13 / 8 / -1 / -1;}
+.k {grid-area: 6 / 6 / span 2 / span 2}
+.h {grid-area: 13 / 6 / span 2 / span 2;}
+
+.image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    top: 100px;
+}
 
 /***************************Media queries*************************/
 @media (max-width: 991px) {
