@@ -261,40 +261,65 @@
   align-items: center;
   flex-direction: column;
   padding: 10px;
+  font-family: 'Cals san', sans-serif;
+  color: white;
+  text-shadow: #000 0.5px 0.5px 2px;
   background-image: linear-gradient(to bottom,
-    rgba(241, 231, 221, 1), 80%,rgba(0,0,0,0.2));
+    rgba(241, 231, 221, 1), 50%,rgba(0,0,0,0.2));
     border-radius: 10px;
 }
 
 .container > div p {
   margin: 0;
   width: 100%;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 27px;
+  text-align: center;
 }
 
 .container > div p span {
     font-size: 1.3rem;
-    font-style: oblique;
     font-weight: 600;
 }
 
 .container > div li {
-  
-  font-size: 18px;
+  font-size: 24px;
   line-height: 2rem;
 }
 
 .pr1 {grid-area: 1 / 1 / span 2 / -1;}
-.pr2 {grid-area: 3 / 1 / span 3 / span 7;}
-.img {grid-area: 3 / 8 / span 5 / -1;}
-.pr3 {grid-area: 6 / 1 / span 5 / span 5;}
-.pr4 {grid-area: 8 / 6 / span 5 / -1;}
+.pr2 {
+    grid-area: 3 / 1 / span 3 / span 7;
+    background-image: linear-gradient(to bottom,
+    rgba(202, 142, 131), 70%,rgba(0,0,0,0.8))!important;
+}
+.img {
+    grid-area: 3 / 8 / span 5 / -1;
+}
+.pr3 {
+    grid-area: 6 / 1 / span 5 / span 5;
+    background-image: linear-gradient(to bottom,
+    rgb(152, 93, 113, 0.8), 70%,rgba(0,0,0,0.9))!important;
+}
+.pr4 {
+    grid-area: 8 / 6 / span 5 / -1;
+    background-image: linear-gradient(to bottom,
+    rgba(108, 75, 94, 0.8), 70%,rgba(0,0,0))!important;
+}
 .img2 {grid-area: 11 / 1 / span 4 / span 5;}
-.pr5 {grid-area: 15 / 1 / -1 / span 7;}
+.pr5 {
+    grid-area: 15 / 1 / -1 / span 7;
+    background-image: linear-gradient(to bottom,
+    rgba(202, 142, 131, 0.7), 60%,rgba(0,0,0,0.8))!important;
+}
 .img3 {grid-area: 13 / 8 / -1 / -1;}
 .k {grid-area: 6 / 6 / span 2 / span 2}
 .h {grid-area: 13 / 6 / span 2 / span 2;}
+
+.k, .h {
+    font-size: 2rem;
+    font-weight: 700;
+}
 
 .image {
     height: 100%;
@@ -318,6 +343,35 @@
 }
 
 /***************************Media queries*************************/
+@media (max-width: 1024px) {
+    .container > div p {
+        text-align: center;
+    }
+
+    .pr1 {grid-area: 1 / 1 / span 2 / -1;}
+    .pr2 {
+        grid-area: 3 / 8 / span 5 / -1;
+    }
+    .img {
+        grid-area: 3 / 1 / span 3 / span 7;
+    }
+    .pr3 {
+        grid-area: 6 / 1 / span 5 / span 5;
+    }
+    .pr4 {
+        grid-area: 11 / 1 / span 4 / span 5;
+    }
+    .img2 {grid-area: 8 / 6 / span 5 / -1;}
+    .pr5 {
+        grid-area: 13 / 8 / -1 / -1;
+    }
+    .img3 {grid-area:15 / 1 / -1 / span 7;}
+
+    .image2 { 
+        object-position: -65px 0px;
+    }
+}
+
 @media (max-width: 991px) {
     .heroImage {
         width: 50%;
@@ -330,7 +384,7 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 
     .heroImage {
         position: absolute;

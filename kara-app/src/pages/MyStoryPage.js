@@ -74,8 +74,12 @@ const MyStoryPage = () => {
         </div>
         <div className={styles.pr3}>
           <p>
+            <span>My work doesn’t just follow trends it helps 
+            create them.</span> 
+          <p>
             From the salon floor to the set, I’ve coloured for 
             major productions like: 
+          </p>
           </p>
             <ul>
               <li><strong>Netflix:</strong> Treason</li>
@@ -84,10 +88,6 @@ const MyStoryPage = () => {
               <li><strong>Channel 5:</strong> The Forsyte Saga</li>
               <li><strong>BBC:</strong> Doctor Who</li>
             </ul>
-          <p>
-            <span>My work doesn’t just follow trends it helps 
-            create them.</span>
-          </p>
         </div>
         <div className={styles.pr4}>
           <p>
