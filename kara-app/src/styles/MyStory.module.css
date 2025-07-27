@@ -271,6 +271,12 @@
   line-height: 27px;
 }
 
+.container > div p span {
+    font-size: 1.3rem;
+    font-style: oblique;
+    font-weight: 600;
+}
+
 .container > div li {
   
   font-size: 18px;
@@ -292,7 +298,21 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
-    top: 100px;
+    object-position: 0px -20px;
+}
+
+.image2 {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0px 0px;
+}
+
+.image3 {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0px 0px;
 }
 
 /***************************Media queries*************************/

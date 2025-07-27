@@ -4,6 +4,8 @@ import kara from '../assets/karapic.webp'
 import nush from '../assets/nush.webp';
 import award from '../assets/award.webp';
 import wigs from '../assets/wigs.webp';
+import curly from '../assets/curly.webp';
+import brazil from '../assets/brazil.webp';
 
 import styles from '../styles/MyStory.module.css'
 import Container from 'react-bootstrap/Container'
@@ -58,14 +60,14 @@ const MyStoryPage = () => {
       <div className={styles.container}>
         <div className={styles.pr1}>
           <p>
-            I’m a colour specialist and hairdresser with over 20 years 
-            in the game working across every hair texture, every 
+            <span>I’m a colour specialist and hairdresser with over 20 years 
+            in the game</span>, working across every hair texture, every 
             shade, every style.
           </p>
         </div>
         <div className={styles.pr2}>
           <p>
-            Hair is my craft, but education is my purpose. I run 
+            <span>Hair is my craft, but education is my purpose.</span> I run 
             cutting-edge courses built for the next wave of stylists
             those who want to break rules the right way. 
           </p>
@@ -75,37 +77,49 @@ const MyStoryPage = () => {
             From the salon floor to the set, I’ve coloured for 
             major productions like: 
           </p>
-          <ul>
-            <li><strong>Netflix:</strong> Treason</li>
-            <li><strong>Amazon Prime: </strong>My Lady Jane</li>
-            <li><strong>ITV:</strong> Belgravia - The Next Chapter</li>
-            <li><strong>Channel 5:</strong> The Forsyte Saga</li>
-            <li><strong>BBC:</strong> Doctor Who</li>
-          </ul>
+            <ul>
+              <li><strong>Netflix:</strong> Treason</li>
+              <li><strong>Amazon Prime: </strong>My Lady Jane</li>
+              <li><strong>ITV:</strong> Belgravia - The Next Chapter</li>
+              <li><strong>Channel 5:</strong> The Forsyte Saga</li>
+              <li><strong>BBC:</strong> Doctor Who</li>
+            </ul>
           <p>
-            My work doesn’t just follow trends it helps 
-            create them.
+            <span>My work doesn’t just follow trends it helps 
+            create them.</span>
           </p>
         </div>
         <div className={styles.pr4}>
           <p>
-            I’m all about pushing boundaries, raising standards, 
-            and making sure the future of hairdressing is diverse, 
-            skilled, and fearless.
+            <span>I’m all about pushing boundaries and raising 
+            standards</span> to ensure the future of hairdressing 
+            is diverse, skilled, and fearless.
           </p>
         </div>
         <div className={styles.pr5}>
           <p>
-            Whether you’re sitting in my chair or learning in my 
-            class, you’re getting more than hair you’re getting 
-            experience, vision, and straight-up passion.
+            Whether you’re sat in my chair or learning in my 
+            classroom, you’re getting more than just hair, <span>you’re getting 
+            experience, vision, and straight-up passion.</span>
           </p>
         </div>
         <div className={styles.img}>
           <img className={styles.image} src={wigs} alt="wigs colouring"/>
         </div>
-        <div className={styles.img2}>Image 2</div>
-        <div className={styles.img3}>Image 3</div>
+        <div className={styles.img2}>
+          <img 
+            className={styles.image2} 
+            src={curly} 
+            alt='Curly hair tutorial'
+          />
+        </div>
+        <div className={styles.img3}>
+          <img 
+            className={styles.image3} 
+            src={brazil} 
+            alt='Happy Client'
+          />
+        </div>
         <div className={styles.k}>K</div>
         <div className={styles.h}>H</div>
       </div>
