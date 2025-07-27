@@ -250,8 +250,9 @@
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(18, 1fr);
   gap: 20px;
-  background-image: linear-gradient(to bottom, #d9b9a0 10%, white 50%);
+  background-image: linear-gradient(to bottom, #d9b9a0 10%, #f1e7dd 80%);
   padding: 75px 20px 50px 20px;
+
 }
 
 .container > div {
@@ -260,8 +261,9 @@
   align-items: center;
   flex-direction: column;
   padding: 10px;
-  background-image: radial-gradient(white, 50%,rgba(249, 249, 249, 1), rgba(217, 217, 217, 1));
-  border-radius: 5px;
+  background-image: linear-gradient(to bottom,
+    rgba(241, 231, 221, 1), 80%,rgba(0,0,0,0.2));
+    border-radius: 10px;
 }
 
 .container > div p {
