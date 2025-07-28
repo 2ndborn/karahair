@@ -274,7 +274,7 @@
 .container > div p {
   margin: 0;
   width: 100%;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 27px;
   text-align: center;
 }
@@ -421,6 +421,31 @@
 }
 
 @media (max-width: 450px) {
+    .pr1 {grid-area: 1 / 1 / span 2 / -1;}
+    .pr2 {
+        grid-area: 3 / 1 / span 2 / -1;
+    }
+    .img {
+        grid-area: 5 / 1 / span 3 / -1;
+    }
+    .pr3 {
+        grid-area: 8 / 1 / span 3 / -1;
+    }
+    .pr4 {
+        grid-area: 13 / 1 / span 2 / -1;
+    }
+    .img2 {grid-area: 11 / 1 / span 2 / -1;}
+    .pr5 {
+        grid-area: 13 / 8 / -1 / -1;
+    }
+    .img3 {grid-area:15 / 1 / -1 / span 7;}
+    .k {display: none!important;}
+    .h {display: none!important;}
+
+    .image2 { 
+        object-position: -65px 0px;
+    }
+
     .AboutMeTwo {
         min-height: 75vh;
     }
