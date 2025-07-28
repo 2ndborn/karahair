@@ -73,13 +73,10 @@ const MyStoryPage = () => {
           </p>
         </div>
         <div className={styles.pr3}>
-          <p>
+          <p className='mb-3'>
             <span>My work doesn’t just follow trends it helps 
-            create them.</span> 
-          <p>
-            From the salon floor to the set, I’ve coloured for 
+            create them.</span> From the salon floor to the set, I’ve coloured for 
             major productions like: 
-          </p>
           </p>
             <ul>
               <li><strong>Netflix:</strong> Treason</li>
@@ -102,6 +99,11 @@ const MyStoryPage = () => {
             classroom, you’re getting more than just hair, <span>you’re getting 
             experience, vision, and straight-up passion.</span>
           </p>
+          <div className={styles.contactButtonWrapper}>
+            <button className={`${styles.contactButton}`}>
+              Book Consultation now!!!
+            </button>
+          </div>
         </div>
         <div className={styles.img}>
           <img className={styles.image} src={wigs} alt="wigs colouring"/>

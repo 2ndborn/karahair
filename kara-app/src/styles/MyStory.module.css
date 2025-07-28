@@ -169,15 +169,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 25px;
+    font-family: "Cal sans", sans-serif;
+    
 }
 
 .contactButton {
     background-color: #cffc1c;
-    border: 5px solid #fff;
+    border: 5px solid #a5ce00;
     border-radius: 0.5rem;
     padding: 0.5rem 0.75rem;
     transition: border-color 0.2s ease;
     box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+    color: #ffffff;
+    text-shadow: #000 2px 2px 2px;
+    letter-spacing: 0.2rem;
+    font-weight: 900;
+    font-size: 1.4rem;
 }
 /* 
 .leftHalf h1 {
@@ -264,11 +272,12 @@
   font-family: 'Cals san', sans-serif;
   font-style: oblique;
   color: white;
+  background-image: linear-gradient(to bottom,
+    #d4a37d, 40%,rgba(0,0,0,0.4));
   text-shadow: #000 0.5px 0.5px 2px;
   box-shadow: rgb(0, 0, 0, 0.5) 0px 4px 6px;
-  background-image: linear-gradient(to bottom,
-    rgba(241, 231, 221, 1), 50%,rgba(0,0,0,0.2));
-    border-radius: 10px;
+  text-shadow: #000 1.5px 1.5px 2px;
+  border-radius: 10px;
 }
 
 .container > div p {
@@ -280,7 +289,7 @@
 }
 
 .container > div p span {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 
@@ -289,7 +298,11 @@
   line-height: 2rem;
 }
 
-.pr1 {grid-area: 1 / 1 / span 2 / -1;}
+.pr1 {
+    grid-area: 1 / 1 / span 2 / -1;
+    background-image: linear-gradient(to bottom,
+    #c9ab94, 50%,rgba(0,0,0,0.2))!important;
+}
 .pr2 {
     grid-area: 3 / 1 / span 3 / span 7;
     background-image: linear-gradient(to bottom,
@@ -319,8 +332,10 @@
 .h {grid-area: 13 / 6 / span 2 / span 2;}
 
 .k, .h {
+    font-family: "Prata", sans-serif!important;
     font-size: 2rem;
     font-weight: 700;
+    font-style: normal!important;
 }
 
 .img, .img2, .img3 {
