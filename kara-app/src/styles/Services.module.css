@@ -1,8 +1,8 @@
 .GridContainer {
   height: 100vh;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   background-color: grey;
   padding: 20px;
   border: 1px solid red;
@@ -10,25 +10,75 @@
 }
 
 .GridContainer > div {
-  border: 1px solid black;
   background-color: antiquewhite;
   font-size: 1.2rem;
   text-align: center;
-  padding: 20px;
+  border-radius: 15px;
 }
 
 .header {
-  grid-area: 1 / 1 / span 1 / span 3;
-  background-color: #808080 !important;
-  border: none !important;
+  grid-area: 5 / 11 / -1 / -1;
 }
 
 .hair {
-    grid-area: 1 / 4 / span 4 / -1;
+  position: relative;
+  grid-area: 1 / 1 / -1 / span 6; 
+  overflow: hidden;
 }
 
-.educate {grid-area: 2 / 1 / -1 / span 3;}
-.codes {grid-area: 5 / 4 / -1 / -1;}
+.educate {
+  position: relative;
+  grid-area: 1 / 7 / span 4 / span 6;
+  overflow: hidden;
+}
+.codes {grid-area: 5 / 7 / -1 / span 4;}
+
+.edImage {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 0px -2px;
+  filter: blur(3px);
+}
+
+.edCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.hairImage {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 0px -45px;
+}
+
+.hairCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.2);
+}
+
+h1 {
+  font-family: "Cal sans", sans-serif;
+  color: #fff;
+  letter-spacing: -1px;
+}
 
 @media (max-width: 500px) {
   .GridContainer {
