@@ -2,13 +2,16 @@ import React from 'react'
 import styles from '../styles/Services.module.css';
 import education from '../assets/karaeducation.webp';
 import roc from '../assets/roc.webp';
+import Title from '../components/Title';
 
 const Services = () => {
   return (
-    <div className={styles.GridContainer}>
+    <>
+      <Title title="Services" />
+      <div id='next-section' className={styles.GridContainer}>
         <div className={styles.header}>Services</div>
         <div className={styles.hair}>
-          <img className={styles.hairImage} src={roc} alt='Curly model'/>
+          <img className={styles.hairImage} src={roc} alt='Curly model' />
           <div className={styles.hairCover}>
             <h1>
               Haircare
@@ -24,7 +27,8 @@ const Services = () => {
           </div>
         </div>
         <div className={styles.codes}>Affiliate Codes</div>
-    </div>
+      </div>
+    </>
   )
 }
 
