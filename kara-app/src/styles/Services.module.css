@@ -1,4 +1,5 @@
 .GridContainer {
+  position: relative;
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -11,14 +12,12 @@
 }
 
 .GridContainer > div {
-  background-color: antiquewhite;
   font-size: 1.2rem;
   text-align: center;
   border-radius: 15px;
   box-shadow:
   rgba(0,0,0,0.3) 2px 2px 4px, 
   5px 5px 10px rgba(0, 0, 0, 0.2);
-;
 }
 
 .header {
@@ -29,6 +28,7 @@
   position: relative;
   grid-area: 1 / 1 / -1 / span 6;
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
 }
 
 .educate {
@@ -92,6 +92,31 @@
   2px 2px 5px rgba(0,0,0,0.6),
   4px 4px 10px rgba(0,0,0,0.8);
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(12px);
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+
+.overlayContent {
+  font-size: 2rem;
+  font-family: "Cal sans", sans-serif;
+  text-align: center;
+  padding: 2rem;
+}
+
+/********************media queries*********************/
 
 @media (max-width: 500px) {
   .GridContainer {
