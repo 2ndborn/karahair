@@ -27,43 +27,62 @@ const Services = () => {
       <div id='next-section' className={styles.GridContainer}>
         <div className={styles.header}>Services</div>
         <LayoutGroup>
-          <AnimatePresence>
+          <AnimatePresence mode='wait'>
           {!isToggled && (
-          <SectionTile
-            id={'hair'}
-            imageSrc={roc}
-            onClick={handleClick}
-            isToggled={isToggled}
-            tileClassName={styles.hair}
-            imageClassName={styles.hairImage}
-          >
-            <div className={styles.hairCover}>
-              <h1>
-                Haircare
-              </h1>
-            </div>
-          </SectionTile>
+            <>
+              <SectionTile
+                key="hair"
+                id={'hair'}
+                imageSrc={roc}
+                onClick={handleClick}
+                isToggled={isToggled}
+                tileClassName={styles.hair}
+                imageClassName={styles.hairImage}
+              >
+                <div className={styles.hairCover}>
+                  <h1>
+                    Haircare
+                  </h1>
+                </div>
+              </SectionTile>
+              <SectionTile
+                key='educate'
+                id='educate'
+                imageSrc={education}
+                onClick={handleClick}
+                isToggled={isToggled}
+                tileClassName={styles.educate}
+                imageClassName={styles.edImage}
+                >
+                  <div className={styles.edCover}>
+                    <h1>
+                      Education
+                    </h1>
+                  </div>
+                </SectionTile>
+            </>
           )}
           </AnimatePresence>
         </LayoutGroup>
-        <div className={styles.educate}>
+        {/* <div className={styles.educate}>
           <img className={styles.edImage} src={education} alt='Students' />
           <div className={styles.edCover}>
             <h1>
               Education
             </h1>
           </div>
-        </div>
+        </div> */}
         <div className={styles.codes}>Affiliate Codes</div>
       </div>
       <LayoutGroup>
-        <AnimatePresence>
+        <AnimatePresence mode='wait'>
         {isToggled && (
-          <OverlaySection id={'hair'} onClose={handleClose}>
+          <OverlaySection id={isToggled} onClose={handleClose}>
             <div className={styles.closeButton}>
                 <i class="fa-solid fa-xmark"></i>
             </div>
             {isToggled === 'hair' && <h1>Hair tips & products</h1>}
+            {isToggled === 'educate' && <h1>Education resources & guides</h1>}
           </OverlaySection>
         )}
         </AnimatePresence>
