@@ -5,6 +5,7 @@ export const SectionTile = ({
     children,
     imageSrc, 
     onClick,
+    isToggled,
     tileClassName,
     imageClassName
 }) => {

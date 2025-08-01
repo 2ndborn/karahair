@@ -7,6 +7,7 @@ import roc from '../assets/roc.webp';
 
 import Title from '../components/Title';
 import { OverlaySection } from '../utils/OverlaySection';
+import { SectionTile } from '../utils/SectionTile';
 
 const Services = () => {
 
@@ -26,25 +27,24 @@ const Services = () => {
       <div id='next-section' className={styles.GridContainer}>
         <div className={styles.header}>Services</div>
         <LayoutGroup>
-          <motion.div
-            layoutId='hair'
-            onClick={() => handleClick('hair')}
-            className={styles.hair}
+          <AnimatePresence>
+          {!isToggled && (
+          <SectionTile
+            id={'hair'}
+            imageSrc={roc}
+            onClick={handleClick}
+            isToggled={isToggled}
+            tileClassName={styles.hair}
+            imageClassName={styles.hairImage}
           >
-            <motion.img
-              className={styles.hairImage}
-              src={roc}
-              alt="Curly model"
-              initial={{ scale: 1, opacity: 1 }}
-              animate={isToggled === 'hair' ? { scale: 2, opacity: 0 } : {}}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            />
             <div className={styles.hairCover}>
               <h1>
                 Haircare
               </h1>
             </div>
-          </motion.div>
+          </SectionTile>
+          )}
+          </AnimatePresence>
         </LayoutGroup>
         <div className={styles.educate}>
           <img className={styles.edImage} src={education} alt='Students' />
@@ -56,18 +56,18 @@ const Services = () => {
         </div>
         <div className={styles.codes}>Affiliate Codes</div>
       </div>
-        <LayoutGroup>
-          <AnimatePresence>
-          {isToggled && (
-            <OverlaySection id={'hair'} onClose={handleClose}>
-              <div className={styles.closeButton}>
-                  <i class="fa-solid fa-xmark"></i>
-              </div>
-              {isToggled === 'hair' && <h1>Hair tips & products</h1>}
-            </OverlaySection>
-          )}
-          </AnimatePresence>
-        </LayoutGroup>
+      <LayoutGroup>
+        <AnimatePresence>
+        {isToggled && (
+          <OverlaySection id={'hair'} onClose={handleClose}>
+            <div className={styles.closeButton}>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            {isToggled === 'hair' && <h1>Hair tips & products</h1>}
+          </OverlaySection>
+        )}
+        </AnimatePresence>
+      </LayoutGroup>
     </>
   )
 }
