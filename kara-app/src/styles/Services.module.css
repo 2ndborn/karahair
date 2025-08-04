@@ -100,7 +100,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  max-height: 100vh;
+  height: 100%;
   backdrop-filter: blur(12px);
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 999;
@@ -109,6 +109,7 @@
   align-items: flex-start;
   color: #fff;
   transition: all 0.5s ease-in-out;
+  box-sizing: border-box;
 }
 
 .closeButton {
@@ -121,16 +122,17 @@
 }
 
 .overlayContent {
+  width: 100%;
+  max-width: 1000px;
   font-family: "Cal sans", sans-serif;
   text-align: center;
   padding: 2rem;
+  box-sizing: border-box;
 }
 
 .serviceContainer {
-  min-height: 100vh;
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   padding: 10px;
   gap: 10px;
 }
