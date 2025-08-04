@@ -6,7 +6,6 @@ export const OverlaySection = ({ id, children, onClose }) => {
         <motion.div>
             <motion.div
                 layoutId={id}
-                onClick={onClose}
                 className={styles.overlay}
                 initial={{ opacity: 0, scale: 0.2 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -14,6 +13,9 @@ export const OverlaySection = ({ id, children, onClose }) => {
                 transition={{ duration: 0.2, ease: "easeOut" }}
             >
                 <motion.div className={styles.overlayContent}>
+                    <div className={styles.closeButton} onClick={onClose}>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
                     {children}
                 </motion.div>
             </motion.div>

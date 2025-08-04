@@ -74,9 +74,6 @@ const Services = () => {
         <AnimatePresence mode='wait'>
         {isToggled && (
           <OverlaySection id={isToggled} onClose={handleClose}>
-            <div className={styles.closeButton}>
-                <i class="fa-solid fa-xmark"></i>
-            </div>
             {isToggled === 'hair' && (<HairComponent />)}
             {isToggled === 'educate' && <EducationComponent />}
           </OverlaySection>
