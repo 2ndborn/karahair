@@ -2,6 +2,7 @@ import React from 'react'
 import { HairData } from '../serviceData/HairData'
 import styles from '../styles/Services.module.css'
 import { AnimateButton } from '../utils/AnimateButton'
+import { Link } from 'react-router-dom'
 
 const HairComponent = () => {
     return (
@@ -25,9 +26,11 @@ const HairComponent = () => {
                 ))}
             </div>
             <div className={styles.contactButtonWrapper}>
-                <AnimateButton className={styles.contactButton}>
-                    Book Consultation now!!!
-                </AnimateButton>
+                <Link to="/contactme">
+                    <AnimateButton className={styles.contactButton}>
+                        Book Consultation now!!!
+                    </AnimateButton>
+                </Link>
             </div>
             <div>
                 <p>

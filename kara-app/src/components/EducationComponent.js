@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../styles/Services.module.css';
 import { AnimateButton } from '../utils/AnimateButton';
 import { EducateData } from '../serviceData/EducateData';
+import { Link } from 'react-router-dom';
 
 const EducationComponent = () => {
   return (
@@ -33,9 +34,11 @@ const EducationComponent = () => {
               ))}
           </div>
           <div className={styles.contactButtonWrapper}>
+            <Link to="/contactme">
               <AnimateButton className={styles.contactButton}>
                   Book Consultation now!!!
               </AnimateButton>
+            </Link>
           </div>
           <div>
               <p>

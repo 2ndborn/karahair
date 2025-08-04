@@ -14,6 +14,7 @@ import useDynamicColor from '../hooks/useDynamicColor'
 import useFadeUp from '../hooks/useFadeUp'
 import Title from '../components/Title'
 import { AnimateButton } from '../utils/AnimateButton';
+import { Link } from 'react-router-dom';
 
 const MyStoryPage = () => {
   const getColor = useDynamicColor();
@@ -101,9 +102,11 @@ const MyStoryPage = () => {
             experience, vision, and straight-up passion.</span>
           </p>
           <div className={styles.contactButtonWrapper}>
-            <AnimateButton className={styles.contactButton}>
-              Book Consultation now!!!
-            </AnimateButton>
+            <Link to="/contactme">
+              <AnimateButton className={styles.contactButton}>
+                Book Consultation now!!!
+              </AnimateButton>
+            </Link>
           </div>
         </div>
         <div className={styles.img}>
