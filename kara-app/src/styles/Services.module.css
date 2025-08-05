@@ -114,7 +114,7 @@
   letter-spacing: -1px;
 }
 
-.hairCover, .edCover > h1 {
+.hairCover, .edCover, .codeCover > h1 {
   text-shadow: 
   2px 2px 5px rgba(0,0,0,0.6),
   4px 4px 10px rgba(0,0,0,0.8);
@@ -149,10 +149,21 @@
 
 .overlayContent {
   width: clamp(300px, 100vw, 1200px);
-  font-family: "Cal sans", sans-serif;
+  font-family: "Open sans", sans-serif;
   text-align: center;
   padding: 2rem;
   box-sizing: border-box;
+}
+
+.overlayContent h1, 
+.overlayContent h2 {
+  font-family: "Cal sans", sans-serif;
+}
+
+.overlayContent p,
+.overlayContent ul {
+  font-family: "Open sans", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .serviceContainer {
@@ -198,13 +209,21 @@
   font-weight: 900;
   font-size: 1.4rem;
 }
-
-/********************media queries*********************/
-@media (max-width: 1000px) {
+  
+  /********************media queries*********************/
+  @media (max-width: 1024px) {
     .serviceContainer {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  
+    .hairImage {
+      object-position: -130px 6px;
+    }
+  
+    .codeImage {
+      object-position: -235px 0px;
+    }
   }
-}
 
 @media (max-width: 500px) {
   .GridContainer {
@@ -222,5 +241,13 @@
 
   .codes {
     grid-area: 3 / 1 / span 1 / span 2;
+  }
+
+  .hairImage {
+    object-position: 0px -60px;
+  }
+
+  .codeImage {
+    object-position: 0px 0px;
   }
 }

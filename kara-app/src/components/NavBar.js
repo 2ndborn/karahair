@@ -46,7 +46,6 @@ function NavBar() {
       {showNav && (
         <motion.div className={styles.NavContainer} initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: showNav ? 1 : 0, y: showNav ? 0 : -50 }} transition={{ duration: 0.5 }}>
-          {/* <Title /> */}
           <Navbar
             style={{ backgroundColor: getColor("navbar") }}
             expanded={expanded}

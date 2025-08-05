@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const HairComponent = () => {
     return (
-        <div>
+        <div className={styles.componentContainer}>
             <div>
                 <h1>Haircare</h1>
                 <p>
