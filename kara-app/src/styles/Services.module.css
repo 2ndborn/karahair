@@ -183,7 +183,7 @@
 @media (max-width: 500px) {
   .GridContainer {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
+    grid-template-rows: repeat(4, minmax(300px, 1fr));
   }
 
   .header {
