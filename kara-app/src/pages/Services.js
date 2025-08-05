@@ -4,6 +4,7 @@ import {AnimatePresence, LayoutGroup, motion} from 'framer-motion';
 
 import education from '../assets/karaeducation.webp';
 import roc from '../assets/roc.webp';
+import product from '../assets/product.webp';
 
 import Title from '../components/Title';
 import { OverlaySection } from '../utils/OverlaySection';
@@ -12,6 +13,8 @@ import { HairData } from '../serviceData/HairData';
 import { AnimateButton } from '../utils/AnimateButton';
 import HairComponent from '../components/HairComponent';
 import EducationComponent from '../components/EducationComponent';
+import AffiliateComponent from '../components/AffiliateComponent';
+import { Reveal } from '../utils/Reveal';
 
 const Services = () => {
 
@@ -29,7 +32,7 @@ const Services = () => {
     <>
       <Title title="Services" />
       <div id='next-section' className={styles.GridContainer}>
-        <div className={styles.header}>Services</div>
+        
         <LayoutGroup>
           <AnimatePresence mode='wait'>
           {!isToggled && (
@@ -64,11 +67,25 @@ const Services = () => {
                     </h1>
                   </div>
                 </SectionTile>
+                <SectionTile
+                  key="codes"
+                  id="codes"
+                  imageSrc={product}
+                  onClick={handleClick}
+                  isToggled={isToggled}
+                  tileClassName={styles.codes}
+                  imageClassName={styles.codeImage}
+                >
+                  <div className={styles.codeCover}>
+                    <h1>
+                      Affiliate Codes
+                    </h1>
+                  </div>
+                </SectionTile>
             </>
           )}
           </AnimatePresence>
         </LayoutGroup>
-        <div className={styles.codes}>Affiliate Codes</div>
       </div>
       <LayoutGroup>
         <AnimatePresence mode='wait'>
@@ -76,6 +93,7 @@ const Services = () => {
           <OverlaySection id={isToggled} onClose={handleClose}>
             {isToggled === 'hair' && (<HairComponent />)}
             {isToggled === 'educate' && <EducationComponent />}
+            {isToggled === 'codes' && <AffiliateComponent />}
           </OverlaySection>
         )}
         </AnimatePresence>
