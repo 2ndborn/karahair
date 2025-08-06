@@ -48,13 +48,17 @@ const MyStoryPage = () => {
                 Hi, I'm Kara
               </motion.h1>
             </div>
-            <div className='my-4'>
+            <div className={`${styles.quoteContainer} my-4`}>
+              <div className={styles.quoteBox}>
+              <i class="fa-solid fa-quote-left"></i>
               <p>
-                "that moment when a client looks into the mirror
+                "That moment when a client looks into the mirror
                 and sees not just a fresh style, but the actualised
-                version of their internal self staring back at them. 
+                version of their internal self staring back at them.
                 That’s why I do what I do."
               </p>
+              <i class="fa-solid fa-quote-right"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -70,7 +74,7 @@ const MyStoryPage = () => {
         <div className={styles.pr2}>
           <p>
             <span>Hair is my craft, but education is my purpose.</span> I run 
-            cutting-edge courses built for the next wave of stylists
+            cutting edge courses built for the next wave of stylists
             those who want to break rules the right way. 
           </p>
         </div>
