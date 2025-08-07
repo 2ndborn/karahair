@@ -166,6 +166,44 @@
     font-style: oblique;
 }
 
+.quoteContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.quoteBox {
+  position: relative;
+  max-width: 600px;
+  font-style: oblique;
+}
+
+.quoteBox p {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.leftQuote {
+  position: absolute;
+  top: -2.5rem;
+  left: -1.5rem;
+  font-size: 4rem;
+  font-style: oblique;
+  color: rgba(251, 236, 224, 0.5);
+}
+
+.rightQuote {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -0.5rem;
+  font-size: 4rem;
+  font-style: oblique;
+  color: rgba(251, 236, 224, 0.5);
+}
+
 .contactButtonWrapper {
     display: flex;
     justify-content: center;

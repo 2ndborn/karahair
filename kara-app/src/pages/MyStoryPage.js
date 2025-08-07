@@ -48,16 +48,16 @@ const MyStoryPage = () => {
                 Hi, I'm Kara
               </motion.h1>
             </div>
-            <div className={`${styles.quoteContainer} my-4`}>
+            <div className={`${styles.quoteContainer}`}>
               <div className={styles.quoteBox}>
-              <i class="fa-solid fa-quote-left"></i>
-              <p>
-                "That moment when a client looks into the mirror
-                and sees not just a fresh style, but the actualised
-                version of their internal self staring back at them.
-                That’s why I do what I do."
-              </p>
-              <i class="fa-solid fa-quote-right"></i>
+                <i className={`${styles.leftQuote} fa-solid fa-quote-left`}></i>
+                <p>
+                  That moment when a client looks into the mirror
+                  and sees not just a fresh style, but the actualised
+                  version of their internal self staring back at them.
+                  That’s why I do what I do.
+                </p>
+                <i className={`${styles.rightQuote} fa-solid fa-quote-right`}></i>
               </div>
             </div>
           </div>
