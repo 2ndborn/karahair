@@ -188,20 +188,20 @@
 
 .leftQuote {
   position: absolute;
-  top: -2.5rem;
+  top: -3.5rem;
   left: -1.5rem;
-  font-size: 4rem;
+  font-size: 7rem;
   font-style: oblique;
-  color: rgba(251, 236, 224, 0.5);
+  color: rgba(251, 236, 224, 0.2);
 }
 
 .rightQuote {
   position: absolute;
   bottom: -1.5rem;
   right: -0.5rem;
-  font-size: 4rem;
+  font-size: 7rem;
   font-style: oblique;
-  color: rgba(251, 236, 224, 0.5);
+  color: rgba(251, 236, 224, 0.2);
 }
 
 .contactButtonWrapper {
