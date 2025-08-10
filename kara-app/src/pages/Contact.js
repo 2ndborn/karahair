@@ -19,9 +19,11 @@ const Contact = () => {
             <p className={styles.checkboxHeading}>Services Interested In:</p>
             <span className={styles.checkboxWrap}>
               <label htmlFor='colour'>Colour</label>
-              <input type='checkbox' id='colour' name='Colour' required />
+              <input type='radio' id='colour' name='services' value='Colour' required />
               <label htmlFor='education'>Education</label>
-              <input type='checkbox' id='education' name='Education' required />
+              <input type='radio' id='education' name='services' value='Education' required />
+              <label htmlFor='both'>Both</label>
+              <input type='radio' id='both' name='services' value='Both' required />
             </span>
             <textarea className={styles.contactInput} name='query' placeholder='Your message' required></textarea>
             <div className={styles.buttonWrap}>
