@@ -26,8 +26,8 @@
 .formContainer {
     position: relative;
     max-height: 500px;
-    width: 50%; min-width: 390px;
-    padding: 10px;
+    width: 40%; min-width: 390px;
+    padding: 20px;
     border-radius: 15px;
     border: 2px solid #fff;
     z-index: 2;

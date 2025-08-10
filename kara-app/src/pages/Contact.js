@@ -14,8 +14,20 @@ const Contact = () => {
         <div className={styles.formContainer}>
           <h3>Request a Consultation</h3>
           <form action="/action_page.php" method="get">
-            <input className={styles.contactInput} type='text' name='name' placeholder='Name' required />
-            <input className={styles.contactInput} type='email' name='email' placeholder='Email Address' required />
+            <input
+              className={styles.contactInput}
+              type='text' 
+              name='name' 
+              placeholder='Name' 
+              required 
+            />
+            <input 
+              className={styles.contactInput} 
+              type='email' 
+              name='email' 
+              placeholder='Email Address' 
+              required 
+            />
             <p className={styles.checkboxHeading}>Services Interested In:</p>
             <span className={styles.checkboxWrap}>
               <label htmlFor='colour'>Colour</label>
