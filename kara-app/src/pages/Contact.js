@@ -14,20 +14,30 @@ const Contact = () => {
         <div className={styles.formContainer}>
           <h3>Request a Consultation</h3>
           <form action="/action_page.php" method="get">
-            <input
-              className={styles.contactInput}
-              type='text' 
-              name='name' 
-              placeholder='Name' 
-              required 
-            />
-            <input 
-              className={styles.contactInput} 
-              type='email' 
-              name='email' 
-              placeholder='Email Address' 
-              required 
-            />
+            <div className={styles.inputGroup}>
+              <input
+                className={styles.contactInput}
+                type='text'
+                id='name'
+                name='name'
+                placeholder=' '
+                required
+              />
+              <label htmlFor='name' className={styles.inputLabel}>Name</label>
+            </div>
+            <div className={styles.inputGroup}>
+              <input 
+                className={styles.contactInput} 
+                type='email'
+                id='email'
+                name='email' 
+                placeholder=' ' 
+                required 
+              />
+              <label htmlFor='email' className={styles.inputLabel}>
+                Email Address
+              </label>
+            </div>
             <p className={styles.checkboxHeading}>Services Interested In:</p>
             <span className={styles.checkboxWrap}>
               <label htmlFor='colour'>Colour</label>
@@ -37,7 +47,9 @@ const Contact = () => {
               <label htmlFor='both'>Both</label>
               <input type='radio' id='both' name='services' value='Both' required />
             </span>
-            <textarea className={styles.contactInput} name='query' placeholder='Your message' required></textarea>
+            <div className={styles.inputGroup}>
+              <textarea className={styles.contactInput} name='query' placeholder='Your message' required></textarea>
+            </div>
             <div className={styles.buttonWrap}>
               <button className={styles.cancelButton}>Cancel</button>
               <button className={styles.submitButton} type='submit' value='Submit'>Send</button>
