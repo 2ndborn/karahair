@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../styles/Contact.module.css';
 import color from '../assets/colorchart.webp';
+import multicolor from '../assets/multicolor.webp';
 
 import Title from '../components/Title';
 
@@ -9,7 +10,7 @@ const Contact = () => {
     <>
       <Title title='Contact' subtitle='Me' />
       <div className={styles.contactContainer}>
-        <img className={styles.colorChart} src={color} alt='colour chart' />
+        <img className={styles.colorChart} src={multicolor} alt='colour chart' />
         <div className={styles.colorOverlay}></div>
         <div className={styles.formContainer}>
           <h3>Request a Consultation</h3>
