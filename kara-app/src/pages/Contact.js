@@ -39,8 +39,8 @@ const Contact = () => {
                 Email Address
               </label>
             </div>
-            <p className={styles.checkboxHeading}>Services Interested In:</p>
             <span className={styles.checkboxWrap}>
+            <p className={styles.checkboxHeading}>Service:</p>
               <label htmlFor='colour'>Colour</label>
               <input type='radio' id='colour' name='services' value='Colour' required />
               <label htmlFor='education'>Education</label>
