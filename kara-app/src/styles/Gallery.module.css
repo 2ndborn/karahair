@@ -1,8 +1,12 @@
-section {
+.sec {
+    position: relative;
     height: 200vh;
+    width: 100%;
 }
 
 .intro {
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,6 +15,20 @@ section {
     height: 100vh;
     width: 100%;
     background-color: rgb(252, 177, 177);
+    z-index: 10;
+    transform-origin: "left center";
+    padding: 3rem;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+.text h1 {
+    font-size: 4rem;
 }
 
 .con {
@@ -26,6 +44,7 @@ section {
     height: 100vh;
     width: 33.3333%;
     background-color: red;
+    z-index: 11;
 }
 
 .box {
