@@ -1,7 +1,6 @@
 import React from 'react'
 import {motion}  from 'framer-motion'
 import kara from '../assets/karapic.webp'
-import nush from '../assets/nush.webp';
 import award from '../assets/award.webp';
 import wigs from '../assets/wigs.webp';
 import curly from '../assets/curly.webp';

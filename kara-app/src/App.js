@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import MyStoryPage from './pages/MyStoryPage';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import Gallery from './pages/Gallery';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/mystory" element={<MyStoryPage />} />
           <Route exact path="/services" element={<Services />} />
+          <Route exact path="/gallery" element={<Gallery />} />
           <Route exact path="/contactme" element={<Contact />} />
         </Routes>
       </div>

@@ -1,0 +1,35 @@
+section {
+    height: 200vh;
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(252, 177, 177);
+}
+
+.con {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+    width: 33.3333%;
+    background-color: red;
+}
+
+.box {
+    height: 250px;
+    width: 250px;
+    background-color: black;
+}
