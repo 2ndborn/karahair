@@ -3,22 +3,28 @@ import styles from '../styles/Gallery.module.css'
 import { motion, useTransform, useScroll } from 'framer-motion';
 
 import wigs from '../assets/wigs.webp';
+import curly from '../assets/curly.webp';
 
 const Gallery = () => {
   
   const ref = useRef(null);
   const boxRef = useRef(null);
-  const workRef= useRef(null);
+  const workRef = useRef(null);
+  const curlyRef = useRef(null);
   const { scrollYProgress: boxScrollY } = useScroll({
     target: boxRef,
     offset: ["start end", "start start"] // triggers when box enters and reaches top
   });
   const {scrollYProgress: workScrollX} = useScroll({
     target: workRef,
-    offset: ["start end", "end start"]
+  });
+  const {scrollYProgress: curlyScrollY} = useScroll({
+    target: curlyRef,
+    offset: ["start end", "start start"]
   });
   const scale = useTransform(boxScrollY, [0, 0.9], [1, 0.65])
-  const x = useTransform(workScrollX, [0,1], [2000 , -2500])
+  const x = useTransform(workScrollX, [0,1], ["5%", "-75%"])
+  const scale2 = useTransform(curlyScrollY, [0,1], [1, 0.5])
   const workArray = [1,2,3,4,5];
   return (
     <div>
@@ -74,11 +80,11 @@ const Gallery = () => {
           </p>
         </div>
         </section>
-      <section className={styles.sec3}>
+      <section className={styles.sec3} ref={workRef}>
         <div className={styles.workContainer}>
           <motion.div
             className={styles.work}
-            ref={workRef}
+            
             style={{ x }}
           >
             {workArray.map((work) => (
@@ -87,6 +93,20 @@ const Gallery = () => {
                 </div>
             ))}
           </motion.div>
+        </div>
+      </section>
+      <section ref={curlyRef} className={styles.sec4}>
+        <motion.div className={styles.imageContainer2} style={{ scale: scale2 }}>
+          <img className={styles.curlyImage} src={curly} alt='curly hair' />
+        </motion.div>
+        <div ref={curlyRef} className={styles.con}>
+          <div className={styles.para4}>
+            <p>
+              <span>I’m all about pushing boundaries and raising 
+              standards</span> to ensure the future of hairdressing 
+              is diverse, skilled, and fearless.
+            </p>
+          </div>
         </div>
       </section>
     </div>

@@ -1,4 +1,4 @@
-.sec {
+.sec, .sec4 {
     position: relative;
     height: 200vh;
     width: 100%;
@@ -10,7 +10,8 @@
 
 .sec3 {
     position: relative;
-    height: 100vh;
+    height: 300vh;
+    background-color: black;
 }
 
 .intro {
@@ -75,6 +76,17 @@
     width: 50%;
 }
 
+.para4 {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+    width: 50%;
+    font-size: 3rem;
+    background-color: red;
+    z-index: 11;
+}
+
 .imageContainer {
     position: sticky;
     top: 0;
@@ -103,26 +115,40 @@
 .workContainer {
     position: sticky;
     top: 0;
-    height: 80vh;
+    height: 100vh;
     background-color: black;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     overflow: hidden; /* Hide overflow as cards move */
 }
 
 .work {
     display: flex;
-    align-items: center;
-    width: 100vw; /* Ensure full width for animation */
 }
 
 .cards {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 5rem;
     height: 50vh;
-    width: 500px;
+    width: 350px;
     background-color: white;
     margin: 0 10px
+}
+
+.imageContainer2 {
+    position: sticky;
+    top: 0;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    transform-origin: left center;
+}
+
+.curlyImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0 -50px;
 }
