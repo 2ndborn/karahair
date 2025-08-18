@@ -20,11 +20,10 @@ const Gallery = () => {
   });
   const {scrollYProgress: curlyScrollY} = useScroll({
     target: curlyRef,
-    offset: ["start end", "start start"]
   });
   const scale = useTransform(boxScrollY, [0, 0.9], [1, 0.65])
   const x = useTransform(workScrollX, [0,1], ["5%", "-75%"])
-  const scale2 = useTransform(curlyScrollY, [0,1], [1, 0.5])
+  const scale2 = useTransform(curlyScrollY, [0,0.9], [1, 0.5])
   const workArray = [1,2,3,4,5];
   return (
     <div>
@@ -96,9 +95,9 @@ const Gallery = () => {
         </div>
       </section>
       <section ref={curlyRef} className={styles.sec4}>
-        <motion.div className={styles.imageContainer2} style={{ scale: scale2 }}>
+        <div className={styles.imageContainer2}>
           <img className={styles.curlyImage} src={curly} alt='curly hair' />
-        </motion.div>
+        </div>
         <div ref={curlyRef} className={styles.con}>
           <div className={styles.para4}>
             <p>
