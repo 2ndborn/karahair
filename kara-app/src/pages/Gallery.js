@@ -4,6 +4,7 @@ import { motion, useTransform, useScroll } from 'framer-motion';
 
 import wigs from '../assets/wigs.webp';
 import curly from '../assets/curly.webp';
+import brazil from '../assets/brazil.webp';
 
 const Gallery = () => {
   
@@ -106,6 +107,20 @@ const Gallery = () => {
               is diverse, skilled, and fearless.
             </p>
           </div>
+        </div>
+      </section>
+      <section className={styles.sec5}>
+        <div className={styles.para5}>
+          <p>
+            Whether you’re sat in my chair or learning in my 
+            classroom, you’re getting more than just hair, <span>you’re getting 
+            experience, vision, and straight-up passion.</span>
+          </p>
+        </div>
+        <div className={styles.doorsContainer}>
+          <img className={styles.brazilContainer} src={brazil} alt='Fabulour girl'/>
+          <div className={styles.left}></div>
+          <div className={styles.right}></div>
         </div>
       </section>
     </div>

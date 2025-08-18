@@ -14,6 +14,18 @@
     background-color: black;
 }
 
+.sec4, .sec5 {
+    position: relative;
+    height: 210vh;
+    width: 100%;
+}
+
+.sec5 {
+    position: relative;
+    height: 300vh;
+    width: 100%;
+}
+
 .intro {
     position: sticky;
     top: 0;
@@ -88,6 +100,20 @@
     z-index: 11;
 }
 
+.para5 {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+    font-size: 3rem;
+    background-color: wheat;
+    z-index: -1;
+}
+
 .imageContainer {
     position: sticky;
     top: 0;
@@ -152,4 +178,29 @@
     width: 100%;
     object-fit: cover;
     object-position: 0 -50px;
+}
+
+.doorsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 5;
+}
+
+.brazilContainer {
+    flex: 0 0 50%;
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+    z-index: 3;
+}
+
+.left, .right {
+    flex: 1;
+    height: 100%;
+    border: 2px solid #000;
+    background-color: lime;
+    z-index: 3;
 }
