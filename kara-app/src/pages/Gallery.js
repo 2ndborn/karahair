@@ -1,6 +1,6 @@
 import {React, useRef, useEffect}  from 'react'
 import styles from '../styles/Gallery.module.css'
-import { motion, useTransform, useScroll } from 'framer-motion';
+import { motion, useTransform, useScroll, useSpring } from 'framer-motion';
 
 import wigs from '../assets/wigs.webp';
 import curly from '../assets/curly.webp';
@@ -27,8 +27,23 @@ const Gallery = () => {
 
   const scale = useTransform(boxScrollY, [0, 0.9], [1, 0.65]);
   const x = useTransform(workScrollX, [0, 1], ["5%", "-75%"]);
-  const leftScale = useTransform(doorsScrollY, [0,1], [1,0])
-  const rightScale = useTransform(doorsScrollY, [0,1], [1,0])
+  const leftScaleRaw = useTransform(doorsScrollY, [0.4,0.6], [1,0])
+  const rightScaleRaw = useTransform(doorsScrollY, [0.4,0.6], [1, 0])
+  const leftScale = useSpring(leftScaleRaw, {
+    stiffness: 100,
+    damping: 20,
+    mass: 0.5
+  });
+
+  const rightScale = useSpring(rightScaleRaw, {
+    stiffness: 100,
+    damping: 20,
+    mass: 0.5
+  });
+  const paraOpacity = useTransform(doorsScrollY, [0.32, 0.49], [0, 1])
+  const paraY = useTransform(doorsScrollY, [0.32, 0.45], [20, 0])
+  const paraScale = useTransform(doorsScrollY, [0.35, 0.4], [0.95, 1]);
+
   const imageOpacity = useTransform(doorsScrollY, [0, 1], [0.3, 1]);
   const imageScale = useTransform(doorsScrollY, [0, 1], [1.2, 1]);
 
@@ -117,20 +132,12 @@ const Gallery = () => {
         </div>
       </section>
       <section className={styles.sec5}>
-        <div className={styles.para5}>
-          <p>
-            Whether you’re sat in my chair or learning in my 
-            classroom, you’re getting more than just hair, <span>you’re getting 
-            experience, vision, and straight-up passion.</span>
-          </p>
-        </div>
         <div className={styles.doorsContainer} ref={doorsRef}>
           <motion.img
             className={styles.brazilContainer}
             style={{
-               opacity: imageOpacity,
                scale: imageScale,
-               }}
+              }}
             src={brazil} alt='Fabulour girl' 
           />
           <motion.div
@@ -148,6 +155,14 @@ const Gallery = () => {
             }}
             transition={{ease: "easeInOut", duration: 1.5}}
           ></motion.div>
+        </div>
+        <div className={styles.para5}>
+          <motion.p style={{opacity: paraOpacity, y: paraY, scale: paraScale}}>
+            Whether you’re sat in my chair or learning in my
+            classroom, you’re getting more than just hair, <span>you’re getting
+              experience, vision, and straight-up passion.</span>
+          </motion.p>
+          
         </div>
       </section>
     </div>
