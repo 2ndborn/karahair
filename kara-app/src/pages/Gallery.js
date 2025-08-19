@@ -1,4 +1,4 @@
-import {React, useRef}  from 'react'
+import {React, useRef, useEffect}  from 'react'
 import styles from '../styles/Gallery.module.css'
 import { motion, useTransform, useScroll } from 'framer-motion';
 
@@ -7,11 +7,12 @@ import curly from '../assets/curly.webp';
 import brazil from '../assets/brazil.webp';
 
 const Gallery = () => {
+
   
   const ref = useRef(null);
   const boxRef = useRef(null);
   const workRef = useRef(null);
-  const curlyRef = useRef(null);
+  const doorsRef = useRef(null);
   const { scrollYProgress: boxScrollY } = useScroll({
     target: boxRef,
     offset: ["start end", "start start"] // triggers when box enters and reaches top
@@ -19,12 +20,18 @@ const Gallery = () => {
   const {scrollYProgress: workScrollX} = useScroll({
     target: workRef,
   });
-  const {scrollYProgress: curlyScrollY} = useScroll({
-    target: curlyRef,
+  const {scrollYProgress: doorsScrollY} = useScroll({
+    target: doorsRef,
+    offset: ["start end", "end start"]
   });
-  const scale = useTransform(boxScrollY, [0, 0.9], [1, 0.65])
-  const x = useTransform(workScrollX, [0,1], ["5%", "-75%"])
-  const scale2 = useTransform(curlyScrollY, [0,0.9], [1, 0.5])
+
+  const scale = useTransform(boxScrollY, [0, 0.9], [1, 0.65]);
+  const x = useTransform(workScrollX, [0, 1], ["5%", "-75%"]);
+  const leftScale = useTransform(doorsScrollY, [0,1], [1,0])
+  const rightScale = useTransform(doorsScrollY, [0,1], [1,0])
+  const imageOpacity = useTransform(doorsScrollY, [0, 1], [0.3, 1]);
+  const imageScale = useTransform(doorsScrollY, [0, 1], [1.2, 1]);
+
   const workArray = [1,2,3,4,5];
   return (
     <div>
@@ -95,11 +102,11 @@ const Gallery = () => {
           </motion.div>
         </div>
       </section>
-      <section ref={curlyRef} className={styles.sec4}>
+      <section className={styles.sec4}>
         <div className={styles.imageContainer2}>
           <img className={styles.curlyImage} src={curly} alt='curly hair' />
         </div>
-        <div ref={curlyRef} className={styles.con}>
+        <div className={styles.con}>
           <div className={styles.para4}>
             <p>
               <span>I’m all about pushing boundaries and raising 
@@ -117,10 +124,30 @@ const Gallery = () => {
             experience, vision, and straight-up passion.</span>
           </p>
         </div>
-        <div className={styles.doorsContainer}>
-          <img className={styles.brazilContainer} src={brazil} alt='Fabulour girl'/>
-          <div className={styles.left}></div>
-          <div className={styles.right}></div>
+        <div className={styles.doorsContainer} ref={doorsRef}>
+          <motion.img
+            className={styles.brazilContainer}
+            style={{
+               opacity: imageOpacity,
+               scale: imageScale,
+               }}
+            src={brazil} alt='Fabulour girl' 
+          />
+          <motion.div
+            className={styles.left}
+            style={{
+              scaleX: leftScale,
+              transformOrigin: "left center"
+            }}
+          transition={{ease: "easeInOut", duration: 1.5}}
+          ></motion.div>
+          <motion.div
+            className={styles.right}
+            style={{
+              scaleX: rightScale, transformOrigin: "right center"
+            }}
+            transition={{ease: "easeInOut", duration: 1.5}}
+          ></motion.div>
         </div>
       </section>
     </div>
