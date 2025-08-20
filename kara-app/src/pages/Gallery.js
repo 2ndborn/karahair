@@ -1,6 +1,6 @@
-import {React, useRef, useEffect}  from 'react'
+import {React, useRef, useEffect, useState}  from 'react'
 import styles from '../styles/Gallery.module.css'
-import { motion, useTransform, useScroll, useSpring } from 'framer-motion';
+import { motion, useTransform, useScroll, useSpring, useMotionValueEvent, useInView } from 'framer-motion';
 
 import wigs from '../assets/wigs.webp';
 import curly from '../assets/curly.webp';
@@ -27,8 +27,8 @@ const Gallery = () => {
 
   const scale = useTransform(boxScrollY, [0, 0.9], [1, 0.65]);
   const x = useTransform(workScrollX, [0, 1], ["5%", "-75%"]);
-  const leftScaleRaw = useTransform(doorsScrollY, [0.4,0.6], [1,0])
-  const rightScaleRaw = useTransform(doorsScrollY, [0.4,0.6], [1, 0])
+  const leftScaleRaw = useTransform(doorsScrollY, [0.25,0.65], [1,0])
+  const rightScaleRaw = useTransform(doorsScrollY, [0.25,0.65], [1,0])
   const leftScale = useSpring(leftScaleRaw, {
     stiffness: 100,
     damping: 20,
@@ -40,17 +40,42 @@ const Gallery = () => {
     damping: 20,
     mass: 0.5
   });
-  const paraOpacity = useTransform(doorsScrollY, [0.32, 0.49], [0, 1])
-  const paraY = useTransform(doorsScrollY, [0.32, 0.45], [20, 0])
+  const paraOpacity = useTransform(doorsScrollY, [0.55, 0.75], [0, 1], {clamp: true})
+  const paraY = useTransform(doorsScrollY, [0.55, 0.75], [20, 0], {clamp: true})
   const paraScale = useTransform(doorsScrollY, [0.35, 0.4], [0.95, 1]);
+  const [textVisible, setTextVisible] = useState(false);
+
+  const isInView = useInView(ref, { once: false, margin: '-20% 0px' });
+
+  useMotionValueEvent(doorsScrollY, "change", (v) => {
+    if (v > 0.38 && !textVisible) setTextVisible(true);
+  });
 
   const imageOpacity = useTransform(doorsScrollY, [0, 1], [0.3, 1]);
   const imageScale = useTransform(doorsScrollY, [0, 1], [1.2, 1]);
 
+  const [scrollVal, setScrollVal] = useState(0);
+
+  useMotionValueEvent(doorsScrollY, "change", (v) => {
+    setScrollVal(v);
+  });
+
   const workArray = [1,2,3,4,5];
   return (
     <div>
-        <section ref={ref} className={styles.sec}>
+      <motion.div style={{
+        position: 'fixed',
+        top: 10,
+        left: 10,
+        background: 'black',
+        color: 'white',
+        padding: '0.5rem',
+        zIndex: 9999
+      }}>
+        ScrollY: {scrollVal.toFixed(2)}
+      </motion.div>
+
+      <section ref={ref} className={styles.sec}>
           <motion.div 
             className={styles.intro}
           >
@@ -132,6 +157,7 @@ const Gallery = () => {
         </div>
       </section>
       <section className={styles.sec5}>
+        <div className={styles.doorsWrapper}>
         <div className={styles.doorsContainer} ref={doorsRef}>
           <motion.img
             className={styles.brazilContainer}
@@ -156,14 +182,75 @@ const Gallery = () => {
             transition={{ease: "easeInOut", duration: 1.5}}
           ></motion.div>
         </div>
-        <div className={styles.para5}>
-          <motion.p style={{opacity: paraOpacity, y: paraY, scale: paraScale}}>
+          <motion.div className={styles.para5}>
+            <motion.p
+              style={{ opacity: paraOpacity, y: paraY }}
+            >
             Whether you’re sat in my chair or learning in my
             classroom, you’re getting more than just hair, <span>you’re getting
               experience, vision, and straight-up passion.</span>
           </motion.p>
           
+        </motion.div>
         </div>
+      </section>
+      <section ref={ref} style={{ height: '120vh', position: 'relative' }}>
+        <motion.div
+          initial={{ scaleX: 1 }}
+          animate={isInView ? { scaleX: 0 } : {}}
+          transition={{ duration: 2, delay: 1 }}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '50%',
+            height: '100%',
+            background: 'lime',
+            transformOrigin: 'left center',
+          }}
+        />
+        <motion.div
+          initial={{ scaleX: 1 }}
+          animate={isInView ? { scaleX: 0 } : {}}
+          transition={{ duration: 2, delay: 1 }}
+          style={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            width: '50%',
+            height: '100%',
+            background: 'lime',
+            transformOrigin: 'right center',
+          }}
+        />
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            fontSize: '2rem',
+            zIndex: 5,
+          }}
+        >
+          Whether you’re sat in my chair or learning in my classroom...
+        </motion.p>
+        <img
+          src={brazil}
+          alt="Revealed content"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: -1,
+          }}
+        />
       </section>
     </div>
   )
