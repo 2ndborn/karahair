@@ -207,6 +207,7 @@ const Gallery = () => {
             height: '100%',
             background: 'lime',
             transformOrigin: 'left center',
+            zIndex: 6,
           }}
         />
         <motion.div
@@ -221,16 +222,30 @@ const Gallery = () => {
             height: '100%',
             background: 'lime',
             transformOrigin: 'right center',
+            zIndex: 6,
           }}
         />
+        <div 
+          style={{
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: '100%',
+            width: '100%',
+            backgroundColor: "rgba(0,0,0,0.2)",
+            fontSize: '2rem',
+            zIndex: 5,
+          }}
+        >
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.8, duration: 0.6 }}
+          transition={{ delay: 2.1, duration: 0.8 }}
           style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
+            
             transform: 'translate(-50%, -50%)',
             fontSize: '2rem',
             zIndex: 5,
@@ -238,7 +253,11 @@ const Gallery = () => {
         >
           Whether you’re sat in my chair or learning in my classroom...
         </motion.p>
-        <img
+        </div>
+        <motion.img
+          initial={{opacity: 0}}
+          animate={isInView ? {opacity: 1} : {}}
+          transition={{ duration: 2, delay: 1}}
           src={brazil}
           alt="Revealed content"
           style={{
@@ -248,6 +267,7 @@ const Gallery = () => {
             width: '100%',
             height: '100%',
             objectFit: 'cover',
+            objectPosition: '0 0',
             zIndex: -1,
           }}
         />
