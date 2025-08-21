@@ -6,9 +6,10 @@ import wigs from '../assets/wigs.webp';
 import curly from '../assets/curly.webp';
 import brazil from '../assets/brazil.webp';
 
+import { Reveal } from '../utils/Reveal';
+
 const Gallery = () => {
 
-  
   const ref = useRef(null);
   const boxRef = useRef(null);
   const workRef = useRef(null);
@@ -99,7 +100,7 @@ const Gallery = () => {
             </div>
           </div>
         </section>
-        <section className={styles.sec2}>
+      <section className={styles.sec2}>
         <div className={styles.para1}>
           <p>
             <span>I’m a colour specialist and hairdresser with over 20 years
@@ -109,14 +110,14 @@ const Gallery = () => {
         </div>
         <div className={styles.imageContainer}>
           <div className={styles.imageCon}>
-            <img className={styles.image} src={wigs} alt='wigs'/>
+            <img className={styles.image} src={wigs} alt='wigs' />
           </div>
         </div>
         <div className={styles.para2}>
           <p>
-            <span>Hair is my craft, but education is my purpose.</span> I run 
+            <span>Hair is my craft, but education is my purpose.</span> I run
             cutting edge courses built for the next wave of stylists
-            those who want to break rules the right way. 
+            those who want to break rules the right way.
           </p>
         </div>
         <div className={styles.para3}>
@@ -126,7 +127,7 @@ const Gallery = () => {
             major productions like:
           </p>
         </div>
-        </section>
+      </section>
       <section className={styles.sec3} ref={workRef}>
         <div className={styles.workContainer}>
           <motion.div
@@ -146,17 +147,21 @@ const Gallery = () => {
         <div className={styles.imageContainer2}>
           <img className={styles.curlyImage} src={curly} alt='curly hair' />
         </div>
+        <Reveal>
         <div className={styles.con}>
           <div className={styles.para4}>
-            <p>
-              <span>I’m all about pushing boundaries and raising 
-              standards</span> to ensure the future of hairdressing 
-              is diverse, skilled, and fearless.
-            </p>
+            <Reveal>
+              <p>
+                <span>I’m all about pushing boundaries and raising 
+                standards</span> to ensure the future of hairdressing 
+                is diverse, skilled, and fearless.
+              </p>
+            </Reveal>
           </div>
         </div>
+        </Reveal>
       </section>
-      <section className={styles.sec5}>
+      {/* <section className={styles.sec5}>
         <div className={styles.doorsWrapper}>
         <div className={styles.doorsContainer} ref={doorsRef}>
           <motion.img
@@ -193,7 +198,7 @@ const Gallery = () => {
           
         </motion.div>
         </div>
-      </section>
+      </section> */}
       <section ref={ref} style={{ height: '120vh', position: 'relative' }}>
         <motion.div
           initial={{ scaleX: 1 }}

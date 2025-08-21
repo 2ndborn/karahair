@@ -3,7 +3,7 @@ import { motion, useInView, useAnimation } from "motion/react"
 
 export const Reveal = ({children, variants, transition, delay, duration, ease}) => {
   const ref = useRef(null);
-  const inView = useInView(ref, {once: false});
+  const inView = useInView(ref, {once: false, margin: "-20% 0px"});
   const mainControl = useAnimation();
 
   useEffect(() => {
