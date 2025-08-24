@@ -1,19 +1,16 @@
-import {React, useRef, useEffect, useState}  from 'react'
+import {React, useRef}  from 'react'
 import styles from '../styles/Gallery.module.css'
-import { motion, useTransform, useScroll, useSpring, useMotionValueEvent, useInView } from 'framer-motion';
+import { motion, useTransform, useScroll, useInView } from 'framer-motion';
 
 import wigs from '../assets/wigs.webp';
 import curly from '../assets/curly.webp';
 import brazil from '../assets/brazil.webp';
-
-import { Reveal } from '../utils/Reveal';
 
 const Gallery = () => {
 
   const ref = useRef(null);
   const boxRef = useRef(null);
   const workRef = useRef(null);
-  const doorsRef = useRef(null);
   const { scrollYProgress: boxScrollY } = useScroll({
     target: boxRef,
     offset: ["start end", "start start"] // triggers when box enters and reaches top
@@ -21,61 +18,15 @@ const Gallery = () => {
   const {scrollYProgress: workScrollX} = useScroll({
     target: workRef,
   });
-  const {scrollYProgress: doorsScrollY} = useScroll({
-    target: doorsRef,
-    offset: ["start end", "end start"]
-  });
 
   const scale = useTransform(boxScrollY, [0, 0.9], [1, 0.65]);
   const x = useTransform(workScrollX, [0, 1], ["5%", "-75%"]);
-  const leftScaleRaw = useTransform(doorsScrollY, [0.25,0.65], [1,0])
-  const rightScaleRaw = useTransform(doorsScrollY, [0.25,0.65], [1,0])
-  const leftScale = useSpring(leftScaleRaw, {
-    stiffness: 100,
-    damping: 20,
-    mass: 0.5
-  });
-
-  const rightScale = useSpring(rightScaleRaw, {
-    stiffness: 100,
-    damping: 20,
-    mass: 0.5
-  });
-  const paraOpacity = useTransform(doorsScrollY, [0.55, 0.75], [0, 1], {clamp: true})
-  const paraY = useTransform(doorsScrollY, [0.55, 0.75], [20, 0], {clamp: true})
-  const paraScale = useTransform(doorsScrollY, [0.35, 0.4], [0.95, 1]);
-  const [textVisible, setTextVisible] = useState(false);
 
   const isInView = useInView(ref, { once: false, margin: '-20% 0px' });
-
-  useMotionValueEvent(doorsScrollY, "change", (v) => {
-    if (v > 0.38 && !textVisible) setTextVisible(true);
-  });
-
-  const imageOpacity = useTransform(doorsScrollY, [0, 1], [0.3, 1]);
-  const imageScale = useTransform(doorsScrollY, [0, 1], [1.2, 1]);
-
-  const [scrollVal, setScrollVal] = useState(0);
-
-  useMotionValueEvent(doorsScrollY, "change", (v) => {
-    setScrollVal(v);
-  });
 
   const workArray = [1,2,3,4,5];
   return (
     <div>
-      <motion.div style={{
-        position: 'fixed',
-        top: 10,
-        left: 10,
-        background: 'black',
-        color: 'white',
-        padding: '0.5rem',
-        zIndex: 9999
-      }}>
-        ScrollY: {scrollVal.toFixed(2)}
-      </motion.div>
-
       <section ref={ref} className={styles.sec}>
           <motion.div 
             className={styles.intro}
@@ -147,58 +98,16 @@ const Gallery = () => {
         <div className={styles.imageContainer2}>
           <img className={styles.curlyImage} src={curly} alt='curly hair' />
         </div>
-        <Reveal>
         <div className={styles.con}>
           <div className={styles.para4}>
-            <Reveal>
-              <p>
-                <span>I’m all about pushing boundaries and raising 
-                standards</span> to ensure the future of hairdressing 
-                is diverse, skilled, and fearless.
-              </p>
-            </Reveal>
+            <p>
+              <span>I’m all about pushing boundaries and raising
+                standards</span> to ensure the future of hairdressing
+              is diverse, skilled, and fearless.
+            </p>
           </div>
         </div>
-        </Reveal>
       </section>
-      {/* <section className={styles.sec5}>
-        <div className={styles.doorsWrapper}>
-        <div className={styles.doorsContainer} ref={doorsRef}>
-          <motion.img
-            className={styles.brazilContainer}
-            style={{
-               scale: imageScale,
-              }}
-            src={brazil} alt='Fabulour girl' 
-          />
-          <motion.div
-            className={styles.left}
-            style={{
-              scaleX: leftScale,
-              transformOrigin: "left center"
-            }}
-          transition={{ease: "easeInOut", duration: 1.5}}
-          ></motion.div>
-          <motion.div
-            className={styles.right}
-            style={{
-              scaleX: rightScale, transformOrigin: "right center"
-            }}
-            transition={{ease: "easeInOut", duration: 1.5}}
-          ></motion.div>
-        </div>
-          <motion.div className={styles.para5}>
-            <motion.p
-              style={{ opacity: paraOpacity, y: paraY }}
-            >
-            Whether you’re sat in my chair or learning in my
-            classroom, you’re getting more than just hair, <span>you’re getting
-              experience, vision, and straight-up passion.</span>
-          </motion.p>
-          
-        </motion.div>
-        </div>
-      </section> */}
       <section ref={ref} style={{ height: '120vh', position: 'relative' }}>
         <motion.div
           initial={{ scaleX: 1 }}

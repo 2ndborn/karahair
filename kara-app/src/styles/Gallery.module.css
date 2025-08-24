@@ -16,7 +16,7 @@
 
 .sec4 {
     position: relative;
-    height: 220vh;
+    height: 210vh;
     width: 100%;
 }
 
@@ -93,7 +93,7 @@
     display: flex;
     justify-content: center;
     align-items:center;
-    height: 120vh;
+    height: 110vh;
     width: 50%;
     font-size: 3rem;
     color: white;
