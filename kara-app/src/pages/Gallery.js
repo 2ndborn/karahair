@@ -1,7 +1,8 @@
-import {React, useRef}  from 'react'
+import {React, useEffect, useRef}  from 'react'
 import styles from '../styles/Gallery.module.css'
-import { motion, useTransform, useScroll, useInView } from 'framer-motion';
+import { motion, useTransform, useScroll, useInView, useAnimation, useSpring } from 'framer-motion';
 
+import kara from '../assets/karapic.webp'
 import wigs from '../assets/wigs.webp';
 import curly from '../assets/curly.webp';
 import brazil from '../assets/brazil.webp';
@@ -11,6 +12,24 @@ const Gallery = () => {
   const ref = useRef(null);
   const boxRef = useRef(null);
   const workRef = useRef(null);
+  
+  const controls = useAnimation();
+  const sec4Ref = useRef(null);
+  const {scrollYProgress} = useScroll({
+    target: sec4Ref,
+    offset: ["start end", "end start"]
+  })
+
+  useEffect(() => {
+    return scrollYProgress.on("change", (latest) => {
+      if (latest > 0.5 && latest < 0.6) {
+        controls.start({ opacity: 1, y: 0, transition: { duration: 0.8 } });
+      } else {
+        controls.start({ opacity: 0, y: 50 });
+      }
+    });
+  }, [scrollYProgress, controls]);
+
   const { scrollYProgress: boxScrollY } = useScroll({
     target: boxRef,
     offset: ["start end", "start start"] // triggers when box enters and reaches top
@@ -20,6 +39,8 @@ const Gallery = () => {
   });
 
   const scale = useTransform(boxScrollY, [0, 0.9], [1, 0.65]);
+  const opacity = useTransform(boxScrollY, [0, 0.5], [0, 1]);
+  const smoothOpacity = useSpring(opacity, { stiffness: 20, damping: 20, mass: 1 });
   const x = useTransform(workScrollX, [0, 1], ["5%", "-75%"]);
 
   const isInView = useInView(ref, { once: false, margin: '-20% 0px' });
@@ -37,20 +58,35 @@ const Gallery = () => {
             transformOrigin: "left center",
             scale }}
             >
-              <h1>Hi I am Kara</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam sed repellendus maiores possimus expedita
-                consequuntur nam. Similique, maxime esse! Ullam deserunt numquam id laboriosam in temporibus quod eveniet corrupti
-                ducimus.
-              </p>
+              <motion.h1
+                initial={{ opacity: 0}}
+                whileInView={{ opacity: 1}}
+                transition={{ duration: 1, delay: 0.5, ease: "easeIn" }}
+              >Hi I am Kara</motion.h1>
+              <motion.p
+                initial={{ opacity: 0}}
+                whileInView={{ opacity: 1}}
+                transition={{ duration: 1, delay: 1.5, ease: "easeIn" }}
+              >
+                That moment when a client looks into the mirror
+                  and sees not just a fresh style, but the actualised
+                  version of their internal self staring back at them.
+                  That’s why I do what I do.
+              </motion.p>
             </motion.div>
           </motion.div>
           <div className={styles.con} ref={boxRef}>
             <div className={styles.container}>
-              <div className={styles.box}></div>
+              {/* <div className={styles.box}></div> */}
+              <motion.img
+                className={styles.karaImage}
+                style={{opacity: smoothOpacity}}
+                src={kara}
+                alt="owner"
+              />
             </div>
           </div>
-        </section>
+      </section>
       <section className={styles.sec2}>
         <div className={styles.para1}>
           <p>
@@ -94,18 +130,22 @@ const Gallery = () => {
           </motion.div>
         </div>
       </section>
-      <section className={styles.sec4}>
+      <section className={styles.sec4} ref={sec4Ref}>
         <div className={styles.imageContainer2}>
           <img className={styles.curlyImage} src={curly} alt='curly hair' />
         </div>
         <div className={styles.con}>
-          <div className={styles.para4}>
+          <motion.div 
+            className={styles.para4}
+            style={{ opacity: 0, y: 50 }}  
+            animate={controls}
+          >
             <p>
               <span>I’m all about pushing boundaries and raising
                 standards</span> to ensure the future of hairdressing
               is diverse, skilled, and fearless.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
       <section ref={ref} style={{ height: '120vh', position: 'relative' }}>
