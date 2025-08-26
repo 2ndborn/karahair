@@ -69,12 +69,6 @@
     z-index: 11;
 }
 
-.box {
-    height: 250px;
-    width: 250px;
-    background-color: black;
-}
-
 .karaImage {
     border-radius: 10px;
     object-fit: fill;
@@ -82,14 +76,25 @@
     #000 1px 1px 2px;
 }
 
-.para1, .para2, .para3 {
+.para1 {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.para2, .para3 {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     font-size: 2rem;
-    text-align: justify;
 }
+
 
 .para2, .para3 {
     width: 50%;

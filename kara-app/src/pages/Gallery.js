@@ -12,6 +12,7 @@ const Gallery = () => {
   const ref = useRef(null);
   const boxRef = useRef(null);
   const workRef = useRef(null);
+  const para1Ref = useRef(null);
   
   const controls = useAnimation();
   const sec4Ref = useRef(null);
@@ -37,10 +38,16 @@ const Gallery = () => {
   const {scrollYProgress: workScrollX} = useScroll({
     target: workRef,
   });
+  const {scrollYProgress: para1ScrollY} = useScroll({
+    target: para1Ref,
+    offset: ["start end", "end start"]
+  });
 
   const scale = useTransform(boxScrollY, [0, 0.9], [1, 0.65]);
   const opacity = useTransform(boxScrollY, [0, 0.5], [0, 1]);
   const smoothOpacity = useSpring(opacity, { stiffness: 20, damping: 20, mass: 1 });
+  const spanOne = useTransform(para1ScrollY, [0, 0.3], [0, 1]);
+  const spanTwo = useTransform(para1ScrollY, [0.4, 0.7], [0, 1]);
   const x = useTransform(workScrollX, [0, 1], ["5%", "-75%"]);
 
   const isInView = useInView(ref, { once: false, margin: '-20% 0px' });
@@ -77,7 +84,6 @@ const Gallery = () => {
           </motion.div>
           <div className={styles.con} ref={boxRef}>
             <div className={styles.container}>
-              {/* <div className={styles.box}></div> */}
               <motion.img
                 className={styles.karaImage}
                 style={{opacity: smoothOpacity}}
@@ -88,11 +94,18 @@ const Gallery = () => {
           </div>
       </section>
       <section className={styles.sec2}>
-        <div className={styles.para1}>
+        <div className={styles.para1} ref={para1Ref}>
           <p>
-            <span>I’m a colour specialist and hairdresser with over 20 years
-              in the game</span>, working across every hair texture, every
-            shade, every style.
+            <motion.span
+              style={{ opacity: spanOne }}
+            >
+              I’m a colour specialist and hairdresser with over 20 years
+              in the game
+            </motion.span>
+            <motion.span style={{ opacity: spanTwo }}>
+              , working across every hair texture, every
+              shade, every style.
+            </motion.span>
           </p>
         </div>
         <div className={styles.imageContainer}>
