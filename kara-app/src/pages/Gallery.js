@@ -145,7 +145,7 @@ const Gallery = () => {
           </p>
         </div>
       </section>
-      <section style={{padding: "20px"}}>
+      <section style={{position: "relative"}}>
         <div className={styles.imageContainer} ref={wigRef}>
           <div className={styles.imageCon}>
             <motion.img 
