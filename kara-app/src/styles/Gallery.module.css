@@ -1,31 +1,10 @@
+
+/***************************************Intro Section*******************************************/
 .sec {
     position: relative;
     height: 200vh;
     width: 100%;
     background-color: #fff5eb;
-}
-
-.sec2 {
-    position: relative;
-    height: 200vh;
-}
-
-.sec3 {
-    position: relative;
-    height: 300vh;
-    background-color: black;
-}
-
-.sec4 {
-    position: relative;
-    height: 210vh;
-    width: 100%;
-}
-
-.sec5 {
-    position: relative;
-    height: 3000vh;
-    width: 100%;
 }
 
 .intro {
@@ -55,27 +34,18 @@
     font-size: 4rem;
 }
 
-.con {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    height: 100vh;
-    width: 33.3333%;
-    z-index: 11;
-}
-
 .karaImage {
     border-radius: 10px;
     object-fit: fill;
     box-shadow: #000 2px 2px 4px,
     #000 1px 1px 2px;
+}
+
+/************************************************First Section**********************************************/
+
+.sec1 {
+    position: relative;
+    height: 200vh;
 }
 
 .para1 {
@@ -91,6 +61,12 @@
     padding: 3rem;
 }
 
+/******************************************Second Section***********************************************/
+
+.sec2 {
+    position: relative;
+}
+
 .para2, .para3 {
     display: flex;
     justify-content: center;
@@ -99,36 +75,6 @@
     width: 50%;
     font-size: 2rem;
     padding: 20px;
-}
-
-.para4 {
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    height: 110vh;
-    width: 50%;
-    font-size: 3rem;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.doorsWrapper {
-    position: sticky;
-    top: 0;
-    background: rgba(255, 0, 0, 0.1);
-    height: 110vh; /* or whatever fits your layout */
-    overflow: hidden;
-}
-
-.para5 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-    z-index: 5;
-    pointer-events: none;
 }
 
 .imageContainer {
@@ -159,6 +105,13 @@
     rgba(0, 0, 0, 0.8) 4px 4px 8px;
 }
 
+/******************************************Third Section***********************************************/
+
+.sec3 {
+    position: relative;
+    height: 300vh;
+    background-color: black;
+}
 .workContainer {
     position: sticky;
     top: 0;
@@ -189,6 +142,42 @@
     rgba(0, 0, 0, 0.5) 3px 3px 8px;
 }
 
+/******************************************Fourth Section***********************************************/
+
+.sec4 {
+    position: relative;
+    height: 210vh;
+    width: 100%;
+}
+
+.con {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+    width: 33.3333%;
+    z-index: 11;
+}
+
+.para4 {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 110vh;
+    width: 50%;
+    font-size: 3rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 11;
+}
+
 .imageContainer2 {
     position: sticky;
     top: 0;
@@ -205,40 +194,4 @@
     object-position: 0 -50px;
 }
 
-.doorsContainer {
-    position:sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 110vh;
-    z-index: 5;
-    overflow: hidden;
-}
-
-.brazilContainer {
-    position:absolute;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    object-fit: cover;
-    z-index: 3;
-}
-
-.left, .right {
-    position: absolute;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background-color: lime;
-    border: 2px solid #000;
-    z-index: 10;
-}
-
-.left {
-  left: 0;
-}
-
-.right {
-  right: 0;
-}
+/******************************************Fifth Section***********************************************/

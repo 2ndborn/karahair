@@ -129,7 +129,7 @@ const Gallery = () => {
             </div>
           </div>
       </section>
-      <section className={styles.sec2}>
+      <section className={styles.sec1}>
         <div className={styles.para1} ref={para1Ref}>
           <p>
             <motion.span
@@ -145,7 +145,7 @@ const Gallery = () => {
           </p>
         </div>
       </section>
-      <section style={{position: "relative"}}>
+      <section className={styles.sec2}>
         <div className={styles.imageContainer} ref={wigRef}>
           <div className={styles.imageCon}>
             <motion.img 
