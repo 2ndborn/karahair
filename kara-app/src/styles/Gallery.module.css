@@ -6,6 +6,7 @@
 
 .sec2 {
     position: relative;
+    height: 200vh;
 }
 
 .sec3 {
@@ -92,12 +93,9 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-size: 2rem;
-}
-
-
-.para2, .para3 {
     width: 50%;
+    font-size: 2rem;
+    padding: 20px;
 }
 
 .para4 {

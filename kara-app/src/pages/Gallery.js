@@ -6,8 +6,13 @@ import kara from '../assets/karapic.webp'
 import wigs from '../assets/wigs.webp';
 import curly from '../assets/curly.webp';
 import brazil from '../assets/brazil.webp';
+import { useScrollFade } from '../hooks/useScrollFade';
 
 const Gallery = () => {
+
+  const { ref: para2Ref, opacity: para2Opacity } = useScrollFade(["start end", "end center"], [0.1, 0.5]);
+  const { ref: para3Ref, opacity: para3Opacity } = useScrollFade(["start end", "end center"], [0.1, 0.5]);
+  const { ref: wigRef, opacity: wigOpacity } = useScrollFade(["start end", "end center"], [0.2, 0.5]);
 
   const ref = useRef(null);
   const boxRef = useRef(null);
@@ -47,7 +52,9 @@ const Gallery = () => {
   const opacity = useTransform(boxScrollY, [0, 0.5], [0, 1]);
   const smoothOpacity = useSpring(opacity, { stiffness: 20, damping: 20, mass: 1 });
   const spanOne = useTransform(para1ScrollY, [0, 0.3], [0, 1]);
-  const spanTwo = useTransform(para1ScrollY, [0.4, 0.7], [0, 1]);
+  const spanTwo = useTransform(para1ScrollY, [0.4, 0.6], [0, 1]);
+  const smoothSpanOne = useSpring(spanOne, {stiffness: 40, damping: 20});
+  const smoothSpanTwo = useSpring(spanTwo, {stiffness: 40, damping: 20});
   const x = useTransform(workScrollX, [0, 1], ["5%", "-75%"]);
 
   const isInView = useInView(ref, { once: false, margin: '-20% 0px' });
@@ -97,35 +104,43 @@ const Gallery = () => {
         <div className={styles.para1} ref={para1Ref}>
           <p>
             <motion.span
-              style={{ opacity: spanOne }}
+              style={{ opacity: smoothSpanOne }}
             >
               I’m a colour specialist and hairdresser with over 20 years
               in the game
             </motion.span>
-            <motion.span style={{ opacity: spanTwo }}>
+            <motion.span style={{ opacity: smoothSpanTwo }}>
               , working across every hair texture, every
               shade, every style.
             </motion.span>
           </p>
         </div>
-        <div className={styles.imageContainer}>
+      </section>
+      <section>
+        <div className={styles.imageContainer} ref={wigRef}>
           <div className={styles.imageCon}>
-            <img className={styles.image} src={wigs} alt='wigs' />
+            <motion.img 
+            className={styles.image}
+            style={{ opacity: wigOpacity }}
+            src={wigs} 
+            alt='wigs' 
+            />
           </div>
         </div>
-        <div className={styles.para2}>
-          <p>
-            <span>Hair is my craft, but education is my purpose.</span> I run
+        <div className={styles.para2} ref={para2Ref}>
+          <motion.p style={{ opacity: para2Opacity}}>
+              Hair is my craft, but education is my purpose.
+             I run
             cutting edge courses built for the next wave of stylists
             those who want to break rules the right way.
-          </p>
+          </motion.p>
         </div>
-        <div className={styles.para3}>
-          <p>
-            <span>My work doesn’t just follow trends it helps
-              create them.</span> From the salon floor to the set, I’ve coloured for
+        <div className={styles.para3} ref={para3Ref}>
+          <motion.p style={{ opacity: para3Opacity}}>
+            My work doesn’t just follow trends it helps
+              create them. From the salon floor to the set, I’ve coloured for
             major productions like:
-          </p>
+          </motion.p>
         </div>
       </section>
       <section className={styles.sec3} ref={workRef}>
