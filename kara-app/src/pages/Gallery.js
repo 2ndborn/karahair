@@ -6,6 +6,10 @@ import kara from '../assets/karapic.webp'
 import wigs from '../assets/wigs.webp';
 import curly from '../assets/curly.webp';
 import brazil from '../assets/brazil.webp';
+import bel from '../assets/bel.webp';
+import jane from '../assets/jane.webp';
+import forsytes from '../assets/forsytes.webp';
+import treason from '../assets/treason.webp';
 import { useScrollFade } from '../hooks/useScrollFade';
 
 const Gallery = () => {
@@ -52,14 +56,39 @@ const Gallery = () => {
   const opacity = useTransform(boxScrollY, [0, 0.5], [0, 1]);
   const smoothOpacity = useSpring(opacity, { stiffness: 20, damping: 20, mass: 1 });
   const spanOne = useTransform(para1ScrollY, [0, 0.3], [0, 1]);
-  const spanTwo = useTransform(para1ScrollY, [0.4, 0.6], [0, 1]);
+  const spanTwo = useTransform(para1ScrollY, [0.4, 0.55], [0, 1]);
   const smoothSpanOne = useSpring(spanOne, {stiffness: 40, damping: 20});
   const smoothSpanTwo = useSpring(spanTwo, {stiffness: 40, damping: 20});
   const x = useTransform(workScrollX, [0, 1], ["5%", "-75%"]);
 
   const isInView = useInView(ref, { once: false, margin: '-20% 0px' });
 
-  const workArray = [1,2,3,4,5];
+  const workArray = [
+    {
+      id: 1,
+      company: "ITV",
+      title: "Belgravia The Next Chapter",
+      image: bel,
+    },
+    {
+      id: 2,
+      company: "Amazon Prime",
+      title: "My Lady Jane",
+      image: jane,
+    },
+    {
+      id: 3,
+      company: "Channel 5",
+      title: "The Forsytes",
+      image: forsytes,
+    },
+    {
+      id: 4,
+      company: "Netflix",
+      title: "Treason",
+      image: treason,
+    },
+  ];
   return (
     <div>
       <section ref={ref} className={styles.sec}>
@@ -116,7 +145,7 @@ const Gallery = () => {
           </p>
         </div>
       </section>
-      <section>
+      <section style={{padding: "20px"}}>
         <div className={styles.imageContainer} ref={wigRef}>
           <div className={styles.imageCon}>
             <motion.img 
@@ -147,12 +176,19 @@ const Gallery = () => {
         <div className={styles.workContainer}>
           <motion.div
             className={styles.work}
-            
             style={{ x }}
           >
             {workArray.map((work) => (
-                <div key={work} className={styles.cards}>
-                  {work}
+              <div key={work.id} className={styles.cards}>
+                <img
+                  src={work.image} 
+                  alt='studios' 
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    objectFit: "fill"
+                  }}
+                  />
                 </div>
             ))}
           </motion.div>
@@ -213,6 +249,7 @@ const Gallery = () => {
             top: '0',
             left: '0',
             display: "flex",
+            flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
             height: '100%',
@@ -222,26 +259,31 @@ const Gallery = () => {
             zIndex: 5,
           }}
         >
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 2.1, duration: 0.8 }}
-          style={{
-            
-            transform: 'translate(-50%, -50%)',
-            fontSize: '2rem',
-            zIndex: 5,
-          }}
-        >
-          Whether you’re sat in my chair or learning in my classroom...
-        </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 2.1, duration: 0.8 }}
+            style={{
+              color: "white",
+              textAlign: "center",
+              transform: 'translate(-50%, -50%)',
+              fontSize: '2rem',
+              padding: "0 20px",
+              zIndex: 5,
+            }}
+          >
+            Whether you’re sat in my chair or learning in my
+            classroom, you’re getting more than just hair, <span>you’re getting
+            experience, vision, and straight-up passion.</span>
+          </motion.p>
+          <button>Click</button>
         </div>
         <motion.img
           initial={{opacity: 0}}
           animate={isInView ? {opacity: 1} : {}}
           transition={{ duration: 2, delay: 1}}
           src={brazil}
-          alt="Revealed content"
+          alt="a model"
           style={{
             position: 'absolute',
             top: 0,

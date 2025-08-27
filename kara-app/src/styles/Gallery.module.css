@@ -2,6 +2,7 @@
     position: relative;
     height: 200vh;
     width: 100%;
+    background-color: #fff5eb;
 }
 
 .sec2 {
@@ -37,7 +38,6 @@
     text-align: center;
     height: 100vh;
     width: 100%;
-    background-color: rgb(252, 177, 177);
     z-index: 10;
     transform-origin: "left center";
     padding: 3rem;
@@ -81,11 +81,13 @@
     position: sticky;
     top: 0;
     height: 100vh;
+    background-image: linear-gradient(#fff5eb 0%, #fff 20%, #fff 80%, #fff5eb 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 4rem;
+    font-size: 3rem;
+    padding: 3rem;
 }
 
 .para2, .para3 {
@@ -141,14 +143,13 @@
 .imageCon {
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    align-items: end;
+    justify-content: center;
     height: 100vh;
     width: 50%;
 }
 
 .image {
-    height: 100%;
+    height: 95%;
     width: 100%;
     object-fit: cover;
     object-position: 0px 21px;
@@ -158,10 +159,11 @@
     position: sticky;
     top: 0;
     height: 100vh;
-    background-color: black;
+    background-color: #fff5eb;
     display: flex;
     align-items: center;
     overflow: hidden; /* Hide overflow as cards move */
+    box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.4);
 }
 
 .work {
@@ -169,14 +171,18 @@
 }
 
 .cards {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 5rem;
     height: 50vh;
     width: 350px;
     background-color: white;
-    margin: 0 10px
+    margin: 0 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 4px,
+    rgba(0, 0, 0, 0.5) 3px 3px 8px;
 }
 
 .imageContainer2 {
