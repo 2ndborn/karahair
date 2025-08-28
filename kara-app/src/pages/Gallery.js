@@ -132,11 +132,11 @@ const Gallery = () => {
       <section className={styles.sec2}>
         <div className={styles.imageContainer} ref={wigRef}>
           <div className={styles.imageCon}>
-            <motion.img 
-            className={styles.image}
-            style={{ opacity: wigOpacity }}
-            src={wigs} 
-            alt='wigs' 
+            <motion.img
+              className={styles.image}
+              style={{ opacity: wigOpacity }}
+              src={wigs}
+              alt='wigs'
             />
           </div>
         </div>

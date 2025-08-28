@@ -75,6 +75,7 @@
 .sec2 {
     position: relative;
     background-image: linear-gradient(#fff, #fff5eb);
+    padding: 0 20px;
 }
 
 .para2, .para3 {
@@ -89,7 +90,7 @@
 
 .imageContainer {
     position: sticky;
-    top: 0;
+    top: 50px;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -100,8 +101,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 95vh;
-    width: 50%;
+    align-items: center;
+    height: 80vh;
+    width: 40%;
     padding: 20px;
 }
 
