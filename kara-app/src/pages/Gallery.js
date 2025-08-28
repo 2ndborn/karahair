@@ -23,22 +23,6 @@ const Gallery = () => {
   const workRef = useRef(null);
   const para1Ref = useRef(null);
   
-  const controls = useAnimation();
-  const sec4Ref = useRef(null);
-  const {scrollYProgress} = useScroll({
-    target: sec4Ref,
-    offset: ["start end", "end start"]
-  })
-
-  useEffect(() => {
-    return scrollYProgress.on("change", (latest) => {
-      if (latest > 0.5 && latest < 0.6) {
-        controls.start({ opacity: 1, y: 0, transition: { duration: 0.8 } });
-      } else {
-        controls.start({ opacity: 0, y: 50 });
-      }
-    });
-  }, [scrollYProgress, controls]);
 
   const { scrollYProgress: boxScrollY } = useScroll({
     target: boxRef,
@@ -194,15 +178,16 @@ const Gallery = () => {
           </motion.div>
         </div>
       </section>
-      <section className={styles.sec4} ref={sec4Ref}>
+      <section className={styles.sec4}>
         <div className={styles.imageContainer2}>
           <img className={styles.curlyImage} src={curly} alt='curly hair' />
         </div>
         <div className={styles.con}>
           <motion.div 
             className={styles.para4}
-            style={{ opacity: 0, y: 50 }}  
-            animate={controls}
+            initial={{opacity: 0}}
+            whileInView={{opacity: 1}}
+            transition={{duration: 1, delay: 0.5, ease: "easeIn"}}
           >
             <p>
               <span>I’m all about pushing boundaries and raising

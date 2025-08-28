@@ -22,6 +22,15 @@
     padding: 3rem;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+    width: 33.3333%;
+    z-index: 11;
+}
+
 .text {
     display: flex;
     flex-direction: column;
@@ -52,7 +61,7 @@
     position: sticky;
     top: 0;
     height: 100vh;
-    background-image: linear-gradient(#fff5eb 0%, #fff 20%, #fff 80%, #fff5eb 100%);
+    background-image: linear-gradient(#fff5eb, #fff);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,6 +74,7 @@
 
 .sec2 {
     position: relative;
+    background-image: linear-gradient(#fff, #fff5eb);
 }
 
 .para2, .para3 {
@@ -146,8 +156,6 @@
 
 .sec4 {
     position: relative;
-    height: 210vh;
-    width: 100%;
 }
 
 .con {
@@ -157,20 +165,11 @@
     justify-content: flex-end;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    height: 100vh;
-    width: 33.3333%;
-    z-index: 11;
-}
-
 .para4 {
     display: flex;
     justify-content: center;
     align-items:center;
-    height: 110vh;
+    height: 100vh;
     width: 50%;
     font-size: 3rem;
     color: white;
