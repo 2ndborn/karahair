@@ -81,8 +81,8 @@
 .para3 {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: start;
+    height: 150vh;
     width: 50%;
     font-size: 2rem;
     padding: 20px;

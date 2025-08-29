@@ -48,44 +48,31 @@ const Gallery = () => {
 
   const isInView = useInView(ref, { once: false, margin: '-20% 0px' });
 
-  const images = [wigs, kara, brazil]
+  const images = [
+    {image: wigs, label: "wig making"},
+    {image: kara, label: "owner"},
+    {image: brazil, label: "model"},
+  ];
 
-  const paraRefs = [useRef(null), useRef(null), useRef(null)];
+  const paraRefOne = useRef(null);
+  const paraRefTwo = useRef(null);
+  const paraRefThree = useRef(null);
 
-  const { scrollYProgress: scrollY1 } = useScroll({ target: paraRefs[0], offset: ["start end", "end center"] });
-  const { scrollYProgress: scrollY2 } = useScroll({ target: paraRefs[1], offset: ["start end", "end center"] });
-  const { scrollYProgress: scrollY3 } = useScroll({ target: paraRefs[2], offset: ["start end", "end center"] });
-
-  const visibility1 = useTransform(scrollY1, [0.45, 0.55], [0, 1]);
-  const visibility2 = useTransform(scrollY2, [0.45, 0.55], [0, 1]);
-  const visibility3 = useTransform(scrollY3, [0.45, 0.55], [0, 1]);
-
-  const [activeIndex, setActiveIndex] = useState(0);
+  const inView1 = useInView(paraRefOne, { margin: '-50% 0px -50% 0px' });
+  const inView2 = useInView(paraRefTwo, { margin: '-50% 0px -50% 0px' });
+  const inView3 = useInView(paraRefThree, { margin: '-50% 0px -50% 0px' });
 
   useEffect(() => {
-    console.log("Effect mounted");
+    if (inView1) setActiveIndex(0);
+    else if (inView2) setActiveIndex(1);
+    else if (inView3) setActiveIndex(2);
+  }, [inView1, inView2, inView3]);
 
-    const unsub1 = visibility1.on("change", checkActive);
-    const unsub2 = visibility2.on("change", checkActive);
-    const unsub3 = visibility3.on("change", checkActive);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [paraOne, paraTwo, paraThree] = paragraphs;
 
-    function checkActive() {
-      console.log("checkActive fired");
-      const values = [visibility1.get(), visibility2.get(), visibility3.get()];
-      const max = Math.max(...values);
-      const index = values.indexOf(max);
-      setActiveIndex(index);
-    }
-
-    return () => {
-      unsub1();
-      unsub2();
-      unsub3();
-    };
-  }, [visibility1, visibility2, visibility3, activeIndex]);
-
-  const currentSrc = images[activeIndex];
-
+  const paraViewOne = useRef(null);
+  const useInViewOne = useInView(paraViewOne, { margin: '-40% 0px -40% 0px', threshold: 0.1 })
   const workArray = [
     {
       id: 1,
@@ -115,7 +102,7 @@ const Gallery = () => {
 
   return (
     <div>
-      <section ref={ref} className={styles.sec}>
+      <section className={styles.sec}>
           <motion.div 
             className={styles.intro}
           >
@@ -129,7 +116,9 @@ const Gallery = () => {
                 initial={{ opacity: 0}}
                 whileInView={{ opacity: 1}}
                 transition={{ duration: 1, delay: 0.5, ease: "easeIn" }}
-              >Hi I am Kara</motion.h1>
+              >
+                Hi I am Kara
+              </motion.h1>
               <motion.p
                 initial={{ opacity: 0}}
                 whileInView={{ opacity: 1}}
@@ -173,24 +162,36 @@ const Gallery = () => {
         <div className={styles.imageContainer}>
           <div className={styles.imageCon}>
             <motion.img
-              key={currentSrc}
-              src={currentSrc}
-              alt="scroll-triggered visual"
+              key={activeIndex}
+              src={images[activeIndex]?.image}
+              alt={images[activeIndex]?.label}
               className={styles.image}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, scale: 1.05, filter: 'blur(4px)' }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              transition={{ duration: 1.5, ease:"easeInOut" }}
             />
           </div>
         </div>
-
-        {paragraphs.map((para, index) => (
-          <div className={styles.para3} ref={paraRefs[index]} key={index}>
-            <p>
-              <strong>{para.primary}</strong> {para.secondary}
-            </p>
-          </div>
-        ))}
+        <div className={styles.para3} ref={paraRefOne}>
+          <motion.p
+            ref={paraViewOne}
+            initial={{opacity: 0}}
+            animate={{opacity: useInViewOne ? 1 : 0}}
+            transition={{ duration: 0.5, ease:"easeInOut"}}
+          >
+            <strong>{paraOne.primary}</strong>{paraOne.secondary}
+          </motion.p>
+        </div>
+        <div className={styles.para3} ref={paraRefTwo}>
+          <p>
+            <strong>{paraTwo.primary}</strong> {paraTwo.secondary}
+          </p>
+        </div>
+        <div className={styles.para3} ref={paraRefThree}>
+          <p>
+            <strong>{paraThree.primary}</strong> {paraThree.secondary}
+          </p>
+        </div>
       </section>
 
       <section className={styles.sec3} ref={workRef}>
