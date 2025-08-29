@@ -1,6 +1,6 @@
 import {React, useEffect, useRef, useState}  from 'react'
 import styles from '../styles/Gallery.module.css'
-import { motion, useTransform, useScroll, useInView, useAnimation, useSpring, useMotionValueEvent } from 'framer-motion';
+import { motion, useTransform, useScroll, useInView, useAnimation, useSpring, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 
 import kara from '../assets/karapic.webp'
 import wigs from '../assets/wigs.webp';
@@ -54,25 +54,32 @@ const Gallery = () => {
     {image: brazil, label: "model"},
   ];
 
-  const paraRefOne = useRef(null);
-  const paraRefTwo = useRef(null);
-  const paraRefThree = useRef(null);
+  // const inViewOne = useInView(paraRefOne, { margin: '-40% 0px -40% 0px' });
+  // const inView2 = useInView(paraRefTwo, { margin: '-40% 0px -40% 0px' });
+  // const inView3 = useInView(paraRefThree, { margin: '-40% 0px -40% 0px' });
 
-  const inView1 = useInView(paraRefOne, { margin: '-50% 0px -50% 0px' });
-  const inView2 = useInView(paraRefTwo, { margin: '-50% 0px -50% 0px' });
-  const inView3 = useInView(paraRefThree, { margin: '-50% 0px -50% 0px' });
+  const { ref: paraRefOne, inView: inViewOne } = useScrollReveal();
+  const { ref: paraRefTwo, inView: inViewTwo } = useScrollReveal();
+  const { ref: paraRefThree, inView: inViewThree } = useScrollReveal();
 
   useEffect(() => {
-    if (inView1) setActiveIndex(0);
-    else if (inView2) setActiveIndex(1);
-    else if (inView3) setActiveIndex(2);
-  }, [inView1, inView2, inView3]);
+    if (inViewOne) setActiveIndex(0);
+    else if (inViewTwo) setActiveIndex(1);
+    else if (inViewThree) setActiveIndex(2);
+  }, [inViewOne, inViewTwo, inViewThree]);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [paraOne, paraTwo, paraThree] = paragraphs;
 
-  const paraViewOne = useRef(null);
-  const useInViewOne = useInView(paraViewOne, { margin: '-40% 0px -40% 0px', threshold: 0.1 })
+  // const paraViewOne = useRef(null);
+  // const useInViewOne = useInView(paraViewOne, { margin: '-40% 0px -40% 0px', threshold: 0.1 })
+
+  function useScrollReveal(margin = "-40% 0px -40% 0px", threshold = 0.1) {
+    const ref = useRef(null);
+    const inView = useInView(ref, {margin, threshold});
+    return {ref, inView}
+  }
+
   const workArray = [
     {
       id: 1,
@@ -161,36 +168,49 @@ const Gallery = () => {
       <section className={styles.sec2}>
         <div className={styles.imageContainer}>
           <div className={styles.imageCon}>
+            <AnimatePresence mode='wait'>
             <motion.img
               key={activeIndex}
               src={images[activeIndex]?.image}
               alt={images[activeIndex]?.label}
               className={styles.image}
-              initial={{ opacity: 0, scale: 1.05, filter: 'blur(4px)' }}
+              initial={{ opacity: 0, scale: 1.1, filter: 'blur(4px)' }}
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-              transition={{ duration: 1.5, ease:"easeInOut" }}
+              exit={{ opacity: 0, scale: 0.95, y: -20, filter: 'blur(6px)' }}
+              transition={{ duration: 0.8, ease:"easeInOut" }}
             />
+            </AnimatePresence>
           </div>
         </div>
-        <div className={styles.para3} ref={paraRefOne}>
+        <div className={styles.para3}>
           <motion.p
-            ref={paraViewOne}
+            ref={paraRefOne}
             initial={{opacity: 0}}
-            animate={{opacity: useInViewOne ? 1 : 0}}
+            animate={{opacity: inViewOne ? 1 : 0, y: inViewOne ? 0 : -20}}
             transition={{ duration: 0.5, ease:"easeInOut"}}
           >
             <strong>{paraOne.primary}</strong>{paraOne.secondary}
           </motion.p>
         </div>
-        <div className={styles.para3} ref={paraRefTwo}>
-          <p>
+        <div className={styles.para3}>
+          <motion.p 
+            ref={paraRefTwo}
+            initial={{opacity: 0}}
+            animate={{opacity: inViewTwo ? 1 : 0}}
+            transition={{ duration: 0.5, ease:"easeInOut"}}
+          >
             <strong>{paraTwo.primary}</strong> {paraTwo.secondary}
-          </p>
+          </motion.p>
         </div>
-        <div className={styles.para3} ref={paraRefThree}>
-          <p>
+        <div className={styles.para3}>
+          <motion.p 
+            ref={paraRefThree}
+            initial={{opacity: 0}}
+            animate={{opacity: inViewThree ? 1 : 0}}
+            transition={{ duration: 0.5, ease:"easeInOut"}}
+          >
             <strong>{paraThree.primary}</strong> {paraThree.secondary}
-          </p>
+          </motion.p>
         </div>
       </section>
 
