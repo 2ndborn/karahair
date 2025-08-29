@@ -78,7 +78,7 @@
     padding: 0 20px;
 }
 
-.para2, .para3 {
+.para3 {
     display: flex;
     justify-content: center;
     align-items: center;

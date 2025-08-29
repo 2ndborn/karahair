@@ -1,6 +1,6 @@
-import {React, useEffect, useRef}  from 'react'
+import {React, useEffect, useRef, useState}  from 'react'
 import styles from '../styles/Gallery.module.css'
-import { motion, useTransform, useScroll, useInView, useAnimation, useSpring } from 'framer-motion';
+import { motion, useTransform, useScroll, useInView, useAnimation, useSpring, useMotionValueEvent } from 'framer-motion';
 
 import kara from '../assets/karapic.webp'
 import wigs from '../assets/wigs.webp';
@@ -11,17 +11,18 @@ import jane from '../assets/jane.webp';
 import forsytes from '../assets/forsytes.webp';
 import treason from '../assets/treason.webp';
 import { useScrollFade } from '../hooks/useScrollFade';
+import { paragraphs } from '../serviceData/paragraphData';
 
 const Gallery = () => {
 
-  const { ref: para2Ref, opacity: para2Opacity } = useScrollFade(["start end", "end center"], [0.1, 0.5]);
-  const { ref: para3Ref, opacity: para3Opacity } = useScrollFade(["start end", "end center"], [0.1, 0.5]);
+  // const { ref: para2Ref, opacity: para2Opacity } = useScrollFade(["start end", "end center"], [0.1, 0.5]);
+  // const { ref: para3Ref, opacity: para3Opacity } = useScrollFade(["start end", "end center"], [0.1, 0.5]);
   const { ref: wigRef, opacity: wigOpacity } = useScrollFade(["start end", "end center"], [0.2, 0.5]);
 
   const ref = useRef(null);
   const boxRef = useRef(null);
   const workRef = useRef(null);
-  const para1Ref = useRef(null);
+  const para0Ref = useRef(null);
   
 
   const { scrollYProgress: boxScrollY } = useScroll({
@@ -32,7 +33,7 @@ const Gallery = () => {
     target: workRef,
   });
   const {scrollYProgress: para1ScrollY} = useScroll({
-    target: para1Ref,
+    target: para0Ref,
     offset: ["start end", "end start"]
   });
 
@@ -46,6 +47,44 @@ const Gallery = () => {
   const x = useTransform(workScrollX, [0, 1], ["5%", "-75%"]);
 
   const isInView = useInView(ref, { once: false, margin: '-20% 0px' });
+
+  const images = [wigs, kara, brazil]
+
+  const paraRefs = [useRef(null), useRef(null), useRef(null)];
+
+  const { scrollYProgress: scrollY1 } = useScroll({ target: paraRefs[0], offset: ["start end", "end center"] });
+  const { scrollYProgress: scrollY2 } = useScroll({ target: paraRefs[1], offset: ["start end", "end center"] });
+  const { scrollYProgress: scrollY3 } = useScroll({ target: paraRefs[2], offset: ["start end", "end center"] });
+
+  const visibility1 = useTransform(scrollY1, [0.45, 0.55], [0, 1]);
+  const visibility2 = useTransform(scrollY2, [0.45, 0.55], [0, 1]);
+  const visibility3 = useTransform(scrollY3, [0.45, 0.55], [0, 1]);
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    console.log("Effect mounted");
+
+    const unsub1 = visibility1.on("change", checkActive);
+    const unsub2 = visibility2.on("change", checkActive);
+    const unsub3 = visibility3.on("change", checkActive);
+
+    function checkActive() {
+      console.log("checkActive fired");
+      const values = [visibility1.get(), visibility2.get(), visibility3.get()];
+      const max = Math.max(...values);
+      const index = values.indexOf(max);
+      setActiveIndex(index);
+    }
+
+    return () => {
+      unsub1();
+      unsub2();
+      unsub3();
+    };
+  }, [visibility1, visibility2, visibility3, activeIndex]);
+
+  const currentSrc = images[activeIndex];
 
   const workArray = [
     {
@@ -73,6 +112,7 @@ const Gallery = () => {
       image: treason,
     },
   ];
+
   return (
     <div>
       <section ref={ref} className={styles.sec}>
@@ -114,7 +154,7 @@ const Gallery = () => {
           </div>
       </section>
       <section className={styles.sec1}>
-        <div className={styles.para1} ref={para1Ref}>
+        <div className={styles.para1} ref={para0Ref}>
           <p>
             <motion.span
               style={{ opacity: smoothSpanOne }}
@@ -130,32 +170,29 @@ const Gallery = () => {
         </div>
       </section>
       <section className={styles.sec2}>
-        <div className={styles.imageContainer} ref={wigRef}>
+        <div className={styles.imageContainer}>
           <div className={styles.imageCon}>
             <motion.img
+              key={currentSrc}
+              src={currentSrc}
+              alt="scroll-triggered visual"
               className={styles.image}
-              style={{ opacity: wigOpacity }}
-              src={wigs}
-              alt='wigs'
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
             />
           </div>
         </div>
-        <div className={styles.para2} ref={para2Ref}>
-          <motion.p style={{ opacity: para2Opacity}}>
-              Hair is my craft, but education is my purpose.
-             I run
-            cutting edge courses built for the next wave of stylists
-            those who want to break rules the right way.
-          </motion.p>
-        </div>
-        <div className={styles.para3} ref={para3Ref}>
-          <motion.p style={{ opacity: para3Opacity}}>
-            My work doesn’t just follow trends it helps
-              create them. From the salon floor to the set, I’ve coloured for
-            major productions like:
-          </motion.p>
-        </div>
+
+        {paragraphs.map((para, index) => (
+          <div className={styles.para3} ref={paraRefs[index]} key={index}>
+            <p>
+              <strong>{para.primary}</strong> {para.secondary}
+            </p>
+          </div>
+        ))}
       </section>
+
       <section className={styles.sec3} ref={workRef}>
         <div className={styles.workContainer}>
           <motion.div
