@@ -13,7 +13,6 @@ import treason from '../assets/treason.webp';
 import { useScrollFade } from '../hooks/useScrollFade';
 import { paragraphs } from '../serviceData/paragraphData';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { useHorizontalReveal } from '../hooks/useHorizontalReveal';
 
 const Gallery = () => {
 
@@ -111,7 +110,7 @@ const Gallery = () => {
 
   return (
     <div>
-      <section className={styles.sec}>
+      {/* <section className={styles.sec}>
           <motion.div 
             className={styles.intro}
           >
@@ -150,7 +149,7 @@ const Gallery = () => {
               />
             </div>
           </div>
-      </section>
+      </section> */}
       <section className={styles.sec1}>
         <div className={styles.para1} ref={para0Ref}>
           <p>
@@ -167,7 +166,30 @@ const Gallery = () => {
           </p>
         </div>
       </section>
-      <section className={styles.sec2}>
+      <section style={{position: "relative"}}>
+        <div style={{display: "flex", justifyContent: "center", height: "100vh", width: "100%", overflow: "hidden", boxSizing: "border-box"}}>
+          <div style={{
+            display: "flex", 
+            justifyContent: "center", 
+            alignItems: "center", 
+            width: "60%", 
+            height: "100vh", 
+            backgroundColor: "lightblue",
+            boxSizing: "border-box",
+            }}
+          >
+            <p>
+              Great things come to those that are patient......
+            </p>
+          </div>
+          <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", width: "40%", boxSizing: "border-box" }}>
+            <div style={{ width: "100%"}}>
+              <img style={{ height: "100%", width: "100%", objectFit: "cover" }} src={kara} alt='test' />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <section className={styles.sec2}>
         <div className={styles.imageContainer}>
           <div className={styles.imageCon}>
             <AnimatePresence mode='wait'>
@@ -225,7 +247,7 @@ const Gallery = () => {
             <strong>{paraThree.primary}</strong> {paraThree.secondary}
           </motion.p>
         </div>
-      </section>
+      </section> */}
 
       <section className={styles.sec3} ref={workRef}>
         <div className={styles.workContainer}>
@@ -233,26 +255,23 @@ const Gallery = () => {
             className={styles.work}
             style={{ x }}
           >
-            {workArray.map((work) => {
-              
-              return (
-                <motion.div
-                  key={work.id}
-                  
-                   className={styles.cards}
-                  >
-                    <motion.img
-                      src={work.image}
-                      alt='studio'
-                      style={{
-                        height: "100%",
-                        width: "100%",
-                        objectFit: "fill"
-                      }}
-                  />
-                </motion.div>
-              )
-            })}
+            {workArray.map((work) => (
+              <motion.div
+                key={work.id}
+                className={styles.cards}
+              >
+                <motion.img
+                  src={work.image}
+                  alt='studio'
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    objectFit: "fill"
+                  }}
+                />
+              </motion.div>
+            )
+            )}
           </motion.div>
         </div>
       </section>
