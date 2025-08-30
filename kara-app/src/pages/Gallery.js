@@ -169,25 +169,28 @@ const Gallery = () => {
         <div className={styles.imageContainer}>
           <div className={styles.imageCon}>
             <AnimatePresence mode='wait'>
-            <motion.img
-              key={activeIndex}
-              src={images[activeIndex]?.image}
-              alt={images[activeIndex]?.label}
-              className={styles.image}
-              initial={{ opacity: 0, scale: 1.1, filter: 'blur(4px)' }}
-              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-              exit={{ opacity: 0, scale: 0.95, y: -20, filter: 'blur(6px)' }}
-              transition={{ duration: 0.8, ease:"easeInOut" }}
-            />
+              <motion.img
+                key={activeIndex}
+                src={images[activeIndex]?.image}
+                alt={images[activeIndex]?.label}
+                className={styles.image}
+                initial={{ opacity: 0, scale: 1.1, filter: 'blur(4px)' }}
+                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                exit={{ opacity: 0, scale: 1.1, y: -20, filter: 'blur(4px)' }}
+                transition={{ duration: 0.5, ease:"easeInOut" }}
+              />
             </AnimatePresence>
           </div>
         </div>
         <div className={styles.para3}>
           <motion.p
             ref={paraRefOne}
-            initial={{opacity: 0}}
-            animate={{opacity: inViewOne ? 1 : 0, y: inViewOne ? 0 : -20}}
-            transition={{ duration: 0.5, ease:"easeInOut"}}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: inViewOne ? 1 : 0,
+              filter: inViewOne ? "blur(0px)" : "blur(4px)"
+            }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             <strong>{paraOne.primary}</strong>{paraOne.secondary}
           </motion.p>
@@ -196,7 +199,10 @@ const Gallery = () => {
           <motion.p 
             ref={paraRefTwo}
             initial={{opacity: 0}}
-            animate={{opacity: inViewTwo ? 1 : 0}}
+            animate={{
+              opacity: inViewTwo ? 1 : 0,
+              filter: inViewTwo ? "blur(0px)" : "blur(4px)"
+            }}
             transition={{ duration: 0.5, ease:"easeInOut"}}
           >
             <strong>{paraTwo.primary}</strong> {paraTwo.secondary}
@@ -206,7 +212,10 @@ const Gallery = () => {
           <motion.p 
             ref={paraRefThree}
             initial={{opacity: 0}}
-            animate={{opacity: inViewThree ? 1 : 0}}
+            animate={{
+              opacity: inViewThree ? 1 : 0,
+              filter: inViewThree ? "blur(0px)" : "blur(4px)"
+            }}
             transition={{ duration: 0.5, ease:"easeInOut"}}
           >
             <strong>{paraThree.primary}</strong> {paraThree.secondary}
