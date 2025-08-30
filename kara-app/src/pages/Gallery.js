@@ -17,14 +17,11 @@ import { useHorizontalReveal } from '../hooks/useHorizontalReveal';
 
 const Gallery = () => {
 
-  // const { ref: para2Ref, opacity: para2Opacity } = useScrollFade(["start end", "end center"], [0.1, 0.5]);
-  // const { ref: para3Ref, opacity: para3Opacity } = useScrollFade(["start end", "end center"], [0.1, 0.5]);
-  const { ref: wigRef, opacity: wigOpacity } = useScrollFade(["start end", "end center"], [0.2, 0.5]);
-
   const ref = useRef(null);
   const boxRef = useRef(null);
   const workRef = useRef(null);
   const para0Ref = useRef(null);
+  const sec4Ref = useRef(null);
   
 
   const { scrollYProgress: boxScrollY } = useScroll({
@@ -38,6 +35,20 @@ const Gallery = () => {
     target: para0Ref,
     offset: ["start end", "end start"]
   });
+  const {scrollYProgress: sec4ScrollY} = useScroll({
+    target: sec4Ref,
+    offset: ["end end", "end start"]
+  })
+
+  const {scrollYProgress: sec4ParaScrollY} = useScroll({
+    target: sec4Ref,
+    offset: ["start end", "end start"]
+  })
+
+  const sec4Scale = useTransform(sec4ScrollY, [0,1], [1,0.85]);
+  const sec4Opacity = useTransform(sec4ScrollY, [0,1], [1,0]);
+  const paraY = useTransform(sec4ParaScrollY, [0,1], [250, -250]);
+  const paraYOpacity = useTransform(sec4ParaScrollY, [0.25, 0.5, 0.75], [0, 1, 0]);
 
   const scale = useTransform(boxScrollY, [0, 0.9], [1, 0.65]);
   const opacity = useTransform(boxScrollY, [0, 0.5], [0, 1]);
@@ -56,10 +67,6 @@ const Gallery = () => {
     {image: brazil, label: "model"},
   ];
 
-  // const inViewOne = useInView(paraRefOne, { margin: '-40% 0px -40% 0px' });
-  // const inView2 = useInView(paraRefTwo, { margin: '-40% 0px -40% 0px' });
-  // const inView3 = useInView(paraRefThree, { margin: '-40% 0px -40% 0px' });
-
   const { ref: paraRefOne, inView: inViewOne } = useScrollReveal();
   const { ref: paraRefTwo, inView: inViewTwo } = useScrollReveal();
   const { ref: paraRefThree, inView: inViewThree } = useScrollReveal();
@@ -72,9 +79,6 @@ const Gallery = () => {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [paraOne, paraTwo, paraThree] = paragraphs;
-  const {ref: horizRef, inView} = useHorizontalReveal();
-  // const paraViewOne = useRef(null);
-  // const useInViewOne = useInView(paraViewOne, { margin: '-40% 0px -40% 0px', threshold: 0.1 })
 
  
 
@@ -234,16 +238,12 @@ const Gallery = () => {
               return (
                 <motion.div
                   key={work.id}
-                  ref={horizRef}
                   
                    className={styles.cards}
                   >
                     <motion.img
                       src={work.image}
                       alt='studio'
-                      initial={{ opacity: 0 }}
-                  animate={{ opacity: inView ? 1 : 0.3 }}
-                  transition={{ duration: 0.6 }}
                       style={{
                         height: "100%",
                         width: "100%",
@@ -256,24 +256,23 @@ const Gallery = () => {
           </motion.div>
         </div>
       </section>
-      <section className={styles.sec4}>
-        <div className={styles.imageContainer2}>
+      <section className={styles.sec4} >
+        <motion.div className={styles.imageContainer2} ref={sec4Ref} style={{scale: sec4Scale}}>
           <img className={styles.curlyImage} src={curly} alt='curly hair' />
-        </div>
-        <div className={styles.con}>
-          <motion.div 
-            className={styles.para4}
-            initial={{opacity: 0}}
-            whileInView={{opacity: 1}}
-            transition={{duration: 1, delay: 0.5, ease: "easeIn"}}
-          >
+          <motion.div className={styles.secFourOverlay} style={{opacity: sec4Opacity}} />
+        </motion.div>
+        <motion.div 
+          className={styles.para4}
+          style={{y: paraY, opacity: paraYOpacity}}
+        >
+          <motion.div className={styles.innerContainer} style={{opacity: sec4Opacity}}>
             <p>
-              <span>I’m all about pushing boundaries and raising
-                standards</span> to ensure the future of hairdressing
+              <strong>I’m all about pushing boundaries and raising
+                standards</strong> to ensure the future of hairdressing
               is diverse, skilled, and fearless.
             </p>
           </motion.div>
-        </div>
+        </motion.div>
       </section>
       <section ref={ref} style={{ height: '120vh', position: 'relative' }}>
         <motion.div
