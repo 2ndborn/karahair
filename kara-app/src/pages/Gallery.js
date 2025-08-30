@@ -12,6 +12,8 @@ import forsytes from '../assets/forsytes.webp';
 import treason from '../assets/treason.webp';
 import { useScrollFade } from '../hooks/useScrollFade';
 import { paragraphs } from '../serviceData/paragraphData';
+import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useHorizontalReveal } from '../hooks/useHorizontalReveal';
 
 const Gallery = () => {
 
@@ -70,15 +72,11 @@ const Gallery = () => {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [paraOne, paraTwo, paraThree] = paragraphs;
-
+  const {ref: horizRef, inView} = useHorizontalReveal();
   // const paraViewOne = useRef(null);
   // const useInViewOne = useInView(paraViewOne, { margin: '-40% 0px -40% 0px', threshold: 0.1 })
 
-  function useScrollReveal(margin = "-40% 0px -40% 0px", threshold = 0.1) {
-    const ref = useRef(null);
-    const inView = useInView(ref, {margin, threshold});
-    return {ref, inView}
-  }
+ 
 
   const workArray = [
     {
@@ -185,10 +183,11 @@ const Gallery = () => {
         <div className={styles.para3}>
           <motion.p
             ref={paraRefOne}
+            style={{willChange: "opacity, transform"}}
             initial={{ opacity: 0 }}
             animate={{
               opacity: inViewOne ? 1 : 0,
-              filter: inViewOne ? "blur(0px)" : "blur(4px)"
+              transform: inViewOne ? "scale(1)" : "scale(1.02)"
             }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
@@ -198,10 +197,11 @@ const Gallery = () => {
         <div className={styles.para3}>
           <motion.p 
             ref={paraRefTwo}
+            style={{willChange: "opacity, transform"}}
             initial={{opacity: 0}}
             animate={{
               opacity: inViewTwo ? 1 : 0,
-              filter: inViewTwo ? "blur(0px)" : "blur(4px)"
+              transform: inViewTwo ? "scale(1)" : "scale(1.02)"
             }}
             transition={{ duration: 0.5, ease:"easeInOut"}}
           >
@@ -214,7 +214,7 @@ const Gallery = () => {
             initial={{opacity: 0}}
             animate={{
               opacity: inViewThree ? 1 : 0,
-              filter: inViewThree ? "blur(0px)" : "blur(4px)"
+              transform: inViewThree ? "scale(1)" : "scale(1.02)"
             }}
             transition={{ duration: 0.5, ease:"easeInOut"}}
           >
@@ -229,19 +229,30 @@ const Gallery = () => {
             className={styles.work}
             style={{ x }}
           >
-            {workArray.map((work) => (
-              <div key={work.id} className={styles.cards}>
-                <img
-                  src={work.image} 
-                  alt='studios' 
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                    objectFit: "fill"
-                  }}
+            {workArray.map((work) => {
+              
+              return (
+                <motion.div
+                  key={work.id}
+                  ref={horizRef}
+                  
+                   className={styles.cards}
+                  >
+                    <motion.img
+                      src={work.image}
+                      alt='studio'
+                      initial={{ opacity: 0 }}
+                  animate={{ opacity: inView ? 1 : 0.3 }}
+                  transition={{ duration: 0.6 }}
+                      style={{
+                        height: "100%",
+                        width: "100%",
+                        objectFit: "fill"
+                      }}
                   />
-                </div>
-            ))}
+                </motion.div>
+              )
+            })}
           </motion.div>
         </div>
       </section>
