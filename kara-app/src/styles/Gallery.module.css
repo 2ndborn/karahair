@@ -74,8 +74,8 @@
 
 .sec2 {
     position: relative;
-    background-image: linear-gradient(#fff, #fff5eb);
     padding: 20px;
+    background-image: radial-gradient(120% 120% at 50% 50%, #f1e7dd 50%, #6c4b5e)
 }
 
 .para3 {

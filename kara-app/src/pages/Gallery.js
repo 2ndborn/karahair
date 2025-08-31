@@ -1,4 +1,4 @@
-import {React, useEffect, useRef, useState}  from 'react'
+import { React, useEffect, useRef, useState } from 'react'
 import styles from '../styles/Gallery.module.css'
 import { motion, useTransform, useScroll, useInView, useAnimation, useSpring, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 
@@ -21,32 +21,32 @@ const Gallery = () => {
   const workRef = useRef(null);
   const para0Ref = useRef(null);
   const sec4Ref = useRef(null);
-  
+
 
   const { scrollYProgress: boxScrollY } = useScroll({
     target: boxRef,
     offset: ["start end", "start start"] // triggers when box enters and reaches top
   });
-  const {scrollYProgress: workScrollX} = useScroll({
+  const { scrollYProgress: workScrollX } = useScroll({
     target: workRef,
   });
-  const {scrollYProgress: para1ScrollY} = useScroll({
+  const { scrollYProgress: para1ScrollY } = useScroll({
     target: para0Ref,
     offset: ["start end", "end start"]
   });
-  const {scrollYProgress: sec4ScrollY} = useScroll({
+  const { scrollYProgress: sec4ScrollY } = useScroll({
     target: sec4Ref,
     offset: ["end end", "end start"]
   })
 
-  const {scrollYProgress: sec4ParaScrollY} = useScroll({
+  const { scrollYProgress: sec4ParaScrollY } = useScroll({
     target: sec4Ref,
     offset: ["start end", "end start"]
   })
 
-  const sec4Scale = useTransform(sec4ScrollY, [0,1], [1,0.85]);
-  const sec4Opacity = useTransform(sec4ScrollY, [0,1], [1,0]);
-  const paraY = useTransform(sec4ParaScrollY, [0,1], [250, -250]);
+  const sec4Scale = useTransform(sec4ScrollY, [0, 1], [1, 0.85]);
+  const sec4Opacity = useTransform(sec4ScrollY, [0, 1], [1, 0]);
+  const paraY = useTransform(sec4ParaScrollY, [0, 1], [250, -250]);
   const paraYOpacity = useTransform(sec4ParaScrollY, [0.25, 0.5, 0.75], [0, 1, 0]);
 
   const scale = useTransform(boxScrollY, [0, 0.9], [1, 0.65]);
@@ -54,16 +54,16 @@ const Gallery = () => {
   const smoothOpacity = useSpring(opacity, { stiffness: 20, damping: 20, mass: 1 });
   const spanOne = useTransform(para1ScrollY, [0, 0.3], [0, 1]);
   const spanTwo = useTransform(para1ScrollY, [0.4, 0.55], [0, 1]);
-  const smoothSpanOne = useSpring(spanOne, {stiffness: 40, damping: 20});
-  const smoothSpanTwo = useSpring(spanTwo, {stiffness: 40, damping: 20});
+  const smoothSpanOne = useSpring(spanOne, { stiffness: 40, damping: 20 });
+  const smoothSpanTwo = useSpring(spanTwo, { stiffness: 40, damping: 20 });
   const x = useTransform(workScrollX, [0, 1], ["5%", "-75%"]);
 
   const isInView = useInView(ref, { once: false, margin: '-20% 0px' });
 
   const images = [
-    {image: wigs, label: "wig making"},
-    {image: kara, label: "owner"},
-    {image: brazil, label: "model"},
+    { image: wigs, label: "wig making" },
+    { image: kara, label: "owner" },
+    { image: brazil, label: "model" },
   ];
 
   const { ref: paraRefOne, inView: inViewOne } = useScrollReveal();
@@ -79,7 +79,7 @@ const Gallery = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paraOne, paraTwo, paraThree] = paragraphs;
 
- 
+
 
   const workArray = [
     {
@@ -166,68 +166,8 @@ const Gallery = () => {
           </p>
         </div>
       </section>
-      <section style={{ position: "relative", height: `${paragraphs.length * 100}vh` }}>
-        {/* Sticky Image Panel */}
-        <div style={{
-          position: "sticky", top: 0,
-          height: "100vh", width: "100%",
-          display: "flex", justifyContent: "end", alignItems: "center",
-          backgroundColor: "lightgreen",
-        }}>
-          <div style={{ width: "40%", height: "100%" }}>
-            <ImagePanel paragraphs={paragraphs} />
-          </div>
-        </div>
-
-        {/* Scrollable Paragraph Triggers */}
-        {paragraphs.map((para, index) => (
-          <ParagraphTrigger key={para.id} para={para} index={index} />
-        ))}
-      </section>
-
-      {/* <section style={{ position: "relative" }}>
-        <div style={{
-          position: "sticky", top: 0,
-          height: "100vh", width: "100%", backgroundColor: "lightgreen", display: "flex",
-          justifyContent: "end",
-          alignItems: "center",
-        }}>
-          <div style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100%",
-            width: "40%",
-            boxSizing: "border-box"
-          }}
-          >
-            <div style={{ width: "100%", height: "100%" }}>
-              <img style={{ height: "100%", width: "100%", objectFit: "cover" }} src={kara} alt='test' />
-            </div>
-          </div>
-        </div>
-        <div style={{
-          position: "absolute", top: 0, left: 0,
-          height: "100vh", width: "100%", display: "flex",
-          justifyContent: "start",
-          alignItems: "center",
-        }}>
-          <div style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100%",
-            width: "60%",
-            boxSizing: "border-box"
-          }}
-          >
-            <p>
-              Great things come to those that are patient......
-            </p>
-          </div>
-        </div>
-      </section> */}
-      {/* <section className={styles.sec2}>
+      <section className={styles.sec2}>
+        <div className={styles.test}>
         <div className={styles.imageContainer}>
           <div className={styles.imageCon}>
             <AnimatePresence mode='wait'>
@@ -253,7 +193,7 @@ const Gallery = () => {
               opacity: inViewOne ? 1 : 0,
               transform: inViewOne ? "scale(1)" : "scale(1.02)"
             }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
           >
             <strong>{paraOne.primary}</strong>{paraOne.secondary}
           </motion.p>
@@ -285,10 +225,8 @@ const Gallery = () => {
             <strong>{paraThree.primary}</strong> {paraThree.secondary}
           </motion.p>
         </div>
-      </section> */}
-      {paragraphs.map((para, index) =>
-        <ParagraphSection key={para.id} {...para} index={index} />
-      )}
+        </div>
+      </section>
       <section className={styles.sec3} ref={workRef}>
         <div className={styles.workContainer}>
           <motion.div
@@ -316,15 +254,15 @@ const Gallery = () => {
         </div>
       </section>
       <section className={styles.sec4} >
-        <motion.div className={styles.imageContainer2} ref={sec4Ref} style={{scale: sec4Scale}}>
+        <motion.div className={styles.imageContainer2} ref={sec4Ref} style={{ scale: sec4Scale }}>
           <img className={styles.curlyImage} src={curly} alt='curly hair' />
-          <motion.div className={styles.secFourOverlay} style={{opacity: sec4Opacity}} />
+          <motion.div className={styles.secFourOverlay} style={{ opacity: sec4Opacity }} />
         </motion.div>
-        <motion.div 
+        <motion.div
           className={styles.para4}
-          style={{y: paraY, opacity: paraYOpacity}}
+          style={{ y: paraY, opacity: paraYOpacity }}
         >
-          <motion.div className={styles.innerContainer} style={{opacity: sec4Opacity}}>
+          <motion.div className={styles.innerContainer} style={{ opacity: sec4Opacity }}>
             <p>
               <strong>I’m all about pushing boundaries and raising
                 standards</strong> to ensure the future of hairdressing
@@ -364,7 +302,7 @@ const Gallery = () => {
             zIndex: 6,
           }}
         />
-        <div 
+        <div
           style={{
             position: 'absolute',
             top: '0',
@@ -395,14 +333,14 @@ const Gallery = () => {
           >
             Whether you’re sat in my chair or learning in my
             classroom, you’re getting more than just hair, <span>you’re getting
-            experience, vision, and straight-up passion.</span>
+              experience, vision, and straight-up passion.</span>
           </motion.p>
           <button>Click</button>
         </div>
         <motion.img
-          initial={{opacity: 0}}
-          animate={isInView ? {opacity: 1} : {}}
-          transition={{ duration: 2, delay: 1}}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 2, delay: 1 }}
           src={brazil}
           alt="a model"
           style={{
