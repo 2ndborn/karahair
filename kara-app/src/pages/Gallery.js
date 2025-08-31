@@ -166,29 +166,67 @@ const Gallery = () => {
           </p>
         </div>
       </section>
-      <section style={{position: "relative"}}>
-        <div style={{display: "flex", justifyContent: "center", height: "100vh", width: "100%", overflow: "hidden", boxSizing: "border-box"}}>
+      <section style={{ position: "relative", height: `${paragraphs.length * 100}vh` }}>
+        {/* Sticky Image Panel */}
+        <div style={{
+          position: "sticky", top: 0,
+          height: "100vh", width: "100%",
+          display: "flex", justifyContent: "end", alignItems: "center",
+          backgroundColor: "lightgreen",
+        }}>
+          <div style={{ width: "40%", height: "100%" }}>
+            <ImagePanel paragraphs={paragraphs} />
+          </div>
+        </div>
+
+        {/* Scrollable Paragraph Triggers */}
+        {paragraphs.map((para, index) => (
+          <ParagraphTrigger key={para.id} para={para} index={index} />
+        ))}
+      </section>
+
+      {/* <section style={{ position: "relative" }}>
+        <div style={{
+          position: "sticky", top: 0,
+          height: "100vh", width: "100%", backgroundColor: "lightgreen", display: "flex",
+          justifyContent: "end",
+          alignItems: "center",
+        }}>
           <div style={{
-            display: "flex", 
-            justifyContent: "center", 
-            alignItems: "center", 
-            width: "60%", 
-            height: "100vh", 
-            backgroundColor: "lightblue",
-            boxSizing: "border-box",
-            }}
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+            width: "40%",
+            boxSizing: "border-box"
+          }}
+          >
+            <div style={{ width: "100%", height: "100%" }}>
+              <img style={{ height: "100%", width: "100%", objectFit: "cover" }} src={kara} alt='test' />
+            </div>
+          </div>
+        </div>
+        <div style={{
+          position: "absolute", top: 0, left: 0,
+          height: "100vh", width: "100%", display: "flex",
+          justifyContent: "start",
+          alignItems: "center",
+        }}>
+          <div style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+            width: "60%",
+            boxSizing: "border-box"
+          }}
           >
             <p>
               Great things come to those that are patient......
             </p>
           </div>
-          <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", width: "40%", boxSizing: "border-box" }}>
-            <div style={{ width: "100%"}}>
-              <img style={{ height: "100%", width: "100%", objectFit: "cover" }} src={kara} alt='test' />
-            </div>
-          </div>
         </div>
-      </section>
+      </section> */}
       {/* <section className={styles.sec2}>
         <div className={styles.imageContainer}>
           <div className={styles.imageCon}>
@@ -248,7 +286,9 @@ const Gallery = () => {
           </motion.p>
         </div>
       </section> */}
-
+      {paragraphs.map((para, index) =>
+        <ParagraphSection key={para.id} {...para} index={index} />
+      )}
       <section className={styles.sec3} ref={workRef}>
         <div className={styles.workContainer}>
           <motion.div
