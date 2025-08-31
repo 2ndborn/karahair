@@ -227,6 +227,48 @@ const Gallery = () => {
         </div>
         </div>
       </section>
+
+      <section style={{position: "relative", height: "200vh"}}>
+        <div
+          style={{
+            position: "sticky",
+            top: 0,
+            display: "flex",
+            justifyContent: "flex-end",
+            height: "100vh",
+            width: "100%",
+            backgroundColor: "lightblue",
+            padding: "10px",
+            boxSizing: "border-box",
+          }}
+        >
+          <div style={{height: "100%", width: "40%"}}>
+            <img style={{height: "100%", width: "100%", objectFit: "fill"}} src={kara} alt='kara' />
+          </div>
+        </div>
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          height: "100vh",
+          display: "flex",
+          justifyContent: "flex-start",
+          alignItems: "center",
+          width: "100%",
+          zIndex: 5 // make sure it sits above the image if needed
+        }}>
+          <div style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+            width: "60%"
+          }}>
+            <p>xxxxxxxxxxxxxxxx...</p>
+          </div>
+        </div>
+
+      </section>
+
       <section className={styles.sec3} ref={workRef}>
         <div className={styles.workContainer}>
           <motion.div
