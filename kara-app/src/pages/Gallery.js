@@ -228,7 +228,7 @@ const Gallery = () => {
         </div>
       </section>
 
-      <section style={{position: "relative", height: "200vh"}}>
+      <section style={{position: "relative", height: "200vh", padding: "1rem"}}>
         <div
           style={{
             position: "sticky",
@@ -237,13 +237,18 @@ const Gallery = () => {
             justifyContent: "flex-end",
             height: "100vh",
             width: "100%",
-            backgroundColor: "lightblue",
+            backgroundImage: "radial-gradient(35% 75% at 30% 47%, white, #d9b9a0)",
             padding: "10px",
             boxSizing: "border-box",
+            borderRadius: "15px",
           }}
         >
-          <div style={{height: "100%", width: "40%"}}>
+          <div style={{position: "relative", height: "100%", width: "40%", borderRadius: "0px 10px 10px 0px", 
+            overflow: "hidden",
+            boxShadow: "rgba(0, 0, 0, 0.3) 2px 2px 4px, 5px 5px 10px rgba(0, 0, 0, 0.2)",
+            }}>
             <img style={{height: "100%", width: "100%", objectFit: "fill"}} src={kara} alt='kara' />
+            <div style={{position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.3)"}} />
           </div>
         </div>
         <div style={{
@@ -261,12 +266,12 @@ const Gallery = () => {
             justifyContent: "center",
             alignItems: "center",
             height: "100%",
-            width: "60%"
+            width: "60%",
+            fontSize: "2rem"
           }}>
             <p>xxxxxxxxxxxxxxxx...</p>
           </div>
         </div>
-
       </section>
 
       <section className={styles.sec3} ref={workRef}>
