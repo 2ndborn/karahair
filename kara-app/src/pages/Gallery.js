@@ -81,12 +81,22 @@ const Gallery = () => {
 
   const targetRef = useRef(null);
 
-const {scrollYProgress: testScrollY} = useScroll({
+  const {scrollYProgress: testScrollY} = useScroll({
     target: targetRef,
     offset: ["end end", "end start"]
   })
 
-  const targetScale = useTransform(testScrollY, [0, 1], [1, 0.85])
+  const targetScale = useTransform(testScrollY, [0, 1], [1, 1.05]);
+  const targetScaleOne = useSpring(targetScale, {stiffness: 100, damping: 30, restDelta: 0.001})
+
+  const {scrollYProgress: testScrollParaY} = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"] // start of the element meets the end of the view. End of the element meets the start of the viewport
+  })
+
+  const testOpacity = useTransform(testScrollParaY, [0.25, 0.5, 0.75], [0,1,0]);
+  const testParaY = useTransform(testScrollParaY, [0, 1], [250, -250]);
+
 
   const workArray = [
     {
@@ -235,55 +245,59 @@ const {scrollYProgress: testScrollY} = useScroll({
         </div>
       </section>
 
-      <section style={{position: "relative", height: "200vh", padding: "1rem"}} >
-        <motion.div
+      <section style={{position: "relative", height: "400vh", padding: "1rem"}} >
+        {paragraphs.map((para, index) => (
+          <motion.div
           ref={targetRef}
           style={{
-            scale: targetScale,
+            scale: targetScaleOne,
             position: "sticky",
             top: 0,
             display: "flex",
-            justifyContent: "flex-end",
+            justifyContent: "center",
             height: "95vh",
             width: "100%",
             backgroundImage: "radial-gradient(35% 75% at 30% 47%, white, #d9b9a0)",
             padding: "10px",
             boxSizing: "border-box",
             borderRadius: "15px",
+            marginBottom: index < paragraphs.length -1 ? "100px" : "0px",
           }}
         >
+          <motion.div style={{
+            // position: "absolute",
+            // inset: 0,
+            height: "100vh",
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            width: "55%",
+            zIndex: 5, // make sure it sits above the image if needed
+            margin: "1rem",
+            padding: "1rem",
+            overflow: "hidden",
+          }}>
+            <motion.div style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100%",
+              width: "100%",
+              fontSize: "2rem"
+            }}>
+              <p style={{ padding: "1rem" }}><strong>{para.primary}</strong>{para.secondary}</p>
+            </motion.div>
+          </motion.div>
           <div style={{position: "relative", height: "100%", width: "40%", borderRadius: "10px", 
             overflow: "hidden",
             boxShadow: "rgba(0, 0, 0, 0.3) 2px 2px 4px, 5px 5px 10px rgba(0, 0, 0, 0.2)",
             }}>
-            <img style={{height: "100%", width: "100%", objectFit: "cover"}} src={kara} alt='kara' />
+            <img style={{height: "100%", width: "100%", objectFit: "cover"}} src={para.image} alt='kara' />
             <div style={{position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.4)"}} />
           </div>
         </motion.div>
-        <motion.div style={{
-          position: "absolute",
-          inset: 0,
-          height: "100vh",
-          display: "flex",
-          justifyContent: "flex-start",
-          alignItems: "center",
-          width: "55%",
-          zIndex: 5, // make sure it sits above the image if needed
-          margin: "1rem",
-          padding: "1rem",
-          overflow: "hidden",
-        }}>
-          <div style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100%",
-            width: "100%",
-            fontSize: "2rem"
-          }}>
-            <p style={{padding: "1rem"}}><strong>{paraOne.primary}</strong>{paraOne.secondary}</p>
-          </div>
-        </motion.div>
+        ))}
+        
       </section>
 
       <section className={styles.sec3} ref={workRef}>
