@@ -79,7 +79,14 @@ const Gallery = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paraOne, paraTwo, paraThree] = paragraphs;
 
+  const targetRef = useRef(null);
 
+const {scrollYProgress: testScrollY} = useScroll({
+    target: targetRef,
+    offset: ["end end", "end start"]
+  })
+
+  const targetScale = useTransform(testScrollY, [0, 1], [1, 0.85])
 
   const workArray = [
     {
@@ -228,14 +235,16 @@ const Gallery = () => {
         </div>
       </section>
 
-      <section style={{position: "relative", height: "200vh", padding: "1rem"}}>
-        <div
+      <section style={{position: "relative", height: "200vh", padding: "1rem"}} >
+        <motion.div
+          ref={targetRef}
           style={{
+            scale: targetScale,
             position: "sticky",
             top: 0,
             display: "flex",
             justifyContent: "flex-end",
-            height: "100vh",
+            height: "95vh",
             width: "100%",
             backgroundImage: "radial-gradient(35% 75% at 30% 47%, white, #d9b9a0)",
             padding: "10px",
@@ -243,35 +252,38 @@ const Gallery = () => {
             borderRadius: "15px",
           }}
         >
-          <div style={{position: "relative", height: "100%", width: "40%", borderRadius: "0px 10px 10px 0px", 
+          <div style={{position: "relative", height: "100%", width: "40%", borderRadius: "10px", 
             overflow: "hidden",
             boxShadow: "rgba(0, 0, 0, 0.3) 2px 2px 4px, 5px 5px 10px rgba(0, 0, 0, 0.2)",
             }}>
-            <img style={{height: "100%", width: "100%", objectFit: "fill"}} src={kara} alt='kara' />
-            <div style={{position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.3)"}} />
+            <img style={{height: "100%", width: "100%", objectFit: "cover"}} src={kara} alt='kara' />
+            <div style={{position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.4)"}} />
           </div>
-        </div>
-        <div style={{
+        </motion.div>
+        <motion.div style={{
           position: "absolute",
           inset: 0,
           height: "100vh",
           display: "flex",
           justifyContent: "flex-start",
           alignItems: "center",
-          width: "100%",
-          zIndex: 5 // make sure it sits above the image if needed
+          width: "55%",
+          zIndex: 5, // make sure it sits above the image if needed
+          margin: "1rem",
+          padding: "1rem",
+          overflow: "hidden",
         }}>
           <div style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             height: "100%",
-            width: "60%",
+            width: "100%",
             fontSize: "2rem"
           }}>
-            <p>xxxxxxxxxxxxxxxx...</p>
+            <p style={{padding: "1rem"}}><strong>{paraOne.primary}</strong>{paraOne.secondary}</p>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <section className={styles.sec3} ref={workRef}>
