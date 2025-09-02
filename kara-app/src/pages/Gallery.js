@@ -14,6 +14,7 @@ import { useScrollFade } from '../hooks/useScrollFade';
 import { paragraphs } from '../serviceData/paragraphData';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import ScrollAnimatedComponent from '../components/ScrollAnimatedComponent';
+import ScrollAnimateMobile from '../components/ScrollAnimateMobile';
 
 const Gallery = () => {
 
@@ -250,32 +251,34 @@ const Gallery = () => {
         </div>
         </div>
       </section> */}
-        <ScrollAnimatedComponent 
-          content={paraOne} 
-          backgroundImage={"radial-gradient(35% 75% at 30% 47%, white, #f1e7dd)"} 
-          marginBottom={"25px"}
-        />
-        <ScrollAnimatedComponent 
-          content={paraTwo} 
-          backgroundImage={"radial-gradient(35% 75% at 30% 47%, white, #a0c4ff)"}
-          marginBottom={"25px"} 
-          flexDirection={"row-reverse"} 
-        />
-        <ScrollAnimatedComponent 
-          content={paraThree} 
-          backgroundImage={"radial-gradient(35% 75% at 30% 47%, white, #ca8383)"}
-          marginBottom={"0px"}  
-        />
-      {/* <section style={{position: "relative", height: "100vh", padding: "1rem"}} >
+      <ScrollAnimatedComponent 
+        content={paraOne} 
+        backgroundImage={"radial-gradient(140% 140% at 60% 0%, #fff, #f1e7dd)"} 
+        marginBottom={"25px"}
+      />
+      <ScrollAnimatedComponent 
+        content={paraTwo} 
+        backgroundImage={"radial-gradient(140% 140% at 30% 0%, white, #a0c4ff)"}
+        marginBottom={"25px"} 
+        flexDirection={"row-reverse"} 
+      />
+      <ScrollAnimatedComponent 
+        content={paraThree} 
+        backgroundImage={"radial-gradient(140% 140% at 60% 0%, #fff, #ca8383)"}
+        marginBottom={"0px"}  
+      />
+      <ScrollAnimateMobile content={paraOne} />
+      <section style={{position: "relative", height: "100vh", padding: "1rem"}} >
         <motion.div
           ref={targetRef}
           style={{
             scale: targetScaleOne, opacity: testOpacityOne, y: smoothedScroll,
             display: "flex",
+            flexDirection: "column-reverse",
             justifyContent: "center",
             height: "95vh",
             width: "100%",
-            backgroundImage: "radial-gradient(35% 75% at 30% 47%, white, #d9b9a0)",
+            backgroundImage: "radial-gradient(160% 130% at 50% 0%, white, #d9b9a0)",
             padding: "20px",
             boxSizing: "border-box",
             borderRadius: "15px",
@@ -284,14 +287,12 @@ const Gallery = () => {
           <motion.div style={{
             // position: "absolute",
             // inset: 0,
-            height: "100vh",
+            height: "40vh",
             display: "flex",
             justifyContent: "flex-start",
             alignItems: "center",
-            width: "60%",
+            width: "100%",
             zIndex: 5, // make sure it sits above the image if needed
-            margin: "1rem",
-            padding: "1rem",
             overflow: "hidden",
           }}>
             <motion.div style={{
@@ -300,12 +301,13 @@ const Gallery = () => {
               alignItems: "center",
               height: "100%",
               width: "100%",
-              fontSize: "2rem"
+              fontSize: "1.5rem",
+              textAlign: "center",
             }}>
-              <p style={{ padding: "1rem" }}><strong>{paraOne.primary}</strong>{paraOne.secondary}</p>
+              <p><strong>{paraOne.primary}</strong>{paraOne.secondary}</p>
             </motion.div>
           </motion.div>
-          <div style={{position: "relative", height: "100%", width: "40%", borderRadius: "10px", 
+          <div style={{position: "relative", height: "100%", width: "100%", borderRadius: "10px", 
             overflow: "hidden",
             boxShadow: "rgba(0, 0, 0, 0.3) 2px 2px 4px, 5px 5px 10px rgba(0, 0, 0, 0.2)",
             }}>
@@ -313,7 +315,7 @@ const Gallery = () => {
             <div style={{position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.4)"}} />
           </div>
         </motion.div>
-      </section> */}
+      </section>
 
       <section className={styles.sec3} ref={workRef}>
         <div className={styles.workContainer}>
