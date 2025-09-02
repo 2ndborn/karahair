@@ -99,7 +99,7 @@ const Gallery = () => {
   const testOpacityOne = useSpring(testOpacity, {stiffness: 100, damping: 30, restDelta: 0.001})
   const testParaY = useTransform(testScrollParaY, [0, 1], [250, -250]);
 
-  const {scrollY: velScrollY} = useScroll({target: targetRef});
+  const {scrollY: velScrollY} = useScroll({target: paraRefOne});
   const velocity = useVelocity(velScrollY);
   const smoothScroll = useTransform(velocity, [-3000, 0, 3000], [-1,0,1])
   const smoothedScroll = useSpring(smoothScroll, {stiffness: 30, damping: 90})
@@ -189,7 +189,7 @@ const Gallery = () => {
           </p>
         </div>
       </section>
-      <section className={styles.sec2}>
+      {/* <section className={styles.sec2}>
         <div className={styles.test}>
         <div className={styles.imageContainer}>
           <div className={styles.imageCon}>
@@ -249,11 +249,24 @@ const Gallery = () => {
           </motion.p>
         </div>
         </div>
-      </section>
-      <ScrollAnimatedComponent content={paraOne} />
-      <ScrollAnimatedComponent content={paraTwo} />
-      <ScrollAnimatedComponent content={paraThree} />
-      <section style={{position: "relative", height: "100vh", padding: "1rem"}} >
+      </section> */}
+        <ScrollAnimatedComponent 
+          content={paraOne} 
+          backgroundImage={"radial-gradient(35% 75% at 30% 47%, white, #f1e7dd)"} 
+          marginBottom={"25px"}
+        />
+        <ScrollAnimatedComponent 
+          content={paraTwo} 
+          backgroundImage={"radial-gradient(35% 75% at 30% 47%, white, #a0c4ff)"}
+          marginBottom={"25px"} 
+          flexDirection={"row-reverse"} 
+        />
+        <ScrollAnimatedComponent 
+          content={paraThree} 
+          backgroundImage={"radial-gradient(35% 75% at 30% 47%, white, #ca8383)"}
+          marginBottom={"0px"}  
+        />
+      {/* <section style={{position: "relative", height: "100vh", padding: "1rem"}} >
         <motion.div
           ref={targetRef}
           style={{
@@ -300,7 +313,7 @@ const Gallery = () => {
             <div style={{position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.4)"}} />
           </div>
         </motion.div>
-      </section>
+      </section> */}
 
       <section className={styles.sec3} ref={workRef}>
         <div className={styles.workContainer}>

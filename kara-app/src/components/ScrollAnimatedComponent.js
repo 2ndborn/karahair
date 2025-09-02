@@ -1,7 +1,12 @@
 import { motion, useScroll, useTransform, useSpring, useVelocity } from "framer-motion";
 import { useRef } from "react";
 
-export default function ScrollAnimatedComponent({ content, backgroundImage }) {
+export default function ScrollAnimatedComponent({
+  content,
+  backgroundImage,
+  flexDirection,
+  marginBottom,
+  }) {
   const targetRef = useRef(null);
 
   // Scroll progress for fade/scale
@@ -10,7 +15,7 @@ export default function ScrollAnimatedComponent({ content, backgroundImage }) {
     offset: ["start end", "end start"]
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
   const scaleSpring = useSpring(scale, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
@@ -25,7 +30,7 @@ export default function ScrollAnimatedComponent({ content, backgroundImage }) {
   const velocitySpring = useSpring(velocityMapped, { stiffness: 30, damping: 90 });
 
   return (
-    <section style={{ position: "relative", height: "100vh", padding: "1rem", marginBottom: "50px" }}>
+    <section style={{ position: "relative", height: "100vh", padding: "1rem", marginBottom: marginBottom }}>
       <motion.div
         ref={targetRef}
         style={{
@@ -33,10 +38,11 @@ export default function ScrollAnimatedComponent({ content, backgroundImage }) {
           opacity: opacitySpring,
           y: velocitySpring,
           display: "flex",
+          flexDirection: flexDirection,
           justifyContent: "center",
           height: "95vh",
           width: "100%",
-          backgroundImage: "radial-gradient(35% 75% at 30% 47%, white, #d9b9a0)",
+          backgroundImage: backgroundImage,
           padding: "20px",
           boxSizing: "border-box",
           borderRadius: "15px"
@@ -47,6 +53,7 @@ export default function ScrollAnimatedComponent({ content, backgroundImage }) {
           style={{
             height: "100vh",
             display: "flex",
+            flexDirection: "column-reverse",
             justifyContent: "flex-start",
             alignItems: "center",
             width: "60%",
