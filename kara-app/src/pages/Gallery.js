@@ -14,7 +14,6 @@ import { useScrollFade } from '../hooks/useScrollFade';
 import { paragraphs } from '../serviceData/paragraphData';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import ScrollAnimatedComponent from '../components/ScrollAnimatedComponent';
-import ScrollAnimateMobile from '../components/ScrollAnimateMobile';
 
 const Gallery = () => {
 
@@ -81,30 +80,6 @@ const Gallery = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paraOne, paraTwo, paraThree] = paragraphs;
 
-  const targetRef = useRef(null);
-
-  const {scrollYProgress: testScrollY} = useScroll({
-    target: targetRef,
-    offset: ["end end", "end start"]
-  })
-
-  const targetScale = useTransform(testScrollY, [0, 1], [1, 0.85]);
-  const targetScaleOne = useSpring(targetScale, {stiffness: 100, damping: 30, restDelta: 0.001})
-
-  const {scrollYProgress: testScrollParaY} = useScroll({
-    target: targetRef,
-    offset: ["start end", "end start"] // start of the element meets the end of the view. End of the element meets the start of the viewport
-  })
-
-  const testOpacity = useTransform(testScrollParaY, [0, 0.5, 1], [0,1,0]);
-  const testOpacityOne = useSpring(testOpacity, {stiffness: 100, damping: 30, restDelta: 0.001})
-  const testParaY = useTransform(testScrollParaY, [0, 1], [250, -250]);
-
-  const {scrollY: velScrollY} = useScroll({target: paraRefOne});
-  const velocity = useVelocity(velScrollY);
-  const smoothScroll = useTransform(velocity, [-3000, 0, 3000], [-1,0,1])
-  const smoothedScroll = useSpring(smoothScroll, {stiffness: 30, damping: 90})
-
   const workArray = [
     {
       id: 1,
@@ -134,6 +109,8 @@ const Gallery = () => {
 
   return (
     <div>
+      <section></section>
+
       {/* <section className={styles.sec}>
           <motion.div 
             className={styles.intro}

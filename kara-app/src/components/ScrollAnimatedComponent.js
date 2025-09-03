@@ -6,13 +6,32 @@ export default function ScrollAnimatedComponent({
   backgroundImage,
   flexDirection,
   marginBottom,
-  mobile
   }) {
-  const targetRef = useRef(null);
+  const mobileRef = useRef(null);
+
+  // Scroll progress for fade/scale
+  const { scrollYProgress: scrollYmobile } = useScroll({
+    target: mobileRef,
+    offset: ["start end", "end start"]
+  });
+
+  const scaleM = useTransform(scrollYmobile, [0, 1], [1, 0.95]);
+  const scaleSpringM = useSpring(scaleM, { stiffness: 100, damping: 30, restDelta: 0.001 });
+
+  const opacityM = useTransform(scrollYmobile, [0, 0.5, 1], [0, 1, 0]);
+  const opacitySpringM = useSpring(opacityM, { stiffness: 100, damping: 30, restDelta: 0.001 });
+
+  // Scroll velocity for reactive motion
+  const { scrollY: scrollYVelMob } = useScroll({ target: mobileRef });
+  const velocityMob = useVelocity(scrollYVelMob);
+  const velocityMappedMob = useTransform(velocityMob, [-3000, 0, 3000], [-1, 0, 1]);
+  const velocitySpringMob = useSpring(velocityMappedMob, { stiffness: 30, damping: 90 });
+
+  const desktopRef = useRef(null);
 
   // Scroll progress for fade/scale
   const { scrollYProgress } = useScroll({
-    target: targetRef,
+    target: desktopRef,
     offset: ["start end", "end start"]
   });
 
@@ -22,10 +41,8 @@ export default function ScrollAnimatedComponent({
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
   const opacitySpring = useSpring(opacity, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
-  const translateY = useTransform(scrollYProgress, [0, 1], [250, -250]);
-
   // Scroll velocity for reactive motion
-  const { scrollY } = useScroll({ target: targetRef });
+  const { scrollY } = useScroll({ target: desktopRef });
   const velocity = useVelocity(scrollY);
   const velocityMapped = useTransform(velocity, [-3000, 0, 3000], [-1, 0, 1]);
   const velocitySpring = useSpring(velocityMapped, { stiffness: 30, damping: 90 });
@@ -37,11 +54,10 @@ export default function ScrollAnimatedComponent({
       padding: "1rem", 
       marginBottom: marginBottom,
       }}
-      className={mobile && "d-lg-none"} 
     >
-      {mobile ? (
         <motion.div
-        ref={targetRef}
+        ref={desktopRef}
+        className="d-none d-lg-flex" 
         style={{
           scale: scaleSpring,
           opacity: opacitySpring,
@@ -114,11 +130,11 @@ export default function ScrollAnimatedComponent({
           />
         </div>
       </motion.div>
-      ) : (
         <motion.div
-          ref={targetRef}
+          ref={mobileRef}
+          className="d-lg-none"
           style={{
-            scale: scaleSpring, opacity: opacitySpring, y: velocitySpring,
+            scale: scaleSpringM, opacity: opacitySpringM, y: velocitySpringMob,
             display: "flex",
             flexDirection: "column-reverse",
             justifyContent: "center",
@@ -161,8 +177,6 @@ export default function ScrollAnimatedComponent({
             <div style={{position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.4)"}} />
           </div>
         </motion.div>
-      )}
-      
     </section>
   );
 }
