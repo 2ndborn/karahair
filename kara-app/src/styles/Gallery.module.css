@@ -3,51 +3,66 @@
 .sec {
     position: relative;
     height: 200vh;
-    width: 100%;
-    background-color: #fff5eb;
 }
 
-.intro {
+.secContainerOne {
     position: sticky;
     top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
     height: 100vh;
-    width: 100%;
-    z-index: 10;
-    transform-origin: "left center";
-    padding: 3rem;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items:center;
+.secImageContainer {
+    height: 100%;
+    width: 40%;
+}
+
+.secContainerTwo {
+    position:absolute;
+    inset: 0;
     height: 100vh;
-    width: 33.3333%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     z-index: 11;
 }
 
-.text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
+.leftQuoteContainer {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    font-size: 15rem;
+    color: rgba(251, 236, 224, 0.2);
 }
 
-.text h1 {
-    font-size: 4rem;
+.rightQuoteContainer {
+    position: absolute;
+    top: 140px;
+    left: 400px;
+    font-size: 15rem;
+    color: rgba(251, 236, 224, 0.2);
 }
 
-.karaImage {
-    border-radius: 10px;
-    object-fit: fill;
-    box-shadow: #000 2px 2px 4px,
-    #000 1px 1px 2px;
+.secContentContainer {
+    width: 60%;
+    padding: 4rem;
+}
+
+@media (max-width: 768px) {
+    .secImageContainer {
+        width: 50%;
+    }
+
+    .secContentContainer {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /************************************************First Section**********************************************/

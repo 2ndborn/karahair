@@ -118,165 +118,56 @@ const Gallery = () => {
   );
   const welcomeScale = useTransform(welcomeScroll, [0, 1], [1.05, 0.9])
 
+  const {scrollYProgress: welcomeParagraph} =useScroll({
+    target: welcomeRef,
+    offset: ["start end", "end start"],
+  });
+
+  const welcomeOpacity = useTransform(welcomeParagraph, [0.2, 0.4, 0.6], [0, 1, 0]);
+  const welcomeSmooth = useSpring(welcomeOpacity, {stiffness: 100, damping: 30, restDelta: 0.001})
+  const WelcomeY = useTransform(welcomeParagraph, [0, 1], [-25, 25]);
+
   return (
     <div>
-      <section style={{position: "relative", height: "200vh",}} ref={welcomeRef}>
+      <section className={styles.sec} ref={welcomeRef}>
         <motion.div
-         style={{
-          scale: welcomeScale,
-          position: "sticky", top: 0, display: "flex",
-          justifyContent: "flex-end", borderRadius: "15px",
-          overflow: "hidden", height: "100vh"}}
+          className={styles.secContainerOne}
+          style={{scale: welcomeScale}}
         >
-          <div style={{height: "100%", width: "40%"}}>
+          <div className={styles.secImageContainer}>
             <img src={kara} alt='test' style={{height: "100%", width: "100%", objectFit: "fill"}} />
           </div>
           <motion.div
            style={{position: "absolute", inset: 0,
              backgroundImage: backgroundStyle,
-                
             }} 
             transition={{ duration: 0.3, ease: "easeInOut" }}
           />
           
         </motion.div>
-        <div style={{
-            position: "absolute", inset: 0, height: "100vh",
-            display: "flex", flexDirection: "column", justifyContent: "center",
-            alignItems: "flex-start", zIndex: 11, margin: "2rem",
-            }}
-          >
-            <div style={{ width: "60%", padding: "1rem"}}>
-              <h2>
-                Hi I am kara
-              </h2>
-              <h4>
-                That moment when a client looks into the mirror
-                and sees not just a fresh style, but the actualised
-                version of their internal self staring back at them.
-                That’s why I do what I do.
-              </h4>
-            </div>
+        <div className={styles.secContainerTwo}>
+          <div className={styles.leftQuoteContainer}>
+            <i style={{fontStyle: "oblique"}} className={`fa-solid fa-quote-left`}></i>
           </div>
-      </section>
-
-      {/* <section className={styles.sec}>
-          <motion.div 
-            className={styles.intro}
+          <div className={styles.rightQuoteContainer}>
+            <i style={{fontStyle: "oblique"}} className={`fa-solid fa-quote-right`}></i>
+          </div>
+          <motion.div
+           className={styles.secContentContainer}
+            style={{opacity: welcomeSmooth, y: WelcomeY}}
           >
-            <motion.div
-            className={styles.text}
-            style={{
-            transformOrigin: "left center",
-            scale }}
-            >
-              <motion.h1
-                initial={{ opacity: 0}}
-                whileInView={{ opacity: 1}}
-                transition={{ duration: 1, delay: 0.5, ease: "easeIn" }}
-              >
-                Hi I am Kara
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0}}
-                whileInView={{ opacity: 1}}
-                transition={{ duration: 1, delay: 1.5, ease: "easeIn" }}
-              >
-                That moment when a client looks into the mirror
-                  and sees not just a fresh style, but the actualised
-                  version of their internal self staring back at them.
-                  That’s why I do what I do.
-              </motion.p>
-            </motion.div>
+            <h1 style={{ marginBottom: "3rem" }}>
+              Hi I am Kara!!!
+            </h1>
+            <h4 style={{textAlign: "center", fontStyle: "oblique"}}>
+              I am obessed with that moment when a client looks into the mirror
+              and sees not just restoration, but the actualised
+              version of their internal self staring back at them.
+              I am immediately reminded why I do this.
+            </h4>
           </motion.div>
-          <div className={styles.con} ref={boxRef}>
-            <div className={styles.container}>
-              <motion.img
-                className={styles.karaImage}
-                style={{opacity: smoothOpacity}}
-                src={kara}
-                alt="owner"
-              />
-            </div>
-          </div>
-      </section> */}
-      <section className={styles.sec1}>
-        <div className={styles.para1} ref={para0Ref}>
-          <p>
-            <motion.span
-              style={{ opacity: smoothSpanOne }}
-            >
-              I’m a colour specialist and hairdresser with over 20 years
-              in the game
-            </motion.span>
-            <motion.span style={{ opacity: smoothSpanTwo }}>
-              , working across every hair texture, every
-              shade, every style.
-            </motion.span>
-          </p>
         </div>
       </section>
-      {/* <section className={styles.sec2}>
-        <div className={styles.test}>
-        <div className={styles.imageContainer}>
-          <div className={styles.imageCon}>
-            <AnimatePresence mode='wait'>
-              <motion.img
-                key={activeIndex}
-                src={images[activeIndex]?.image}
-                alt={images[activeIndex]?.label}
-                className={styles.image}
-                initial={{ opacity: 0, scale: 1.1, filter: 'blur(4px)' }}
-                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                exit={{ opacity: 0, scale: 1.1, y: -20, filter: 'blur(4px)' }}
-                transition={{ duration: 0.5, ease:"easeInOut" }}
-              />
-            </AnimatePresence>
-          </div>
-        </div>
-        <div className={styles.para3}>
-          <motion.p
-            ref={paraRefOne}
-            style={{willChange: "opacity, transform"}}
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: inViewOne ? 1 : 0,
-              transform: inViewOne ? "scale(1)" : "scale(1.02)"
-            }}
-            transition={{ duration: 1, ease: "easeInOut" }}
-          >
-            <strong>{paraOne.primary}</strong>{paraOne.secondary}
-          </motion.p>
-        </div>
-        <div className={styles.para3}>
-          <motion.p 
-            ref={paraRefTwo}
-            style={{willChange: "opacity, transform"}}
-            initial={{opacity: 0}}
-            animate={{
-              opacity: inViewTwo ? 1 : 0,
-              transform: inViewTwo ? "scale(1)" : "scale(1.02)"
-            }}
-            transition={{ duration: 0.5, ease:"easeInOut"}}
-          >
-            <strong>{paraTwo.primary}</strong> {paraTwo.secondary}
-          </motion.p>
-        </div>
-        <div className={styles.para3}>
-          <motion.p 
-            ref={paraRefThree}
-            initial={{opacity: 0}}
-            animate={{
-              opacity: inViewThree ? 1 : 0,
-              transform: inViewThree ? "scale(1)" : "scale(1.02)"
-            }}
-            transition={{ duration: 0.5, ease:"easeInOut"}}
-          >
-            <strong>{paraThree.primary}</strong> {paraThree.secondary}
-          </motion.p>
-        </div>
-        </div>
-      </section> */}
       <ScrollAnimatedComponent 
         content={paraOne} 
         backgroundImage={"radial-gradient(140% 140% at 60% 0%, #fff, #f1e7dd)"} 
@@ -397,7 +288,7 @@ const Gallery = () => {
             left: 0,
             width: '50%',
             height: '100%',
-            background: 'lime',
+            background: '#fff',
             transformOrigin: 'left center',
             zIndex: 6,
           }}
@@ -412,7 +303,7 @@ const Gallery = () => {
             right: 0,
             width: '50%',
             height: '100%',
-            background: 'lime',
+            background: '#fff',
             transformOrigin: 'right center',
             zIndex: 6,
           }}
@@ -428,7 +319,7 @@ const Gallery = () => {
             alignItems: "center",
             height: '100%',
             width: '100%',
-            backgroundColor: "rgba(0,0,0,0.2)",
+            backgroundColor: "rgba(0,0,0,0.5)",
             fontSize: '2rem',
             zIndex: 5,
           }}
