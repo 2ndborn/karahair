@@ -107,9 +107,58 @@ const Gallery = () => {
     },
   ];
 
+  const welcomeRef = useRef(null);
+  const {scrollYProgress: welcomeScroll} = useScroll({
+    target: welcomeRef,
+    offset: ["start end", "end end"],
+  });
+  const gradientProgress = useTransform(welcomeScroll, [0,1], [20,100]);
+  const backgroundStyle = useTransform(gradientProgress, (val) => 
+    `linear-gradient(to right, #ca8383 ${val}%, transparent)`
+  );
+  const welcomeScale = useTransform(welcomeScroll, [0, 1], [1.05, 0.9])
+
   return (
     <div>
-      <section></section>
+      <section style={{position: "relative", height: "200vh",}} ref={welcomeRef}>
+        <motion.div
+         style={{
+          scale: welcomeScale,
+          position: "sticky", top: 0, display: "flex",
+          justifyContent: "flex-end", borderRadius: "15px",
+          overflow: "hidden", height: "100vh"}}
+        >
+          <div style={{height: "100%", width: "40%"}}>
+            <img src={kara} alt='test' style={{height: "100%", width: "100%", objectFit: "fill"}} />
+          </div>
+          <motion.div
+           style={{position: "absolute", inset: 0,
+             backgroundImage: backgroundStyle,
+                
+            }} 
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          />
+          
+        </motion.div>
+        <div style={{
+            position: "absolute", inset: 0, height: "100vh",
+            display: "flex", flexDirection: "column", justifyContent: "center",
+            alignItems: "flex-start", zIndex: 11, margin: "2rem",
+            }}
+          >
+            <div style={{ width: "60%", padding: "1rem"}}>
+              <h2>
+                Hi I am kara
+              </h2>
+              <h4>
+                That moment when a client looks into the mirror
+                and sees not just a fresh style, but the actualised
+                version of their internal self staring back at them.
+                That’s why I do what I do.
+              </h4>
+            </div>
+          </div>
+      </section>
 
       {/* <section className={styles.sec}>
           <motion.div 
@@ -399,7 +448,7 @@ const Gallery = () => {
           >
             Whether you’re sat in my chair or learning in my
             classroom, you’re getting more than just hair, <span>you’re getting
-              experience, vision, and straight-up passion.</span>
+            experience, vision, and straight-up passion.</span>
           </motion.p>
           <button>Click</button>
         </div>
