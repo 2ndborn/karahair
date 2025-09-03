@@ -267,8 +267,7 @@ const Gallery = () => {
         backgroundImage={"radial-gradient(140% 140% at 60% 0%, #fff, #ca8383)"}
         marginBottom={"0px"}  
       />
-      <ScrollAnimateMobile content={paraOne} />
-      <section style={{position: "relative", height: "100vh", padding: "1rem"}} >
+      {/* <section style={{position: "relative", height: "100vh", padding: "1rem"}} >
         <motion.div
           ref={targetRef}
           style={{
@@ -315,7 +314,7 @@ const Gallery = () => {
             <div style={{position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.4)"}} />
           </div>
         </motion.div>
-      </section>
+      </section> */}
 
       <section className={styles.sec3} ref={workRef}>
         <div className={styles.workContainer}>

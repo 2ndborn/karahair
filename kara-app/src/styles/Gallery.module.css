@@ -156,6 +156,18 @@
     box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+    .cards {
+        width: 500px;
+    }
+}
+
+@media (max-width: 500px) {
+    .cards {
+        width: 400px;
+    }
+}
+
 /******************************************Fourth Section***********************************************/
 
 .sec4 {
@@ -177,7 +189,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: 0 -50px;
+    object-position: 0px -50px;
     border-radius: 15px;
 }
 
@@ -211,6 +223,20 @@
     width: 50%;
     padding: 20px;
     box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .para4 {
+        justify-content: center;
+    }
+
+    .curlyImage {
+        object-position: -200px 0px;
+    }
+
+    .innerContainer {
+        width: 90%;
+    }
 }
 
 /******************************************Fifth Section***********************************************/
