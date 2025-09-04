@@ -52,16 +52,46 @@
     padding: 4rem;
 }
 
+.secImage {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+
 @media (max-width: 768px) {
     .secImageContainer {
-        width: 50%;
+        width: 60%;
+    }
+}
+
+@media (max-width: 500px) {
+    .secImageContainer {
+        width: 100%;
+    }
+
+    .secContainerTwo {
+        justify-content: flex-end;
+        align-items: center;
     }
 
     .secContentContainer {
-        width: 60%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        width: 100%;
+        padding: 4rem;
+    }
+
+    .secContentContainer h1 {
+        text-align: center;
+    }
+
+    .leftQuoteContainer {
+        top: 514px;
+        left: 34px;
+        font-size: 10rem;
+    }
+
+    .rightQuoteContainer {
+        top: 611px;
+        left: 136px;
     }
 }
 

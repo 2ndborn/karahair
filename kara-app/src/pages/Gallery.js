@@ -127,15 +127,35 @@ const Gallery = () => {
   const welcomeSmooth = useSpring(welcomeOpacity, {stiffness: 100, damping: 30, restDelta: 0.001})
   const WelcomeY = useTransform(welcomeParagraph, [0, 1], [-25, 25]);
 
+  const welcomeRefMob = useRef(null);
+  const {scrollYProgress: welcomeScrollMob} = useScroll({
+    target: welcomeRefMob,
+    offset: ["start end", "end end"],
+  });
+  const gradientProgressMob = useTransform(welcomeScrollMob, [0,1], [-50,100]);
+  const backgroundStyleMob = useTransform(gradientProgressMob, (val) => 
+    `linear-gradient(to top, #ca8383 ${val}%, transparent)`
+  );
+  const welcomeScaleMob = useTransform(welcomeScrollMob, [0, 1], [1.05, 0.9])
+
+  const {scrollYProgress: welcomeParagraphMob} =useScroll({
+    target: welcomeRefMob,
+    offset: ["start end", "end start"],
+  });
+
+  const welcomeOpacityMob = useTransform(welcomeParagraphMob, [0.2, 0.4, 0.6], [0, 1, 0]);
+  const welcomeSmoothMob = useSpring(welcomeOpacityMob, {stiffness: 100, damping: 30, restDelta: 0.001})
+  const WelcomeYMob = useTransform(welcomeParagraphMob, [0, 1], [-25, 25]);
+
   return (
     <div>
-      <section className={styles.sec} ref={welcomeRef}>
+      {/* <section className={styles.sec} ref={welcomeRef}>
         <motion.div
           className={styles.secContainerOne}
           style={{scale: welcomeScale}}
         >
           <div className={styles.secImageContainer}>
-            <img src={kara} alt='test' style={{height: "100%", width: "100%", objectFit: "fill"}} />
+            <img className={styles.secImage} src={kara} alt='test' />
           </div>
           <motion.div
            style={{position: "absolute", inset: 0,
@@ -155,6 +175,45 @@ const Gallery = () => {
           <motion.div
            className={styles.secContentContainer}
             style={{opacity: welcomeSmooth, y: WelcomeY}}
+          >
+            <h1 style={{ marginBottom: "3rem" }}>
+              Hi I am Kara!!!
+            </h1>
+            <h4 style={{textAlign: "center", fontStyle: "oblique"}}>
+              I am obessed with that moment when a client looks into the mirror
+              and sees not just restoration, but the actualised
+              version of their internal self staring back at them.
+              I am immediately reminded why I do this.
+            </h4>
+          </motion.div>
+        </div>
+      </section> */}
+      <section className={styles.sec} ref={welcomeRefMob}>
+        <motion.div
+          className={styles.secContainerOne}
+          style={{scale: welcomeScaleMob}}
+        >
+          <div className={styles.secImageContainer}>
+            <img className={styles.secImage} src={kara} alt='test' />
+          </div>
+          <motion.div
+           style={{position: "absolute", inset: 0,
+             backgroundImage: backgroundStyleMob,
+            }} 
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          />
+          
+        </motion.div>
+        <div className={styles.secContainerTwo}>
+          <div className={styles.leftQuoteContainer}>
+            <i style={{fontStyle: "oblique"}} className={`fa-solid fa-quote-left`}></i>
+          </div>
+          <div className={styles.rightQuoteContainer}>
+            <i style={{fontStyle: "oblique"}} className={`fa-solid fa-quote-right`}></i>
+          </div>
+          <motion.div
+           className={styles.secContentContainer}
+            style={{opacity: welcomeSmoothMob, y: WelcomeYMob}}
           >
             <h1 style={{ marginBottom: "3rem" }}>
               Hi I am Kara!!!
