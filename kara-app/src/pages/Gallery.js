@@ -114,7 +114,7 @@ const Gallery = () => {
   });
   const gradientProgress = useTransform(welcomeScroll, [0,1], [20,100]);
   const backgroundStyle = useTransform(gradientProgress, (val) => 
-    `linear-gradient(to right, #ca8383 ${val}%, transparent)`
+    `linear-gradient(to right, #fff ${val}%, transparent)`
   );
   const welcomeScale = useTransform(welcomeScroll, [0, 1], [1.05, 0.9])
 
@@ -149,7 +149,7 @@ const Gallery = () => {
 
   return (
     <div>
-      {/* <section className={styles.sec} ref={welcomeRef}>
+      <section className={styles.sec} ref={welcomeRef}>
         <motion.div
           className={styles.secContainerOne}
           style={{scale: welcomeScale}}
@@ -187,8 +187,8 @@ const Gallery = () => {
             </h4>
           </motion.div>
         </div>
-      </section> */}
-      <section className={styles.sec} ref={welcomeRefMob}>
+      </section>
+      {/* <section className={styles.sec} ref={welcomeRefMob}>
         <motion.div
           className={styles.secContainerOne}
           style={{scale: welcomeScaleMob}}
@@ -226,10 +226,10 @@ const Gallery = () => {
             </h4>
           </motion.div>
         </div>
-      </section>
+      </section> */}
       <ScrollAnimatedComponent 
         content={paraOne} 
-        backgroundImage={"radial-gradient(140% 140% at 60% 0%, #fff, #f1e7dd)"} 
+        backgroundImage={"radial-gradient(140% 140% at 60% 0%, #fff, #f6ff76ff)"} 
         marginBottom={"25px"}
       />
       <ScrollAnimatedComponent 
