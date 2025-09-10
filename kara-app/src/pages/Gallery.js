@@ -132,20 +132,20 @@ const Gallery = () => {
     target: welcomeRefMob,
     offset: ["start end", "end end"],
   });
-  const gradientProgressMob = useTransform(welcomeScrollMob, [0,1], [-50,100]);
+  const gradientProgressMob = useTransform(welcomeScrollMob, [0,1], [-50, 100]);
   const backgroundStyleMob = useTransform(gradientProgressMob, (val) => 
-    `linear-gradient(to top, #ca8383 ${val}%, transparent)`
-  );
+    `linear-gradient(to top, #f1e7dd ${val}%, transparent)`
+  ); 
   const welcomeScaleMob = useTransform(welcomeScrollMob, [0, 1], [1.05, 0.9])
 
-  const {scrollYProgress: welcomeParagraphMob} =useScroll({
+  const {scrollYProgress: welcomeParagraphMob} = useScroll({
     target: welcomeRefMob,
     offset: ["start end", "end start"],
   });
 
   const welcomeOpacityMob = useTransform(welcomeParagraphMob, [0.2, 0.4, 0.6], [0, 1, 0]);
   const welcomeSmoothMob = useSpring(welcomeOpacityMob, {stiffness: 100, damping: 30, restDelta: 0.001})
-  const WelcomeYMob = useTransform(welcomeParagraphMob, [0, 1], [-25, 25]);
+  const WelcomeYMob = useTransform(welcomeParagraphMob, [0, 1], [-50, 50]);
 
   return (
     <div>
