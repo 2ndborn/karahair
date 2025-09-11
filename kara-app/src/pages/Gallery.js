@@ -420,7 +420,7 @@ const Gallery = () => {
           }}
         />
       </section>
-      <section style={{ height: '200vh', position: 'relative' }}>
+      <section style={{ height: '400vh', position: 'relative' }}>
         <div style={{
           position: "sticky",
           top: 0,
@@ -430,7 +430,7 @@ const Gallery = () => {
           width: "100%",
           height: "100vh",
           padding: "10px",
-          boxSizing: "border-box"
+          boxSizing: "border-box",
         }}>
           <motion.img
             src={brazil}
@@ -444,15 +444,26 @@ const Gallery = () => {
               zIndex: -1,
             }}
           />
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(0,0,0,0.3)",
+            margin: "10px",
+            borderRadius: "10px",
+            boxSizing: "border-box",
+            }} />
         </div>
         <div style={{
-          position: "absolute",
+          position: "relative",
+          height: "110vh",
           display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           zIndex: 21,
         }}>
-          <p style={{ fontSize: "2rem" }}>I am the best</p>
+          <p style={{height: "100vh", color: "#fff", fontSize: "2rem" }}>I am the best</p>
+          <button style={{height: "100vh",}}>Button</button>
         </div>
       </section>
     </div>
