@@ -420,18 +420,19 @@ const Gallery = () => {
           }}
         />
       </section>
-      <section style={{ height: '200vh', position: 'relative' }}>
+      <section style={{ height: '200vh', position: 'relative' }} ref={secFive}>
         <div style={{
-          position: "sticky",
-          top: 0,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          height: "100vh",
-          padding: "10px",
-          boxSizing: "border-box",
-        }}>
+            position: "sticky",
+            top: 0,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            height: "100vh",
+            padding: "10px",
+            boxSizing: "border-box",
+          }}
+        >
           <motion.img
             src={brazil}
             alt="a model"
@@ -447,11 +448,12 @@ const Gallery = () => {
           <div style={{
             position: "absolute",
             inset: 0,
-            backgroundColor: "rgba(0,0,0,0.3)",
+            backgroundColor: "rgba(0,0,0,0.6)",
             margin: "10px",
             borderRadius: "10px",
             boxSizing: "border-box",
-            }} />
+            }} 
+          />
         </div>
         <div style={{
           display: "flex",
@@ -461,8 +463,7 @@ const Gallery = () => {
           textAlign: "center",
         }}>
           <div style={{
-            position: "relative",
-            height: "110vh",
+            height: "100vh",
             width: "75%",
             zIndex: 21,
           }}>
@@ -471,16 +472,22 @@ const Gallery = () => {
               classroom, you’re getting more than just hair, <span>you’re getting
                 experience, vision, and straight-up passion.</span>
             </p>
-            <button style={{
+            
+          </div>
+        </div>
+      </section>
+      <section style={{position: "relative", height: "50vh"}}>
+        <div style={{height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
+          <button style={{
               borderRadius: "20px",
               padding: "5px 20px",
-              backgroundImage: "radial-gradient(100% 105% at 50% 0%, #cffc1c, #364207ff)",
-              color: "#fff"
+              backgroundColor: "#cffc1c",
+              color: "#fff",
+              boxShadow: "2px 2px 4px #000"
             }}
             >
               Book a consultation!
             </button>
-          </div>
         </div>
       </section>
     </div>
