@@ -420,6 +420,41 @@ const Gallery = () => {
           }}
         />
       </section>
+      <section style={{ height: '200vh', position: 'relative' }}>
+        <div style={{
+          position: "sticky",
+          top: 0,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "100vh",
+          padding: "10px",
+          boxSizing: "border-box"
+        }}>
+          <motion.img
+            src={brazil}
+            alt="a model"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: '0 0',
+              borderRadius: "10px",
+              zIndex: -1,
+            }}
+          />
+        </div>
+        <div style={{
+          position: "absolute",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          zIndex: 21,
+        }}>
+          <p style={{ fontSize: "2rem" }}>I am the best</p>
+        </div>
+      </section>
     </div>
   )
 }
