@@ -420,7 +420,7 @@ const Gallery = () => {
           }}
         />
       </section>
-      <section style={{ height: '400vh', position: 'relative' }}>
+      <section style={{ height: '200vh', position: 'relative' }}>
         <div style={{
           position: "sticky",
           top: 0,
@@ -454,16 +454,33 @@ const Gallery = () => {
             }} />
         </div>
         <div style={{
-          position: "relative",
-          height: "110vh",
           display: "flex",
-          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          zIndex: 21,
+          flexDirection: "column",
+          textAlign: "center",
         }}>
-          <p style={{height: "100vh", color: "#fff", fontSize: "2rem" }}>I am the best</p>
-          <button style={{height: "100vh",}}>Button</button>
+          <div style={{
+            position: "relative",
+            height: "110vh",
+            width: "75%",
+            zIndex: 21,
+          }}>
+            <p style={{ color: "#fff", fontSize: "2rem" }}>
+              Whether you’re sat in my chair or learning in my
+              classroom, you’re getting more than just hair, <span>you’re getting
+                experience, vision, and straight-up passion.</span>
+            </p>
+            <button style={{
+              borderRadius: "20px",
+              padding: "5px 20px",
+              backgroundImage: "radial-gradient(100% 105% at 50% 0%, #cffc1c, #364207ff)",
+              color: "#fff"
+            }}
+            >
+              Book a consultation!
+            </button>
+          </div>
         </div>
       </section>
     </div>
