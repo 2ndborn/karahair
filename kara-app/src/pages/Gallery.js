@@ -420,7 +420,7 @@ const Gallery = () => {
           }}
         />
       </section>
-      <section style={{ height: '200vh', position: 'relative' }} ref={secFive}>
+      <section style={{ height: '200vh', position: 'relative' }}>
         <div style={{
             position: "sticky",
             top: 0,
@@ -448,12 +448,72 @@ const Gallery = () => {
           <div style={{
             position: "absolute",
             inset: 0,
+            display: "flex",
+            justifyContent: "center",
+            textAlign: "center",
             backgroundColor: "rgba(0,0,0,0.6)",
             margin: "10px",
             borderRadius: "10px",
             boxSizing: "border-box",
-            }} 
-          />
+          }}
+          >
+            <div style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              height: "100vh",
+              width: "75%",
+            }}>
+              <motion.p 
+                initial={{opacity: 0}}
+                whileInView={{opacity: 1}}
+                transition={{duration: 1.5, ease: "easeIn"}}
+                style={{ color: "#fff", fontSize: "2rem" }}>
+                Whether you’re sat in my chair or learning in my
+                classroom, you’re getting more than just hair, <span>you’re getting
+                  experience, vision, and straight-up passion.</span>
+              </motion.p>
+              <motion.button 
+              initial={{opacity: 0}}
+                whileInView={{opacity: 1}}
+                transition={{duration: 1.5, delay: 0.5, ease: "easeIn"}}
+              style={{
+                marginTop: "10px",
+                borderRadius: "20px",
+                padding: "5px 20px",
+                backgroundColor: "#cffc1c",
+                color: "#fff",
+                boxShadow: "2px 2px 4px #000"
+              }}
+              >
+                Book a consultation!
+              </motion.button>
+            </div>
+          </div>
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            height: "100vh",
+            width: "75%",
+            zIndex: 21,
+          }}>
+            {/* <p style={{ color: "#fff", fontSize: "2rem" }}>
+              Whether you’re sat in my chair or learning in my
+              classroom, you’re getting more than just hair, <span>you’re getting
+                experience, vision, and straight-up passion.</span>
+            </p>
+            <button style={{
+              borderRadius: "20px",
+              padding: "5px 20px",
+              backgroundColor: "#cffc1c",
+              color: "#fff",
+              boxShadow: "2px 2px 4px #000"
+            }}
+            >
+              Book a consultation!
+            </button> */}
+          </div>
         </div>
         <div style={{
           display: "flex",
@@ -462,7 +522,7 @@ const Gallery = () => {
           flexDirection: "column",
           textAlign: "center",
         }}>
-          <div style={{
+          {/* <div style={{
             height: "100vh",
             width: "75%",
             zIndex: 21,
@@ -472,13 +532,7 @@ const Gallery = () => {
               classroom, you’re getting more than just hair, <span>you’re getting
                 experience, vision, and straight-up passion.</span>
             </p>
-            
-          </div>
-        </div>
-      </section>
-      <section style={{position: "relative", height: "50vh"}}>
-        <div style={{height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
-          <button style={{
+            <button style={{
               borderRadius: "20px",
               padding: "5px 20px",
               backgroundColor: "#cffc1c",
@@ -488,6 +542,7 @@ const Gallery = () => {
             >
               Book a consultation!
             </button>
+          </div> */}
         </div>
       </section>
     </div>
