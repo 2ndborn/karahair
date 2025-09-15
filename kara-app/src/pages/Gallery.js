@@ -483,7 +483,10 @@ const Gallery = () => {
                 borderRadius: "20px",
                 padding: "5px 20px",
                 backgroundColor: "#cffc1c",
+                fontWeight: 700,
+                letterSpacing: "1px",
                 color: "#fff",
+                textShadow: "rgba(0,0,0) 2px 2px 3px",
                 boxShadow: "2px 2px 4px #000"
               }}
               >

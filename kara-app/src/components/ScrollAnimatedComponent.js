@@ -12,7 +12,7 @@ export default function ScrollAnimatedComponent({
   // Scroll progress for fade/scale
   const { scrollYProgress: scrollYmobile } = useScroll({
     target: mobileRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
 
   const scaleM = useTransform(scrollYmobile, [0, 1], [1, 0.95]);
