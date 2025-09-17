@@ -140,7 +140,7 @@ export default function ScrollAnimatedComponent({
             justifyContent: "center",
             height: "95vh",
             width: "100%",
-            backgroundImage: "radial-gradient(160% 130% at 50% 0%, white, #d9b9a0)",
+            backgroundImage: backgroundImage,
             padding: "20px",
             boxSizing: "border-box",
             borderRadius: "15px",

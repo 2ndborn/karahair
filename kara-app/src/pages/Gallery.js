@@ -14,6 +14,7 @@ import { useScrollFade } from '../hooks/useScrollFade';
 import { paragraphs } from '../serviceData/paragraphData';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import ScrollAnimatedComponent from '../components/ScrollAnimatedComponent';
+import SwipeComponent from '../components/SwipeComponent';
 
 const Gallery = () => {
 
@@ -107,49 +108,59 @@ const Gallery = () => {
     },
   ];
 
-  const welcomeRef = useRef(null);
-  const {scrollYProgress: welcomeScroll} = useScroll({
-    target: welcomeRef,
-    offset: ["start end", "end end"],
+  // const welcomeRef = useRef(null);
+  // const {scrollYProgress: welcomeScroll} = useScroll({
+  //   target: welcomeRef,
+  //   offset: ["start end", "end end"],
+  // });
+  // const gradientProgress = useTransform(welcomeScroll, [0,1], [20,100]);
+  // const backgroundStyle = useTransform(gradientProgress, (val) => 
+  //   `linear-gradient(to right, #fff ${val}%, transparent)`
+  // );
+  // const welcomeScale = useTransform(welcomeScroll, [0, 1], [1.05, 0.9])
+
+  // const {scrollYProgress: welcomeParagraph} =useScroll({
+  //   target: welcomeRef,
+  //   offset: ["start end", "end start"],
+  // });
+
+  // const welcomeOpacity = useTransform(welcomeParagraph, [0.2, 0.4, 0.6], [0, 1, 0]);
+  // const welcomeSmooth = useSpring(welcomeOpacity, {stiffness: 100, damping: 30, restDelta: 0.001})
+  // const WelcomeY = useTransform(welcomeParagraph, [0, 1], [-25, 25]);
+
+  // const welcomeRefMob = useRef(null);
+  // const {scrollYProgress: welcomeScrollMob} = useScroll({
+  //   target: welcomeRefMob,
+  //   offset: ["start end", "end end"],
+  // });
+  // const gradientProgressMob = useTransform(welcomeScrollMob, [0,1], [-50, 100]);
+  // const backgroundStyleMob = useTransform(gradientProgressMob, (val) => 
+  //   `linear-gradient(to top, #f1e7dd ${val}%, transparent)`
+  // ); 
+  // const welcomeScaleMob = useTransform(welcomeScrollMob, [0, 1], [1.05, 0.9])
+
+  // const {scrollYProgress: welcomeParagraphMob} = useScroll({
+  //   target: welcomeRefMob,
+  //   offset: ["start end", "end start"],
+  // });
+
+  // const welcomeOpacityMob = useTransform(welcomeParagraphMob, [0.2, 0.4, 0.6], [0, 1, 0]);
+  // const welcomeSmoothMob = useSpring(welcomeOpacityMob, {stiffness: 100, damping: 30, restDelta: 0.001})
+  // const WelcomeYMob = useTransform(welcomeParagraphMob, [0, 1], [-50, 50]);
+
+  const  fiveRef = useRef(null);
+
+  const { scrollYProgress: fiveScrollY } = useScroll({
+    target: fiveRef,
+    offset: ["start end", "end start"]
   });
-  const gradientProgress = useTransform(welcomeScroll, [0,1], [20,100]);
-  const backgroundStyle = useTransform(gradientProgress, (val) => 
-    `linear-gradient(to right, #fff ${val}%, transparent)`
-  );
-  const welcomeScale = useTransform(welcomeScroll, [0, 1], [1.05, 0.9])
 
-  const {scrollYProgress: welcomeParagraph} =useScroll({
-    target: welcomeRef,
-    offset: ["start end", "end start"],
-  });
-
-  const welcomeOpacity = useTransform(welcomeParagraph, [0.2, 0.4, 0.6], [0, 1, 0]);
-  const welcomeSmooth = useSpring(welcomeOpacity, {stiffness: 100, damping: 30, restDelta: 0.001})
-  const WelcomeY = useTransform(welcomeParagraph, [0, 1], [-25, 25]);
-
-  const welcomeRefMob = useRef(null);
-  const {scrollYProgress: welcomeScrollMob} = useScroll({
-    target: welcomeRefMob,
-    offset: ["start end", "end end"],
-  });
-  const gradientProgressMob = useTransform(welcomeScrollMob, [0,1], [-50, 100]);
-  const backgroundStyleMob = useTransform(gradientProgressMob, (val) => 
-    `linear-gradient(to top, #f1e7dd ${val}%, transparent)`
-  ); 
-  const welcomeScaleMob = useTransform(welcomeScrollMob, [0, 1], [1.05, 0.9])
-
-  const {scrollYProgress: welcomeParagraphMob} = useScroll({
-    target: welcomeRefMob,
-    offset: ["start end", "end start"],
-  });
-
-  const welcomeOpacityMob = useTransform(welcomeParagraphMob, [0.2, 0.4, 0.6], [0, 1, 0]);
-  const welcomeSmoothMob = useSpring(welcomeOpacityMob, {stiffness: 100, damping: 30, restDelta: 0.001})
-  const WelcomeYMob = useTransform(welcomeParagraphMob, [0, 1], [-50, 50]);
+  const fiveOpacity = useTransform(fiveScrollY, [0,1], [1,0]);
 
   return (
     <div>
-      <section className={styles.sec} ref={welcomeRef}>
+      <SwipeComponent />
+      {/* <section className={styles.sec} ref={welcomeRef}>
         <motion.div
           className={styles.secContainerOne}
           style={{scale: welcomeScale}}
@@ -187,7 +198,7 @@ const Gallery = () => {
             </h4>
           </motion.div>
         </div>
-      </section>
+      </section> */}
       {/* <section className={styles.sec} ref={welcomeRefMob}>
         <motion.div
           className={styles.secContainerOne}
@@ -420,7 +431,7 @@ const Gallery = () => {
           }}
         />
       </section>
-      <section style={{ height: '200vh', position: 'relative' }}>
+      <section style={{ height: '200vh', position: 'relative' }} ref={fiveRef}>
         <div style={{
             position: "sticky",
             top: 0,
@@ -445,109 +456,52 @@ const Gallery = () => {
               zIndex: -1,
             }}
           />
+          <motion.div className={styles.secFiveOverlay} style={{ opacity: fiveOpacity }}
+          />
           <div style={{
             position: "absolute",
             inset: 0,
             display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
             justifyContent: "center",
-            textAlign: "center",
-            backgroundColor: "rgba(0,0,0,0.6)",
-            margin: "10px",
-            borderRadius: "10px",
+            height: "100vh",
+            width: "100%",
+            padding: "0 20px",
             boxSizing: "border-box",
-          }}
-          >
-            <div style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              height: "100vh",
-              width: "75%",
-            }}>
-              <motion.p 
-                initial={{opacity: 0}}
-                whileInView={{opacity: 1}}
-                transition={{duration: 1.5, ease: "easeIn"}}
-                style={{ color: "#fff", fontSize: "2rem" }}>
-                Whether you’re sat in my chair or learning in my
-                classroom, you’re getting more than just hair, <span>you’re getting
-                  experience, vision, and straight-up passion.</span>
-              </motion.p>
-              <motion.button 
+            textAlign: "center",
+          }}>
+            <motion.p 
               initial={{opacity: 0}}
-                whileInView={{opacity: 1}}
-                transition={{duration: 1.5, delay: 0.5, ease: "easeIn"}}
-              style={{
-                marginTop: "10px",
-                borderRadius: "20px",
-                padding: "5px 20px",
-                backgroundColor: "#cffc1c",
-                fontWeight: 700,
-                letterSpacing: "1px",
-                color: "#fff",
-                textShadow: "rgba(0,0,0) 2px 2px 3px",
-                boxShadow: "2px 2px 4px #000"
-              }}
-              >
-                Book a consultation!
-              </motion.button>
-            </div>
-          </div>
-          <div style={{
-            position: "absolute",
-            inset: 0,
-            height: "100vh",
-            width: "75%",
-            zIndex: 21,
-          }}>
-            {/* <p style={{ color: "#fff", fontSize: "2rem" }}>
+              whileInView={{opacity: 1}}
+              transition={{duration: 1.5, ease: "easeIn"}}
+              style={{ color: "#fff", fontSize: "2rem", width: "100%", maxWidth: "900px",}}>
               Whether you’re sat in my chair or learning in my
               classroom, you’re getting more than just hair, <span>you’re getting
                 experience, vision, and straight-up passion.</span>
-            </p>
-            <button style={{
-              borderRadius: "20px",
-              padding: "5px 20px",
+            </motion.p>
+            <motion.button 
+            initial={{opacity: 0}}
+              whileInView={{opacity: 1}}
+              transition={{duration: 1.5, delay: 0.5, ease: "easeIn"}}
+            style={{
+              marginTop: "30px",
+              borderRadius: "30px",
+              padding: "15px 35px",
               backgroundColor: "#cffc1c",
+              fontWeight: 700,
+              letterSpacing: "1px",
               color: "#fff",
+              textShadow: "rgba(0,0,0) 2px 2px 3px",
               boxShadow: "2px 2px 4px #000"
             }}
             >
               Book a consultation!
-            </button> */}
+            </motion.button>
           </div>
-        </div>
-        <div style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          textAlign: "center",
-        }}>
-          {/* <div style={{
-            height: "100vh",
-            width: "75%",
-            zIndex: 21,
-          }}>
-            <p style={{ color: "#fff", fontSize: "2rem" }}>
-              Whether you’re sat in my chair or learning in my
-              classroom, you’re getting more than just hair, <span>you’re getting
-                experience, vision, and straight-up passion.</span>
-            </p>
-            <button style={{
-              borderRadius: "20px",
-              padding: "5px 20px",
-              backgroundColor: "#cffc1c",
-              color: "#fff",
-              boxShadow: "2px 2px 4px #000"
-            }}
-            >
-              Book a consultation!
-            </button>
-          </div> */}
         </div>
       </section>
+      
     </div>
   )
 }

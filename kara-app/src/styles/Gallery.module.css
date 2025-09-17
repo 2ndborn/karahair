@@ -18,6 +18,7 @@
 .secImageContainer {
     height: 100%;
     width: 40%;
+    border: 2px solid red;
 }
 
 .secContainerTwo {
@@ -56,6 +57,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    border: 2px solid blue;
 }
 
 @media (max-width: 768px) {
@@ -285,3 +287,11 @@
 }
 
 /******************************************Fifth Section***********************************************/
+
+.secFiveOverlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 10px;
+    border-radius: 15px;
+}
