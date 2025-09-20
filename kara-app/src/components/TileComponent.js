@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useSpring, useTransform, useVelocity } from 'framer-motion';
-import brazil from '../assets/brazil.webp';
 
 export default function TileComponent({margin, boxShadow, content,}) {
   const ref = useRef(null);
@@ -46,17 +45,6 @@ export default function TileComponent({margin, boxShadow, content,}) {
       >
       <img src={content.image} alt='model' style={{ height: "100%", width: "100%", objectFit: "cover" }} />
       <motion.div style={{ opacity: opacitySpring, position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.5)" }} />
-        {/* <motion.div
-          style={{
-            y,
-            opacity: opacitySpring,
-            position: "relative", height: "75%", width: "35%",
-            borderRadius: "10px", overflow: "hidden",
-            backgroundColor: "blue",
-            boxShadow: "-0px 10px 10px rgba(0,0,0,0.3), 0px 15px 20px rgba(0,0,0,0.5)"
-          }}>
-          
-        </motion.div> */}
         <motion.div
           style={{
             position: "absolute",
@@ -64,9 +52,12 @@ export default function TileComponent({margin, boxShadow, content,}) {
             opacity: opacitySpring, y,
             display: 'flex', justifyContent: "center", alignItems: "center", textAlign: "center",
             color: "#fff",
-            // height: "75%", width: "35%",
           }}>
-          <p><span>{content.primary}</span>{content.secondary}</p>
+          <p
+            style={{fontSize: "2rem", padding: "0px 100px"}}
+          >
+            <span>{content.primary}</span>{content.secondary}
+          </p>
         </motion.div>
         
       </motion.div>
