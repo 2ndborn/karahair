@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useSpring, useTransform, useVelocity } from 'framer-motion';
 import brazil from '../assets/brazil.webp';
 
-const TileComponent = () => {
+export default function TileComponent({margin, boxShadow, content,}) {
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -10,20 +10,16 @@ const TileComponent = () => {
     offset: ["start end", "end start"] 
   });
 
-  const boxShadow = useTransform(scrollYProgress, [0, 1], [
-    "inset 15px 15px 25px rgba(255, 3, 255, 0.6)",
-    "inset -15px -15px 25px rgba(255, 3, 255, 0.6)"
-  ]);
   const opacity = useTransform(scrollYProgress, [0.25, 0.5, 0.75], [0,1,0]);
   const opacitySpring = useSpring(opacity, {stiffness: 100, damping: 30, restDelta: 0.001})
   const y = useTransform(scrollYProgress, [0,1], [300, -300])
 
   const { scrollYProgress: scrollScale } = useScroll({
     target: ref,
-    offset: ["end end", "end start"] 
+    offset: ["start end", "end start"] 
   });
 
-  const scale = useTransform(scrollScale, [0,1], [1, 0.85])
+  const scale = useTransform(scrollScale, [0.2, 0.5, 0.8], [0.8, 1, 0.8])
 
   const {scrollY} = useScroll({target: ref});
   const velocity = useVelocity(scrollY);
@@ -31,49 +27,50 @@ const TileComponent = () => {
   const velocitySpring = useSpring(velocityMap, { stiffness: 30, damping: 90 })
 
   return (
-    <div style={{ height: "300vh", padding: "50px" }}>
-        <div style={{height: "100vh,"}} />
+    <div style={{ height: "200vh", boxSizing: "border-box"}}>
+      <div style={{ height: "50vh," }} />
       <motion.div
         ref={ref}
         style={{
           y: velocitySpring,
           position: "sticky",
-          top: 60,  
+          top: 60,
           height: "90vh",
-          backgroundColor: "#fff",
-          border: "rgba(255, 3, 255, 0.4) solid 2px",
           borderRadius: "15px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-evenly",
-          boxShadow,
           scale,
+          boxShadow: boxShadow,
+          boxSizing: "border-box",
+          margin: margin,
+          overflow: "hidden"
         }}
       >
-        <motion.div 
-        style={{
-          opacity: opacitySpring, y, 
-          display: 'flex', justifyContent: "center", alignItems: "center", 
-          height: "75%", width: "35%",
-          boxShadow: "0px 10px 20px "
+      <img src={content.image} alt='model' style={{ height: "100%", width: "100%", objectFit: "cover" }} />
+      <motion.div style={{ opacity: opacitySpring, position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.5)" }} />
+        {/* <motion.div
+          style={{
+            y,
+            opacity: opacitySpring,
+            position: "relative", height: "75%", width: "35%",
+            borderRadius: "10px", overflow: "hidden",
+            backgroundColor: "blue",
+            boxShadow: "-0px 10px 10px rgba(0,0,0,0.3), 0px 15px 20px rgba(0,0,0,0.5)"
           }}>
-          <h1>Hello, world!!!</h1>
+          
+        </motion.div> */}
+        <motion.div
+          style={{
+            position: "absolute",
+            inset: 0,
+            opacity: opacitySpring, y,
+            display: 'flex', justifyContent: "center", alignItems: "center", textAlign: "center",
+            color: "#fff",
+            // height: "75%", width: "35%",
+          }}>
+          <p><span>{content.primary}</span>{content.secondary}</p>
         </motion.div>
-        <motion.div 
-        style={{
-          y,
-          opacity: opacitySpring,
-          position: "relative", height: "75%", width: "35%", 
-          borderRadius: "10px", overflow: "hidden",
-          backgroundColor: "blue",
-          boxShadow: "0px 15px 25px rgba(51, 0, 51, 0.6)"}}>
-          <img src={brazil} alt='model' style={{height: "100%", width: "100%", objectFit: "cover"}} />
-          <div style={{position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.4)"}} />
-        </motion.div>
+        
       </motion.div>
-        <div style={{height: "100vh,"}} />
+      <div style={{ height: "50vh," }} />
     </div>
   );
 };
-
-export default TileComponent;

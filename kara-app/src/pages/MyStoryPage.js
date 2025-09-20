@@ -7,18 +7,19 @@ import curly from '../assets/curly.webp';
 import brazil from '../assets/brazil.webp';
 
 import styles from '../styles/MyStory.module.css'
-import Container from 'react-bootstrap/Container'
-import {Row, Col} from 'react-bootstrap/'
 import useDynamicColor from '../hooks/useDynamicColor'
 import useFadeUp from '../hooks/useFadeUp'
 import Title from '../components/Title'
 import { AnimateButton } from '../utils/AnimateButton';
 import { Link } from 'react-router-dom';
 import TileComponent from '../components/TileComponent';
+import { paragraphs } from '../serviceData/paragraphData';
 
 const MyStoryPage = () => {
   const getColor = useDynamicColor();
   const isLoaded = useFadeUp();
+
+  const [paraOne, paraTwo, paraThree] = paragraphs;
 
   return (
     <>
@@ -133,7 +134,16 @@ const MyStoryPage = () => {
         <div className={styles.k}>K</div>
         <div className={styles.h}>H</div>
       </div>
-      <TileComponent />
+      <section style={{
+        height: "1000vh", position: "relative",
+        backgroundImage: "radial-gradient(50% 50% at 50% 50%, rgba(255, 3, 255, 0.2), rgba(255, 3, 255, 0.17), rgba(255, 3, 255, 0.15) 5%, white)",
+        }}
+      >
+        <TileComponent content={paraOne} margin={"0px 190px 0px 10px"} boxShadow={"8px 8px 10px rgba(0,0,0,0.3), 10px 10px 14px rgba(0,0,0,0.5)"}/>
+        <TileComponent content={paraTwo} margin={"0px 150px 0px 50px"} boxShadow={"4px 8px 10px rgba(0,0,0,0.3), 6px 10px 14px rgba(0,0,0,0.5)"} />
+        <TileComponent content={paraThree} margin={"0px 100px 0px 100px"} boxShadow={"0px 8px 10px rgba(0,0,0,0.3), 0px 10px 14px rgba(0,0,0,0.5)"} />
+        <TileComponent content={{ primary: "Great", secondary: "stuff"}} margin={"0px 50px 0px 150px"} />
+      </section>
     </>
   )
 }
