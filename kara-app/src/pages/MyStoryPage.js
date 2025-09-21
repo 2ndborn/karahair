@@ -1,10 +1,14 @@
-import React from 'react'
-import {motion}  from 'framer-motion'
+import React, { useRef } from 'react'
+import {motion, useScroll, useTransform}  from 'framer-motion'
 import kara from '../assets/karapic.webp'
 import award from '../assets/award.webp';
 import wigs from '../assets/wigs.webp';
 import curly from '../assets/curly.webp';
 import brazil from '../assets/brazil.webp';
+import bel from '../assets/bel.webp';
+import jane from '../assets/jane.webp';
+import forsytes from '../assets/forsytes.webp';
+import treason from '../assets/treason.webp';
 
 import styles from '../styles/MyStory.module.css'
 import useDynamicColor from '../hooks/useDynamicColor'
@@ -19,7 +23,39 @@ const MyStoryPage = () => {
   const getColor = useDynamicColor();
   const isLoaded = useFadeUp();
 
-  const [paraOne, paraTwo, paraThree] = paragraphs;
+  const workRef = useRef(null);
+  const { scrollYProgress: workScrollX } = useScroll({
+    target: workRef,
+  });
+  const x = useTransform(workScrollX, [0, 1], ["5%", "-75%"]);
+
+  const [paraOne, paraTwo, paraThree, paraFour, paraFive] = paragraphs;
+  const workArray = [
+      {
+        id: 1,
+        company: "ITV",
+        title: "Belgravia The Next Chapter",
+        image: bel,
+      },
+      {
+        id: 2,
+        company: "Amazon Prime",
+        title: "My Lady Jane",
+        image: jane,
+      },
+      {
+        id: 3,
+        company: "Channel 5",
+        title: "The Forsytes",
+        image: forsytes,
+      },
+      {
+        id: 4,
+        company: "Netflix",
+        title: "Treason",
+        image: treason,
+      },
+    ];
 
   return (
     <>
@@ -64,7 +100,7 @@ const MyStoryPage = () => {
           </div>
         </div>
       </div>
-      <div className={styles.container}>
+      {/* <div className={styles.container}>
         <div className={styles.pr1}>
           <p>
             <span>I’m a colour specialist and hairdresser with over 20 years 
@@ -133,9 +169,9 @@ const MyStoryPage = () => {
         </div>
         <div className={styles.k}>K</div>
         <div className={styles.h}>H</div>
-      </div>
+      </div> */}
       <section style={{
-        height: "1000vh", position: "relative",
+        height: "1500vh", position: "relative",
         backgroundImage: "radial-gradient(50% 50% at 50% 50%, rgba(255, 3, 255, 0.2), rgba(255, 3, 255, 0.17), rgba(255, 3, 255, 0.15) 5%, white)",
         }}
       >
@@ -143,6 +179,34 @@ const MyStoryPage = () => {
         <TileComponent content={paraTwo} margin={"0px 150px 0px 50px"} boxShadow={"4px 8px 10px rgba(0,0,0,0.3), 6px 10px 14px rgba(0,0,0,0.5)"} />
         <TileComponent content={paraThree} margin={"0px 100px 0px 100px"} boxShadow={"0px 8px 10px rgba(0,0,0,0.3), 0px 10px 14px rgba(0,0,0,0.5)"} />
         <TileComponent content={{ primary: "Great", secondary: "stuff"}} margin={"0px 50px 0px 150px"} />
+        <section className={styles.sec3} ref={workRef}>
+          <div className={styles.workContainer}>
+            <motion.div
+              className={styles.work}
+              style={{ x }}
+            >
+              {workArray.map((work) => (
+                <motion.div
+                  key={work.id}
+                  className={styles.cards}
+                >
+                  <motion.img
+                    src={work.image}
+                    alt='studio'
+                    style={{
+                      height: "100%",
+                      width: "100%",
+                      objectFit: "fill"
+                    }}
+                  />
+                </motion.div>
+              )
+              )}
+            </motion.div>
+          </div>
+        </section>
+        <TileComponent content={paraFour} />
+        <TileComponent content={paraFive} />
       </section>
     </>
   )

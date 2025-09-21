@@ -54,9 +54,17 @@ export default function TileComponent({margin, boxShadow, content,}) {
             color: "#fff",
           }}>
           <p
-            style={{fontSize: "2rem", padding: "0px 100px"}}
+            style={{fontSize: "2rem", color: "rgba(255, 255, 255, 0.8)", padding: "0px 100px"}}
           >
-            <span>{content.primary}</span>{content.secondary}
+            {(content.id < 5 || content.id === 'paraFive') ? (
+              <>
+              <span style={{fontWeight: "800", color: "#fff"}}>{content.primary}</span>{content.secondary}
+              </>
+            ) : (
+              <>
+              {content.primary}<span style={{fontWeight: "800", color: "#fff"}}>{content.secondary}</span>
+              </>
+            )}
           </p>
         </motion.div>
         
@@ -64,4 +72,4 @@ export default function TileComponent({margin, boxShadow, content,}) {
       <div style={{ height: "50vh," }} />
     </div>
   );
-};
+};  
