@@ -176,10 +176,9 @@ const MyStoryPage = () => {
         backgroundImage: "radial-gradient(50% 50% at 50% 50%, rgba(255, 3, 255, 0.2), rgba(255, 3, 255, 0.17), rgba(255, 3, 255, 0.15) 5%, white)",
         }}
       >
-        <TileComponent content={paraOne} margin={"0px 190px 0px 10px"} boxShadow={"8px 8px 10px rgba(0,0,0,0.3), 10px 10px 14px rgba(0,0,0,0.5)"}/>
-        <TileComponent content={paraTwo} margin={"0px 150px 0px 50px"} boxShadow={"4px 8px 10px rgba(0,0,0,0.3), 6px 10px 14px rgba(0,0,0,0.5)"} />
-        <TileComponent content={paraThree} margin={"0px 100px 0px 100px"} boxShadow={"0px 8px 10px rgba(0,0,0,0.3), 0px 10px 14px rgba(0,0,0,0.5)"} />
-        <TileComponent content={{ primary: "Great", secondary: "stuff"}} margin={"0px 50px 0px 150px"} />
+        <TileComponent content={paraOne} margin={"0px 190px 0px 10px"} boxShadow={"8px 8px 10px rgba(0,0,0,0.3), 10px 10px 14px rgba(0,0,0,0.5)"} />
+        <TileComponent content={paraTwo} margin={"0px 100px 0px 100px"} boxShadow={"0px 8px 10px rgba(0,0,0,0.3), 0px 10px 14px rgba(0,0,0,0.5)"} />
+        <TileComponent content={paraThree} margin={"0px 10px 0px 190px"} boxShadow={"-8px 8px 10px rgba(0,0,0,0.3), -10px 10px 14px rgba(0,0,0,0.5)"} />
         <section className={styles.sec3} ref={workRef}>
           <div className={styles.workContainer}>
             <motion.div
@@ -206,11 +205,10 @@ const MyStoryPage = () => {
             </motion.div>
           </div>
         </section>
-        <TileComponent content={paraFour} />
-        <TileComponent content={paraFive} />
+        <TileComponent content={paraFour} margin={"0px 10px 0px 190px"} boxShadow={"-4px 8px 10px rgba(0,0,0,0.3), -6px 10px 14px rgba(0,0,0,0.5)"} />
+        <TileComponent content={paraFive} margin={"0px 100px 0px 100px"} boxShadow={"0px 8px 10px rgba(0,0,0,0.3), 0px 10px 14px rgba(0,0,0,0.5)"}  />
         <TileComponent
-          content={{ image: colorchart }}
-          margin={"0px 50px 0px 150px"}
+          content={{ image: colorchart }} boxShadow={"8px 8px 10px rgba(0,0,0,0.3), 10px 10px 14px rgba(0,0,0,0.5)"}
           renderContent={() => (
             <>
               <motion.div
@@ -236,6 +234,7 @@ const MyStoryPage = () => {
                   cursor: "pointer",
                   zIndex: 3 // optional, for extra safety
                 }}>
+                  <i class="fa-brands fa-instagram"></i>
                   Button One
                 </button>
                 <button style={{
@@ -248,6 +247,7 @@ const MyStoryPage = () => {
                   cursor: "pointer",
                   zIndex: 3
                 }}>
+                  <i class="fa-brands fa-whatsapp"></i>
                   Button Two
                 </button>
               </motion.div>
