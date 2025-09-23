@@ -9,6 +9,7 @@ import bel from '../assets/bel.webp';
 import jane from '../assets/jane.webp';
 import forsytes from '../assets/forsytes.webp';
 import treason from '../assets/treason.webp';
+import colorchart from '../assets/colorchart.webp';
 
 import styles from '../styles/MyStory.module.css'
 import useDynamicColor from '../hooks/useDynamicColor'
@@ -73,7 +74,7 @@ const MyStoryPage = () => {
           src={kara}
           alt='owner'
           className={styles.heroImage}
-          />
+        />
         <div className={styles.gradientBg}>
           <div className={`${styles.leftHalf} px-5`}>
             <div className='my-3 display-1'>
@@ -171,7 +172,7 @@ const MyStoryPage = () => {
         <div className={styles.h}>H</div>
       </div> */}
       <section style={{
-        height: "1500vh", position: "relative",
+        height: "1700vh", position: "relative",
         backgroundImage: "radial-gradient(50% 50% at 50% 50%, rgba(255, 3, 255, 0.2), rgba(255, 3, 255, 0.17), rgba(255, 3, 255, 0.15) 5%, white)",
         }}
       >
@@ -207,6 +208,53 @@ const MyStoryPage = () => {
         </section>
         <TileComponent content={paraFour} />
         <TileComponent content={paraFive} />
+        <TileComponent
+          content={{ image: colorchart }}
+          margin={"0px 50px 0px 150px"}
+          renderContent={() => (
+            <>
+              <motion.div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  display: 'flex',
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  gap: "1rem",
+                  zIndex: 2, // higher than overlay
+                  pointerEvents: "auto", // ensure buttons are clickable
+                }}
+              >
+                <button style={{
+                  padding: "0.75rem 1.5rem",
+                  fontSize: "1rem",
+                  borderRadius: "8px",
+                  border: "none",
+                  backgroundColor: "#fff",
+                  color: "#000",
+                  cursor: "pointer",
+                  zIndex: 3 // optional, for extra safety
+                }}>
+                  Button One
+                </button>
+                <button style={{
+                  padding: "0.75rem 1.5rem",
+                  fontSize: "1rem",
+                  borderRadius: "8px",
+                  border: "none",
+                  backgroundColor: "#fff",
+                  color: "#000",
+                  cursor: "pointer",
+                  zIndex: 3
+                }}>
+                  Button Two
+                </button>
+              </motion.div>
+            </>
+          )}
+        />
+
       </section>
     </>
   )

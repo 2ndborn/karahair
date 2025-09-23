@@ -41,5 +41,12 @@ export const paragraphs = [
       secondary: `you’re getting
                 experience, vision, and straight-up passion.`,
       image: brazil,
+    },{
+      id: 5,
+      primary: `Whether you’re sat in my chair or learning in my
+              classroom, you’re getting more than just hair, `,
+      secondary: `you’re getting
+                experience, vision, and straight-up passion.`,
+      image: brazil,
     },
   ];

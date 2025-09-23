@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useSpring, useTransform, useVelocity } from 'framer-motion';
 
-export default function TileComponent({margin, boxShadow, content,}) {
+export default function TileComponent({margin, boxShadow, content, renderContent}) {
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -26,7 +26,7 @@ export default function TileComponent({margin, boxShadow, content,}) {
   const velocitySpring = useSpring(velocityMap, { stiffness: 30, damping: 90 })
 
   return (
-    <div style={{ height: "200vh", boxSizing: "border-box"}}>
+    <div style={{ height: "150vh", boxSizing: "border-box"}}>
       <div style={{ height: "50vh," }} />
       <motion.div
         ref={ref}
@@ -53,6 +53,7 @@ export default function TileComponent({margin, boxShadow, content,}) {
             display: 'flex', justifyContent: "center", alignItems: "center", textAlign: "center",
             color: "#fff",
           }}>
+            {renderContent ? renderContent(content) : (
           <p
             style={{fontSize: "2rem", color: "rgba(255, 255, 255, 0.8)", padding: "0px 100px"}}
           >
@@ -66,6 +67,7 @@ export default function TileComponent({margin, boxShadow, content,}) {
               </>
             )}
           </p>
+          )}
         </motion.div>
         
       </motion.div>
