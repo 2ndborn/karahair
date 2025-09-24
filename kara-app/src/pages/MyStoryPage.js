@@ -178,7 +178,7 @@ const MyStoryPage = () => {
       >
         <TileComponent content={paraOne} margin={"0px 190px 0px 10px"} boxShadow={"8px 8px 10px rgba(0,0,0,0.3), 10px 10px 14px rgba(0,0,0,0.5)"} />
         <TileComponent content={paraTwo} margin={"0px 100px 0px 100px"} boxShadow={"0px 8px 10px rgba(0,0,0,0.3), 0px 10px 14px rgba(0,0,0,0.5)"} />
-        <TileComponent content={paraThree} margin={"0px 10px 0px 190px"} boxShadow={"-8px 8px 10px rgba(0,0,0,0.3), -10px 10px 14px rgba(0,0,0,0.5)"} />
+        <TileComponent content={paraThree} margin={"0px 10px 20px 190px"} boxShadow={"-8px 8px 10px rgba(0,0,0,0.3), -10px 10px 14px rgba(0,0,0,0.5)"} />
         <section className={styles.sec3} ref={workRef}>
           <div className={styles.workContainer}>
             <motion.div

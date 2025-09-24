@@ -34,7 +34,7 @@ export default function TileComponent({margin, boxShadow, content, renderContent
           y: velocitySpring,
           position: "sticky",
           top: 60,
-          height: "90vh",
+          height: "80vh",
           borderRadius: "15px",
           scale,
           boxShadow: boxShadow,
