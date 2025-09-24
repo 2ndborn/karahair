@@ -41,7 +41,7 @@ function HomePage() {
   const {scrollYProgress} = useScroll({
     target: ref,
   })
-  const x = useTransform(scrollYProgress, [1,0], ["5%", "-75%"])
+  const x = useTransform(scrollYProgress, [0,1], ["100%", "0%"])
 
   // const listVariants = {
   //   hidden: { opacity: 0 },
@@ -69,10 +69,20 @@ function HomePage() {
         variants={variants}
         transition={{ duration: 1, ease: "easeOut" }}
       />
-      <div style={{height: "200vh", backgroundColor: "grey"}} ref={ref}>
-        <motion.div style={{x, position: "sticky", top: 0, height: "50vh", backgroundColor: "lightgrey", display: "flex", alignItems: "center"}}>
-          <h1 style={{fontSize: "250px"}}>KNOWLEDGE</h1>
+      <div style={{height: "150vh"}} ref={ref}>
+        <motion.div style={{ position: "sticky", top: "50%", height: "50vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
+          <motion.h1 style={{ x, fontSize: "200px" }}>KNOWLEDGE</motion.h1>
         </motion.div>
+      </div>
+      <div style={{height: "150vh", backgroundColor: "grey"}}>
+        <div style={{position: "sticky", top: "50%", backgroundColor: "yellow", height: "75vh", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}}>
+          <i class="fa-solid fa-brain"></i>
+          <h1>My clients security is of the utmost importance to me. Over
+            the last 2 decades I have supported a diverse range of clients
+            with their hair needs. Naturally my skills in nuturing, styling 
+            and colouring have been refined to the level of an expert
+          </h1>
+        </div>
       </div>
       <div className={styles.homeBackground}></div>
       <motion.div id='next-section' className={`${styles.homeContainer} mx-auto`}>
