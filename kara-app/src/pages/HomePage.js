@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { motion, useAnimation } from 'motion/react';
+import React, { useEffect, useRef } from 'react'
+import { motion, useAnimation, useScroll, useTransform } from 'motion/react';
 import styles from '../styles/HomePage.module.css';
 import peach from '../assets/peachone.webp';
 import Title from '../components/Title';
@@ -37,6 +37,12 @@ function HomePage() {
 
   const scrollToSection = useScrollToSection();
 
+  const ref = useRef(null);
+  const {scrollYProgress} = useScroll({
+    target: ref,
+  })
+  const x = useTransform(scrollYProgress, [1,0], ["5%", "-75%"])
+
   // const listVariants = {
   //   hidden: { opacity: 0 },
   //   visible: {
@@ -63,6 +69,11 @@ function HomePage() {
         variants={variants}
         transition={{ duration: 1, ease: "easeOut" }}
       />
+      <div style={{height: "200vh", backgroundColor: "grey"}} ref={ref}>
+        <motion.div style={{x, position: "sticky", top: 0, height: "50vh", backgroundColor: "lightgrey", display: "flex", alignItems: "center"}}>
+          <h1 style={{fontSize: "250px"}}>KNOWLEDGE</h1>
+        </motion.div>
+      </div>
       <div className={styles.homeBackground}></div>
       <motion.div id='next-section' className={`${styles.homeContainer} mx-auto`}>
         {homeContent.map((content, index) => (
