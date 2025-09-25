@@ -7,6 +7,7 @@ import { useScrollToSection } from '../hooks/useScrollToSection';
 import { Reveal } from '../utils/Reveal';
 import { AnimateButton } from '../utils/AnimateButton';
 import { Link } from 'react-router-dom';
+import HomeScrollComponent from '../components/HomeScrollComponent';
 
 function HomePage() {
 
@@ -69,21 +70,8 @@ function HomePage() {
         variants={variants}
         transition={{ duration: 1, ease: "easeOut" }}
       />
-      <div style={{height: "150vh"}} ref={ref}>
-        <motion.div style={{ position: "sticky", top: "50%", height: "50vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
-          <motion.h1 style={{ x, fontSize: "200px" }}>KNOWLEDGE</motion.h1>
-        </motion.div>
-      </div>
-      <div style={{height: "150vh", backgroundColor: "grey"}}>
-        <div style={{position: "sticky", top: "50%", backgroundColor: "yellow", height: "75vh", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}}>
-          <i class="fa-solid fa-brain"></i>
-          <h1>My clients security is of the utmost importance to me. Over
-            the last 2 decades I have supported a diverse range of clients
-            with their hair needs. Naturally my skills in nuturing, styling 
-            and colouring have been refined to the level of an expert
-          </h1>
-        </div>
-      </div>
+      
+      <HomeScrollComponent icon={<i class="fa-solid fa-brain"></i>} />
       <div className={styles.homeBackground}></div>
       <motion.div id='next-section' className={`${styles.homeContainer} mx-auto`}>
         {homeContent.map((content, index) => (
