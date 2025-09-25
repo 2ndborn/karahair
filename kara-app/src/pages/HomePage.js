@@ -9,6 +9,8 @@ import { AnimateButton } from '../utils/AnimateButton';
 import { Link } from 'react-router-dom';
 import HomeScrollComponent from '../components/HomeScrollComponent';
 
+import {HomePageData} from '../serviceData/HomePageData';
+
 function HomePage() {
 
   const homeContent = [
@@ -70,8 +72,9 @@ function HomePage() {
         variants={variants}
         transition={{ duration: 1, ease: "easeOut" }}
       />
-      
-      <HomeScrollComponent icon={<i class="fa-solid fa-brain"></i>} />
+      {HomePageData.map((home) => (
+        <HomeScrollComponent key={home.id} {...home} />
+      ))}
       <div className={styles.homeBackground}></div>
       <motion.div id='next-section' className={`${styles.homeContainer} mx-auto`}>
         {homeContent.map((content, index) => (
