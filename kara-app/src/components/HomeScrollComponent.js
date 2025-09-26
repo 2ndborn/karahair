@@ -1,13 +1,13 @@
 import React, {useRef} from 'react'
 import {motion, useScroll, useSpring, useTransform, useVelocity} from 'framer-motion';
 
-const HomeScrollComponent = ({title, icon, content}) => {
+const HomeScrollComponent = ({title, icon, content, backgroundColor}) => {
     
     const ref = useRef(null);
     const {scrollYProgress} = useScroll({
     target: ref,
     })
-    const x = useTransform(scrollYProgress, [0,1], ["100%", "0%"]);
+    const x = useTransform(scrollYProgress, [0,1], ["200%", "0%"]);
 
     const targetRef = useRef(null);
     const {scrollYProgress: targetScoll} = useScroll({
@@ -25,18 +25,26 @@ const HomeScrollComponent = ({title, icon, content}) => {
     return (
         <>
             <div style={{ height: "150vh" }} ref={ref}>
-                <motion.div style={{ position: "sticky", top: "50%", height: "50vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
+                <motion.div 
+                style={{
+                    position: "sticky", top: "50%", 
+                    height: "50vh", display: "flex", 
+                    alignItems: "center", overflow: "hidden",
+                    color: "#fff", textShadow: "2px 2px 8px rgba(0, 0, 0, 0.5)"
+                    }}
+                >
                     <motion.h1 style={{ x, fontSize: "200px" }}>{title}</motion.h1>
                 </motion.div>
             </div>
-            <div style={{ height: "150vh", backgroundColor: "grey" }} ref={targetRef}>
+            <div style={{ height: "150vh" }} ref={targetRef}>
                 <div style={{
-                     position: "sticky", top: "50%", 
-                     backgroundColor: "yellow", 
+                     position: "sticky", top: "50%",
                      height: "75vh", 
                      display: "flex", justifyContent: "center", 
                      alignItems: "center", flexDirection: "column",
-                     textAlign: "center", padding: "0 4rem"
+                     textAlign: "center", padding: "0 4rem",
+                     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5)",
+                     backgroundColor: backgroundColor
                      }}
                 >
                     <motion.div style={{opacity, y, velocitySpring}}>

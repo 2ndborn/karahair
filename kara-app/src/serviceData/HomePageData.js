@@ -8,7 +8,8 @@ export const HomePageData = [
         a diverse range of clients with their hair needs.
         Through years of dedicated practice, my skills in nurturing,
         styling, and colouring have evolved to an expert level ensuring
-        every client feels seen, celebrated, and beautifully cared for."`
+        every client feels seen, celebrated, and beautifully cared for."`,
+        backgroundColor: "grey"
     },{
         id: 2,
         title: "ASSESSMENT",
@@ -18,6 +19,33 @@ export const HomePageData = [
         technique I use is tailored not only for stunning results, but also 
         to preserve the health, strength, and integrity of your hair. My 
         approach is both artistic and mindful, designed to bring out your 
-        best while keeping your hair beautifully resilient."` 
+        best while keeping your hair beautifully resilient."`,
+        backgroundColor: "red"
+    },{
+        id: 3,
+        title: "RESTORE",
+        icon: <i class="fa-solid fa-shower"></i>,
+        content: `"Once we’ve explored your desired look, I take time to 
+        carefully assess the condition of your hair. This ensures that every
+        technique I use is tailored not only for stunning results, but also 
+        to preserve the health, strength, and integrity of your hair. My 
+        approach is both artistic and mindful, designed to bring out your 
+        best while keeping your hair beautifully resilient."`,
+        backgroundColor: "blue"
+    },{
+        id: 4,
+        title: "ALLURE", 
+        icon: <>
+        <i style={{margin: "0 5px"}} class="fa-solid fa-heart"></i>
+        <i style={{margin: "0 5px"}} class="fa-solid fa-heart"></i>
+        <i style={{margin: "0 5px"}} class="fa-solid fa-heart"></i>
+        </>,
+        content: `"Once we’ve explored your desired look, I take time to 
+        carefully assess the condition of your hair. This ensures that every
+        technique I use is tailored not only for stunning results, but also 
+        to preserve the health, strength, and integrity of your hair. My 
+        approach is both artistic and mindful, designed to bring out your 
+        best while keeping your hair beautifully resilient."`,
+        backgroundColor: "green"
     }
 ]
