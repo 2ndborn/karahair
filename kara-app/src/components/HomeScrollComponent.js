@@ -37,9 +37,10 @@ const HomeScrollComponent = ({title, icon, content, backgroundColor}) => {
                 </motion.div>
             </div>
             <div style={{ height: "150vh" }} ref={targetRef}>
-                <div style={{
+                <motion.div style={{
+                    opacity,
                      position: "sticky", top: "50%",
-                     height: "75vh", 
+                     height: "75vh",
                      display: "flex", justifyContent: "center", 
                      alignItems: "center", flexDirection: "column",
                      textAlign: "center", padding: "0 4rem",
@@ -53,7 +54,7 @@ const HomeScrollComponent = ({title, icon, content, backgroundColor}) => {
                         </div>
                         <h3>{content}</h3>
                     </motion.div>
-                </div>
+                </motion.div>
             </div>
         </>
     )

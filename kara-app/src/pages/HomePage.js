@@ -76,6 +76,37 @@ function HomePage() {
         <HomeScrollComponent key={home.id} {...home} />
       ))}
       <div className={styles.homeBackground}></div>
+      <section 
+      style={{
+        height: "100vh",
+        display: "flex", justifyContent: "center",
+        alignItems: "center",
+        paddingTop: "25px"
+        }}
+      >
+        <div
+          style={{
+            display: "flex", justifyContent: "center",
+            alignItems: "center", height: "85%", width: "75%",
+            flexDirection: "column",
+            border: "4px solid #fff", backdropFilter: "blur(4px)", backgroundColor: "#ffffff3b"
+          }}
+        >
+          <div style={{height: "30%", display: "flex", alignItems: "center"}}>
+            <h1>Give your hair the care it deserves</h1>
+          </div>
+          <div style={{height: "30%", display: "flex", alignItems: "center"}}>
+            <button style={{minWidth: "250px", padding: "1em 2em", borderRadius: "1000px", border: "4px solid #fff", margin: "10px"}}>
+              Learn more
+            </button>
+            <button
+              style={{
+                minWidth: "250px", padding: "1em 2em", backgroundColor: "green", borderRadius: "1000px", margin: "10px"
+              }}
+            >Book a consultation</button>
+          </div>
+        </div>   
+      </section>
       <motion.div id='next-section' className={`${styles.homeContainer} mx-auto`}>
         {homeContent.map((content, index) => (
           <section key={index} id={`section-${index}`} className={styles.sloganText}>
