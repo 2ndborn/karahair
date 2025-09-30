@@ -78,7 +78,7 @@ function HomePage() {
       <div className={styles.homeBackground}></div>
       <section 
       style={{
-        height: "100vh",
+        height: "75vh",
         display: "flex", justifyContent: "center",
         alignItems: "center",
         paddingTop: "25px"
@@ -89,19 +89,22 @@ function HomePage() {
             display: "flex", justifyContent: "center",
             alignItems: "center", height: "85%", width: "75%",
             flexDirection: "column",
-            border: "4px solid #fff", backdropFilter: "blur(4px)", backgroundColor: "#ffffff3b"
+            border: "4px solid #fff", backdropFilter: "blur(4px)", backgroundColor: "#ffffff3b",
+            padding: "0 1.4em", boxShadow: "1px 2px 20px rgba(255, 255, 255, 0.5), -1px -2px 20px rgba(255, 255, 255, 0.5)"
           }}
         >
-          <div style={{height: "30%", display: "flex", alignItems: "center"}}>
-            <h1>Give your hair the care it deserves</h1>
+          <div style={{height: "30%", display: "flex", alignItems: "center", textAlign: "center"}}>
+            <h1 style={{fontSize: "clamp(1.7rem, 4vw, 3.4rem)", color: "#fff", textShadow: "1px 2px 20px rgba(255, 255, 255, 0.5), -1px -2px 20px rgba(255, 255, 255, 0.5)"}}>
+              Give your hair the care it deserves
+            </h1>
           </div>
-          <div style={{height: "30%", display: "flex", alignItems: "center"}}>
-            <button style={{minWidth: "250px", padding: "1em 2em", borderRadius: "1000px", border: "4px solid #fff", margin: "10px"}}>
+          <div style={{height: "30%", display: "flex", alignItems: "center", justifyContent: "center", flexWrap: "wrap"}}>
+            <button style={{minWidth: "250px", padding: "1em 2em", borderRadius: "1000px", border: "4px solid #fff", margin: "10px", color: "#fff", fontWeight: 700}}>
               Learn more
             </button>
             <button
               style={{
-                minWidth: "250px", padding: "1em 2em", backgroundColor: "green", borderRadius: "1000px", margin: "10px"
+                minWidth: "250px", padding: "1em 2em", backgroundColor: "#c3f803ff", color: "#000000be", fontWeight: 700, borderRadius: "1000px", border: "4px solid #c3f803ff", margin: "10px"
               }}
             >Book a consultation</button>
           </div>
