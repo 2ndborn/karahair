@@ -78,16 +78,16 @@ function HomePage() {
       <div className={styles.homeBackground}></div>
       <section 
       style={{
-        height: "75vh",
+        height: "100vh",
         display: "flex", justifyContent: "center",
         alignItems: "center",
-        paddingTop: "25px"
+        paddingTop: "25px",
         }}
       >
         <div
           style={{
             display: "flex", justifyContent: "center",
-            alignItems: "center", height: "85%", width: "75%",
+            alignItems: "center", height: "75%", width: "75%",
             flexDirection: "column",
             border: "4px solid #fff", backdropFilter: "blur(4px)", backgroundColor: "#ffffff3b",
             padding: "0 1.4em", boxShadow: "1px 2px 20px rgba(255, 255, 255, 0.5), -1px -2px 20px rgba(255, 255, 255, 0.5)"

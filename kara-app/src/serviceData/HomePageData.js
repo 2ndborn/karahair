@@ -9,7 +9,6 @@ export const HomePageData = [
         Through years of dedicated practice, my skills in nurturing,
         styling, and colouring have evolved to an expert level ensuring
         every client feels seen, celebrated, and beautifully cared for."`,
-        backgroundColor: "grey"
     },{
         id: 2,
         title: "ASSESSMENT",
@@ -20,7 +19,6 @@ export const HomePageData = [
         to preserve the health, strength, and integrity of your hair. My 
         approach is both artistic and mindful, designed to bring out your 
         best while keeping your hair beautifully resilient."`,
-        backgroundColor: "red"
     },{
         id: 3,
         title: "RESTORE",
@@ -31,7 +29,6 @@ export const HomePageData = [
         to preserve the health, strength, and integrity of your hair. My 
         approach is both artistic and mindful, designed to bring out your 
         best while keeping your hair beautifully resilient."`,
-        backgroundColor: "blue"
     },{
         id: 4,
         title: "ALLURE", 
@@ -46,6 +43,5 @@ export const HomePageData = [
         to preserve the health, strength, and integrity of your hair. My 
         approach is both artistic and mindful, designed to bring out your 
         best while keeping your hair beautifully resilient."`,
-        backgroundColor: "green"
     }
 ]

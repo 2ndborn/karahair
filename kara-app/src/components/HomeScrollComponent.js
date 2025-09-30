@@ -1,7 +1,7 @@
 import React, {useRef} from 'react'
 import {motion, useScroll, useSpring, useTransform, useVelocity} from 'framer-motion';
 
-const HomeScrollComponent = ({title, icon, content, backgroundColor}) => {
+const HomeScrollComponent = ({title, icon, content}) => {
     
     const ref = useRef(null);
     const {scrollYProgress} = useScroll({
@@ -29,11 +29,11 @@ const HomeScrollComponent = ({title, icon, content, backgroundColor}) => {
                 style={{
                     position: "sticky", top: "50%", 
                     height: "50vh", display: "flex", 
-                    alignItems: "center", overflow: "hidden",
+                    alignItems: "center", justifyContent: "center", overflow: "hidden",
                     color: "#fff", textShadow: "2px 2px 8px rgba(0, 0, 0, 0.5)"
                     }}
                 >
-                    <motion.h1 style={{ x, fontSize: "200px" }}>{title}</motion.h1>
+                    <motion.h1 style={{ x, fontSize: "clamp(3rem, 15vw, 14rem)"}}>{title}</motion.h1>
                 </motion.div>
             </div>
             <div style={{ height: "150vh" }} ref={targetRef}>
@@ -43,16 +43,18 @@ const HomeScrollComponent = ({title, icon, content, backgroundColor}) => {
                      height: "75vh",
                      display: "flex", justifyContent: "center", 
                      alignItems: "center", flexDirection: "column",
-                     textAlign: "center", padding: "0 4rem",
-                     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5)",
-                     backgroundColor: backgroundColor
+                     textAlign: "center", padding: "min(4em, 5%)",
+                     backgroundColor: "rgba(255, 255, 255, 0.2)",
+                     backdropFilter: "blur(20px)",
+                     color: "#fffefeff",
+                     boxShadow: "inset 0 -8px 20px #fff"
                      }}
                 >
-                    <motion.div style={{opacity, y, velocitySpring}}>
-                        <div style={{ fontSize: "5rem" }}>
+                    <motion.div style={{opacity, y, velocitySpring, display: "flex", justifyContent: "center", alignItems: "center"}}>
+                        <div style={{ fontSize: "clamp(1.8rem, calc(7vw + 1rem), 5rem)"}}>
                             {icon}
+                            <p style={{fontWeight: "700", fontSize: "min(1.5rem, 5vw)", textShadow: "0 5px 8px rgba(0, 0, 0, 0.4)"}}>{content}</p>
                         </div>
-                        <h3>{content}</h3>
                     </motion.div>
                 </motion.div>
             </div>
