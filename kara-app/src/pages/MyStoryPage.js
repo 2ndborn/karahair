@@ -171,14 +171,16 @@ const MyStoryPage = () => {
         <div className={styles.k}>K</div>
         <div className={styles.h}>H</div>
       </div> */}
-      <section style={{
-        height: "1700vh", position: "relative",
-        backgroundImage: "radial-gradient(50% 50% at 50% 50%, rgba(255, 3, 255, 0.2), rgba(255, 3, 255, 0.17), rgba(255, 3, 255, 0.15) 5%, white)",
-        }}
-      >
-        <TileComponent content={paraOne} margin={"0px 190px 0px 10px"} boxShadow={"8px 8px 10px rgba(0,0,0,0.3), 10px 10px 14px rgba(0,0,0,0.5)"} />
-        <TileComponent content={paraTwo} margin={"0px 100px 0px 100px"} boxShadow={"0px 8px 10px rgba(0,0,0,0.3), 0px 10px 14px rgba(0,0,0,0.5)"} />
-        <TileComponent content={paraThree} margin={"0px 10px 20px 190px"} boxShadow={"-8px 8px 10px rgba(0,0,0,0.3), -10px 10px 14px rgba(0,0,0,0.5)"} />
+      <section style={{ position: "relative"}}>
+        <div style={{
+          position: "fixed", top: 0, left: 0, 
+          width: "100%", height: "100vh", backgroundImage: "radial-gradient(#fff 70%, #d9b9a06c)",
+          zIndex: -1
+          }} 
+        />
+        <TileComponent content={paraOne} boxShadow={"8px 8px 10px rgba(0,0,0,0.3), 10px 10px 14px rgba(0,0,0,0.5)"} />
+        <TileComponent content={paraTwo} boxShadow={"0px 8px 10px rgba(0,0,0,0.3), 0px 10px 14px rgba(0,0,0,0.5)"} />
+        <TileComponent content={paraThree} boxShadow={"-8px 8px 10px rgba(0,0,0,0.3), -10px 10px 14px rgba(0,0,0,0.5)"} />
         <section className={styles.sec3} ref={workRef}>
           <div className={styles.workContainer}>
             <motion.div
@@ -205,8 +207,8 @@ const MyStoryPage = () => {
             </motion.div>
           </div>
         </section>
-        <TileComponent content={paraFour} margin={"0px 10px 0px 190px"} boxShadow={"-4px 8px 10px rgba(0,0,0,0.3), -6px 10px 14px rgba(0,0,0,0.5)"} />
-        <TileComponent content={paraFive} margin={"0px 100px 0px 100px"} boxShadow={"0px 8px 10px rgba(0,0,0,0.3), 0px 10px 14px rgba(0,0,0,0.5)"}  />
+        <TileComponent content={paraFour} boxShadow={"-4px 8px 10px rgba(0,0,0,0.3), -6px 10px 14px rgba(0,0,0,0.5)"} />
+        <TileComponent content={paraFive} boxShadow={"0px 8px 10px rgba(0,0,0,0.3), 0px 10px 14px rgba(0,0,0,0.5)"}  />
         <TileComponent
           content={{ image: colorchart }} boxShadow={"8px 8px 10px rgba(0,0,0,0.3), 10px 10px 14px rgba(0,0,0,0.5)"}
           renderContent={() => (

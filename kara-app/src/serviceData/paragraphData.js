@@ -1,7 +1,7 @@
-import wigs from '../assets/wigs.webp';
+import wig from '../assets/wig.webp';
 import curly from '../assets/curly.webp';
 import brazil from '../assets/brazil.webp';
-import teaching from '../assets/teaching.webp';
+import teaching from '../assets/karae.webp';
 import wedding from '../assets/wedding.webp';
 
 export const paragraphs = [
@@ -11,7 +11,7 @@ export const paragraphs = [
       over 20 years in the game`,
       secondary: `, working across every hair texture, every 
       shade, every style.`,
-      image: wigs,
+      image: wig,
     },
     {
       id: 2,

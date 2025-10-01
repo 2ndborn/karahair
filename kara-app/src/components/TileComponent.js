@@ -26,7 +26,7 @@ export default function TileComponent({margin, boxShadow, content, renderContent
   const velocitySpring = useSpring(velocityMap, { stiffness: 30, damping: 90 })
 
   return (
-    <div style={{ height: "150vh", boxSizing: "border-box"}}>
+    <div style={{ height: "150vh", boxSizing: "border-box", display: "flex", justifyContent: "center", alignItems: "center"}}>
       <div style={{ height: "50vh," }} />
       <motion.div
         ref={ref}
@@ -35,9 +35,10 @@ export default function TileComponent({margin, boxShadow, content, renderContent
           position: "sticky",
           top: 60,
           height: "80vh",
+          width: "min(95%, 1000px)",
           borderRadius: "15px",
           scale,
-          boxShadow: boxShadow,
+          boxShadow: "0px 8px 10px rgba(0,0,0,0.3), 0px 10px 14px rgba(0,0,0,0.5)",
           boxSizing: "border-box",
           margin: margin,
           overflow: "hidden"
@@ -55,7 +56,7 @@ export default function TileComponent({margin, boxShadow, content, renderContent
           }}>
             {renderContent ? renderContent(content) : (
           <p
-            style={{fontSize: "2rem", color: "rgba(255, 255, 255, 0.8)", padding: "0px 100px"}}
+            style={{fontSize: "2rem", color: "rgba(255, 255, 255, 0.8)", paddingLeft: "min(5%, 3rem)", paddingRight: "min(5%, 3rem)"}}
           >
             {(content.id < 5 || content.id === 'paraFive') ? (
               <>
