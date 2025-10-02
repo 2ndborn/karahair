@@ -209,7 +209,7 @@ const MyStoryPage = () => {
         </section>
         <TileComponent content={paraFour} boxShadow={"-4px 8px 10px rgba(0,0,0,0.3), -6px 10px 14px rgba(0,0,0,0.5)"} />
         <TileComponent content={paraFive} boxShadow={"0px 8px 10px rgba(0,0,0,0.3), 0px 10px 14px rgba(0,0,0,0.5)"}  />
-        <TileComponent
+        {/* <TileComponent
           content={{ image: colorchart }} boxShadow={"8px 8px 10px rgba(0,0,0,0.3), 10px 10px 14px rgba(0,0,0,0.5)"}
           renderContent={() => (
             <>
@@ -255,8 +255,14 @@ const MyStoryPage = () => {
               </motion.div>
             </>
           )}
-        />
-
+        /> */}
+        <div style={{height: "50vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+          <button
+              style={{
+                minWidth: "250px", padding: "1em 2em", backgroundColor: "#c3f803ff", color: "#000000be", fontWeight: 700, borderRadius: "1000px", border: "4px solid #c3f803ff", margin: "10px"
+              }}
+            >Book a consultation</button>
+        </div>
       </section>
     </>
   )
