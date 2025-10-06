@@ -1,10 +1,17 @@
-import { React, useRef} from 'react'
+import { React, useRef, useState} from 'react'
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import Title from '../components/Title';
 import AnimateImages from '../components/AnimateImages';
 
 
 const Gallery = () => {
+
+  const [showImage, setShowImage] = useState({img: "", i: 0})
+
+  const handleClick = (img, i) => {
+    setShowImage({img, i})
+    console.log(img, i)
+  }
 
   const images = [
     "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/multicolor_oyeevr.jpg",
@@ -25,13 +32,25 @@ const Gallery = () => {
   return(
     <>
     <Title title="THE" subtitle="GALLERY" />
+    {showImage.img && 
+      <div style={{
+        position: "fixed",
+        backgroundColor: "rgba(0,0,0,0.5)",
+        height: "100vh", width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+      }}>
+        <img src={showImage.img} style={{width: "auto", maxWidth: "90%", maxHeight: "90%"}} alt='' />
+      </div>
+    }
     <div style={{padding: "1rem"}}>
       <ResponsiveMasonry
         columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
       >
         <Masonry>
           {images.map((src, i) => (
-            <AnimateImages key={i} src={src} delay={i * 0.1} />
+            <AnimateImages key={i} src={src} delay={i * 0.1} onClick={() => handleClick(src, i)} />
           ))}
         </Masonry>
       </ResponsiveMasonry>
