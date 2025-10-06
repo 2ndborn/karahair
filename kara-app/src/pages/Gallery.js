@@ -1,4 +1,5 @@
-import { React, useRef, useState} from 'react'
+import { React, useState} from 'react'
+import {AnimatePresence, motion} from 'framer-motion'
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import Title from '../components/Title';
 import AnimateImages from '../components/AnimateImages';
@@ -32,10 +33,9 @@ const Gallery = () => {
   }
 
   const images = [
-    "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/multicolor_oyeevr.jpg",
+    "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/multicolor_svp5oc.jpg",
     "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/roc_ateauu.jpg",
     "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/peachone_yonh67.jpg",
-    "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/blonde_cvvvc3.jpg",
     "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/ginger_nh9idb.jpg",
     "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/demon_slayer_caw97w.jpg",
     "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/scarlet_lqwfrp.jpg",
@@ -49,48 +49,55 @@ const Gallery = () => {
 
   return(
     <>
-    <Title title="THE" subtitle="GALLERY" />
-    {showImage.img && 
-      <div style={{
-        position: "fixed", top: 0, left: 0,
-        backgroundColor: "rgba(0,0,0,0.85)",
-        height: "100vh", width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        overflow: 'hidden',
-        zIndex: 9999
-      }}>
-        <button 
-          onClick={handleClose}
-          style={{
-            position: 'absolute', top: 5, right: 24, color: "#fff", background: "transparent", border: "none", fontSize: "2rem", cursor: "pointer", zIndex: 10000
-          }}
-          aria-label="Close overlay"
+      <Title title="THE" subtitle="GALLERY" />
+      <AnimatePresence mode='wait'>
+      {showImage.img &&
+        <motion.div 
+        initial={{ opacity: 0, scale: 0.2 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.2 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        style={{
+          position: "fixed", top: 0, left: 0,
+          backgroundColor: "rgba(0,0,0,0.85)",
+          height: "100vh", width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          overflow: 'hidden',
+          zIndex: 9999
+        }}>
+          <button
+            onClick={handleClose}
+            style={{
+              position: 'absolute', top: 5, right: 24, color: "#fff", background: "transparent", border: "none", fontSize: "2rem", cursor: "pointer", zIndex: 10000
+            }}
+            aria-label="Close overlay"
+          >
+            <i className="fa-solid fa-xmark"></i>
+          </button>
+          <button onClick={handlePrev}
+            style={{ position: "absolute", top: "50%", left: "10%", color: "#fff", fontSize: "2rem", cursor: "pointer", zIndex: 10000 }}>
+            <i className="fa-solid fa-less-than"></i>
+          </button>
+          <button onClick={handleNext} style={{ position: "absolute", top: "50%", right: "10%", color: "#fff", fontSize: "2rem", cursor: "pointer", zIndex: 10000 }}>
+            <i class="fa-solid fa-greater-than"></i>
+          </button>
+          <img src={showImage.img} style={{ width: "auto", maxWidth: "90vw", maxHeight: "85vh", borderRadius: 10, boxShadow: "0 8px 32px rgba(0,0,0,0.7)" }} alt='' />
+        </motion.div>
+      }
+      </AnimatePresence>
+      <div style={{ padding: "1rem" }}>
+        <ResponsiveMasonry
+          columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
         >
-          <i className="fa-solid fa-xmark"></i>
-        </button>
-        <button onClick={handlePrev}
-        style={{position: "absolute", top: "50%", left: "10%", color: "#fff", fontSize: "2rem", cursor: "pointer", zIndex: 10000}}>
-          <i className="fa-solid fa-less-than"></i>
-        </button>
-        <button onClick={handleNext} style={{position: "absolute", top: "50%", right: "10%", color: "#fff", fontSize: "2rem", cursor: "pointer", zIndex: 10000}}>
-          <i class="fa-solid fa-greater-than"></i>
-        </button>
-        <img src={showImage.img} style={{width: "auto", maxWidth: "90vw", maxHeight: "85vh", borderRadius: 10, boxShadow: "0 8px 32px rgba(0,0,0,0.7)"}} alt='' />
+          <Masonry>
+            {images.map((src, i) => (
+              <AnimateImages key={i} src={src} delay={i * 0.1} onClick={() => handleClick(src, i)} />
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
       </div>
-    }
-    <div style={{padding: "1rem"}}>
-      <ResponsiveMasonry
-        columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
-      >
-        <Masonry>
-          {images.map((src, i) => (
-            <AnimateImages key={i} src={src} delay={i * 0.1} onClick={() => handleClick(src, i)} />
-          ))}
-        </Masonry>
-      </ResponsiveMasonry>
-    </div>
     </>
   )
 }
