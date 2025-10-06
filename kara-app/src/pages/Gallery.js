@@ -13,6 +13,24 @@ const Gallery = () => {
     console.log(img, i)
   }
 
+  const handleClose = () => {
+    setShowImage({img: "", i: 0})
+  }
+
+  const handleNext = () => {
+    const nextIndex = showImage.i + 1;
+    if (nextIndex < images.length) {
+      setShowImage({ img: images[nextIndex], i: nextIndex });
+    }
+  }
+
+  const handlePrev = () => {
+    const prevIndex = showImage.i - 1;
+    if (prevIndex < images.length) {
+      setShowImage({ img: images[prevIndex], i: prevIndex });
+    }
+  }
+
   const images = [
     "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/multicolor_oyeevr.jpg",
     "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/roc_ateauu.jpg",
@@ -34,14 +52,32 @@ const Gallery = () => {
     <Title title="THE" subtitle="GALLERY" />
     {showImage.img && 
       <div style={{
-        position: "fixed",
-        backgroundColor: "rgba(0,0,0,0.5)",
+        position: "fixed", top: 0, left: 0,
+        backgroundColor: "rgba(0,0,0,0.85)",
         height: "100vh", width: "100%",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        overflow: 'hidden',
+        zIndex: 9999
       }}>
-        <img src={showImage.img} style={{width: "auto", maxWidth: "90%", maxHeight: "90%"}} alt='' />
+        <button 
+          onClick={handleClose}
+          style={{
+            position: 'absolute', top: 5, right: 24, color: "#fff", background: "transparent", border: "none", fontSize: "2rem", cursor: "pointer", zIndex: 10000
+          }}
+          aria-label="Close overlay"
+        >
+          <i className="fa-solid fa-xmark"></i>
+        </button>
+        <button onClick={handlePrev}
+        style={{position: "absolute", top: "50%", left: "10%", color: "#fff", fontSize: "2rem", cursor: "pointer", zIndex: 10000}}>
+          <i className="fa-solid fa-less-than"></i>
+        </button>
+        <button onClick={handleNext} style={{position: "absolute", top: "50%", right: "10%", color: "#fff", fontSize: "2rem", cursor: "pointer", zIndex: 10000}}>
+          <i class="fa-solid fa-greater-than"></i>
+        </button>
+        <img src={showImage.img} style={{width: "auto", maxWidth: "90vw", maxHeight: "85vh", borderRadius: 10, boxShadow: "0 8px 32px rgba(0,0,0,0.7)"}} alt='' />
       </div>
     }
     <div style={{padding: "1rem"}}>
