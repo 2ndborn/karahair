@@ -14,6 +14,7 @@ export const SectionTile = ({
             layoutId={id}
             onClick={() => onClick(id)}
             className={tileClassName}
+            whileHover={{scale: 1.01}}
         >
             <motion.img
                 className={imageClassName}
