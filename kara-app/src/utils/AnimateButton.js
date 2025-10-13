@@ -5,7 +5,7 @@ export const AnimateButton = ({children, className}) => {
     const buttonControl = useAnimation();
     useEffect(() => {
         buttonControl.start({
-          scale: [1, 1.05, 1],
+          scale: [1, 1.01, 1],
           boxShadow: [
             '0px 2px 0px rgba(0,0,0,0.3)',
             '0px 5px 12px rgba(0,0,0,0.4)',

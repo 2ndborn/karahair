@@ -12,6 +12,8 @@ import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 import useFadeUp from '../hooks/useFadeUp';
 import useDynamicColor from '../hooks/useDynamicColor';
 import NavItem from './NavItem';
+import { Link } from 'react-router-dom';
+import { AnimateButton } from '../utils/AnimateButton';
 
 function useScrollTrigger() {
   const [showNav, setShowNav] = useState(false);
@@ -71,6 +73,11 @@ function NavBar() {
                     <NavItem to="/services" label="Services" delay={0.6} />
                     <NavItem to="/gallery" label="Gallery" delay={0.8} />
                     <NavItem to="/contactme" label="Contact Me" delay={1.0} />
+                    <Link to="/contactme">
+                      <AnimateButton className={styles.NavContact} >
+                        Book now
+                      </AnimateButton>
+                    </Link>
                   </Nav>
                 )}
               </Navbar.Collapse>

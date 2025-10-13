@@ -20,6 +20,12 @@
   transition: transform 0.1s;
 }
 
+.NavContact {
+  background-color: #c3f803ff;
+  padding: 0.25rem 1rem;
+  border-radius: 1000px;
+}
+
 .Dropdown {
   z-index: 999;
 }
