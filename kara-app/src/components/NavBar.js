@@ -72,10 +72,9 @@ function NavBar() {
                     <NavItem to="/mystory" label="My Story" delay={0.4} />
                     <NavItem to="/services" label="Services" delay={0.6} />
                     <NavItem to="/gallery" label="Gallery" delay={0.8} />
-                    <NavItem to="/contactme" label="Contact Me" delay={1.0} />
                     <Link to="/contactme">
                       <AnimateButton className={styles.NavContact} >
-                        Book now
+                        Let's talk
                       </AnimateButton>
                     </Link>
                   </Nav>

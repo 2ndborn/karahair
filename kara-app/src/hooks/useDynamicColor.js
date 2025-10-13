@@ -5,7 +5,8 @@ const useDynamicColor = () => {
     const getColor = (element) => {
         const colors = {
             "/mystory": {navbar: "transparent", title: "#d9b9a0", footer: "#d9b9a0"},
-            "/services": {navbar: "rgba(202, 131, 131)", title: "#ca8383", footer: "#fff"},
+            "/services": {navbar: "transparent", title: "#ca8383", footer: "#fff"},
+            "/gallery": {navbar: "transparent", title: "#9B6771", footer: "#fff"},
             "/contactme": {navbar: "transparent", title: "#6c4b5e", footer: "#fff"},
             default: {navbar: "transparent", title: "#f1e7dd", footer: "#f1e7dd"},
         }

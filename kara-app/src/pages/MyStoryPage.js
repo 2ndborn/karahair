@@ -256,12 +256,12 @@ const MyStoryPage = () => {
             </>
           )}
         /> */}
-        <div style={{height: "50vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
-          <button
+        <div style={{height: "12.5vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+          {/* <button
               style={{
                 minWidth: "250px", padding: "1em 2em", backgroundColor: "#c3f803ff", color: "#000000be", fontWeight: 700, borderRadius: "1000px", border: "4px solid #c3f803ff", margin: "10px"
               }}
-            >Book a consultation</button>
+            >Book a consultation</button> */}
         </div>
       </section>
     </>

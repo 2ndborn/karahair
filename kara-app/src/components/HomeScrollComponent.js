@@ -33,7 +33,7 @@ const HomeScrollComponent = ({title, icon, content}) => {
                     color: "#fff", textShadow: "2px 2px 8px rgba(0, 0, 0, 0.5)"
                     }}
                 >
-                    <motion.h1 style={{ x, fontSize: "clamp(3rem, 15vw, 14rem)"}}>{title}</motion.h1>
+                    <motion.h1 style={{ x, letterSpacing: "-1px", fontWeight: "700", fontSize: "clamp(3rem, 15vw, 14rem)"}}>{title}</motion.h1>
                 </motion.div>
             </div>
             <div style={{ height: "150vh" }} ref={targetRef}>

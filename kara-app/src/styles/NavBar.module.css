@@ -3,6 +3,7 @@
   flex-direction: column;
   position: fixed;
   width: 100vw;
+  backdrop-filter: blur(3px);
   z-index: 999;
   overflow: hidden;
 }
@@ -22,8 +23,9 @@
 
 .NavContact {
   background-color: #c3f803ff;
-  padding: 0.25rem 1rem;
-  border-radius: 1000px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 10px;
+  font-weight: 700;
 }
 
 .Dropdown {
