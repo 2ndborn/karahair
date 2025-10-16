@@ -52,7 +52,7 @@ const Gallery = () => {
       <Title title="THE" subtitle="GALLERY" />
       <AnimatePresence mode='wait'>
       {showImage.img &&
-        <motion.div 
+        <motion.div
         initial={{ opacity: 0, scale: 0.2 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.2 }}
@@ -87,7 +87,7 @@ const Gallery = () => {
         </motion.div>
       }
       </AnimatePresence>
-      <div style={{ padding: "1rem" }}>
+      <div style={{ padding: "1rem", marginBottom: "50px" }} id='next-section'>
         <ResponsiveMasonry
           columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
         >

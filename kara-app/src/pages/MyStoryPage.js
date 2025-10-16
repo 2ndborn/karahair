@@ -1,28 +1,17 @@
 import React, { useRef } from 'react'
 import {motion, useScroll, useTransform}  from 'framer-motion'
 import kara from '../assets/karapic.webp'
-import award from '../assets/award.webp';
-import wigs from '../assets/wigs.webp';
-import curly from '../assets/curly.webp';
-import brazil from '../assets/brazil.webp';
 import bel from '../assets/bel.webp';
 import jane from '../assets/jane.webp';
 import forsytes from '../assets/forsytes.webp';
 import treason from '../assets/treason.webp';
-import colorchart from '../assets/colorchart.webp';
 
 import styles from '../styles/MyStory.module.css'
-import useDynamicColor from '../hooks/useDynamicColor'
-import useFadeUp from '../hooks/useFadeUp'
 import Title from '../components/Title'
-import { AnimateButton } from '../utils/AnimateButton';
-import { Link } from 'react-router-dom';
 import TileComponent from '../components/TileComponent';
 import { paragraphs } from '../serviceData/paragraphData';
 
 const MyStoryPage = () => {
-  const getColor = useDynamicColor();
-  const isLoaded = useFadeUp();
 
   const workRef = useRef(null);
   const { scrollYProgress: workScrollX } = useScroll({

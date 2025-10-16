@@ -3,10 +3,12 @@ import { Container, Row, Col } from "react-bootstrap";
 import styles from '../styles/Footer.module.css'
 import { NavLink } from "react-router-dom";
 import { Reveal } from "../utils/Reveal";
+import useDynamicColor from "../hooks/useDynamicColor";
 
 const Footer = () => {
+  const getColor = useDynamicColor();
   return (
-    <footer className="py-4" mx-auto>
+    <footer style={{ backgroundColor: getColor("footer") }} className="py-4 mx-auto" >
       <Container className={styles.Footer}>
         <Reveal>
         <Row>

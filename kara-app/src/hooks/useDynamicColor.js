@@ -5,9 +5,9 @@ const useDynamicColor = () => {
     const getColor = (element) => {
         const colors = {
             "/mystory": {navbar: "transparent", title: "#d9b9a0", footer: "#d9b9a0"},
-            "/services": {navbar: "transparent", title: "#ca8383", footer: "#fff"},
-            "/gallery": {navbar: "transparent", title: "#9B6771", footer: "#fff"},
-            "/contactme": {navbar: "transparent", title: "#6c4b5e", footer: "#fff"},
+            "/services": {navbar: "transparent", title: "#ca8383", footer: "#ca8383"},
+            "/gallery": {navbar: "transparent", title: "#9B6771", footer: "#9B6771"},
+            "/contactme": {navbar: "transparent", title: "#6c4b5e", footer: "#6c4b5e"},
             default: {navbar: "transparent", title: "#f1e7dd", footer: "#f1e7dd"},
         }
         return colors[location.pathname]?.[element] || colors.default[element]
