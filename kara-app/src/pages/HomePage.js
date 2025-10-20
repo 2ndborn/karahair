@@ -6,6 +6,7 @@ import Title from '../components/Title';
 import HomeScrollComponent from '../components/HomeScrollComponent';
 
 import {HomePageData} from '../serviceData/HomePageData';
+import ExpoComponent from '../components/ExpoComponent';
 
 function HomePage() {
 
@@ -78,7 +79,7 @@ function HomePage() {
           </div>
         </div>   
       </section>
-              
+      <ExpoComponent />  
     </>
   );
 }
