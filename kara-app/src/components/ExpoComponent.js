@@ -24,12 +24,12 @@ const ExpoComponent = () => {
           </div>
       </section>
       <section className={styles.cont}>
-        <div style={{ textAlign: "center", backgroundColor: "#000" }}>
-          <h3 >Knowledge</h3>
+        <div className={styles.contentTitle}>
+          <h3>Knowledge</h3>
         </div>
         <div className={styles.expoContainer}>
           <div className={styles.content}>
-            <p style={{ padding: "min(5rem, 8%)", fontSize: "1.25rem" }}>
+            <p style={{ padding: "min(5rem, 8%)", fontSize: "clamp(1rem, 2vw, 1.25rem)" }}>
               Your comfort and confidence are my highest priorities.
               For over two decades, I’ve had the privilege of supporting
               a diverse range of clients with their hair needs.
