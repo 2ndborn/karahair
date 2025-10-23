@@ -1,8 +1,8 @@
 export const HomePageData = [
     {
         id: 1,
-        title: "KNOWLEDGE",
-        icon: <i class="fa-solid fa-brain"></i>,
+        title: ["K","N","O","W","L","E","D","G","E"],
+        icon: "Knowledge",
         content: `"Your comfort and confidence are my highest priorities.
         For over two decades, I’ve had the privilege of supporting
         a diverse range of clients with their hair needs.
@@ -12,7 +12,7 @@ export const HomePageData = [
     },{
         id: 2,
         title: "ASSESSMENT",
-        icon: <i class="fa-regular fa-clipboard"></i>,
+        icon: ["A","S","S","E","S","S","M","E","N","T"],
         content: `"Once we’ve explored your desired look, I take time to 
         carefully assess the condition of your hair. This ensures that every
         technique I use is tailored not only for stunning results, but also 
@@ -21,8 +21,8 @@ export const HomePageData = [
         best while keeping your hair beautifully resilient."`,
     },{
         id: 3,
-        title: "RESTORE",
-        icon: <i class="fa-solid fa-shower"></i>,
+        title: [" "," ","R","E","S","T","O","R","E"," "],
+        icon: "Restore",
         content: `"Once we’ve explored your desired look, I take time to 
         carefully assess the condition of your hair. This ensures that every
         technique I use is tailored not only for stunning results, but also 
@@ -32,11 +32,7 @@ export const HomePageData = [
     },{
         id: 4,
         title: "ALLURE", 
-        icon: <>
-        <i style={{margin: "0 5px"}} class="fa-solid fa-heart"></i>
-        <i style={{margin: "0 5px"}} class="fa-solid fa-heart"></i>
-        <i style={{margin: "0 5px"}} class="fa-solid fa-heart"></i>
-        </>,
+        icon: "Allure",
         content: `"Once we’ve explored your desired look, I take time to 
         carefully assess the condition of your hair. This ensures that every
         technique I use is tailored not only for stunning results, but also 

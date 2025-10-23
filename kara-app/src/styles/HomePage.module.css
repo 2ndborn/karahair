@@ -112,15 +112,21 @@
 /***********************************expo**************************/
 .cont {
     height: auto;
-    background-color: rgba(255, 255, 255,0.9);
+    background-color: rgba(255, 255, 255,0.8);
     padding: 1rem;
 }
 
 .expoContainer {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     height: 70vh;
 }
+
+.rowReverse {
+  flex-direction: row-reverse;
+}
+
 
 .contentTitle {
     text-align: center;

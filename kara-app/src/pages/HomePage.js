@@ -6,6 +6,7 @@ import Title from '../components/Title';
 import HomeScrollComponent from '../components/HomeScrollComponent';
 
 import {HomePageData} from '../serviceData/HomePageData';
+import {data} from '../serviceData/data';
 import ExpoComponent from '../components/ExpoComponent';
 
 function HomePage() {
@@ -79,7 +80,9 @@ function HomePage() {
           </div>
         </div>   
       </section>
-      <ExpoComponent />  
+      {data.map((da, idx) => (
+        <ExpoComponent key={da.id} {...da} rowReverse={idx % 2 !== 0} />  
+      ))}
     </>
   );
 }
