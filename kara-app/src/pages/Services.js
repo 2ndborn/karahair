@@ -3,8 +3,10 @@ import styles from '../styles/Services.module.css';
 import {AnimatePresence, LayoutGroup, motion} from 'framer-motion';
 
 import education from '../assets/karaeducation.webp';
-import roc from '../assets/roc.webp';
+import coach from '../assets/coach.webp';
+import roc from '../assets/roctwo.webp';
 import product from '../assets/product.webp';
+import affiliate from '../assets/affiliate.webp';
 
 import Title from '../components/Title';
 import { OverlaySection } from '../utils/OverlaySection';
@@ -55,7 +57,7 @@ const Services = () => {
               <SectionTile
                 key='educate'
                 id='educate'
-                imageSrc={education}
+                imageSrc={coach}
                 onClick={handleClick}
                 isToggled={isToggled}
                 tileClassName={styles.educate}
@@ -70,7 +72,7 @@ const Services = () => {
                 <SectionTile
                   key="codes"
                   id="codes"
-                  imageSrc={product}
+                  imageSrc={affiliate}
                   onClick={handleClick}
                   isToggled={isToggled}
                   tileClassName={styles.codes}
