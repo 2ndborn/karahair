@@ -30,7 +30,7 @@ export const data = [
         id: 2,
         title: ["R","E","S","T","O","R","E"],
         head: "Restore",
-        content: `"In the restoration phase, only the finest haircare 
+        content: `"During the restoration phase, only the finest haircare 
         products are chosen, each selected to nourish, strengthen, and
         renew. This is your moment to step away from the demands of 
         daily life and enter a space of transformation. As your hair

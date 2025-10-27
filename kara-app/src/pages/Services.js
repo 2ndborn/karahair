@@ -7,6 +7,8 @@ import coach from '../assets/coach.webp';
 import roc from '../assets/roctwo.webp';
 import product from '../assets/product.webp';
 import affiliate from '../assets/affiliate.webp';
+import treatment from '../assets/treatmenttwo.webp';
+import boucleme from '../assets/boucleme.JPG';
 
 import Title from '../components/Title';
 import { OverlaySection } from '../utils/OverlaySection';
@@ -42,7 +44,7 @@ const Services = () => {
               <SectionTile
                 key="hair"
                 id={'hair'}
-                imageSrc={roc}
+                imageSrc={treatment}
                 onClick={handleClick}
                 isToggled={isToggled}
                 tileClassName={styles.hair}
@@ -72,7 +74,7 @@ const Services = () => {
                 <SectionTile
                   key="codes"
                   id="codes"
-                  imageSrc={affiliate}
+                  imageSrc={boucleme}
                   onClick={handleClick}
                   isToggled={isToggled}
                   tileClassName={styles.codes}

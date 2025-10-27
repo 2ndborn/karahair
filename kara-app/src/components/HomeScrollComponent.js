@@ -5,7 +5,15 @@ const HomeScrollComponent = ({title, icon, content}) => {
     
     const ref = useRef(null);
     const {scrollYProgress} = useScroll({target: ref})
-    const x = useTransform(scrollYProgress, [0,1], ["100%", "-100%"])
+    const x = useTransform(scrollYProgress, [0,1], [1675, -1675])
+    const {scrollY: scrollYSide} = useScroll({target: ref})
+    const sideVel = useVelocity(scrollYSide);
+    const sideMap = useTransform(sideVel, [-1500, 0, 1500], [-1, 0, 1]);
+    const sideSpring = useSpring(sideMap, {stiffness: 30, damping: 200})
+
+    const combineX = useTransform([x, sideSpring], ([BaseX, springX]) => {
+        return BaseX + springX * 10;
+    })
 
     const targetRef = useRef(null);
     const {scrollYProgress: targetScroll} = useScroll({
@@ -22,27 +30,16 @@ const HomeScrollComponent = ({title, icon, content}) => {
     
     return (
         <>
-            {/* <div style={{ height: "150vh" }} ref={ref}>
-                <motion.div 
-                style={{
-                    position: "sticky", top: "50%", 
-                    height: "50vh", display: "flex", 
-                    alignItems: "center", justifyContent: "center", overflow: "hidden",
-                    color: "#fff", textShadow: "2px 2px 8px rgba(0, 0, 0, 0.5)"
-                    }}
-                >
-                    <motion.h1 style={{ x, letterSpacing: "-1px", fontWeight: "700", fontSize: "clamp(3rem, 15vw, 14rem)"}}>{title}</motion.h1>
-                </motion.div>
-            </div> */}
-            <section ref={ref} style={{position: "relative", height: "200vh"}}>
-                      <div  style={{position: "sticky", top: "100px", height: "80vh", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", overflow: "hidden"}}>
-                          <motion.div style={{x, display: "flex" }}>
-                                  <motion.div style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "0 5px"}}>
-                                      <h1 style={{ color: "transparent", fontSize: "20rem", fontWeight: 800, WebkitTextStroke: "10px #fff" }}>{title}</h1>
-                                  </motion.div>
-                          </motion.div>
-                      </div>
-                  </section>
+            
+            <section ref={ref} style={{ position: "relative", height: "200vh" }}>
+                <div style={{ position: "sticky", top: "100px", height: "80vh", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", overflow: "hidden" }}>
+                    <motion.div style={{ x: combineX, display: "flex" }}>
+                        <motion.div style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "0 5px" }}>
+                            <h1 style={{ color: "transparent", fontSize: "20rem", fontWeight: 800, WebkitTextStroke: "10px #fff" }}>{title}</h1>
+                        </motion.div>
+                    </motion.div>
+                </div>
+            </section>
             <div style={{ height: "150vh" }} ref={targetRef}>
                 <motion.div style={{
                     opacity,

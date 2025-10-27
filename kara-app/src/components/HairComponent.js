@@ -27,8 +27,8 @@ const HairComponent = () => {
             </div>
             <div className={styles.contactButtonWrapper}>
                 <Link to="/contactme">
-                    <AnimateButton className={styles.contactButton}>
-                        Book Consultation now!!!
+                    <AnimateButton className={styles.servicetButton}>
+                        Book a consultation
                     </AnimateButton>
                 </Link>
             </div>

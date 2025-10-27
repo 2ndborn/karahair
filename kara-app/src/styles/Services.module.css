@@ -9,6 +9,7 @@
   padding: 20px;
   gap: 20px;
   padding: 50px 20px 30px 20px;
+  margin-bottom: 20px;
 }
 
 .GridContainer > div {
@@ -202,18 +203,15 @@
   margin-bottom: 20px;
 }
 
-.contactButton {
+.servicetButton {
   background-color: #cffc1c;
-  border: 5px solid #a5ce00;
-  border-radius: 0.5rem;
-  padding: 0.5rem 0.75rem;
+  border-radius: 100px;
+  padding: 0.75rem 1.5rem;
   transition: border-color 0.2s ease;
   box-shadow: 0 2px 0 rgba(0,0,0,0.3);
-  color: #ffffff;
-  text-shadow: #000 2px 2px 2px;
-  letter-spacing: 0.2rem;
-  font-weight: 900;
-  font-size: 1.4rem;
+  letter-spacing: 1.5px;
+  color: #000;
+  font-size: 1.1rem;
 }
   
   /********************media queries*********************/
@@ -250,7 +248,7 @@
   }
 
   .hairImage {
-    object-position: 0px -125px;
+    /* object-position: 0px -125px; */
   }
 
   .codeImage {

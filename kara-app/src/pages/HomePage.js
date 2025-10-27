@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { motion, useAnimation } from 'motion/react';
+import React, { useEffect, useRef } from 'react'
+import { motion, useAnimation, useScroll, useSpring, useTransform } from 'motion/react';
 import styles from '../styles/HomePage.module.css';
 import peach from '../assets/peachone.webp';
 import Title from '../components/Title';
@@ -17,31 +17,39 @@ function HomePage() {
   }
   const buttonControl = useAnimation();
 
-  useEffect(() => {
-    buttonControl.start({
-      scale: [1, 1.05, 1],
-      boxShadow: [
-        '0px 2px 0px rgba(0,0,0,0.3)',
-        '0px 5px 12px rgba(0,0,0,0.4)',
-        '0px 2px 0px rgba(0,0,0,0.3)'
-      ],
-      transition: {duration: 1.5, repeat: Infinity, ease: "easeInOut"}
-    })
-  }, [buttonControl])
+  // useEffect(() => {
+  //   buttonControl.start({
+  //     scale: [1, 1.05, 1],
+  //     boxShadow: [
+  //       '0px 2px 0px rgba(0,0,0,0.3)',
+  //       '0px 5px 12px rgba(0,0,0,0.4)',
+  //       '0px 2px 0px rgba(0,0,0,0.3)'
+  //     ],
+  //     transition: {duration: 1.5, repeat: Infinity, ease: "easeInOut"}
+  //   })
+  // }, [buttonControl])
+
+  const ref = useRef(null);
+  const {scrollYProgress} = useScroll({target: ref});
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
+  const smoothScale = useSpring(scale, { stiffness: 60, damping: 30 });
 
   return (
     <>
       <Title title="K.A.R.A" subtitle="HAIRCARE" />
-      <motion.img
-        src={peach}
-        alt='out'
-        className={styles.backgroundImage}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={variants}
-        transition={{ duration: 1, ease: "easeOut" }}
-      />
+      <div ref={ref} style={{height: "1500vh"}}>
+        <motion.img
+          style={{scale: smoothScale}}
+          src={peach}
+          alt='out'
+          className={styles.backgroundImage}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={variants}
+          transition={{ duration: 1, ease: "easeOut" }}
+        />
+      
       {HomePageData.map((home) => (
         <HomeScrollComponent key={home.id} {...home} />
       ))}
@@ -51,10 +59,13 @@ function HomePage() {
         height: "100vh",
         display: "flex", justifyContent: "center",
         alignItems: "center",
-        paddingTop: "25px",
+        paddingTop: "150px",
         }}
       >
-        <div
+        <motion.div
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1}}
+          transition={{ duration: 1, ease: "easeIn"}}
           style={{
             display: "flex", justifyContent: "center",
             alignItems: "center", height: "75%", width: "75%",
@@ -78,11 +89,9 @@ function HomePage() {
               }}
             >Book a consultation</button>
           </div>
-        </div>   
+        </motion.div>   
       </section>
-      {data.map((da, idx) => (
-        <ExpoComponent key={da.id} {...da} rowReverse={idx % 2 !== 0} />  
-      ))}
+      </div>
     </>
   );
 }

@@ -23,12 +23,12 @@ export const HomePageData = [
         id: 3,
         title: [" "," ","R","E","S","T","O","R","E"," "],
         icon: "Restore",
-        content: `"Once we’ve explored your desired look, I take time to 
-        carefully assess the condition of your hair. This ensures that every
-        technique I use is tailored not only for stunning results, but also 
-        to preserve the health, strength, and integrity of your hair. My 
-        approach is both artistic and mindful, designed to bring out your 
-        best while keeping your hair beautifully resilient."`,
+        content: `"During the restoration phase, only the finest haircare 
+        products are chosen, each selected to nourish, strengthen, and
+        renew. This is your moment to step away from the demands of 
+        daily life and enter a space of transformation. As your hair
+        is revived, so too is your sense of self elevated, radiant, 
+        and unmistakably you."`,
     },{
         id: 4,
         title: "ALLURE", 

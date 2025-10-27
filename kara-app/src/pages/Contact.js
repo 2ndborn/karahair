@@ -9,7 +9,7 @@ const Contact = () => {
     <>
       <Title title='Contact' subtitle='Me' />
       <div className={styles.contactContainer} id='next-section'>
-        <img className={styles.colorChart} src={multicolor} alt='colour chart' />
+        <img className={styles.colorChart} src={multicolor} alt='multi-colour hair' />
         <div className={styles.colorOverlay}></div>
         <div className={styles.formContainer}>
           <h3>Request a Consultation</h3>

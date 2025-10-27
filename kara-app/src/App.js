@@ -8,10 +8,12 @@ import MyStoryPage from './pages/MyStoryPage';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
+import ScrollToTop from './components/ScrollToTopComponent';
 
 function App() {
   return (
     <div className={styles.App}>
+      <ScrollToTop />
       <NavBar />
       <div className={styles.Main}> {/* Use div instead of Container */}
         <Routes>
