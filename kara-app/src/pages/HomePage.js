@@ -11,6 +11,13 @@ import ExpoComponent from '../components/ExpoComponent';
 
 function HomePage() {
 
+  const fadeVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 }
+  };
+
+
   const variants = {
     hidden: { opacity: 0, scale: 0.5 },
     visible: { opacity: 1, scale: 1 },
@@ -36,6 +43,13 @@ function HomePage() {
 
   return (
     <>
+      <motion.div
+        variants={fadeVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{ duration: 0.5, easeOut: "easeOut" }}
+      >
       <Title title="K.A.R.A" subtitle="HAIRCARE" />
       <div ref={ref} style={{height: "1500vh"}}>
         <motion.img
@@ -43,10 +57,6 @@ function HomePage() {
           src={peach}
           alt='out'
           className={styles.backgroundImage}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={variants}
           transition={{ duration: 1, ease: "easeOut" }}
         />
       
@@ -92,6 +102,7 @@ function HomePage() {
         </motion.div>   
       </section>
       </div>
+      </motion.div>
     </>
   );
 }

@@ -47,8 +47,22 @@ const MyStoryPage = () => {
       },
     ];
 
+  const fadeVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 }
+  };
+
+
   return (
     <>
+      <motion.div
+        variants={fadeVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{ duration: 0.5, easeOut: "easeOut" }}
+      >
       <Title title="MY" subtitle="STORY" />
           {/* <motion.div 
           className={styles.TitleContainer}
@@ -253,6 +267,7 @@ const MyStoryPage = () => {
             >Book a consultation</button> */}
         </div>
       </section>
+      </motion.div>
     </>
   )
 }
