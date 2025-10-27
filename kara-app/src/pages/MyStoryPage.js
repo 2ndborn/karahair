@@ -47,11 +47,11 @@ const MyStoryPage = () => {
       },
     ];
 
-  const fadeVariants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    exit: { opacity: 0 }
-  };
+    const fadeVariants = {
+      initial: { opacity: 0 },
+      animate: { opacity: 1 },
+      exit: { opacity: 0 }
+    };
 
 
   return (
@@ -64,14 +64,6 @@ const MyStoryPage = () => {
         transition={{ duration: 0.5, easeOut: "easeOut" }}
       >
       <Title title="MY" subtitle="STORY" />
-          {/* <motion.div 
-          className={styles.TitleContainer}
-          style={{backgroundColor: getColor("title")}}
-          >
-          <h1>MY</h1>
-          <h5>STORY</h5>
-
-        </motion.div> */}
       <div id='next-section' className={styles.tcontainer}>
         <img
           src={kara}
@@ -104,76 +96,6 @@ const MyStoryPage = () => {
           </div>
         </div>
       </div>
-      {/* <div className={styles.container}>
-        <div className={styles.pr1}>
-          <p>
-            <span>I’m a colour specialist and hairdresser with over 20 years 
-            in the game</span>, working across every hair texture, every 
-            shade, every style.
-          </p>
-        </div>
-        <div className={styles.pr2}>
-          <p>
-            <span>Hair is my craft, but education is my purpose.</span> I run 
-            cutting edge courses built for the next wave of stylists
-            those who want to break rules the right way. 
-          </p>
-        </div>
-        <div className={styles.pr3}>
-          <p className='mb-3'>
-            <span>My work doesn’t just follow trends it helps 
-            create them.</span> From the salon floor to the set, I’ve coloured for 
-            major productions like: 
-          </p>
-            <ul>
-              <li><strong>Netflix:</strong> Treason</li>
-              <li><strong>Amazon Prime: </strong>My Lady Jane</li>
-              <li><strong>ITV:</strong> Belgravia - The Next Chapter</li>
-              <li><strong>Channel 5:</strong> The Forsyte Saga</li>
-              <li><strong>BBC:</strong> Doctor Who</li>
-            </ul>
-        </div>
-        <div className={styles.pr4}>
-          <p>
-            <span>I’m all about pushing boundaries and raising 
-            standards</span> to ensure the future of hairdressing 
-            is diverse, skilled, and fearless.
-          </p>
-        </div>
-        <div className={styles.pr5}>
-          <p>
-            Whether you’re sat in my chair or learning in my 
-            classroom, you’re getting more than just hair, <span>you’re getting 
-            experience, vision, and straight-up passion.</span>
-          </p>
-          <div className={styles.contactButtonWrapper}>
-            <Link to="/contactme">
-              <AnimateButton className={styles.contactButton}>
-                Book Consultation now!!!
-              </AnimateButton>
-            </Link>
-          </div>
-        </div>
-        <div className={styles.img}>
-          <img className={styles.image} src={wigs} alt="wigs colouring"/>
-        </div>
-        <div className={styles.img2}>
-          <img 
-            className={styles.image2} 
-            src={curly} 
-            alt='Curly hair tutorial'
-          />
-        </div>
-        <div className={styles.img3}>
-          <img 
-            className={styles.image3} 
-            src={brazil} 
-            alt='Happy Client'
-          />
-        </div>
-        <div className={styles.k}>K</div>
-        <div className={styles.h}>H</div>
-      </div> */}
       <section style={{ position: "relative"}}>
         <div style={{
           position: "fixed", top: 0, left: 0, 
@@ -212,59 +134,7 @@ const MyStoryPage = () => {
         </section>
         <TileComponent content={paraFour} boxShadow={"-4px 8px 10px rgba(0,0,0,0.3), -6px 10px 14px rgba(0,0,0,0.5)"} />
         <TileComponent content={paraFive} boxShadow={"0px 8px 10px rgba(0,0,0,0.3), 0px 10px 14px rgba(0,0,0,0.5)"}  />
-        {/* <TileComponent
-          content={{ image: colorchart }} boxShadow={"8px 8px 10px rgba(0,0,0,0.3), 10px 10px 14px rgba(0,0,0,0.5)"}
-          renderContent={() => (
-            <>
-              <motion.div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  display: 'flex',
-                  justifyContent: "center",
-                  alignItems: "center",
-                  flexDirection: "column",
-                  gap: "1rem",
-                  zIndex: 2, // higher than overlay
-                  pointerEvents: "auto", // ensure buttons are clickable
-                }}
-              >
-                <button style={{
-                  padding: "0.75rem 1.5rem",
-                  fontSize: "1rem",
-                  borderRadius: "8px",
-                  border: "none",
-                  backgroundColor: "#fff",
-                  color: "#000",
-                  cursor: "pointer",
-                  zIndex: 3 // optional, for extra safety
-                }}>
-                  <i class="fa-brands fa-instagram"></i>
-                  Button One
-                </button>
-                <button style={{
-                  padding: "0.75rem 1.5rem",
-                  fontSize: "1rem",
-                  borderRadius: "8px",
-                  border: "none",
-                  backgroundColor: "#fff",
-                  color: "#000",
-                  cursor: "pointer",
-                  zIndex: 3
-                }}>
-                  <i class="fa-brands fa-whatsapp"></i>
-                  Button Two
-                </button>
-              </motion.div>
-            </>
-          )}
-        /> */}
         <div style={{height: "12.5vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
-          {/* <button
-              style={{
-                minWidth: "250px", padding: "1em 2em", backgroundColor: "#c3f803ff", color: "#000000be", fontWeight: 700, borderRadius: "1000px", border: "4px solid #c3f803ff", margin: "10px"
-              }}
-            >Book a consultation</button> */}
         </div>
       </section>
       </motion.div>

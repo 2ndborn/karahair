@@ -33,11 +33,10 @@ export const HomePageData = [
         id: 4,
         title: "ALLURE", 
         icon: "Allure",
-        content: `"Once we’ve explored your desired look, I take time to 
-        carefully assess the condition of your hair. This ensures that every
-        technique I use is tailored not only for stunning results, but also 
-        to preserve the health, strength, and integrity of your hair. My 
-        approach is both artistic and mindful, designed to bring out your 
-        best while keeping your hair beautifully resilient."`,
+        content: `"As you return to reality, you're met by the magnetic 
+        allure of the person in the mirror. The moment you realise that 
+        radiant figure is you, your favourite song begins to play, growing 
+        louder with every compliment that follows. Your radiance has returned, 
+        and with it, your confidence, joy and sense of self.`,
     }
 ]

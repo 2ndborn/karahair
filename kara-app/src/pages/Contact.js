@@ -1,12 +1,27 @@
 import React from 'react'
+import {motion} from 'framer-motion'
 import styles from '../styles/Contact.module.css';
 import multicolor from '../assets/multicolor.webp';
 
 import Title from '../components/Title';
 
 const Contact = () => {
+
+  const fadeVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 }
+  };
+
   return (
     <>
+    <motion.div
+        variants={fadeVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{ duration: 0.5, easeOut: "easeOut" }}
+      >
       <Title title='Contact' subtitle='Me' />
       <div className={styles.contactContainer} id='next-section'>
         <img className={styles.colorChart} src={multicolor} alt='multi-colour hair' />
@@ -57,6 +72,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
+      </motion.div>
     </>
   )
 }

@@ -47,8 +47,21 @@ const Gallery = () => {
     "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/alex_a5okil.jpg",
   ]
 
+  const fadeVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 }
+  };
+
   return(
     <>
+    <motion.div
+        variants={fadeVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{ duration: 0.5, easeOut: "easeOut" }}
+      >
       <Title title="THE" subtitle="GALLERY" />
       <AnimatePresence mode='wait'>
       {showImage.img &&
@@ -98,6 +111,7 @@ const Gallery = () => {
           </Masonry>
         </ResponsiveMasonry>
       </div>
+      </motion.div>
     </>
   )
 }
