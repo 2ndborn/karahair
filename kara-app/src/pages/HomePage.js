@@ -8,6 +8,7 @@ import HomeScrollComponent from '../components/HomeScrollComponent';
 import { HomePageData } from '../serviceData/HomePageData';
 import { data } from '../serviceData/data';
 import ExpoComponent from '../components/ExpoComponent';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
 
@@ -67,9 +68,13 @@ function HomePage() {
             }}
           >
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, ease: "easeIn" }}
+              variants={{
+                hidden: { opacity: 0, y: 25 },    
+                visible: { opacity: 1, y: 0 }
+              }}
+              initial={"hidden"}
+              whileInView={"visible"}
+              transition={{ duration: 0.75, ease: "easeIn", delay: 0.25 }}
               style={{
                 display: "flex", justifyContent: "center",
                 alignItems: "center", height: "75%", width: "75%",
@@ -84,14 +89,23 @@ function HomePage() {
                 </h1>
               </div>
               <div style={{ height: "30%", display: "flex", alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
-                <button style={{ minWidth: "250px", padding: "1em 2em", borderRadius: "1000px", border: "4px solid #fff", margin: "10px", color: "#fff", fontWeight: 700 }}>
-                  Learn more
-                </button>
-                <button
-                  style={{
-                    minWidth: "250px", padding: "1em 2em", backgroundColor: "#c3f803ff", color: "#000000be", fontWeight: 700, borderRadius: "1000px", border: "4px solid #c3f803ff", margin: "10px"
-                  }}
-                >Book a consultation</button>
+                <Link to="/mystory">
+                  <motion.button
+                    whileHover={{ backgroundColor: "#fff", color: "#000" }}
+                    style={{ minWidth: "250px", padding: "1em 2em", borderRadius: "1000px", border: "4px solid #fff", margin: "10px", color: "#fff", fontWeight: 700 }}>
+                    Learn more
+                  </motion.button>
+                </Link>
+                <Link to="/contactme">
+                  <motion.button
+                    whileHover={{ backgroundColor: "transparent", color: "#fff" }}
+                    style={{
+                      minWidth: "250px", padding: "1em 2em", backgroundColor: "#c3f803ff", color: "#000000be", fontWeight: 700, borderRadius: "1000px", border: "4px solid #c3f803ff", margin: "10px"
+                    }}
+                  >
+                    Book a consultation
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
           </section>

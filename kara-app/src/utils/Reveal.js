@@ -19,7 +19,7 @@ export const Reveal = ({
   }, [inView, mainControl])
   return (
     <div ref={ref}>
-      <motion.div
+      <motion.div 
         variants={variants || {
           hidden: { opacity: 0, y: 25 },
           visible: { opacity: 1, y: 0 },
