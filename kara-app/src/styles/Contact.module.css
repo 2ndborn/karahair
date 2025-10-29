@@ -26,7 +26,7 @@
 .formContainer {
     position: relative;
     max-height: 500px;
-    width: 40%; min-width: 390px;
+    width: 95%; min-width: 390px;
     padding: 20px;
     border-radius: 15px;
     border: 4px solid #fff;
@@ -159,6 +159,50 @@ textarea.contactInput::placeholder {
 .cancelButton {
     border: 2px solid #fff;
     background-color: transparent;
+ }
+
+ .buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+ }
+
+ a:nth-child(2), a:nth-child(3){
+    background-color: #fff;
+ }
+
+ .socialButton {
+    text-decoration: none;
+    width: 100%;
+    max-width: 300px;
+    color: #5e5e5e;
+    background-color: #cffc1c;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-weight: 600;
+ }
+
+ .buttonContainer i {
+    font-size: 1.3rem;
+    margin-right: 3px;
+ }
+
+ .socialButton:hover {
+    background-color: #8dab16;
+    color: #ffffff;
+    transition: all ease-in-out 0.5s;
+    transform: scale(1.02);
+ }
+
+ @media (max-width: 800px) {
+    .buttonContainer {
+        flex-direction: column;
+    }
  }
 
  @media (max-width: 1024px) {

@@ -27,7 +27,31 @@ const Contact = () => {
         <img className={styles.colorChart} src={multicolor} alt='multi-colour hair' />
         <div className={styles.colorOverlay}></div>
         <div className={styles.formContainer}>
-          <h3>Request a Consultation</h3>
+          <div className={styles.buttonContainer}>
+              <a
+                className={styles.socialButton}
+                href='https://wa.me/7799212929?text=Hi%20Kara'
+                target='_blank' rel='noreferrer' alt="Message Kara via WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+                Chat on WhatsApp
+              </a>
+              <a
+                className={styles.socialButton}
+                href='mailto:mfrancisr@hotmail.com?subject=Haircare%20consultation%20enquiry?Body=Hi%20Kara%20'
+                alt="Send an email to Kara"
+                target='_blank' rel='noreferrer'>
+                <i class="fa-regular fa-envelope"></i>
+                Message via Email
+              </a>
+              <a
+                className={styles.socialButton}
+                href='https://www.instagram.com/kara__haircare_'
+                target='_blank' rel='noreferrer' alt="link to Kara's Instagram">
+                <i class="fa-brands fa-instagram"></i>
+                Follow on Instagram
+              </a>
+          </div>
+          {/* <h3>Request a Consultation</h3>
           <form action="/action_page.php" method="get">
             <div className={styles.inputGroup}>
               <input
@@ -69,7 +93,7 @@ const Contact = () => {
               <button className={styles.cancelButton}>Cancel</button>
               <button className={styles.submitButton} type='submit' value='Submit'>Send</button>
             </div>
-          </form>
+          </form> */}
         </div>
       </div>
       </motion.div>
