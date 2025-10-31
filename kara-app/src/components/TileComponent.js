@@ -1,7 +1,14 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useScroll, useSpring, useTransform, useVelocity } from 'framer-motion';
+import styles from '../styles/MyStory.module.css';
+import { Link } from 'react-router-dom';
+import { OverlaySection } from '../utils/OverlaySection';
+import WorkComponent from './WorkComponent';
+import EducatorComponent from './EducatorComponent';
 
-export default function TileComponent({margin, boxShadow, content, renderContent}) {
+export default function TileComponent({margin, content, renderContent}) {
+
+  const [isToggled, setIsToggled] = useState(null);
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -25,6 +32,14 @@ export default function TileComponent({margin, boxShadow, content, renderContent
   const velocityMap = useTransform(velocity, [-2500, 0, 2500], [-1, 0, 1]);
   const velocitySpring = useSpring(velocityMap, { stiffness: 30, damping: 90 })
 
+  const handleClick = () => {
+    setIsToggled(content.id);
+  }
+
+  const handleClose = () => {
+    setIsToggled(null)
+  }
+
   return (
     <div style={{ height: "150vh", boxSizing: "border-box", display: "flex", justifyContent: "center", alignItems: "center"}}>
       <div style={{ height: "50vh," }} />
@@ -45,33 +60,56 @@ export default function TileComponent({margin, boxShadow, content, renderContent
         }}
       >
       <img src={content.image} alt='model' style={{ height: "100%", width: "100%", objectFit: "cover" }} />
-      <motion.div style={{ opacity: opacitySpring, position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.5)" }} />
+      <motion.div style={{ opacity: opacitySpring, position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.5)"}} />
         <motion.div
           style={{
             position: "absolute",
             inset: 0,
             opacity: opacitySpring, y,
-            display: 'flex', justifyContent: "center", alignItems: "center", textAlign: "center",
+            display: 'flex', justifyContent: "center", alignItems: "center", textAlign: "center", flexDirection: "column",
             color: "#fff",
           }}>
-            {renderContent ? renderContent(content) : (
-          <p
-            style={{fontSize: "2rem", color: "rgba(255, 255, 255, 0.8)", paddingLeft: "min(5%, 3rem)", paddingRight: "min(5%, 3rem)"}}
-          >
-            {(content.id < 5 || content.id === 'paraFive') ? (
-              <>
-              <span style={{fontWeight: "800", color: "#fff"}}>{content.primary}</span>{content.secondary}
-              </>
-            ) : (
-              <>
-              {content.primary}<span style={{fontWeight: "800", color: "#fff"}}>{content.secondary}</span>
-              </>
-            )}
-          </p>
+          {renderContent ? renderContent(content) : (
+            <p
+              style={{ fontSize: "2rem", color: "rgba(255, 255, 255, 0.8)", paddingLeft: "min(5%, 3rem)", paddingRight: "min(5%, 3rem)" }}
+            >
+              {(content.id < 5 || content.id === 'paraFive') ? (
+                <>
+                  <span style={{ fontWeight: "800", color: "#fff" }}>{content.primary}</span>{content.secondary}
+                </>
+              ) : (
+                <>
+                  {content.primary}<span style={{ fontWeight: "800", color: "#fff" }}>{content.secondary}</span>
+                </>
+              )}
+            </p>
           )}
+        <div>
+          {content.id === 4 ? (
+            <Link to="/gallery">
+              <button className={styles.storyButton}>{content.button}</button>
+            </Link>
+          ) : (
+            !isToggled && (
+              <>
+                <button 
+                  onClick={handleClick}
+                  className={styles.storyButton}
+                >
+                  {content.button}
+                </button>
+              </>
+            )
+          )}
+        </div>
         </motion.div>
-        
       </motion.div>
+        {isToggled &&  (
+          <OverlaySection id={isToggled} onClose={handleClose}>
+            {isToggled === 1 && (<WorkComponent />)}
+            {isToggled === 2 && (<EducatorComponent />)}
+          </OverlaySection>
+        )}
       <div style={{ height: "50vh," }} />
     </div>
   );

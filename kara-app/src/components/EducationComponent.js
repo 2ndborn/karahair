@@ -35,7 +35,7 @@ const EducationComponent = () => {
           </div>
           <div className={styles.contactButtonWrapper}>
             <Link to="/contactme">
-              <AnimateButton className={styles.servicetButton}>
+              <AnimateButton className={styles.serviceButton}>
                   Book a consultation
               </AnimateButton>
             </Link>

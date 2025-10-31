@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const HairComponent = () => {
     return (
-        <div className={styles.componentContainer}>
+        <div>
             <div>
                 <h1>Haircare</h1>
                 <p>
@@ -27,7 +27,7 @@ const HairComponent = () => {
             </div>
             <div className={styles.contactButtonWrapper}>
                 <Link to="/contactme">
-                    <AnimateButton className={styles.servicetButton}>
+                    <AnimateButton className={styles.serviceButton}>
                         Book a consultation
                     </AnimateButton>
                 </Link>

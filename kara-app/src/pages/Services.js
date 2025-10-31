@@ -13,12 +13,9 @@ import boucleme from '../assets/boucleme.JPG';
 import Title from '../components/Title';
 import { OverlaySection } from '../utils/OverlaySection';
 import { SectionTile } from '../utils/SectionTile';
-import { HairData } from '../serviceData/HairData';
-import { AnimateButton } from '../utils/AnimateButton';
 import HairComponent from '../components/HairComponent';
 import EducationComponent from '../components/EducationComponent';
 import AffiliateComponent from '../components/AffiliateComponent';
-import { Reveal } from '../utils/Reveal';
 
 const Services = () => {
 
