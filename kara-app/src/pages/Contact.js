@@ -27,6 +27,12 @@ const Contact = () => {
         <img className={styles.colorChart} src={multicolor} alt='multi-colour hair' />
         <div className={styles.colorOverlay}></div>
         <div className={styles.formContainer}>
+          <div style={{textAlign: "center", marginBottom: "10px"}}>
+            <h1>Let's talk about your <span style={{fontSize: "1.1em", fontWeight: 600}}>Haircare</span> needs...</h1>
+          </div>
+          <div style={{textAlign: "center", fontSize: "1.1em", color: "#f0f0f0ff", marginBottom: "20px"}}>
+            <p>Whether its maintenance, a new you or a colour correction, I am here to help.</p>
+          </div>
           <div className={styles.buttonContainer}>
               <a
                 className={styles.socialButton}
@@ -49,6 +55,13 @@ const Contact = () => {
                 target='_blank' rel='noreferrer' alt="link to Kara's Instagram">
                 <i class="fa-brands fa-instagram"></i>
                 Follow on Instagram
+              </a>
+              <a
+                className={styles.socialButton}
+                href='https://www.instagram.com/kara__haircare_'
+                target='_blank' rel='noreferrer' alt="link to Kara's Instagram">
+                <i class="fa-brands fa-tiktok"></i>
+                Follow on TikTok
               </a>
           </div>
           {/* <h3>Request a Consultation</h3>
