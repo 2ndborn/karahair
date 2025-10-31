@@ -32,7 +32,7 @@ const Footer = () => {
           <Col md={4} className="text-md-start px-md-5 text-center">
             <h4 className="mb-3"><strong>Follow Me</strong></h4>
             <div className={styles.socialMedia}>
-                <a href="/" className="px-md-0 pe-md-3 px-3"><i className="fa-brands fa-instagram"></i></a>
+                <a href="https://www.instagram.com/kara__haircare_" className="px-md-0 pe-md-3 px-3"><i className="fa-brands fa-instagram"></i></a>
                 <a href="/" className="px-md-0 pe-md-3 px-3"><i className="fa-brands fa-tiktok"></i></a>
             </div>
           </Col>

@@ -28,6 +28,11 @@
   font-weight: 700;
 }
 
+.NavContact:hover {
+  background-color: #8dab16;
+  transition: all ease-in 0.2s;
+}
+
 .Dropdown {
   z-index: 999;
 }

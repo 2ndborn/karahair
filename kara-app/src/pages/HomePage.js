@@ -1,13 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { motion, useAnimation, useScroll, useSpring, useTransform } from 'motion/react';
+import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 import styles from '../styles/HomePage.module.css';
 import peach from '../assets/peachone.webp';
 import Title from '../components/Title';
 import HomeScrollComponent from '../components/HomeScrollComponent';
 
 import { HomePageData } from '../serviceData/HomePageData';
-import { data } from '../serviceData/data';
-import ExpoComponent from '../components/ExpoComponent';
 import { Link } from 'react-router-dom';
 
 function HomePage() {
@@ -43,7 +41,7 @@ function HomePage() {
         transition={{ duration: 0.5, easeOut: "easeOut" }}
       >
         <Title title="K.A.R.A" subtitle="HAIRCARE" />
-        <div ref={ref} style={{ height: "1500vh" }}>
+        <div ref={ref} style={{ height: "1500vh" }} id='next-section'>
           {showBackground && (
             <motion.img
               style={{ scale: smoothScale }}
@@ -91,14 +89,14 @@ function HomePage() {
               <div style={{ height: "30%", display: "flex", alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
                 <Link to="/mystory">
                   <motion.button
-                    whileHover={{ backgroundColor: "#fff", color: "#000" }}
+                    whileHover={{ backgroundColor: "#fff", color: "#000", scale: 1.05 }}
                     style={{ minWidth: "250px", padding: "1em 2em", borderRadius: "1000px", border: "4px solid #fff", margin: "10px", color: "#fff", fontWeight: 700 }}>
                     Learn more
                   </motion.button>
                 </Link>
                 <Link to="/contactme">
                   <motion.button
-                    whileHover={{ backgroundColor: "transparent", color: "#fff" }}
+                    whileHover={{ backgroundColor: "#8dab16", border: "#8dab16 solid 4px", color: "#fff", scale: 1.05 }}
                     style={{
                       minWidth: "250px", padding: "1em 2em", backgroundColor: "#c3f803ff", color: "#000000be", fontWeight: 700, borderRadius: "1000px", border: "4px solid #c3f803ff", margin: "10px"
                     }}
