@@ -58,8 +58,8 @@ const Contact = () => {
               </a>
               <a
                 className={styles.socialButton}
-                href='https://www.instagram.com/kara__haircare_'
-                target='_blank' rel='noreferrer' alt="link to Kara's Instagram">
+                href='https://www.tiktok.com/@kara_hair_care'
+                target='_blank' rel='noreferrer' alt="link to Kara's Tik Tok">
                 <i class="fa-brands fa-tiktok"></i>
                 Follow on TikTok
               </a>
