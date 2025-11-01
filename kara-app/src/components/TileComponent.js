@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
-import { motion, useScroll, useSpring, useTransform, useVelocity } from 'framer-motion';
+import { AnimatePresence, LayoutGroup, motion, useScroll, useSpring, useTransform, useVelocity } from 'framer-motion';
 import styles from '../styles/MyStory.module.css';
 import { Link } from 'react-router-dom';
 import { OverlaySection } from '../utils/OverlaySection';
 import WorkComponent from './WorkComponent';
 import EducatorComponent from './EducatorComponent';
+import TVComponent from './TVComponent';
+import TestimonialComponent from './TestimonialComponent';
 
 export default function TileComponent({margin, content, renderContent}) {
 
@@ -40,8 +42,16 @@ export default function TileComponent({margin, content, renderContent}) {
     setIsToggled(null)
   }
 
+  const fadeVariants = {
+    initial: { opacity: 0, y: 20, scale: 0.2 },
+  animate: { opacity: 1, y: 0, scale: 1 },
+  exit: { opacity: 0, y: 20, scale: 0.2, transition: { duration: 0.2 } },
+  };
+  
+
   return (
-    <div style={{ height: "150vh", boxSizing: "border-box", display: "flex", justifyContent: "center", alignItems: "center"}}>
+    <div style={{ height: "150vh", boxSizing: "border-box", display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <LayoutGroup>
       <div style={{ height: "50vh," }} />
       <motion.div
         ref={ref}
@@ -59,8 +69,8 @@ export default function TileComponent({margin, content, renderContent}) {
           overflow: "hidden"
         }}
       >
-      <img src={content.image} alt='model' style={{ height: "100%", width: "100%", objectFit: "cover" }} />
-      <motion.div style={{ opacity: opacitySpring, position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.5)"}} />
+        <img src={content.image} alt='model' style={{ height: "100%", width: "100%", objectFit: "cover" }} />
+        <motion.div style={{ opacity: opacitySpring, position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.5)" }} />
         <motion.div
           style={{
             position: "absolute",
@@ -84,33 +94,47 @@ export default function TileComponent({margin, content, renderContent}) {
               )}
             </p>
           )}
-        <div>
-          {content.id === 4 ? (
-            <Link to="/gallery">
-              <button className={styles.storyButton}>{content.button}</button>
-            </Link>
-          ) : (
-            !isToggled && (
-              <>
-                <button 
-                  onClick={handleClick}
-                  className={styles.storyButton}
-                >
-                  {content.button}
-                </button>
-              </>
-            )
-          )}
-        </div>
+          
+          <div style={{ marginTop: "10px" }}>
+            {content.id === 4 ? (
+              <Link to="/gallery">
+                <button className={styles.storyButton}>{content.button}</button>
+              </Link>
+            ) : (
+                <AnimatePresence mode='wait'>
+                  {!isToggled && (
+                    <motion.div
+                      variants={fadeVariants}
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                    >
+                      <motion.button
+                        layoutId={content.id}
+                        onClick={handleClick}
+                        className={styles.storyButton}
+                      >
+                        {content.button}
+                      </motion.button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+            )}
+          </div>
         </motion.div>
       </motion.div>
-        {isToggled &&  (
-          <OverlaySection id={isToggled} onClose={handleClose}>
-            {isToggled === 1 && (<WorkComponent />)}
-            {isToggled === 2 && (<EducatorComponent />)}
-          </OverlaySection>
-        )}
-      <div style={{ height: "50vh," }} />
+        <AnimatePresence mode='wait'>
+          {isToggled && (
+            <OverlaySection key={isToggled} id={String(isToggled)} onClose={handleClose}>
+              {isToggled === 1 && (<WorkComponent />)}
+              {isToggled === 2 && (<EducatorComponent />)}
+              {isToggled === 3 && (<TVComponent />)}
+              {isToggled === 5 && (<TestimonialComponent />)}
+            </OverlaySection>
+          )}
+        </AnimatePresence>
+      </LayoutGroup>
+      <div style={{ height: "50vh" }} />
     </div>
   );
 };  
