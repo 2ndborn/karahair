@@ -22,7 +22,7 @@ const TestimonialComponent = () => {
       {TestimonialData.map((test, idx) =>
         <div key={test.id}>
           <div style={{ padding: "3rem", fontStyle: "italic", border: "1px solid #535353ff", borderRadius: "10px" }}>
-            <div style={{ textAlign: "left" }}>
+            <div style={{ textAlign: "left", fontSize: "1.2rem" }}>
               <p>{test.content}</p>
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
