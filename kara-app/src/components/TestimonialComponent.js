@@ -23,9 +23,7 @@ const TestimonialComponent = () => {
         <div key={test.id}>
           <div style={{ padding: "3rem", fontStyle: "italic", border: "1px solid #535353ff", borderRadius: "10px" }}>
             <div style={{ textAlign: "left" }}>
-              <p>
-                Working with Kara was excellent, she is a credit to the industry.
-              </p>
+              <p>{test.content}</p>
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ color: 'yellow' }}>
