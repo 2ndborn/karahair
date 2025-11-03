@@ -7,6 +7,7 @@ import HomeScrollComponent from '../components/HomeScrollComponent';
 
 import { HomePageData } from '../serviceData/HomePageData';
 import { Link } from 'react-router-dom';
+import IntroScrollComponent from '../components/IntroScrollComponent';
 
 function HomePage() {
 
@@ -41,6 +42,7 @@ function HomePage() {
         transition={{ duration: 0.5, easeOut: "easeOut" }}
       >
         <Title title="K.A.R.A" subtitle="HAIRCARE" />
+        <IntroScrollComponent />
         <div ref={ref} style={{ height: "1500vh" }} id='next-section'>
           {showBackground && (
             <motion.img
