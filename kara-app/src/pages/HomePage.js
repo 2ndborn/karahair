@@ -21,6 +21,7 @@ function HomePage() {
   const { scrollYProgress } = useScroll({ target: ref });
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
   const smoothScale = useSpring(scale, { stiffness: 60, damping: 30 });
+  const opacity = useTransform(scrollYProgress, [0,1], [1,0.2]);
 
   const [showBackground, setShowBackground] = useState(false);
 
@@ -42,7 +43,9 @@ function HomePage() {
         transition={{ duration: 0.5, easeOut: "easeOut" }}
       >
         <Title title="K.A.R.A" subtitle="HAIRCARE" />
-        <IntroScrollComponent />
+        <div  id='next-section'>
+          <IntroScrollComponent />
+        </div>
         <div ref={ref} style={{ height: "1500vh" }} id='next-section'>
           {showBackground && (
             <motion.img
@@ -57,7 +60,7 @@ function HomePage() {
             <HomeScrollComponent key={home.id} {...home} />
           ))}
           {showBackground && (
-            <div className={styles.homeBackground}></div>
+            <motion.div style={{opacity}} className={styles.homeBackground} />
           )}
           <section
             style={{
