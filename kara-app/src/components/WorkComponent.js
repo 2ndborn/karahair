@@ -47,8 +47,10 @@ const WorkComponent = () => {
         <h1>I am Kara</h1>
       </div>
       <div style={{padding: "clamp(0.5rem, calc(-0.045rem + 2.73vw), 2rem)"}}>
-        {WorkData.map((work) => 
-          <p style={{fontSize: "1.2rem", margin: "20px 0", textAlign: "justify"}}>{work}</p>
+        {WorkData.map((work, i) => 
+          <article key={i} aria-label='Work history'>
+            <p style={{ fontSize: "1.2rem", margin: "20px 0", textAlign: "justify" }}>{work}</p>
+          </article>
         )}
       </div>
     </div>

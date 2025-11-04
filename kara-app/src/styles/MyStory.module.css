@@ -1,3 +1,16 @@
+.edArticle {
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+.edArticle p {
+    margin-bottom: 25px;
+}
+
+.edArticle div {
+    text-align: left;
+    margin-bottom: 25px;
+}
 
 .tcontainer {
     display: flex;
