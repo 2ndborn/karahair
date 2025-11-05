@@ -8,8 +8,14 @@
 }
 
 .edArticle div {
+    display: flex;
+    justify-content: left;
     text-align: left;
     margin-bottom: 25px;
+}
+
+.edArticle li {
+    margin-bottom: 7px;
 }
 
 .tcontainer {
