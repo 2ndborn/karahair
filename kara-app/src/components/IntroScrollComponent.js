@@ -6,11 +6,11 @@ const IntroScrollComponent = () => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ["center end", "end 10%"]
+        offset: ["85% end", "end start"]
     })
     const scale = useTransform(scrollYProgress, [0, 1], [0, 8]);
     const y = useTransform(scrollYProgress, [0, 1], [150, -150])
-    const opacityTwo = useTransform(scrollYProgress, [0, 1], [1, 0])
+    const opacityTwo = useTransform(scrollYProgress, [0,0.5, 1], [0, 1, 0])
 
     // const targeRef = useRef(null);
     const { scrollYProgress: targetYProgress } = useScroll({
@@ -19,9 +19,26 @@ const IntroScrollComponent = () => {
     })
     const opacity = useTransform(targetYProgress, [0, 1], [1, 0])
 
+        const { scrollYProgress: scrollFade } = useScroll({
+        target: ref,
+        offset: ["start start", "end start"]
+    });
+
+    // Fade out "Ready" between 0% and 20% scroll progress
+    const opacityThree = useTransform(scrollFade, [0, 0.2], [1, 0]);
+
     return (
-        <motion.div ref={ref} style={{ opacity, display: "flex", justifyContent: "center", alignItems: "center", backgroundImage: "linear-gradient(to bottom, #f1e7dd, #ffffff, #fff)", height: "100vh" }}>
-            <div style={{display: "flex", justifyContent: "center", alignItems: "center",height: "90%", width: "90%", overflow: "hidden"}}>
+        <motion.div ref={ref} style={{ opacity, position: "relative", backgroundImage: "linear-gradient(to bottom, #f1e7dd, #ffffff, #fff)", height: "350vh" }}>
+            <motion.div style={{opacity: opacityThree, position: "sticky", top: 0, display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", width: "100%", zIndex: 1}}>
+                <h1>Ready</h1>
+            </motion.div>
+            <div style={{height: "100vh"}}></div>
+            <div style={{ height: "150vh", position: "relative"}}>
+            <motion.div style={{opacity: opacityTwo, position: "sticky", top: 0, display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", width: "100%", zIndex: 2}}>
+                <h1>Steady</h1>
+            </motion.div>
+            </div>
+            {/* <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
                 <motion.p style={{
                     y, opacity: opacityTwo,
                     scale: scale,
@@ -37,7 +54,7 @@ const IntroScrollComponent = () => {
                     by following the KARA by model. <br />
                     Keep scrolling.
                 </motion.p>
-            </div>
+            </div> */}
         </motion.div>
     )
 }
