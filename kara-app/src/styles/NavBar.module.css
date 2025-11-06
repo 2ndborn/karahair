@@ -3,7 +3,6 @@
   flex-direction: column;
   position: fixed;
   width: 100vw;
-  backdrop-filter: blur(3px);
   z-index: 999;
   overflow: hidden;
 }

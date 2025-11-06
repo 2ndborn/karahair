@@ -56,7 +56,7 @@ const HomeScrollComponent = ({title, icon, content}) => {
                 >
                     <motion.div style={{opacity, y, velocitySpring, display: "flex", justifyContent: "center", alignItems: "center"}}>
                         <div>
-                            <h1 style={{ fontSize: "clamp(2.5rem, 0.864rem + 8.18vw, 7rem)", fontWeight: 600, marginBottom: "2rem"}}>{icon}</h1>
+                            <h1 style={{ fontSize: "clamp(2.5rem, 0.864rem + 8.18vw, 7rem)", letterSpacing: "-1px", fontWeight: 800, marginBottom: "2rem"}}>{icon}</h1>
                             <p style={{fontWeight: "700", fontSize: "min(1.5rem, 5vw)", textShadow: "0 5px 8px rgba(0, 0, 0, 0.4)"}}>{content}</p>
                         </div>
                     </motion.div>

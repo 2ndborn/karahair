@@ -2,7 +2,7 @@ export const HomePageData = [
     {
         id: 1,
         title: ["K","N","O","W","L","E","D","G","E"],
-        icon: "Knowledge",
+        icon: "KNOWLEDGE",
         content: `"Your comfort and confidence are my highest priorities.
         For over two decades, I’ve had the privilege of supporting
         a diverse range of clients with their hair needs.
@@ -22,7 +22,7 @@ export const HomePageData = [
     },{
         id: 3,
         title: [" "," ","R","E","S","T","O","R","E"," "],
-        icon: "Restore",
+        icon: "RESTORES",
         content: `"During the restoration phase, only the finest haircare 
         products are chosen, each selected to nourish, strengthen, and
         renew. This is your moment to step away from the demands of 
@@ -32,7 +32,7 @@ export const HomePageData = [
     },{
         id: 4,
         title: "ALLURE", 
-        icon: "Allure",
+        icon: "ALLURE",
         content: `"As you return to reality, you're met by the magnetic 
         allure of the person in the mirror. The moment you realise that 
         radiant figure is you, your favourite song begins to play, growing 
