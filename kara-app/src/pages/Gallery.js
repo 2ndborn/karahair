@@ -46,8 +46,18 @@ const Gallery = () => {
     "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/cathy.jpg_k2tit9.jpg",
     "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/alex_a5okil.jpg",
     "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/IMG-20251022-WA0039_rt9pvu",
-    "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/black-wavey_oyoiqp",
     "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/IMG-20251022-WA0042_esavhf",
+    "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/purple_o8a8on",
+    "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/IMG-20251105-WA0003_fer8af",
+    "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/IMG-20251102-WA0001_cjzvvo",
+    "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/IMG-20251105-WA0001_ybju0c",
+    "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/IMG-20251024-WA0017_aivgyu",
+    "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/IMG-20251024-WA0016_n0c7rg",
+    "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/IMG-20251024-WA0006_fuiv5r",
+    "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/IMG-20251024-WA0007_nzqgfp",
+    "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/IMG-20251024-WA0004_qvjozu",
+    "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/IMG-20251024-WA0003_huswfn",
+    "https://res.cloudinary.com/ddfubj6vf/image/upload/q_auto,f_auto,w_600,c_fill,g_face/IMG-20251024-WA0013_z1jbgh",
   ]
 
   const fadeVariants = {
