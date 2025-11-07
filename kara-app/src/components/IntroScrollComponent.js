@@ -12,7 +12,6 @@ const IntroScrollComponent = () => {
     const opacityTwo = useTransform(scrollYProgress, [0,0.5, 1], [0, 1, 0])
     const letterSpacing = useTransform(scrollYProgress, [0.4, 1], ["0px", "4px"]);
 
-    // const targeRef = useRef(null);
     const { scrollYProgress: targetYProgress } = useScroll({
         target: ref,
         offset: ["end end", "end start"]
@@ -29,7 +28,7 @@ const IntroScrollComponent = () => {
     const {scrollY} = useScroll({target: ref})
     const velocity = useVelocity(scrollY)
     const velocityMap = useTransform(velocity, [-3000, 0, 3000], [-1, 0, 1]);
-    const velocitySpring = useSpring(velocityMap, { stiffness: 30, damping: 90 })
+    const velocitySpring = useSpring(velocityMap, { stiffness: 10, damping: 90 })
 
     return (
         <motion.div ref={ref} 
@@ -60,7 +59,8 @@ const IntroScrollComponent = () => {
                         fontWeight: 800, marginBottom: "3rem",
                         fontSize: "clamp(3.5rem, 2.955rem + 2.73vw, 5rem)"
                     }}
-                >My Mission
+                >
+                    My Mission
                 </h1>
                 <h3
                     style={{

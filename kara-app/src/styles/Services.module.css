@@ -49,15 +49,12 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  /* object-position: 0px -2px; */
 }
 
 .codeImage {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  /* object-position: 0px 0px; */
-  /* filter: blur(5px); */
 }
 
 .edCover {
@@ -90,7 +87,6 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  /* object-position: 0px -55px; */
 }
 
 .hairCover {
@@ -221,26 +217,6 @@
   padding-top: 10px;
 }
 
-.contactButtonWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 25px;
-  font-family: "Cal sans", sans-serif;
-  margin-bottom: 20px;
-}
-
-.serviceButton {
-  background-color: #cffc1c;
-  border-radius: 100px;
-  padding: 0.75rem 1.5rem;
-  transition: border-color 0.2s ease;
-  box-shadow: 0 2px 0 rgba(0,0,0,0.3);
-  letter-spacing: 1.5px;
-  color: #000;
-  font-size: 1.1rem;
-}
-
 .serviceButton:hover {
   background-color: #8dab16;
   color: #fff;
@@ -252,14 +228,6 @@
   @media (max-width: 1024px) {
     .serviceContainer {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-  
-    .hairImage {
-      /* object-position: -130px 6px; */
-    }
-  
-    .codeImage {
-      /* object-position: -235px 0px; */
     }
   }
 
@@ -280,12 +248,10 @@
   .codes {
     grid-area: 3 / 1 / span 1 / span 2;
   }
+}
 
-  .hairImage {
-    /* object-position: 0px -125px; */
-  }
-
-  .codeImage {
-    /* object-position: 0px 0px; */
+@media (max-width: 400px) {
+  .GridContainer {
+    height: 120vh;
   }
 }

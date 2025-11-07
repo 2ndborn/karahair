@@ -2,11 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from '../styles/Services.module.css';
 import {AnimatePresence, LayoutGroup, motion} from 'framer-motion';
 
-import education from '../assets/karaeducation.webp';
 import coach from '../assets/coach.JPG';
-import roc from '../assets/roctwo.webp';
-import product from '../assets/product.webp';
-import affiliate from '../assets/affiliate.webp';
 import treatment from '../assets/treatmenttwo.webp';
 import boucleme from '../assets/boucleme.JPG';
 

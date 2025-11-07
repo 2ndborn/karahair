@@ -81,7 +81,7 @@ export default function TileComponent({margin, content, renderContent}) {
           }}>
           {renderContent ? renderContent(content) : (
             <p
-              style={{ fontSize: "2rem", color: "rgba(255, 255, 255, 0.8)", paddingLeft: "min(5%, 3rem)", paddingRight: "min(5%, 3rem)" }}
+              style={{ fontSize: "clamp(1.5rem, 1.318rem + 0.91vw, 2rem)", color: "rgba(255, 255, 255, 0.8)", paddingLeft: "min(5%, 3rem)", paddingRight: "min(5%, 3rem)" }}
             >
               {(content.id < 5 || content.id === 'paraFive') ? (
                 <>

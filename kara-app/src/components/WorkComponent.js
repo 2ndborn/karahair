@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from "../styles/MyStory.module.css";
 
 const WorkComponent = () => {
   const WorkData = [
@@ -44,12 +45,12 @@ const WorkComponent = () => {
   return (
     <div>
       <div>
-        <h1>I am Kara</h1>
+        <h1>My Story</h1>
       </div>
       <div style={{padding: "clamp(0.5rem, calc(-0.045rem + 2.73vw), 2rem)"}}>
         {WorkData.map((work, i) => 
-          <article key={i} aria-label='Work history'>
-            <p style={{ fontSize: "1.2rem", margin: "20px 0", textAlign: "justify" }}>{work}</p>
+          <article className={styles.edArticle} key={i} aria-label='Work history'>
+            <p >{work}</p>
           </article>
         )}
       </div>

@@ -215,7 +215,7 @@
 
 .quoteBox p {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 0.927rem + 0.36vw, 1.2rem);
   line-height: 1.6;
   text-align: center;
 }
@@ -628,5 +628,9 @@
 @media (max-width: 500px) {
     .cards {
         width: 400px;
+    }
+
+    .edArticle {
+        text-align: center;
     }
 }
