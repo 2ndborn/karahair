@@ -96,7 +96,7 @@ function HomePage() {
                   <motion.button
                     whileHover={{ backgroundColor: "#fff", color: "#000", scale: 1.05 }}
                     style={{ minWidth: "250px", padding: "1em 2em", borderRadius: "1000px", border: "4px solid #fff", margin: "10px", color: "#fff", fontWeight: 700 }}>
-                    Learn more.
+                    Learn more
                   </motion.button>
                 </Link>
                 <Link to="/contactme">
