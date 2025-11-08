@@ -51,7 +51,7 @@ const Footer = () => {
         </Row>
         <Row className="mt-3">
           <Col className="text-center">
-            <p>&copy; {new Date().getFullYear()} YourWebsite. All Rights Reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Kara Haircare. All Rights Reserved.</p>
           </Col>
         </Row>
         </Reveal>
