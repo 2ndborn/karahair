@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/karahair/static/css/main.8e25bbad.css",
-    "main.js": "/karahair/static/js/main.d2f6665c.js",
+    "main.css": "/karahair/static/css/main.11333130.css",
+    "main.js": "/karahair/static/js/main.2285ef6b.js",
     "static/js/453.b6f67256.chunk.js": "/karahair/static/js/453.b6f67256.chunk.js",
     "static/media/treatmenttwo.webp": "/karahair/static/media/treatmenttwo.024e88add3124bac8b7f.webp",
     "static/media/brazil.webp": "/karahair/static/media/brazil.f051b9605ee3bf6ed626.webp",
@@ -19,12 +19,12 @@
     "static/media/forsytes.webp": "/karahair/static/media/forsytes.c83725e8c405779677be.webp",
     "static/media/treason.webp": "/karahair/static/media/treason.a31e6a9f028499263a87.webp",
     "index.html": "/karahair/index.html",
-    "main.8e25bbad.css.map": "/karahair/static/css/main.8e25bbad.css.map",
-    "main.d2f6665c.js.map": "/karahair/static/js/main.d2f6665c.js.map",
+    "main.11333130.css.map": "/karahair/static/css/main.11333130.css.map",
+    "main.2285ef6b.js.map": "/karahair/static/js/main.2285ef6b.js.map",
     "453.b6f67256.chunk.js.map": "/karahair/static/js/453.b6f67256.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8e25bbad.css",
-    "static/js/main.d2f6665c.js"
+    "static/css/main.11333130.css",
+    "static/js/main.2285ef6b.js"
   ]
 }
