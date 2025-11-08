@@ -1,0 +1,14 @@
+.App {
+  font-family: "Open sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  min-height: 100vh;
+}
+
+.Main {
+    min-height: 80vh;
+}
+
+.ColorNav {
+  transition: background-color 1s ease-in-out;
+}
