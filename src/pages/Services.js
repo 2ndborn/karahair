@@ -50,6 +50,7 @@ const Services = () => {
       >
         <Title title="Services" />
         {showBackground && (
+          <div style={{paddingBottom: "50px"}}>
           <div id='next-section' className={styles.GridContainer}>
             <LayoutGroup>
               <AnimatePresence mode='wait'>
@@ -104,6 +105,7 @@ const Services = () => {
                 )}
               </AnimatePresence>
             </LayoutGroup>
+          </div>
           </div>
         )}
         <LayoutGroup>

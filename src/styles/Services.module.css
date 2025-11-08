@@ -217,6 +217,14 @@
   padding-top: 10px;
 }
 
+.serviceButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  background-color: #cffc1c;
+  margin: 20px 0;
+  font-weight: 700;
+}
+
 .serviceButton:hover {
   background-color: #8dab16;
   color: #fff;
@@ -252,6 +260,6 @@
 
 @media (max-width: 400px) {
   .GridContainer {
-    height: 120vh;
+    height: 110vh;
   }
 }
