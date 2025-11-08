@@ -10,6 +10,7 @@ import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 import { AnimatePresence } from 'motion/react';
 import ScrollToTop from './components/ScrollToTopComponent';
+import NotFoundComponent from './components/NotFoundComponent';
 
 function App() {
   const location = useLocation();
@@ -17,14 +18,15 @@ function App() {
     <div className={styles.App}>
       <ScrollToTop />
       <NavBar />
-      <div className={styles.Main}> {/* Use div instead of Container */}
-        <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo({ top: 0, behavior: "auto"})}>
+      <div className={styles.Main}>
+        <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo({ top: 0, behavior: "auto" })}>
           <Routes location={location} key={location.pathname}>
             <Route exact path="/" element={<HomePage />} />
             <Route exact path="/mystory" element={<MyStoryPage />} />
             <Route exact path="/services" element={<Services />} />
             <Route exact path="/gallery" element={<Gallery />} />
             <Route exact path="/contactme" element={<Contact />} />
+            <Route path="*" element={<NotFoundComponent />} />
           </Routes>
         </AnimatePresence>
       </div>

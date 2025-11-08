@@ -43,7 +43,7 @@ const Contact = () => {
               </a>
               <a
                 className={styles.socialButton}
-                href='mailto:mfrancisr@hotmail.com?subject=Haircare%20consultation%20enquiry?Body=Hi%20Kara%20'
+                href='mailto:me@karahaircare.co.uk?subject=Haircare%20consultation%20enquiry?Body=Hi%20Kara%20'
                 alt="Send an email to Kara"
                 target='_blank' rel='noreferrer'>
                 <i class="fa-regular fa-envelope"></i>
