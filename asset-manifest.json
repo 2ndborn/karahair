@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/karahair/static/css/main.11333130.css",
-    "main.js": "/karahair/static/js/main.2285ef6b.js",
-    "static/js/453.b6f67256.chunk.js": "/karahair/static/js/453.b6f67256.chunk.js",
-    "static/media/treatmenttwo.webp": "/karahair/static/media/treatmenttwo.024e88add3124bac8b7f.webp",
-    "static/media/brazil.webp": "/karahair/static/media/brazil.f051b9605ee3bf6ed626.webp",
-    "static/media/curly.webp": "/karahair/static/media/curly.0e64fd8b5afc4b4eceac.webp",
-    "static/media/wig.webp": "/karahair/static/media/wig.b4d7629c99a6aa8c93a0.webp",
-    "static/media/jane.webp": "/karahair/static/media/jane.c1bbafee95d5b492b3f7.webp",
-    "static/media/bel.webp": "/karahair/static/media/bel.195d3e440d4c36c8b4c1.webp",
-    "static/media/coach.JPG": "/karahair/static/media/coach.a64b40ad670330ef2cf0.JPG",
-    "static/media/multicolor.webp": "/karahair/static/media/multicolor.f92f817e2b08e914225b.webp",
-    "static/media/peachone.webp": "/karahair/static/media/peachone.4ec3d8a1ba537dfd8636.webp",
-    "static/media/boucleme.JPG": "/karahair/static/media/boucleme.75971f93c710cbaed8a6.JPG",
-    "static/media/wedding.webp": "/karahair/static/media/wedding.a045c3e1bf1cd8bca223.webp",
-    "static/media/karae.webp": "/karahair/static/media/karae.910b10a29f2b64b87b7c.webp",
-    "static/media/karapic.webp": "/karahair/static/media/karapic.601b154d6b1d425a86e3.webp",
-    "static/media/forsytes.webp": "/karahair/static/media/forsytes.c83725e8c405779677be.webp",
-    "static/media/treason.webp": "/karahair/static/media/treason.a31e6a9f028499263a87.webp",
-    "index.html": "/karahair/index.html",
-    "main.11333130.css.map": "/karahair/static/css/main.11333130.css.map",
-    "main.2285ef6b.js.map": "/karahair/static/js/main.2285ef6b.js.map",
-    "453.b6f67256.chunk.js.map": "/karahair/static/js/453.b6f67256.chunk.js.map"
+    "main.css": "/static/css/main.11333130.css",
+    "main.js": "/static/js/main.e6ae0718.js",
+    "static/js/453.b6f67256.chunk.js": "/static/js/453.b6f67256.chunk.js",
+    "static/media/treatmenttwo.webp": "/static/media/treatmenttwo.024e88add3124bac8b7f.webp",
+    "static/media/brazil.webp": "/static/media/brazil.f051b9605ee3bf6ed626.webp",
+    "static/media/curly.webp": "/static/media/curly.0e64fd8b5afc4b4eceac.webp",
+    "static/media/wig.webp": "/static/media/wig.b4d7629c99a6aa8c93a0.webp",
+    "static/media/jane.webp": "/static/media/jane.c1bbafee95d5b492b3f7.webp",
+    "static/media/bel.webp": "/static/media/bel.195d3e440d4c36c8b4c1.webp",
+    "static/media/coach.JPG": "/static/media/coach.a64b40ad670330ef2cf0.JPG",
+    "static/media/multicolor.webp": "/static/media/multicolor.f92f817e2b08e914225b.webp",
+    "static/media/peachone.webp": "/static/media/peachone.4ec3d8a1ba537dfd8636.webp",
+    "static/media/boucleme.JPG": "/static/media/boucleme.75971f93c710cbaed8a6.JPG",
+    "static/media/wedding.webp": "/static/media/wedding.a045c3e1bf1cd8bca223.webp",
+    "static/media/karae.webp": "/static/media/karae.910b10a29f2b64b87b7c.webp",
+    "static/media/karapic.webp": "/static/media/karapic.601b154d6b1d425a86e3.webp",
+    "static/media/forsytes.webp": "/static/media/forsytes.c83725e8c405779677be.webp",
+    "static/media/treason.webp": "/static/media/treason.a31e6a9f028499263a87.webp",
+    "index.html": "/index.html",
+    "main.11333130.css.map": "/static/css/main.11333130.css.map",
+    "main.e6ae0718.js.map": "/static/js/main.e6ae0718.js.map",
+    "453.b6f67256.chunk.js.map": "/static/js/453.b6f67256.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.11333130.css",
-    "static/js/main.2285ef6b.js"
+    "static/js/main.e6ae0718.js"
   ]
 }
