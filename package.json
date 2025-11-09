@@ -2,7 +2,7 @@
   "name": "kara-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://2ndborn.github.io/karahair",
+  "homepage": "https://karahaircare.co.uk",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
