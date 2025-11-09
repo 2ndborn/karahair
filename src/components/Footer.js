@@ -25,7 +25,7 @@ const Footer = () => {
           <Col md={4} className="text-md-start px-md-5 text-center">
                 <h4 className="mb-3"><strong>Contact Me</strong></h4>
                 <ul className={`${styles.FooterList} list-unstyled`}>
-                  <li><i className="fa-solid fa-mobile-screen-button me-2"></i>07799 212 929</li>
+                  {/* <li><i className="fa-solid fa-mobile-screen-button me-2"></i>07799 212 929</li> */}
                   <li><i className="fa-solid fa-envelope me-2"></i>me@karahaircare.co.uk</li>
                 </ul>
           </Col>

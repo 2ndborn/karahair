@@ -34,13 +34,13 @@ const Contact = () => {
             <p>Whether its maintenance, a new you or a colour correction, I am here to help.</p>
           </div>
           <div className={styles.buttonContainer}>
-              <a
+              {/* <a
                 className={styles.socialButton}
                 href='https://wa.me/7799212929?text=Hi%20Kara'
                 target='_blank' rel='noreferrer' alt="Message Kara via WhatsApp">
                 <i class="fa-brands fa-whatsapp"></i>
                 Chat on WhatsApp
-              </a>
+              </a> */}
               <a
                 className={styles.socialButton}
                 href='mailto:me@karahaircare.co.uk?subject=Haircare%20consultation%20enquiry?Body=Hi%20Kara%20'

@@ -5,14 +5,14 @@ const HomeScrollComponent = ({title, icon, content}) => {
     
     const ref = useRef(null);
     const {scrollYProgress} = useScroll({target: ref})
-    const x = useTransform(scrollYProgress, [0,1], [1675, -1675])
+    const x = useTransform(scrollYProgress, [0,1], [1500, -1500])
     const {scrollY: scrollYSide} = useScroll({target: ref})
     const sideVel = useVelocity(scrollYSide);
     const sideMap = useTransform(sideVel, [-1500, 0, 1500], [-1, 0, 1]);
-    const sideSpring = useSpring(sideMap, {stiffness: 30, damping: 200})
+    const sideSpring = useSpring(sideMap, {stiffness: 20, damping: 250})
 
     const combineX = useTransform([x, sideSpring], ([BaseX, springX]) => {
-        return BaseX + springX * 10;
+        return BaseX + springX * 4;
     })
 
     const targetRef = useRef(null);
@@ -26,7 +26,7 @@ const HomeScrollComponent = ({title, icon, content}) => {
     const {scrollY} = useScroll({target: targetRef})
     const velocity = useVelocity(scrollY)
     const velocityMap = useTransform(velocity, [-2500, 0, 2500], [-1, 0, 1]);
-    const velocitySpring = useSpring(velocityMap, { stiffness: 30, damping: 90 })
+    const velocitySpring = useSpring(velocityMap, { stiffness: 20, damping: 120 })
     
     return (
         <>
