@@ -21,8 +21,8 @@ export const HomePageData = [
         best while keeping your hair beautifully resilient."`,
     },{
         id: 3,
-        title: [" "," ","R","E","S","T","O","R","E"," "],
-        icon: "RESTORES",
+        title: [" "," ","R","E","S","T","O","R","E"],
+        icon: "RESTORE",
         content: `"During the restoration phase, only the finest haircare 
         products are chosen, each selected to nourish, strengthen, and
         renew. This is your moment to step away from the demands of 

@@ -35,7 +35,7 @@ const IntroScrollComponent = () => {
         style={{
             opacity, position: "relative", 
             backgroundImage: "linear-gradient(to bottom, rgba(241, 231, 221, 1), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8))", 
-            height: "350vh" 
+            height: "250vh" 
             }}
         >
             <motion.div
@@ -72,7 +72,6 @@ const IntroScrollComponent = () => {
                     so we can discover the true beauty behind our hair one strand at a time.
                 </h3>
             </motion.div>
-            <div style={{ height: "100vh" }} />
             <div style={{ position: "sticky", top: 0, height: "100vh", overflow: "hidden"}}>
                 <motion.div
                     style={{

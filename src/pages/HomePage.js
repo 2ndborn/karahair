@@ -46,7 +46,7 @@ function HomePage() {
         <div  id='next-section'>
           <IntroScrollComponent />
         </div>
-        <div ref={ref} style={{ height: "1500vh" }} id='next-section'>
+        <div ref={ref} style={{ height: "1700vh" }} id='next-section'>
           {showBackground && (
             <motion.img
               style={{ scale: smoothScale }}
@@ -56,8 +56,8 @@ function HomePage() {
               transition={{ duration: 1, ease: "easeOut" }}
             />
           )}
-          {HomePageData.map((home) => (
-            <HomeScrollComponent key={home.id} {...home} />
+          {HomePageData.map((home, index) => (
+            <HomeScrollComponent key={home.id} {...home} index={index} />
           ))}
           {showBackground && (
             <motion.div style={{opacity}} className={styles.homeBackground} />
@@ -77,7 +77,7 @@ function HomePage() {
               }}
               initial={"hidden"}
               whileInView={"visible"}
-              transition={{ duration: 0.75, ease: "easeIn", delay: 0.25 }}
+              transition={{ duration: 0.75, ease: "easeIn" }}
               style={{
                 display: "flex", justifyContent: "center",
                 alignItems: "center", height: "75%", width: "75%",

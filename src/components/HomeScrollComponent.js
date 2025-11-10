@@ -1,11 +1,18 @@
 import React, {useRef} from 'react'
 import {motion, useScroll, useSpring, useTransform, useVelocity} from 'framer-motion';
 
-const HomeScrollComponent = ({title, icon, content}) => {
+const HomeScrollComponent = ({title, icon, content, index}) => {
     
     const ref = useRef(null);
     const {scrollYProgress} = useScroll({target: ref})
-    const x = useTransform(scrollYProgress, [0,1], [1500, -1500])
+    let ranges = [
+        [950, -950],
+        [950, -950],
+        [625, -625],
+        [520, -520]
+    ]
+    const xRange = ranges[index] || [0, 0]
+    const x = useTransform(scrollYProgress, [0,1], xRange)
     const {scrollY: scrollYSide} = useScroll({target: ref})
     const sideVel = useVelocity(scrollYSide);
     const sideMap = useTransform(sideVel, [-1500, 0, 1500], [-1, 0, 1]);
@@ -31,7 +38,7 @@ const HomeScrollComponent = ({title, icon, content}) => {
     return (
         <>
             
-            <section ref={ref} style={{ position: "relative", height: "200vh" }}>
+            <section ref={ref} style={{ position: "relative", height: "250vh" }}>
                 <div style={{ position: "sticky", top: "100px", height: "80vh", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", overflow: "hidden" }}>
                     <motion.div style={{ x: combineX, display: "flex" }}>
                         <motion.div style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "0 5px" }}>
