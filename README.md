@@ -1,70 +1,81 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Kara Haircare
 
-## Available Scripts
+## Missions Statement
+Empowering clients to explore the owner's expertise and services, enabling them to make an informed decision when booking a consultation."
 
-In the project directory, you can run:
+## User Stories
 
-### `npm start`
+### Navigation
+| I want to… | so that I … |
+|--------|-------------|
+| to gain access to the Home, About me, Gallery & Contact page via the nav bar,| can understand the areas of the website I can access. |
+| visually identify the page I am on,| know what page I am on. |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Home
+| I want to… | so that I … |
+|--------| -------------|
+| to be able to view a hero image,| can understand the theme of the website. |
+|have clear options on what areas of the site I should visit,|can understand the main features of the site.|
+|have a list of services the owner provides,|can understand what they can do for me.|
+|view afilliate codes,|benefit from the discounts that they provide.|
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### About me
+| I want to… | so that I … |
+|--------| -------------|
+|read a short bio,|understand the owners background and level of experience.|
+|read testimonials from the users clients,|verify their creditials.|
 
-### `npm test`
+### Services
+| I want to… | so that I … |
+|--------| -------------|
+|view descriptions of services,|can understand what the owner has to offer.|
+|view an oppropriate picture of the service,|have a clear understanding of whats on I am booking.|
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Gallery
+| I want to… | so that I … |
+|--------| -------------|
+|view pictures of the owners work,|can understand the range their capabilities.|
+|interact with the pictures,|can explore a larger image.|
 
-### `npm run build`
+### Contact me
+| I want to… | so that I … |
+|--------| -------------|
+|be able to contact the owner via a form,|can book or enquire about a consultation.|
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### General
+| I want to… | so that I … |
+|--------| -------------|
+|to be able see the contact details of the user,|can use alternative means to make contact.|
+|have a link to the owners social media,|understand their online presence.|
+|the app to function across multiple devices,|can access and use it without restrictions regardless of the device I'm on.|
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Design
+### Wireframe
+![WireFrame]()
+### Colour Scheme
+![ColorScheme](../karahair//src/assets/karapalette.jpg)
+### Font
+* Prata - Title page
+* Cal sans - Headers
+* Open sans - Paragraphs
+## Future Features
+* Addition of a backend to sell products and tutorial services.
+## Technologies
+### Resources
+**W3schools**
+* [Onscroll](https://www.w3schools.com/jsref/event_onscroll.asp)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**YouTube**
+* [useScroll](https://youtu.be/hjbxaYTMhy0?si=IdzhRdhF9kWWhptS)
 
-### `npm run eject`
+**Framer-Motion**
+* [framer.com/motion](https://motion.dev/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Testing
+![Homepage](../karahair/src/assets/home.webp)
+![Mystorypage](../karahair/src/assets/mystory.webp)
+![Servicespage](../karahair/src/assets/services.webp)
+![Gallerypage](../karahair/src/assets/gallery.webp)
+![Contactpage](../karahair/src/assets/contact.webp)
