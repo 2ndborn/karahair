@@ -73,13 +73,10 @@ const MyStoryPage = () => {
           <div className={styles.gradientBg}>
             <div className={`${styles.leftHalf} px-5`}>
               <div className='my-3 display-1'>
-                <motion.h1
-                  initial={{ opactiy: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 2.5, delay: 4, ease: "easeIn" }}
+                <h1
                 >
                   Hi, I'm Kara
-                </motion.h1>
+                </h1>
               </div>
               <div className={`${styles.quoteContainer}`}>
                 <div className={styles.quoteBox}>

@@ -3,7 +3,7 @@ import styles from '../styles/Services.module.css';
 import {AnimatePresence, LayoutGroup, motion} from 'framer-motion';
 
 import coach from '../assets/coach.JPG';
-import treatment from '../assets/treatmenttwo.webp';
+import hairpanel from '../assets/hairpanel.webp';
 import boucleme from '../assets/boucleme.JPG';
 
 import Title from '../components/Title';
@@ -59,7 +59,7 @@ const Services = () => {
                     <SectionTile
                       key="hair"
                       id={'hair'}
-                      imageSrc={treatment}
+                      imageSrc={hairpanel}
                       onClick={handleClick}
                       isToggled={isToggled}
                       tileClassName={styles.hair}

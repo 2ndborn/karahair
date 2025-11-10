@@ -2,7 +2,7 @@ import wig from '../assets/wig.webp';
 import curly from '../assets/curly.webp';
 import brazil from '../assets/brazil.webp';
 import teaching from '../assets/karae.webp';
-import wedding from '../assets/wedding.webp';
+import eva from '../assets/eva.webp';
 
 export const paragraphs = [
     {
@@ -28,7 +28,7 @@ export const paragraphs = [
             create them. `,
       secondary: `From the salon floor to the set, I’ve coloured for 
             major productions like: `,
-      image: wedding,
+      image: eva,
       button: "I've worked with..."
     },{
       id: 4,
