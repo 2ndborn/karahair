@@ -48,6 +48,7 @@ Visit the deployed site: [Kara Haircare](https://karahaircare.co.uk)
 | I want to able to visually identify what page I am on using the nav bar so that I can know what page I am on. | Need to evidence | ![Navbar](docs/testing/navbar.png) |
 
 `Home Page`
+
 |  Goals | How are they achieved? | Evidence |
 | :--- | :--- | :--- |
 | I want to be able to view a hero image, so that I can can understand the theme of the website. | Users are introduced to a home page that says "Kara Haircare" | ![Image of homepage](docs/testing/user-story-home-1.png) |
