@@ -52,7 +52,9 @@ Empowering clients to explore the owner's expertise and services, enabling them 
 
 ## Design
 ### Wireframe
-![WireFrame]()
+|HomePage|MyStory|Service|Gallery|Contact|Template|
+|-|-|-|-|-|-|
+|![WireFrame](./src/assets/home.jpg)|![WireFrame](./src/assets/about_me.jpg)|![WireFrame](./src/assets/service.jpg)|![WireFrame](./src/assets/gallery.jpg)|![WireFrame](./src/assets/contact.jpg)|![WireFrame](./src/assets/template.jpg)| 
 ### Colour Scheme
 ![ColorScheme](./src/assets/karapalette.jpg)
 ### Font
