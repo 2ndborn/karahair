@@ -74,6 +74,7 @@ Empowering clients to explore the owner's expertise and services, enabling them 
 
 
 ## Testing
+[Tests](#Kara-Haircare-Testing)
 ![Homepage](./src/assets/home.webp)
 ![Mystorypage](./src/assets/mystory.webp)
 ![Servicespage](./src/assets/services.webp)
