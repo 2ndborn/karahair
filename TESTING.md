@@ -87,7 +87,7 @@ Visit the deployed site: [Kara Haircare](https://karahaircare.co.uk)
 | --- | --- | --- |
 | I want to be able see the contact details of the user throughout the site, so that I can use alternative means to make contact.|Users can see the owners contact details in the footer.|![Image of the Footer](s;dkf)|
 | I want to have a link to the owners social media, so that I can understand their social media presence.|Users can click on the social media icons in the footer.|See above|
-| I want the app to function across multiple devices, so that I can access and use it without restrictions regardless of the device I'm on.|Users can access the site on multiply devices.|![Homepage](../karahair/src/assets/home.webp)|
+| I want the app to function across multiple devices, so that I can access and use it without restrictions regardless of the device I'm on.|Users can access the site on multiply devices.|![Homepage](./src/assets/home.webp)|
 - - -
 
 ### Full Testing
