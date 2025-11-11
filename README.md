@@ -54,7 +54,7 @@ Empowering clients to explore the owner's expertise and services, enabling them 
 ### Wireframe
 ![WireFrame]()
 ### Colour Scheme
-![ColorScheme](../karahair//src/assets/karapalette.jpg)
+![ColorScheme](./kara-app/src/assets/karapalette.jpg)
 ### Font
 * Prata - Title page
 * Cal sans - Headers
@@ -74,8 +74,8 @@ Empowering clients to explore the owner's expertise and services, enabling them 
 
 
 ## Testing
-![Homepage](../karahair/src/assets/home.webp)
-![Mystorypage](../karahair/src/assets/mystory.webp)
-![Servicespage](../karahair/src/assets/services.webp)
-![Gallerypage](../karahair/src/assets/gallery.webp)
-![Contactpage](../karahair/src/assets/contact.webp)
+![Homepage](./kara-app/src/assets/home.webp)
+![Mystorypage](./kara-app/src/assets/mystory.webp)
+![Servicespage](./kara-app/src/assets/services.webp)
+![Gallerypage](./kara-app/src/assets/gallery.webp)
+![Contactpage](./kara-app/src/assets/contact.webp)
