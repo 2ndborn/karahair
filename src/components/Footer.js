@@ -35,14 +35,14 @@ const Footer = () => {
                 <a 
                   href="https://www.instagram.com/kara__haircare_" 
                   target="_blank" rel="noreferrer" 
-                  className="px-md-0 pe-md-3 px-3"
+                  className={`${styles.socialIcons} px-md-0 pe-md-3 px-3`}
                 >
                   <i className="fa-brands fa-instagram"></i>
                 </a>
                 <a
                   href="https://www.tiktok.com/@kara_hair_care"
                   target="_blank" rel="noreferrer"
-                  className="px-md-0 pe-md-3 px-3"
+                  className={`${styles.socialIcons} px-md-0 pe-md-3 px-3`}
                 >
                   <i className="fa-brands fa-tiktok"></i>
                 </a>

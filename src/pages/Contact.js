@@ -28,7 +28,7 @@ const Contact = () => {
         <div className={styles.colorOverlay}></div>
         <div className={styles.formContainer}>
           <div style={{textAlign: "center", marginBottom: "10px", color: "#f0f0f0ff"}}>
-            <h1>Let's talk about your <span style={{fontSize: "1.1em", fontWeight: 600, padding: "0 7px", backgroundColor: "#cffc1c", color: "#5e5e5e"}}>Haircare</span> needs...</h1>
+            <h1 style={{marginTop: "1.5rem"}}>Let's talk about your <span style={{fontSize: "1.1em", fontWeight: 600, padding: "0 7px", backgroundColor: "#cffc1c", color: "#5e5e5e"}}>Haircare</span> needs...</h1>
           </div>
           <div style={{textAlign: "center", fontSize: "1.1em", color: "#f0f0f0ff", marginBottom: "20px"}}>
             <p>Whether its maintenance, a new you or a colour correction, I am here to help.</p>

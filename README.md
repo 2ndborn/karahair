@@ -54,9 +54,9 @@ Empowering clients to explore the owner's expertise and services, enabling them 
 ### Wireframe
 |HomePage|MyStory|Service|Gallery|Contact|Template|
 |-|-|-|-|-|-|
-|![WireFrame](./src/assets/home.jpg)|![WireFrame](./src/assets/about_me.jpg)|![WireFrame](./src/assets/service.jpg)|![WireFrame](./src/assets/gallery.jpg)|![WireFrame](./src/assets/contact.jpg)|![WireFrame](./src/assets/template.jpg)| 
+|![WireFrame](./docs/assets/home.jpg)|![WireFrame](./docs/assets/about_me.jpg)|![WireFrame](./docs/assets/service.jpg)|![WireFrame](./docs/assets/gallery.jpg)|![WireFrame](./docs/assets/contact.jpg)|![WireFrame](./docs/assets/template.jpg)| 
 ### Colour Scheme
-![ColorScheme](./src/assets/karapalette.jpg)
+![ColorScheme](./docs/assets/karapalette.jpg)
 ### Font
 * Prata - Title page
 * Cal sans - Headers
@@ -77,8 +77,8 @@ Empowering clients to explore the owner's expertise and services, enabling them 
 
 ## Testing
 [Tests](./TESTING.md)
-![Homepage](./src/assets/home.webp)
-![Mystorypage](./src/assets/mystory.webp)
-![Servicespage](./src/assets/services.webp)
-![Gallerypage](./src/assets/gallery.webp)
-![Contactpage](./src/assets/contact.webp)
+![Homepage](./docs/assets/home.webp)
+![Mystorypage](./docs/assets/mystory.webp)
+![Servicespage](./docs/assets/services.webp)
+![Gallerypage](./docs/assets/gallery.webp)
+![Contactpage](./docs/assets/contact.webp)

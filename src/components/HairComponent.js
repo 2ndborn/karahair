@@ -8,7 +8,7 @@ const HairComponent = () => {
     return (
         <div>
             <div>
-                <h1>Haircare</h1>
+                <h1>Haircare Services</h1>
                 <p>
                     Hair artistry with care at the centre. All services are tailored for
                     all hair textures, using health-conscious products that protect the

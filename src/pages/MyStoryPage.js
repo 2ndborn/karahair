@@ -96,7 +96,7 @@ const MyStoryPage = () => {
         <section style={{ position: "relative" }}>
           <div style={{
             position: "fixed", top: 0, left: 0,
-            width: "100%", height: "100vh", backgroundImage: "radial-gradient(#fff 70%, #d9b9a06c)",
+            width: "100%", height: "100vh", backgroundImage: "linear-gradient(to bottom, #d9b9a0, #fff)",
             zIndex: -1
           }}
           />

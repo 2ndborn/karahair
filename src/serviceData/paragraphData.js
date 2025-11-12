@@ -12,7 +12,7 @@ export const paragraphs = [
       secondary: `, working across every hair texture, every 
       shade, every style.`,
       image: wig,
-      button: 'Learn more'
+      button: 'The Haircare Professional'
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ export const paragraphs = [
       wave of stylists those who want to break rules the right 
       way.`,
       image: teaching,
-      button: 'Learn more'
+      button: 'The Educator'
     },{
       id: 3,
       primary: `My work doesn’t just follow trends it helps 
@@ -29,7 +29,7 @@ export const paragraphs = [
       secondary: `From the salon floor to the set, I’ve coloured for 
             major productions like: `,
       image: eva,
-      button: "I've worked with..."
+      button: "Who i've worked with..."
     },{
       id: 4,
       primary: `I’m all about pushing boundaries and raising

@@ -2,8 +2,13 @@
     font-size:xx-large;
 }
 
-.socialMedia i {
+.socialIcons {
   color: #22161c;
+}
+
+
+.socialIcons:hover {
+  color: #8f5b75;
 }
 
 .Footer {

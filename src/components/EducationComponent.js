@@ -8,7 +8,7 @@ const EducationComponent = () => {
   return (
       <div>
           <div>
-              <h1>Education</h1>
+              <h1>Educational Services</h1>
               <p>
                   KARA, education is more than skill-building it’s 
                   a space for growth, inspiration, and connection. 
