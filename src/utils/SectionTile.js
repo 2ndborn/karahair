@@ -7,7 +7,8 @@ export const SectionTile = ({
     onClick,
     isToggled,
     tileClassName,
-    imageClassName
+    imageClassName,
+    ariaLabel
 }) => {
     return (
         <motion.div
@@ -15,6 +16,15 @@ export const SectionTile = ({
             onClick={() => onClick(id)}
             className={tileClassName}
             whileHover={{scale: 1.01}}
+            role='button'
+            ariaLabel={ariaLabel}
+            tabIndex={0}
+            onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    onClick(id);
+                }
+            }}
         >
             <motion.img
                 className={imageClassName}

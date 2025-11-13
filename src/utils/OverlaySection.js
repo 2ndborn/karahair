@@ -19,12 +19,22 @@ export const OverlaySection = ({ id, children, onClose }) => {
                 transition={{ duration: 0.2, ease: "easeOut" }}
             >
                 <motion.div className={styles.overlayContent}>
-                    <div className={styles.closeButton} onClick={onClose}>
-                        <i className="fa-solid fa-xmark"></i>
-                    </div>
-                    <div className={styles.lightButton} onClick={handleToggle}>
-                        {background ? (<i className="fa-solid fa-moon"></i>) : (<i className="fa-solid fa-sun"></i>)}
-                    </div>
+                    <button
+                        className={styles.closeButton}
+                        onClick={onClose}
+                        type="button"
+                        aria-label="Close overlay"
+                    >
+                        <i className="fa-solid fa-xmark" aria-hidden="true"></i>
+                    </button>
+                    <button
+                        className={styles.lightButton}
+                        onClick={handleToggle}
+                        type="button"
+                        aria-label={background ? "Switch to dark mode" : "Switch to light mode"}
+                    >
+                        {background ? (<i className="fa-solid fa-moon" aria-hidden="true"></i>) : (<i className="fa-solid fa-sun" aria-hidden="true"></i>)}
+                    </button>
                     {children}
                 </motion.div>
             </motion.div>

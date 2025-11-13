@@ -64,6 +64,7 @@ const Services = () => {
                       isToggled={isToggled}
                       tileClassName={styles.hair}
                       imageClassName={styles.hairImage}
+                      ariaLabel="Open Haircare section"
                     >
                       <div className={styles.hairCover}>
                         <h1>
@@ -79,6 +80,7 @@ const Services = () => {
                       isToggled={isToggled}
                       tileClassName={styles.educate}
                       imageClassName={styles.edImage}
+                      ariaLabel="Open Education section"
                     >
                       <div className={styles.edCover}>
                         <h1>
@@ -94,6 +96,7 @@ const Services = () => {
                       isToggled={isToggled}
                       tileClassName={styles.codes}
                       imageClassName={styles.codeImage}
+                      ariaLabel="Open Affiliation Code section"
                     >
                       <div className={styles.codeCover}>
                         <h1>
