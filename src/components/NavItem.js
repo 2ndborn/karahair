@@ -10,7 +10,8 @@ const NavItem = ({to, label, delay}) => {
             transition={{ duration: 1, delay, ease: "easeOut" }}
             whileHover={{scale: 1.2}}
         >
-            <NavLink to={to} className={`${styles.NavLink} px-2`}>{label}</NavLink>
+            <NavLink to={to} className={({isActive}) =>
+                `${styles.NavLink} px-2 ${isActive ? styles.Active : ''}`}>{label}</NavLink>
         </motion.div>
     )
 }

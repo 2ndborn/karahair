@@ -20,6 +20,10 @@
   transition: transform 0.1s;
 }
 
+.Active {
+  text-decoration: underline;
+}
+
 .NavContact {
   background-color: #c3f803ff;
   padding: 0.25rem 0.75rem;

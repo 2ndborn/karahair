@@ -40,12 +40,12 @@ Visit the deployed site: [Kara Haircare](https://karahaircare.co.uk)
 - - -
 ## MANUAL TESTING
 ### Testing User Stories
-`Navigation`
 
+`Navigation`
 | Goals | How are they achieved? | Evidence |
 | :--- | :--- | :--- |
 | I want to gain access to the Home, My story, Services, Gallery & Contact page via the nav bar, | A Navbar with links to all pages of the site is utilised. | ![Navbar](./docs/assets/navbar.webp) |
-| I want to able to visually identify what page I am on using the nav bar so that I can know what page I am on. | Need to evidence | ![Navbar](docs/testing/navbar.png) |
+| I want to able to visually identify what page I am on using the nav bar so that I can know what page I am on. | Active page is underlined | ![Navbar](docs/testing/navbar.png) |
 `Home Page`
 |  Goals | How are they achieved? | Evidence |
 | :--- | :--- | :--- |
@@ -112,7 +112,7 @@ Additional testing was taken by friends and family on a variety of devices and s
 | `Footer` |
 | Instagram icon | When clicked, user will be taken to the owners Instagram page in a new tab. | Clicked icon | Taken to the project Instagram page in a new tab | ✅ |
 | Tik Tok icon | When clicked, user will be taken to the owners Tik Tok page in a new tab. | Clicked icon | Taken to the project Tik Tok page in a new tab | ✅ |
-| Icon Hover | When user hovers over the icon, the icon changes color to a lighter colour to indicate the user is hovered over the icon | Hover over icons | Icons change to light shade | --- |
+| Icon Hover | When user hovers over the icon, the icon changes color to a lighter colour to indicate the user is hovered over the icon | Hover over icons | Icons change to light shade | ✅ |
 | Menu items | When clicks a menu item the user will be taken to either the Home, My Story, Services, Gallery or Contact me page | Clicked in each menu item | Taken to the page of the same name | ✅ |
 | --- | --- | --- | --- | --- |
 | `Home Page` |
