@@ -63,7 +63,9 @@ Empowering clients to explore the owner's expertise and services, enabling them 
 * [Onscroll](https://www.w3schools.com/jsref/event_onscroll.asp)
 
 **YouTube**
-* [useScroll](https://youtu.be/hjbxaYTMhy0?si=IdzhRdhF9kWWhptS)
+* [useScroll Reveal](https://youtu.be/hjbxaYTMhy0?si=IdzhRdhF9kWWhptS)
+* [Horizontal Scrolling Animation](https://youtu.be/4ehYkfh7P-I?si=yl-8hBS9SFBBbbKe)
+* [The Framer Motion Crash Course](https://youtu.be/znbCa4Rr054?si=MH2NSsJbiJ7vMxoj)
 
 **Framer-Motion**
 * [framer.com/motion](https://motion.dev/)

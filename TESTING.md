@@ -46,30 +46,36 @@ Visit the deployed site: [Kara Haircare](https://karahaircare.co.uk)
 | :--- | :--- | :--- |
 | I want to gain access to the Home, My story, Services, Gallery & Contact page via the nav bar, | A Navbar with links to all pages of the site is utilised. | ![Navbar](./docs/assets/navbar.webp) |
 | I want to able to visually identify what page I am on using the nav bar so that I can know what page I am on. | Active page is underlined | ![Navbar](docs/testing/navbar.png) |
+
 `Home Page`
 |  Goals | How are they achieved? | Evidence |
 | :--- | :--- | :--- |
 | I want to be able to view a hero image, so that I can can understand the theme of the website. | Users are introduced to a home page that says "Kara Haircare" | ![Image of homepage](./docs/assets/hero.webp) |
 | I want to have clear options on what areas of the site I should visit so that I understand where the main features of the site are. | A navbar is available on each page, along with cards on the main page | ![Image of homepage](docs/testing/user-story-home-1.png) |
+
 `My Story`
 | Goal | How  is this achieved | Evidence |
 | --- | --- | --- |
 | I want to read a short bio, so that I understand the owners background and level of experience.|Users can scroll through 5 short sections about the owner, learning more if they want to.  |![image of the owners bio](./docs/assets/bio.webp)|
 | I want to read testimonials from the users clients, so that I verify the owners creditials.|Users can click on the testimonial section of the page and open up the testimonials.|![image of the testimonials](./docs/assets/testimonials.webp)|
+
 `Services`
 | Goal | How  is this achieved | Evidence |
 | --- | --- | --- |
 | I want to view the owners services, so that I can understand what is on offer.|Users can click on any of the services panals and view an overlay with all the services on offer.|![Image of the overlay](./docs/assets/seroverlays.webp)|
 | I want to view an oppropriate picture of the service, so that I have a clear understanding of whats on I am booking.|Users can see pictures for Haircare, Education and Affiliation codes.|![image of the services page](./docs/assets/panels.webp)|
+
 `Gallery`
 | Goal | How  is this achieved | Evidence |
 | --- | --- | --- |
 | I want to view the owners work, so that I can understand the range their capabilities.|Users can view a range of clients who have benefited from the owners services|![Image of various picture](./docs/assets/gallerypic.webp)|
 | I want to interact with the pictures, so that I can explore a larger image individually.|Users can click on any image to toggle the overlay with a larger version of the image.|![image of the individual image](./docs/assets/gallerytoggle.webp)|
+
 `Contact`
 | Goal | How  is this achieved | Evidence |
 | --- | --- | --- |
 | I want to be able to contact the owner, so that I can book or enquire about a consultation.|User can contact the owner via email, Instagram and TikTok|![Image of the Contact page](./docs/assets/contactevid.webp)|
+
 `General`
 | Goal | How  is this achieved | Evidence |
 | --- | --- | --- |
