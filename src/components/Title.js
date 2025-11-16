@@ -50,8 +50,13 @@ function Title({title, subtitle}) {
               </>
             )}
       </Container>
+      {isLoaded && 
+        <>
       <div className={styles.Arrow}>
-        <button
+        <motion.button
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 2, ease: "easeOut" }}
           onClick={() => scrollToSection('next-section')}
           className={`${styles.ScrollButton} text-decoration-none`}
           aria-label="Scroll to next section"
@@ -80,8 +85,9 @@ function Title({title, subtitle}) {
               ></motion.i>
               )}
           </AnimatePresence>
-        </button>
+        </motion.button>
       </div>
+      </>}
     </div>
   )
 }
