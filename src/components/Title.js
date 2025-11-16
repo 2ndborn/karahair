@@ -1,5 +1,5 @@
-import React from 'react'
-import {motion} from 'framer-motion';
+import React, { useEffect, useState } from 'react'
+import {AnimatePresence, motion} from 'framer-motion';
 import Container from 'react-bootstrap/esm/Container'
 import styles from '../styles/Title.module.css'
 import useFadeUp from '../hooks/useFadeUp';
@@ -11,6 +11,14 @@ function Title({title, subtitle}) {
   const getColor = useDynamicColor();
 
   const scrollToSection = useScrollToSection();
+  const [showText, setShowText] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowText(prev => !prev)
+    }, 2000);
+    return () => clearInterval(interval)
+  }, [])
 
   // const scrollToNext = () => {
   //   document.getElementById("next-section")?.scrollIntoView({ behavior: "smooth" });
@@ -43,16 +51,35 @@ function Title({title, subtitle}) {
             )}
       </Container>
       <div className={styles.Arrow}>
-        <button 
+        <button
           onClick={() => scrollToSection('next-section')}
           className={`${styles.ScrollButton} text-decoration-none`}
           aria-label="Scroll to next section"
         >
-        <motion.i 
-        className={`${styles.arrowIcon} fa-solid fa-angle-down`}
-        animate={{ scale: [1,1.3,1]}}
-        transition={{duration: 2, repeat: Infinity}}
-        ></motion.i>
+          <AnimatePresence mode='wait'>
+            {showText ? (
+              <motion.span
+                key="text"
+                initial={{opacity: 0, scale: 0.8}}
+                animate={{opacity: 1, scale: 1}}
+                exit={{opacity: 0, scale: 1.2}}
+                transition={{ duration: 0.3}}
+                className={styles.titleScroll}
+              >
+                <h6 style={{margin: 0}}>Keep</h6>
+                <h6>Scrolling</h6>
+              </motion.span>
+            ) : (
+              <motion.i
+                key="icon"
+                className={`${styles.arrowIcon} fa-solid fa-angle-down`}
+                initial={{opacity: 0, scale: 0.8}}
+                animate={{ opacity: 1, scale: 2}}
+                exit={{opacity: 0, scale: 1.2}}
+                transition={{ duration: 0.3 }}
+              ></motion.i>
+              )}
+          </AnimatePresence>
         </button>
       </div>
     </div>

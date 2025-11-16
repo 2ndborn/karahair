@@ -23,6 +23,12 @@
     font-size: 25px;
 }
 
+.titleScroll {
+  font-family: "Open Sans", sans-serif;
+  /* font-size: 0.9rem; */
+  font-weight: 600;
+}
+
 button {
   text-decoration: none;
   color: #22161c;
