@@ -50,7 +50,7 @@ export default function TileComponent({margin, content, renderContent}) {
   
 
   return (
-    <div style={{ height: "150vh", boxSizing: "border-box", display: "flex", justifyContent: "center", alignItems: "center" }}>
+    <div className={styles.tileContainer}>
       <LayoutGroup>
       <div style={{ height: "50vh," }} />
       <motion.div

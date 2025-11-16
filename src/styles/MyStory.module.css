@@ -1,4 +1,4 @@
-.edArticle {
+/* .edArticle {
     font-size: 1.2rem;
     text-align: justify;
 }
@@ -16,7 +16,7 @@
 
 .edArticle li {
     margin-bottom: 7px;
-}
+} */
 
 .tcontainer {
     display: flex;
@@ -53,13 +53,13 @@
   scale: 1.05;
 }
 
-.StoryContainer {
+/* .StoryContainer {
     position: relative;
     z-index: -1;
     overflow: hidden;
-}
+} */
 
-.AboutMeOne {
+/* .AboutMeOne {
     position: relative;
     min-height: 50vh;
     display: flex;
@@ -100,77 +100,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
+} */
 
-.ImageAnchor {
-  position: absolute;
-  top: calc(50vh - 150px); /* position image halfway into AboutMeOne */
-  left: 85%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
 
-.ImageAnchorTwo {
-  position: absolute;
-  top: calc(0vh - 50px); /* position image halfway into AboutMeOne */
-  left: 16%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
 
-.ImageAnchorThree {
-  position: absolute;
-  top: calc(50vh - 125px); /* position image halfway into AboutMeOne */
-  left: 85%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
 
-.cathyImage {
-  width: clamp(180px, 25vw, 250px);
-  height: auto;
-  object-fit: cover;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-  rotate: 2deg;
-}
 
-.awardImage {
-  width: clamp(180px, 25vw, 250px);
-  height: auto;
-  object-fit: cover;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-  rotate: -2deg;
-}
 
-.wigsImage {
-  width: clamp(180px, 25vw, 250px);
-  height: auto;
-  object-fit: cover;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-  rotate: 2deg;
-}
 
-.StoryContainer p {
-    font-size: 20px;
-    width: 70%;
-    line-height: 30px;
-}
-
-.StoryContainer span {
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.TitleContainer {
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .heroImage {
     position: absolute;
@@ -238,7 +175,15 @@
   color: rgba(251, 236, 224, 0.2);
 }
 
-.contactButtonWrapper {
+.tileContainer {
+    height: 150vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .contactButtonWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -259,7 +204,7 @@
     letter-spacing: 0.2rem;
     font-weight: 900;
     font-size: 1.4rem;
-}
+} */
 /* 
 .leftHalf h1 {
     font-family: "Cal Sans", sans-serif;
@@ -269,7 +214,7 @@
     font-family: "Merriweather Sans", sans-serif;
 } */
 
-.con {
+/* .con {
     height: 100vh;
     display: flex;
     background-color: aquamarine;
@@ -322,10 +267,10 @@
     object-fit: cover;
     display: block;
     
-}
+} */
 
 /*************************Grid System***************************/
-.container {
+/* .container {
   height: 250vh;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -435,10 +380,10 @@
     object-fit: cover;
     object-position: 0px 0px;
     border-radius: 10px;
-}
+} */
 
 /***************************Media queries*************************/
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
     .container > div p {
         text-align: center;
     }
@@ -465,7 +410,7 @@
     .image2 { 
         object-position: -65px 0px;
     }
-}
+} */
 
 @media (max-width: 991px) {
     .heroImage {
@@ -474,8 +419,11 @@
     }
 
     .gradientBg {
-        background-image: linear-gradient(
-            to right, #d9b9a0 50%, transparent);
+        background-image: linear-gradient(to right, #d9b9a0 50%, transparent);
+    }
+
+    .tileContainer {
+        height: 110vh;
     }
 }
 
@@ -508,7 +456,13 @@
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
+    .tileContainer {
+        height: 100vh;
+    }
+}
+
+/* @media (max-width: 450px) {
 
     .container > div p {
         font-size: 1rem;
@@ -578,10 +532,10 @@
         width: 100%;
         text-align: center;
     }
-}
+} */
 
 
-/******************************************Third Section***********************************************/
+/******************************************Work component***********************************************/
 
 .sec3 {
     position: relative;
