@@ -61,33 +61,33 @@ function Title({title, subtitle}) {
           className={`${styles.ScrollButton} text-decoration-none`}
           aria-label="Scroll to next section"
         >
-          <AnimatePresence mode='wait'>
-            {showText ? (
-              <motion.span
-                key="text"
-                initial={{opacity: 0, scale: 0.8}}
-                animate={{opacity: 1, scale: 1}}
-                exit={{opacity: 0, scale: 1.2}}
-                transition={{ duration: 0.3}}
-                className={styles.titleScroll}
-              >
-                <h6 style={{margin: 0}}>Keep</h6>
-                <h6>Scrolling</h6>
-              </motion.span>
-            ) : (
-              <motion.i
-                key="icon"
-                className={`${styles.arrowIcon} fa-solid fa-angle-down`}
-                initial={{opacity: 0, scale: 0.8}}
-                animate={{ opacity: 1, scale: 2}}
-                exit={{opacity: 0, scale: 1.2}}
-                transition={{ duration: 0.3 }}
-              ></motion.i>
-              )}
-          </AnimatePresence>
-        </motion.button>
-      </div>
-      </>}
+              <AnimatePresence mode='wait'>
+                {showText ? (
+                  <motion.span
+                    key="text"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 1.2 }}
+                    transition={{ duration: 0.3 }}
+                    className={styles.titleScroll}
+                  >
+                    <h6 style={{ margin: 0 }}>Keep</h6>
+                    <h6>Scrolling</h6>
+                  </motion.span>
+                ) : (
+                  <motion.i
+                    key="icon"
+                    className={`${styles.arrowIcon} fa-solid fa-angle-down`}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 2 }}
+                    exit={{ opacity: 0, scale: 1.2 }}
+                    transition={{ duration: 0.3 }}
+                  ></motion.i>
+                )}
+              </AnimatePresence>
+            </motion.button>
+          </div>
+        </>}
     </div>
   )
 }
