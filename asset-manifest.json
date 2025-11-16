@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.3b11e96c.css",
-    "main.js": "/static/js/main.2a7d88c0.js",
+    "main.css": "/static/css/main.a4220859.css",
+    "main.js": "/static/js/main.87750e20.js",
     "static/js/453.b6f67256.chunk.js": "/static/js/453.b6f67256.chunk.js",
     "static/media/brazil.webp": "/static/media/brazil.f051b9605ee3bf6ed626.webp",
     "static/media/curly.webp": "/static/media/curly.0e64fd8b5afc4b4eceac.webp",
@@ -11,20 +11,20 @@
     "static/media/bel.webp": "/static/media/bel.195d3e440d4c36c8b4c1.webp",
     "static/media/eva.webp": "/static/media/eva.65d3e86b8998c17261af.webp",
     "static/media/coach.JPG": "/static/media/coach.a64b40ad670330ef2cf0.JPG",
-    "static/media/multicolor.webp": "/static/media/multicolor.f92f817e2b08e914225b.webp",
     "static/media/peachone.webp": "/static/media/peachone.4ec3d8a1ba537dfd8636.webp",
+    "static/media/multicolor.webp": "/static/media/multicolor.dfd496c0ca7758b920e7.webp",
     "static/media/boucleme.JPG": "/static/media/boucleme.75971f93c710cbaed8a6.JPG",
     "static/media/karae.webp": "/static/media/karae.910b10a29f2b64b87b7c.webp",
     "static/media/karapic.webp": "/static/media/karapic.601b154d6b1d425a86e3.webp",
     "static/media/forsytes.webp": "/static/media/forsytes.c83725e8c405779677be.webp",
     "static/media/treason.webp": "/static/media/treason.a31e6a9f028499263a87.webp",
     "index.html": "/index.html",
-    "main.3b11e96c.css.map": "/static/css/main.3b11e96c.css.map",
-    "main.2a7d88c0.js.map": "/static/js/main.2a7d88c0.js.map",
+    "main.a4220859.css.map": "/static/css/main.a4220859.css.map",
+    "main.87750e20.js.map": "/static/js/main.87750e20.js.map",
     "453.b6f67256.chunk.js.map": "/static/js/453.b6f67256.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b11e96c.css",
-    "static/js/main.2a7d88c0.js"
+    "static/css/main.a4220859.css",
+    "static/js/main.87750e20.js"
   ]
 }
