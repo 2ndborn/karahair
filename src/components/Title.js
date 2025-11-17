@@ -16,7 +16,7 @@ function Title({title, subtitle}) {
   useEffect(() => {
     const interval = setInterval(() => {
       setShowText(prev => !prev)
-    }, 2000);
+    }, 1500);
     return () => clearInterval(interval)
   }, [])
 
@@ -68,7 +68,7 @@ function Title({title, subtitle}) {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 1.2 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.5 }}
                     className={styles.titleScroll}
                   >
                     <h6 style={{ margin: 0 }}>Keep</h6>
@@ -81,7 +81,7 @@ function Title({title, subtitle}) {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 2 }}
                     exit={{ opacity: 0, scale: 1.2 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.5 }}
                   ></motion.i>
                 )}
               </AnimatePresence>

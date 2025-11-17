@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {AnimatePresence} from 'framer-motion';
 import { motion } from 'motion/react';
 
@@ -14,28 +14,7 @@ import useDynamicColor from '../hooks/useDynamicColor';
 import NavItem from './NavItem';
 import { Link } from 'react-router-dom';
 import { AnimateButton } from '../utils/AnimateButton';
-
-function useScrollTrigger() {
-  const [showNav, setShowNav] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const titleSection = document.getElementById("title-container");
-      if (!titleSection) {
-        console.warn("TitleContainer not found!");
-        return;
-      }
-
-      const rect = titleSection.getBoundingClientRect();
-      setShowNav(rect.bottom < 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [showNav]);
-
-  return showNav;
-}
+import useScrollTrigger from '../hooks/useScrollTrigger';
 
 function NavBar() {
   const showNav = useScrollTrigger();
