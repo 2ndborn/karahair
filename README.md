@@ -68,7 +68,6 @@ Empowering clients to explore the owner's expertise and services, enabling them 
 * CSS
 * Javascript
 * VSCode
-* [Vite](https://vite.dev/)
 * [React Router](https://v5.reactrouter.com/web/guides/quick-start)
 * [Motion — JavaScript & React animation library](https://motion.dev/)
 * Microsoft Copilot
