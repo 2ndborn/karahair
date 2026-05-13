@@ -43,9 +43,7 @@ const Loader = () => {
         animate={['expand', 'fadeOut']}
         exit='fadeOut'
         style={loaderStyle}
-    >
-        Loader
-    </motion.div>
+    />
   )
 }
 
